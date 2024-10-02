@@ -1,0 +1,19 @@
+{
+  "name": "com.welovegamesinc.figureskate",
+  "version": "0.0.1",
+  "displayName": "FigureSkate",
+  "description": "",
+  "unity": "2022.3",
+  "dependencies": {
+    "com.unity.test-framework": "1.3.9"
+  },
+  "keywords": [
+    "figureskate",
+    "figure",
+    "skate"
+  ],
+  "author": {
+    "name": "wlg-shinya",
+    "email": "shinya.watanabe@welovegamesinc.com"
+  }
+}
