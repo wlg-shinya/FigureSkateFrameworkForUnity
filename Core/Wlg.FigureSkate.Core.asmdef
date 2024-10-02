@@ -1,0 +1,17 @@
+{
+    "name": "Wlg.FigureSkate.Core",
+    "rootNamespace": "Wlg.FigureSkate.Core",
+    "references": [
+        "GUID:bc97508755a205042851ec84b3d2bc1a",
+        "GUID:7e288c393ca8c014fa53ae32d7cd2141"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
