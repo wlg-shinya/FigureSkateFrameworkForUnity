@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335ea63d814f30a408c17197361357b8, type: 3}
+  m_Name: AllJapanNoviceChampionship
+  m_EditorClassIdentifier: 
+  data:
+    id: AllJapanNoviceChampionship
+    name: "\u5168\u65E5\u672C\u30CE\u30FC\u30D3\u30B9\u9078\u624B\u6A29\u5927\u4F1A"
+    startDay:
+      year: 2023
+      month: 10
+      day: 22
+    endDay:
+      year: 2023
+      month: 10
+      day: 22
+  eventObjects:
+  - {fileID: 11400000, guid: 145b4dd686c0a86429ed0cab4f63f532, type: 2}
+  - {fileID: 11400000, guid: d1943fdf373ce334a9c8d63c1d53d337, type: 2}
+  - {fileID: 11400000, guid: 88f52983cb1d42946bc3581dbf8878e2, type: 2}
+  - {fileID: 11400000, guid: 1f4f2fbc05f2e744a879d3de2a730c79, type: 2}

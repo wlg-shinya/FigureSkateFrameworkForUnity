@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50dcd92e106e38d4e9f01301277d2c7c, type: 3}
+  m_Name: ProgramComponentConditionWithinJump2
+  m_EditorClassIdentifier: 
+  data:
+    falseMessage: "\u540C\u3058\u30B8\u30E3\u30F3\u30D7\u306F3\u56DE\u4EE5\u4E0A\u69CB\u6210\u3067\u304D\u307E\u305B\u3093"
+    elementPlaceableSetIds:
+    - Jump1
+    - Jump2
+    - Jump3
+    - Jump4
+    - Jump2Combination1
+    - Jump2Combination2
+    - Jump3Combination
+    count: 2

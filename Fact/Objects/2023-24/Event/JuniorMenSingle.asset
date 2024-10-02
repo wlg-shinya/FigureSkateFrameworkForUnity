@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0847207a02b116a48ab7d39d7219ad96, type: 3}
+  m_Name: JuniorMenSingle
+  m_EditorClassIdentifier: 
+  data:
+    name: "\u30B8\u30E5\u30CB\u30A2\u7537\u5B50\u30B7\u30F3\u30B0\u30EB"
+  targetClassObject: {fileID: 11400000, guid: 8dae38351e6cf574392d62ff50eeea07, type: 2}
+  targetSexObject: {fileID: 11400000, guid: f3c09a95e51f87946ab3de8ab5433508, type: 2}
+  programObjects:
+  - {fileID: 11400000, guid: faa8c56b9f583ec46ba987529d5a034b, type: 2}
+  - {fileID: 11400000, guid: 546052bb764a56a48be0fc042b58cd76, type: 2}

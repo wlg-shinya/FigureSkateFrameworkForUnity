@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0631d4bb0daf72f42a462b9140459d7d, type: 3}
+  m_Name: ElementPlaceableSetConditionInvalid2Combination32
+  m_EditorClassIdentifier: 
+  data:
+    falseMessage: "3\u56DE\u8EE2+2\u56DE\u8EE2\u306F\u69CB\u6210\u3067\u304D\u307E\u305B\u3093"
+    firstInvalidElementIdPattern: ^3.+
+    secondInvalidElementIdPattern: ^2.+
