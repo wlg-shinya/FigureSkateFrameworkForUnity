@@ -6,7 +6,7 @@ using Wlg.FigureSkate.Core.Data;
 
 namespace Wlg.FigureSkate.Fact.UI
 {
-    public class JudgesScoreComponent
+    public class JudgesScoreUI
     {
         public TemplateContainer Root { get; private set; }
 
