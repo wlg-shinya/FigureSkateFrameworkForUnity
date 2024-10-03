@@ -1,6 +1,6 @@
 {
-    "name": "Wlg.FigureSkate.Tests.Core",
-    "rootNamespace": "Wlg.FigureSkate.Tests.Core",
+    "name": "Wlg.FigureSkate.Tests.Editor.Core",
+    "rootNamespace": "Wlg.FigureSkate.Tests.Editor.Core",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",

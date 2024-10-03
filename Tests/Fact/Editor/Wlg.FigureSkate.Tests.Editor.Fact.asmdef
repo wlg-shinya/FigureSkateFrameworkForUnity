@@ -1,0 +1,25 @@
+{
+    "name": "Wlg.FigureSkate.Tests.Editor.Fact",
+    "rootNamespace": "Wlg.FigureSkate.Tests.Editor.Fact",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Wlg.FigureSkate.Core",
+        "Wlg.FigureSkate.Fact"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -2,7 +2,7 @@ using NUnit.Framework;
 using Wlg.FigureSkate.Core.Data;
 using Assert = UnityEngine.Assertions.Assert;
 
-namespace Wlg.FigureSkate.Tests.Core.Data
+namespace Wlg.FigureSkate.Tests.Editor.Core.Data
 {
     public class YearMonthDayTest
     {
