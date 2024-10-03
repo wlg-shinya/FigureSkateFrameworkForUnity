@@ -3,7 +3,7 @@ using NUnit.Framework;
 using Wlg.FigureSkate.Core.Data;
 using Assert = UnityEngine.Assertions.Assert;
 
-namespace Wlg.FigureSkate.Core.Tests.Data
+namespace Wlg.FigureSkate.Tests.Core.Data
 {
     public class JudgeDetailTest
     {
