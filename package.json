@@ -1,7 +1,7 @@
 {
-  "name": "com.welovegamesinc.figureskate",
+  "name": "com.welovegamesinc.figureskate-framework",
   "version": "0.0.1",
-  "displayName": "FigureSkate",
+  "displayName": "FigureSkateFramework",
   "description": "",
   "unity": "2022.3",
   "dependencies": {
