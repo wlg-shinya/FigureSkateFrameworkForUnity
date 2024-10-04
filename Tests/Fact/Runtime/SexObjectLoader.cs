@@ -12,8 +12,8 @@ namespace Wlg.FigureSkate.Tests.Fact
         {
             return new List<SexObject>
             {
-                AssetDatabase.LoadAssetAtPath<SexObject>("Packages/com.welovegamesinc.figureskate/Fact/Objects/Sex/Men.asset"),
-                AssetDatabase.LoadAssetAtPath<SexObject>("Packages/com.welovegamesinc.figureskate/Fact/Objects/Sex/Women.asset"),
+                AssetDatabase.LoadAssetAtPath<SexObject>("Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Sex/Men.asset"),
+                AssetDatabase.LoadAssetAtPath<SexObject>("Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Sex/Women.asset"),
             };
         }
     }

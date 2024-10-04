@@ -15,9 +15,9 @@ namespace Wlg.FigureSkate.Tests.Fact
             var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             return new List<CompetitionObject>
             {
-                AssetDatabase.LoadAssetAtPath<CompetitionObject>($"Packages/com.welovegamesinc.figureskate/Fact/Objects/{skateYear}/Competition/AllJapanNoviceChampionship.asset"),
-                AssetDatabase.LoadAssetAtPath<CompetitionObject>($"Packages/com.welovegamesinc.figureskate/Fact/Objects/{skateYear}/Competition/ISUJuniorGrandPrixOsaka.asset"),
-                AssetDatabase.LoadAssetAtPath<CompetitionObject>($"Packages/com.welovegamesinc.figureskate/Fact/Objects/{skateYear}/Competition/KinoshitaGroupCupJapanOpen2023.asset"),
+                AssetDatabase.LoadAssetAtPath<CompetitionObject>($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Competition/AllJapanNoviceChampionship.asset"),
+                AssetDatabase.LoadAssetAtPath<CompetitionObject>($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Competition/ISUJuniorGrandPrixOsaka.asset"),
+                AssetDatabase.LoadAssetAtPath<CompetitionObject>($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Competition/KinoshitaGroupCupJapanOpen2023.asset"),
             };
         }
     }

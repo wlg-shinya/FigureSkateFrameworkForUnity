@@ -15,11 +15,11 @@ namespace Wlg.FigureSkate.Tests.Fact
             var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             return new List<ClassObject>
             {
-                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate/Fact/Objects/{skateYear}/Class/Senior.asset"),
-                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate/Fact/Objects/{skateYear}/Class/Junior.asset"),
-                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate/Fact/Objects/{skateYear}/Class/NoviceA.asset"),
-                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate/Fact/Objects/{skateYear}/Class/NoviceB.asset"),
-                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate/Fact/Objects/{skateYear}/Class/None.asset"),
+                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Class/Senior.asset"),
+                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Class/Junior.asset"),
+                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Class/NoviceA.asset"),
+                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Class/NoviceB.asset"),
+                AssetDatabase.LoadAssetAtPath<ClassObject>($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Class/None.asset"),
             };
         }
     }

@@ -33,7 +33,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var list = new List<ElementObject>(AllIds.Length);
             foreach (var id in AllIds)
             {
-                list.Add(AssetDatabase.LoadAssetAtPath<ElementObject>($"Packages/com.welovegamesinc.figureskate/Fact/Objects/{skateYear}/Element/{id}.asset"));
+                list.Add(AssetDatabase.LoadAssetAtPath<ElementObject>($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Element/{id}.asset"));
             }
             return list;
         }
