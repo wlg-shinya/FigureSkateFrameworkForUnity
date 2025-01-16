@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Wlg.FigureSkate.Core.ScriptableObjects;
 using Wlg.FigureSkate.Core.Data;
 
@@ -9,6 +10,13 @@ namespace Wlg.FigureSkate.Fact
     // クラスオブジェクトを得るための問い合わせ
     public static class ClassObjectQuery
     {
+        // 基準日の年度の全オブジェクトを読み込む
+        public static async Task<List<ClassObject>> All(YearMonthDay baseday)
+        {
+            var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
+            return await LoaderUtility.LoadAssetsAsync<ClassObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Class");
+        }
+
         // 指定IDのオブジェクトを得る
         public static ClassObject ById(List<ClassObject> src, string id) => src.Find(x => x.data.id == id) ?? throw new Exception($"Not found '{id}'");
 

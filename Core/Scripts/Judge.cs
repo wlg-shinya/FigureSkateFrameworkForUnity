@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Wlg.FigureSkate.Core.Data;
-using Wlg.FigureSkate.Core.ScriptableObjects;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -10,13 +9,16 @@ namespace Wlg.FigureSkate.Core
     // MEMO:
     // - +REPは非対応（プログラム構成条件で設定できないようにする想定）
     // - Fall判定はジャンプ単位ではなく構成単位で行っている。そのためジャンプコンビネーションは全部実行される
+    // TODO:ElementBaseValueを活用する形に全面的に変更する
     public class Judge
     {
-        public Judge(Program program, ProgramComponent[] programComponents, List<ElementObject> elementObjectAll)
+        public Judge(Program program, ProgramComponent[] programComponents, List<Element> elementAll, List<ElementBaseValue> elementBaseValueAll, List<Goe> goeAll)
         {
             _program = program;
             _programComponents = programComponents;
-            _elementObjectAll = elementObjectAll;
+            _elementAll = elementAll;
+            _elementBaseValueAll = elementBaseValueAll;
+            _goeAll = goeAll;
 
             // 判定の詳細データの初期化
             var componentLength = _programComponents.Length;
@@ -40,9 +42,9 @@ namespace Wlg.FigureSkate.Core
         }
 
         // GOE加点項目のチェックを通ったらtrueを返すデリゲート。
-        public delegate bool SuccessGoePlus(GoePlus goePlus, ElementObject elementObject);
+        public delegate bool SuccessGoePlus(GoePlus goePlus, Element element);
         // GOE減点項目に引っかからなかったらtrueを返すデリゲート。
-        public delegate bool SuccessGoeMinus(GoeMinus goeMinus, ElementObject elementObject);
+        public delegate bool SuccessGoeMinus(GoeMinus goeMinus, Element element);
         // GOE減点項目の減点量(GoeMinus.minValue-GoeMinus.maxValue)を返すデリゲート。
         public delegate int CheckGoeMinusValue(GoeMinus goeMinus);
         // ジャンプが成功したらtrueを返すデリゲート
@@ -116,11 +118,11 @@ namespace Wlg.FigureSkate.Core
                     .Select((elementId, index) => (elementId, index))
                     .Min((data) => // 連続で要素を実行する場合のGOEは最も低い値を採用する
                     {
-                        // 構成要素のデータからオブジェクトを取得
-                        var elementObject = _elementObjectAll.Find(x => Equals(x.data.id, data.elementId)) ?? throw new Exception($"Not found '{data.elementId}'");
-                        // 構成要素オブジェクトを用いてGOE判定を行う
-                        var goePlusValue = CheckTesGoePlusValue(elementObject, successGoePlus);
-                        var goeMinusValue = CheckTesGoeMinusValue(elementObject, goeMinus[refereeIndex][data.index], successGoeMinus, checkGoeMinusValue);
+                        // プログラム構成した要素から要素データを特定
+                        var element = _elementAll.Find(x => Equals(x.id, data.elementId)) ?? throw new Exception($"Not found '{data.elementId}'");
+                        // 要素データを用いてGOE判定を行う
+                        var goePlusValue = CheckTesGoePlusValue(element, successGoePlus);
+                        var goeMinusValue = CheckTesGoeMinusValue(element, goeMinus[refereeIndex][data.index], successGoeMinus, checkGoeMinusValue);
                         // すべての判定が終わったらこれまでのGOEの加減点を合算する
                         return Math.Clamp(goePlusValue + goeMinusValue, Constant.GOE_MIN_VALUE, Constant.GOE_MAX_VALUE);
                     });
@@ -128,36 +130,36 @@ namespace Wlg.FigureSkate.Core
         }
 
         // GOE加点値の判定
-        private int CheckTesGoePlusValue(ElementObject elementObject, SuccessGoePlus successGoePlus)
+        private int CheckTesGoePlusValue(Element element, SuccessGoePlus successGoePlus)
         {
-            var plus = elementObject.goeObject.data.plus;
+            var goe = _goeAll.Find(x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found '{element.goeId}'");
 
             // 成否判定
-            var result = plus.Select(x => successGoePlus(x, elementObject));
+            var result = goe.plus.Select(x => successGoePlus(x, element));
 
             // GOEの重要項目数と実際に成功した重要項目数が一致していたら、全体の達成項目数かGOE最大値の低いほうをGOE加点として採用
             // そうでなければ全体の達成項目数かGOEの重要項目数の低いほうをGOE加点として採用
             // ref. https://www.jsports.co.jp/skate/about/game/
-            var requiredCount = plus.Count((x) => x.important == true);
-            var requiredSuccessCount = result.Where((x, i) => x && plus[i].important).Count();
+            var requiredCount = goe.plus.Count((x) => x.important == true);
+            var requiredSuccessCount = result.Where((x, i) => x && goe.plus[i].important).Count();
             var successCount = result.Count((x) => x == true);
             return requiredCount == requiredSuccessCount ? Math.Min(successCount, Constant.GOE_MAX_VALUE) : Math.Min(successCount, requiredCount);
         }
 
         // GEO減点値の判定
         // 減点項目(GoeMinus)の生成も行う
-        private int CheckTesGoeMinusValue(ElementObject elementObject, List<GoeMinus> goeMinus, SuccessGoeMinus successGoeMinus, CheckGoeMinusValue checkGoeMinusValue)
+        private int CheckTesGoeMinusValue(Element element, List<GoeMinus> goeMinus, SuccessGoeMinus successGoeMinus, CheckGoeMinusValue checkGoeMinusValue)
         {
-            var minus = elementObject.goeObject.data.minus;
+            var goe = _goeAll.Find(x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found '{element.goeId}'");
 
             // 成否判定を行いチェックに引っかかった減点項目の一覧を得る
-            var minusFails = minus
+            var minusFails = goe.minus
                 // 対象構成要素のみに絞る
-                .Where((x) => x.targetElementIds.Length <= 0 || x.targetElementIds.Any(x => Equals(x, elementObject.data.id)))
+                .Where((x) => x.targetElementIds.Length <= 0 || x.targetElementIds.Any(x => Equals(x, element.id)))
                 // ダウングレードしようがない要素はダウングレード判定を除外
-                .Where((x) => !(!elementObject.downgrade && x.isDowngrade))
+                .Where((x) => !(String.IsNullOrEmpty(element.downgradeId) && x.isDowngrade))
                 // 成否判定。失敗したものだけ残す
-                .Where((x) => !successGoeMinus(x, elementObject));
+                .Where((x) => !successGoeMinus(x, element));
 
             if (minusFails.Count() > 0)
             {
@@ -291,14 +293,23 @@ namespace Wlg.FigureSkate.Core
             }
             var lastJumpFactor = tes.lastJump ? 1.1f : 1.0f;
             var baseValue = component.elementIds
-                .Select((x, i) => (elementId: x, downgrade: tes.isDowngrades[i], baseValueFactor: tes.baseValueFactors[i]))
+                .Select((x, i) => (elementId: x, isDowngrade: tes.isDowngrades[i], baseValueFactor: tes.baseValueFactors[i]))
                 .Sum(x =>
                 {
-                    // 構成要素のデータからオブジェクトを取得
-                    var elementObject = _elementObjectAll.Find(elementObject => Equals(elementObject.data.id, x.elementId)) ?? throw new Exception($"Not found '{x.elementId}'");
-                    // 構成要素オブジェクトからダウングレード情報を参照して適切な基礎点を算出
-                    var downgrade = x.downgrade && elementObject.downgrade;
-                    var basevalue = downgrade ? elementObject.downgrade.data.baseValue : elementObject.data.baseValue;
+                    // 今回の構成要素のデータを取得
+                    var element = _elementAll.Find(element => Equals(element.id, x.elementId)) ?? throw new Exception($"Not found '{x.elementId}'");
+                    // 構成要素データからダウングレード情報を参照して適切な基礎点を算出
+                    var isDowngrade = x.isDowngrade && !String.IsNullOrEmpty(element.downgradeId);
+                    ElementBaseValue elementBaseValue = null;
+                    if (!isDowngrade)
+                    {
+                        elementBaseValue = _elementBaseValueAll.Find(elementBaseValue => Equals(elementBaseValue.id, element.id)) ?? throw new Exception($"Not found element.id({element.id})");
+                    }
+                    else
+                    {
+                        elementBaseValue = _elementBaseValueAll.Find(elementBaseValue => Equals(elementBaseValue.id, element.downgradeId)) ?? throw new Exception($"Not found downgradeId({element.downgradeId}) in elementBaseValue({elementBaseValue.id})");
+                    }
+                    var basevalue = elementBaseValue.baseValue;
                     return basevalue * x.baseValueFactor;
                 });
             tes.baseValue = baseValue * lastJumpFactor;
@@ -363,7 +374,11 @@ namespace Wlg.FigureSkate.Core
         // 採点するプログラム構成
         private readonly ProgramComponent[] _programComponents;
         // 採点対象の全構成要素
-        private readonly List<ElementObject> _elementObjectAll;
+        private readonly List<Element> _elementAll;
+        // 採点対象の全構成要素の基礎点
+        private readonly List<ElementBaseValue> _elementBaseValueAll;
+        // 全GOE
+        private readonly List<Goe> _goeAll;
 
         // GOE減点項目
         private readonly List<GoeMinus>[][][] _goeMinus;

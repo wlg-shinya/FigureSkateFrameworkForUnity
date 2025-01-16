@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using Wlg.FigureSkate.Core;
 using Wlg.FigureSkate.Core.Data;
@@ -14,96 +15,107 @@ namespace Wlg.FigureSkate.Tests.Fact
     public class JudgeTest
     {
         private readonly YearMonthDay baseday = new(2024, 1, 1);
-        private string SkateYear() => YearMonthDayUtility.GetSkateYearString(baseday);
 
         [Test]
-        public void CheckTesGoePlusValue()
+        public async Task CheckTesGoePlusValue()
         {
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync();
                 Assert.IsNotNull(programComponentHanlder);
             }
-            var elementObjectAll = ElementObjectLoader.All(baseday);
-            var judge = new Judge(programComponentHanlder.Program, programComponentHanlder.ProgramComponents, elementObjectAll);
+            var elementObjectAll = await ElementObjectQuery.All();
+            var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
+            var goeObjectAll = await GoeObjectQuery.All(baseday);
+            var judge = new Judge(
+                programComponentHanlder.Program,
+                programComponentHanlder.ProgramComponents,
+                elementObjectAll.Select(x => x.data).ToList(),
+                elementBaseValueObjectAll.Select(x => x.data).ToList(),
+                goeObjectAll.Select(x => x.data).ToList()
+                );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("CheckTesGoePlusValue", BindingFlags.NonPublic | BindingFlags.Instance);
             Assert.IsNotNull(methodInfo);
             var elementId = programComponentHanlder.ProgramComponents[0].elementIds[0];
-            var elementObject = elementObjectAll.Find(x => Equals(x.data.id, elementId)) ?? throw new Exception($"Not found '{elementId}'");
+            var elementObject = ElementObjectQuery.ById(elementObjectAll, elementId);
 
             // 全項目成功ならGOE+5
             {
-                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, ElementObject elementObject) =>
+                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, Element element) =>
                 {
                     return true;
                 };
-                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject, successGoePlus });
+                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, successGoePlus });
                 Assert.AreEqual(returnValue, 5);
             }
             // 一つも成功していないならGOE+0
             {
-                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, ElementObject elementObject) =>
+                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, Element element) =>
                 {
                     return false;
                 };
-                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject, successGoePlus });
+                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, successGoePlus });
                 Assert.AreEqual(returnValue, 0);
             }
             // 重要項目だけ全部成功すると3項目あるのでGOE+3
             {
-                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, ElementObject elementObject) =>
+                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, Element element) =>
                 {
                     return goePlus.important;
                 };
-                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject, successGoePlus });
+                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, successGoePlus });
                 Assert.AreEqual(returnValue, 3);
             }
             // 重要でない項目だけ全部成功すると3項目あるのでGOE+3
             {
-                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, ElementObject elementObject) =>
+                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, Element element) =>
                 {
                     return !goePlus.important;
                 };
-                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject, successGoePlus });
+                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, successGoePlus });
                 Assert.AreEqual(returnValue, 3);
             }
             // 重要項目が一つでも失敗するとそれ以外の項目が満点でもGOE+3
             {
                 var importantTrueCount = 2;
-                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, ElementObject elementObject) =>
+                Judge.SuccessGoePlus successGoePlus = (GoePlus goePlus, Element element) =>
                 {
                     importantTrueCount--;
                     return !goePlus.important || importantTrueCount >= 0;
                 };
-                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject, successGoePlus });
+                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, successGoePlus });
                 Assert.AreEqual(returnValue, 3);
             }
         }
 
         [Test]
-        public void CheckTesGoeMinusValue()
+        public async Task CheckTesGoeMinusValue()
         {
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync();
                 Assert.IsNotNull(programComponentHanlder);
             }
-            var elementObjectAll = ElementObjectLoader.All(baseday);
-            var judge = new Judge(programComponentHanlder.Program, programComponentHanlder.ProgramComponents, elementObjectAll);
+            var elementObjectAll = await ElementObjectQuery.All();
+            var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
+            var goeObjectAll = await GoeObjectQuery.All(baseday);
+            var judge = new Judge(
+                programComponentHanlder.Program,
+                programComponentHanlder.ProgramComponents,
+                elementObjectAll.Select(x => x.data).ToList(),
+                elementBaseValueObjectAll.Select(x => x.data).ToList(),
+                goeObjectAll.Select(x => x.data).ToList()
+                );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("CheckTesGoeMinusValue", BindingFlags.NonPublic | BindingFlags.Instance);
             Assert.IsNotNull(methodInfo);
-            ElementObject elementObject = null;
-            {
-                elementObject = ElementObjectQuery.ById(elementObjectAll, "2A");
-                Assert.IsNotNull(elementObject);
-            }
+            ElementObject elementObject = ElementObjectQuery.ById(elementObjectAll, "2A");
 
             // 減点項目に引っかからなかったらGOE-0 & 減点項目も0
             {
                 var goeMinus = new List<GoeMinus>();
-                Judge.SuccessGoeMinus successGoeMinus = (GoeMinus goeMinus, ElementObject elementObject) =>
+                Judge.SuccessGoeMinus successGoeMinus = (GoeMinus goeMinus, Element element) =>
                 {
                     return true;
                 };
@@ -111,7 +123,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 {
                     return goeMinus.minValue;
                 };
-                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject, goeMinus, successGoeMinus, checkGoeMinusValue });
+                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, goeMinus, successGoeMinus, checkGoeMinusValue });
                 Assert.AreEqual(returnValue, 0);
                 Assert.AreEqual(goeMinus.Count, 0);
             }
@@ -120,7 +132,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             {
                 var goeMinusValueTotal = 0;
                 var goeMinus = new List<GoeMinus>();
-                Judge.SuccessGoeMinus successGoeMinus = (GoeMinus goeMinus, ElementObject elementObject) =>
+                Judge.SuccessGoeMinus successGoeMinus = (GoeMinus goeMinus, Element element) =>
                 {
                     return false;
                 };
@@ -129,13 +141,14 @@ namespace Wlg.FigureSkate.Tests.Fact
                     goeMinusValueTotal += goeMinus.maxValue;
                     return goeMinus.maxValue;
                 };
-                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject, goeMinus, successGoeMinus, checkGoeMinusValue });
+                var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, goeMinus, successGoeMinus, checkGoeMinusValue });
                 Assert.AreEqual(returnValue, Math.Max(goeMinusValueTotal, Constant.GOE_MIN_VALUE));
 
                 // 減点の仕組み上の項目最大数 ( ref. Judge.CheckTesGoeMinusValue ) との比較
-                var geoMinusMaxCount = elementObject.goeObject.data.minus
+                var goeObject = GoeObjectQuery.ById(goeObjectAll, elementObject.data.goeId);
+                var geoMinusMaxCount = goeObject.data.minus
                     .Where((x) => x.targetElementIds.Length <= 0 || x.targetElementIds.Any(x => Equals(x, elementObject.data.id)))
-                    .Where((x) => !(!elementObject.downgrade && x.isDowngrade))
+                    .Where((x) => !(String.IsNullOrEmpty(elementObject.data.downgradeId) && x.isDowngrade))
                     .GroupBy((x) => x.group)
                     .SelectMany((x) => Equals(x.Key, "") ? x.ToArray() : new GoeMinus[] { x.Aggregate((a, c) => a.TotalValue() < c.TotalValue() ? a : c) })
                     .Count();
@@ -144,7 +157,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             // 上限範囲外テスト
             {
                 var goeMinus = new List<GoeMinus>();
-                Judge.SuccessGoeMinus successGoeMinus = (GoeMinus goeMinus, ElementObject elementObject) =>
+                Judge.SuccessGoeMinus successGoeMinus = (GoeMinus goeMinus, Element element) =>
                 {
                     return true;
                 };
@@ -154,7 +167,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 };
                 try
                 {
-                    var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject, goeMinus, successGoeMinus, checkGoeMinusValue });
+                    var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, goeMinus, successGoeMinus, checkGoeMinusValue });
                     Assert.IsTrue(false); // ここには到達しないはず
                 }
                 catch { }
@@ -162,7 +175,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             // 下限範囲外テスト
             {
                 var goeMinus = new List<GoeMinus>();
-                Judge.SuccessGoeMinus successGoeMinus = (GoeMinus goeMinus, ElementObject elementObject) =>
+                Judge.SuccessGoeMinus successGoeMinus = (GoeMinus goeMinus, Element element) =>
                 {
                     return true;
                 };
@@ -172,7 +185,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 };
                 try
                 {
-                    var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject, goeMinus, successGoeMinus, checkGoeMinusValue });
+                    var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, goeMinus, successGoeMinus, checkGoeMinusValue });
                     Assert.IsTrue(false); // ここには到達しないはず
                 }
                 catch { }
@@ -180,15 +193,23 @@ namespace Wlg.FigureSkate.Tests.Fact
         }
 
         [Test]
-        public void CheckTesJump()
+        public async Task CheckTesJump()
         {
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync();
                 Assert.IsNotNull(programComponentHanlder);
             }
-            var elementObjectAll = ElementObjectLoader.All(baseday);
-            var judge = new Judge(programComponentHanlder.Program, programComponentHanlder.ProgramComponents, elementObjectAll);
+            var elementObjectAll = await ElementObjectQuery.All();
+            var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
+            var goeObjectAll = await GoeObjectQuery.All(baseday);
+            var judge = new Judge(
+                programComponentHanlder.Program,
+                programComponentHanlder.ProgramComponents,
+                elementObjectAll.Select(x => x.data).ToList(),
+                elementBaseValueObjectAll.Select(x => x.data).ToList(),
+                goeObjectAll.Select(x => x.data).ToList()
+                );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("CheckTesJump", BindingFlags.NonPublic | BindingFlags.Instance);
             Assert.IsNotNull(methodInfo);
@@ -208,15 +229,23 @@ namespace Wlg.FigureSkate.Tests.Fact
         }
 
         [Test]
-        public void RecordTes()
+        public async Task RecordTes()
         {
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync();
                 Assert.IsNotNull(programComponentHanlder);
             }
-            var elementObjectAll = ElementObjectLoader.All(baseday);
-            var judge = new Judge(programComponentHanlder.Program, programComponentHanlder.ProgramComponents, elementObjectAll);
+            var elementObjectAll = await ElementObjectQuery.All();
+            var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
+            var goeObjectAll = await GoeObjectQuery.All(baseday);
+            var judge = new Judge(
+                programComponentHanlder.Program,
+                programComponentHanlder.ProgramComponents,
+                elementObjectAll.Select(x => x.data).ToList(),
+                elementBaseValueObjectAll.Select(x => x.data).ToList(),
+                goeObjectAll.Select(x => x.data).ToList()
+                );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("RecordTes", BindingFlags.NonPublic | BindingFlags.Instance);
             Assert.IsNotNull(methodInfo);
@@ -240,31 +269,41 @@ namespace Wlg.FigureSkate.Tests.Fact
                         if (elementIndex == 0)
                         {
                             var elementId = component.elementIds[elementIndex];
-                            var elementObject = elementObjectAll.Find(x => Equals(x.data.id, elementId)) ?? throw new Exception($"Not found '{elementId}'");
-                            goeMinus[refereeIndex][elementIndex].Add(elementObject.goeObject.data.minus.ToList().Find(x => x.isDowngrade));
+                            var elementObject = ElementObjectQuery.ById(elementObjectAll, elementId);
+                            var goeObject = GoeObjectQuery.ById(goeObjectAll, elementObject.data.goeId);
+                            goeMinus[refereeIndex][elementIndex].Add(goeObject.data.minus.ToList().Find(x => x.isDowngrade));
                         }
                     }
                     methodInfo.Invoke(judge, new object[] { tes, component, goeMinus });
                     // 情報記号が想定通りか
                     Assert.AreEqual(tes.executedElement, "2A<<+3Lo");
                     // 一つ目のジャンプがダウングレードしたので基礎点がダウングレード先の値を参照した結果になっているはず
-                    var elementObject0 = elementObjectAll.Find(x => Equals(x.data.id, component.elementIds[0])) ?? throw new Exception($"Not found '{component.elementIds[0]}'");
-                    var elementObject1 = elementObjectAll.Find(x => Equals(x.data.id, component.elementIds[1])) ?? throw new Exception($"Not found '{component.elementIds[1]}'");
-                    Assert.AreEqual(tes.baseValue, elementObject0.downgrade.data.baseValue + elementObject1.data.baseValue);
+                    var element0Object = ElementObjectQuery.ById(elementObjectAll, component.elementIds[0]);
+                    var element0DowngradeBaseValueObject = ElementBaseValueObjectQuery.ById(elementBaseValueObjectAll, element0Object.data.downgradeId);
+                    var element1BaseValueObject = ElementBaseValueObjectQuery.ById(elementBaseValueObjectAll, component.elementIds[1]);
+                    Assert.AreEqual(tes.baseValue, element0DowngradeBaseValueObject.data.baseValue + element1BaseValueObject.data.baseValue);
                 }
             }
         }
 
         [Test]
-        public void CheckPcs()
+        public async Task CheckPcs()
         {
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync();
                 Assert.IsNotNull(programComponentHanlder);
             }
-            var elementObjectAll = ElementObjectLoader.All(baseday);
-            var judge = new Judge(programComponentHanlder.Program, programComponentHanlder.ProgramComponents, elementObjectAll);
+            var elementObjectAll = await ElementObjectQuery.All();
+            var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
+            var goeObjectAll = await GoeObjectQuery.All(baseday);
+            var judge = new Judge(
+                programComponentHanlder.Program,
+                programComponentHanlder.ProgramComponents,
+                elementObjectAll.Select(x => x.data).ToList(),
+                elementBaseValueObjectAll.Select(x => x.data).ToList(),
+                goeObjectAll.Select(x => x.data).ToList()
+                );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("CheckPcs", BindingFlags.NonPublic | BindingFlags.Instance);
             Assert.IsNotNull(methodInfo);
@@ -322,9 +361,9 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        private ProgramComponentHanlder CreateProgramComponentHanlderAsync()
+        private async Task<ProgramComponentHanlder> CreateProgramComponentHanlderAsync()
         {
-            var competitionObjectAll = CompetitionObjectLoader.All(baseday);
+            var competitionObjectAll = await CompetitionObjectQuery.All(baseday);
             CompetitionObject competitionObject = CompetitionObjectQuery.ById(competitionObjectAll, "KinoshitaGroupCupJapanOpen2023");
             ProgramComponentHanlder programComponentHanlderHanlder;
             {

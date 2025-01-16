@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ChoreographicSequence
   m_EditorClassIdentifier: 
   data:
+    id: ChoreographicSequence
     plus:
     - description: "\u5275\u9020\u7684"
       important: 1

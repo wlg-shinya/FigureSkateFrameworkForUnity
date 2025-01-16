@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
 using Wlg.FigureSkate.Core;
 using Wlg.FigureSkate.Core.Data;
-using Wlg.FigureSkate.Core.ScriptableObjects;
 using Wlg.FigureSkate.Fact;
 using Wlg.FigureSkate.Fact.Data;
 using Assert = UnityEngine.Assertions.Assert;
-using System.Linq;
 
 namespace Wlg.FigureSkate.Tests.Fact
 {
@@ -19,17 +18,18 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("NoviceA", "Women")]
         [TestCase("NoviceB", "Men")]
         [TestCase("NoviceB", "Women")]
-        public void AllJapanNoviceChampionship(string classId, string sexId) => Competition("AllJapanNoviceChampionship", new(2023, 10, 22), classId, sexId);
+        public async Task AllJapanNoviceChampionship(string classId, string sexId) => await Competition("AllJapanNoviceChampionship", new(2023, 10, 22), classId, sexId);
         [TestCase("Junior", "Men")]
         [TestCase("Junior", "Women")]
-        public void ISUJuniorGrandPrixOsaka(string classId, string sexId) => Competition("ISUJuniorGrandPrixOsaka", new(2023, 9, 13), classId, sexId);
+        public async Task ISUJuniorGrandPrixOsaka(string classId, string sexId) => await Competition("ISUJuniorGrandPrixOsaka", new(2023, 9, 13), classId, sexId);
         [TestCase("Senior", "Men")]
         [TestCase("Senior", "Women")]
-        public void KinoshitaGroupCupJapanOpen2023(string classId, string sexId) => Competition("KinoshitaGroupCupJapanOpen2023", new(2023, 10, 7), classId, sexId);
+        public async Task KinoshitaGroupCupJapanOpen2023(string classId, string sexId) => await Competition("KinoshitaGroupCupJapanOpen2023", new(2023, 10, 7), classId, sexId);
 
-        private void Competition(string competitionName, YearMonthDay startDay, string classId, string sexId)
+        private async Task Competition(string competitionName, YearMonthDay startDay, string classId, string sexId)
         {
             var skateYear = YearMonthDayUtility.GetSkateYearString(startDay);
+            var elementObjectAll = await ElementObjectQuery.All();
 
             // プレイヤー
             Player CreatePlayer(
@@ -49,9 +49,9 @@ namespace Wlg.FigureSkate.Tests.Fact
                     classId = classId,
                     nation = nation
                 };
-                foreach (var id in ElementObjectLoader.AllIds)
+                foreach (var elementObject in elementObjectAll)
                 {
-                    player.elementIdList.Add(id);
+                    player.elementIdList.Add(elementObject.data.id);
                 }
                 return player;
             }
@@ -97,9 +97,11 @@ namespace Wlg.FigureSkate.Tests.Fact
                 else throw new ArgumentException($"classId = {classId}");
             }
             else throw new ArgumentException($"sexId = {sexId}");
-            var classObjectAll = ClassObjectLoader.All(startDay);
-            var competitionObjectAll = CompetitionObjectLoader.All(startDay);
-            var sexObjectAll = SexObjectLoader.All();
+            var classObjectAll = await ClassObjectQuery.All(startDay);
+            var competitionObjectAll = await CompetitionObjectQuery.All(startDay);
+            var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(startDay);
+            var goeObjectAll = await GoeObjectQuery.All(startDay);
+            var sexObjectAll = await SexObjectQuery.All();
             var className = ClassObjectQuery.ById(classObjectAll, player.classId).data.name;
             var sexName = SexObjectQuery.ById(sexObjectAll, player.sexId).data.name;
             Debug.Log($"{player.name}({YearMonthDayUtility.GetAge(startDay, player.birthday)}) / {className} / {sexName}");
@@ -112,7 +114,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             Assert.AreEqual(competitionObject.data.startDay, startDay);
 
             // 大会中のイベントに合わせてプログラム構成を構築
-            var elementObjectAll = ElementObjectLoader.All(startDay);
             var programObjects = ProgramObjectQuery.ByPlayerWithSetupConditions(competitionObject, player);
             player.programComponentsList = new Player.ProgramComponents[programObjects.Count()];
             var programComponentHanlders = new List<ProgramComponentHanlder>();
@@ -130,15 +131,15 @@ namespace Wlg.FigureSkate.Tests.Fact
 
                     // 合計基礎点テスト
                     {
-                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementObjectAll, 0), 39.72f);
+                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementBaseValueObjectAll, 0), 39.72f);
                         // 入れ替えによってジャンプボーナスが変わっているはず
                         programComponentHanlder.Swap(0, 2);
-                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementObjectAll, 0), 39.7f);
+                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementBaseValueObjectAll, 0), 39.7f);
                         // 入れ替えたものを元に戻す
                         programComponentHanlder.Swap(2, 0);
                         // GOE最大・最小の値が想定通りか
-                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementObjectAll, -5), 19.86f);
-                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementObjectAll, 5), 59.58f);
+                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementBaseValueObjectAll, -5), 19.86f);
+                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementBaseValueObjectAll, 5), 59.58f);
                     }
                 }
                 else if (Equals(programObject.name, "SeniorWomenShortProgram"))
@@ -192,24 +193,30 @@ namespace Wlg.FigureSkate.Tests.Fact
             foreach (var programComponentHanlder in programComponentHanlders)
             {
                 Debug.Log(programComponentHanlder.Program.name);
-                Judge(programComponentHanlder.Program, programComponentHanlder.ProgramComponents, elementObjectAll);
+                Judge(
+                    programComponentHanlder.Program,
+                    programComponentHanlder.ProgramComponents,
+                    elementObjectAll.Select(x => x.data).ToList(),
+                    elementBaseValueObjectAll.Select(x => x.data).ToList(),
+                    goeObjectAll.Select(x => x.data).ToList()
+                    );
             }
         }
 
-        private void Judge(Program program, ProgramComponent[] programComponents, List<ElementObject> elementObjectAll)
+        private void Judge(Program program, ProgramComponent[] programComponents, List<Element> elementAll, List<ElementBaseValue> elementBaseValueAll, List<Goe> goeAll)
         {
             UnityEngine.Random.InitState(DateTime.Now.Millisecond);
             int Random0To99() => UnityEngine.Random.Range(0, 100);
 
-            var judge = new Judge(program, programComponents, elementObjectAll);
+            var judge = new Judge(program, programComponents, elementAll, elementBaseValueAll, goeAll);
             judge.Execute(
                 // GOE加点項目のチェックを通ったらtrueを返す
-                (GoePlus goePlus, ElementObject elementObject) =>
+                (GoePlus goePlus, Element element) =>
                 {
                     return true;
                 },
                 // GOE減点項目に引っかからなかったらtrueを返す
-                (GoeMinus goeMinus, ElementObject elementObject) =>
+                (GoeMinus goeMinus, Element element) =>
                 {
                     return Random0To99() < 50;
                 },

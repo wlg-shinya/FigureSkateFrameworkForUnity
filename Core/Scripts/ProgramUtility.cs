@@ -6,7 +6,7 @@ using Wlg.FigureSkate.Core.ScriptableObjects;
 
 namespace Wlg.FigureSkate.Core
 {
-    // プログラム関するユーティリティクラス
+    // プログラムに関するユーティリティクラス
     public static class ProgramUtility
     {
         // 構成要素項目オブジェクトを指定IDから得る
@@ -14,20 +14,33 @@ namespace Wlg.FigureSkate.Core
 
         // 登録した構成要素の合計基礎点（ジャンプボーナス込み、GOE考慮）の見積もり算出
         // 正式な値は Judge をする必要がある。これで得られるものはあくまでも机上の値
-        public static float EstimateTotalBaseValue(Program program, ProgramComponent[] components, List<ElementObject> elementObjects, int goe)
+        public static float EstimateTotalBaseValue(Program program, ProgramComponent[] components, List<ElementBaseValueObject> elementObjects, int goe)
         {
             if (Constant.GOE_MIN_VALUE > goe || goe > Constant.GOE_MAX_VALUE)
             {
                 throw new ArgumentOutOfRangeException($"goe = {goe}");
             }
-            var goeFactor = 1.0f + (Constant.GOE_SCORE_MAGNIFICATION * goe);
             return components.Aggregate(0.0f, (a1, c1) =>
             {
                 var factor = IsLastJumpElementPlaceableSetId(program, components, c1.elementPlaceableSetId) ? 1.1f : 1.0f;
                 return c1.elementIds.Aggregate(0.0f, (a2, c2) =>
                 {
                     var elementObject = elementObjects.Find(x => x.data.id.Equals(c2));
-                    return (elementObject != null ? elementObject.data.baseValue * goeFactor * factor : 0.0f) + a2;
+                    var baseValue = elementObject.data.baseValue;
+                    switch (goe)
+                    {
+                        case -5: baseValue += elementObject.data.baseValueM5; break;
+                        case -4: baseValue += elementObject.data.baseValueM4; break;
+                        case -3: baseValue += elementObject.data.baseValueM3; break;
+                        case -2: baseValue += elementObject.data.baseValueM2; break;
+                        case -1: baseValue += elementObject.data.baseValueM1; break;
+                        case 1: baseValue += elementObject.data.baseValueP1; break;
+                        case 2: baseValue += elementObject.data.baseValueP2; break;
+                        case 3: baseValue += elementObject.data.baseValueP3; break;
+                        case 4: baseValue += elementObject.data.baseValueP4; break;
+                        case 5: baseValue += elementObject.data.baseValueP5; break;
+                    }
+                    return (elementObject != null ? baseValue * factor : 0.0f) + a2;
                 }) + a1;
             });
         }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: StepSequence
   m_EditorClassIdentifier: 
   data:
+    id: StepSequence
     plus:
     - description: "\u6DF1\u3044\u30A8\u30C3\u30B8\u3001\u660E\u78BA\u306A\u30B9\u30C6\u30C3\u30D7\u304A\u3088\u3073\u30BF\u30FC\u30F3\u3001\u5168\u8EAB\u306E\u30B3\u30F3\u30C8\u30ED\u30FC\u30EB"
       important: 1
@@ -32,6 +33,6 @@ MonoBehaviour:
       minValue: -1
       maxValue: -3
       baseValueFactor: 1
-      downgrade: 0
+      isDowngrade: 0
       mark: 
       targetElementIds: []

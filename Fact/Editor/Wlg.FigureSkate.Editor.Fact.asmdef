@@ -1,0 +1,19 @@
+{
+    "name": "Wlg.FigureSkate.Editor.Fact",
+    "rootNamespace": "Wlg.FigureSkate",
+    "references": [
+        "GUID:a8e567b750f394f41b2f9e3adcab0fea",
+        "GUID:e39f5e0c232503b4aa9d3f3c9e79bf16"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
