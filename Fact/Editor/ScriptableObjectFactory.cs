@@ -8,6 +8,7 @@ using Wlg.FigureSkate.Core.ScriptableObjects;
 namespace Wlg.FigureSkate.Fact.Editor
 {
     // TODO:ScriptableObjectFactory で作成したデータ自体のテスト追加
+    // TODO:可能な限りすべてのデータをcsv->assetの流れにする
     public class ScriptableObjectFactory : AssetPostprocessor
     {
         static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
