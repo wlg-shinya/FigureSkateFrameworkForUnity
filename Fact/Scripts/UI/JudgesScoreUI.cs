@@ -42,7 +42,7 @@ namespace Wlg.FigureSkate.Fact.UI
                         var labelIndex = 0;
                         item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = $"{index + 1}";
                         item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].executedElement;
-                        item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].InfoMark();
+                        item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].UnifiedInfoMark();
                         item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].baseValue.ToString("N2");
                         item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].lastJump ? "X" : "";
                         item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].goeScore.ToString("N2");

@@ -13,7 +13,7 @@ namespace Wlg.FigureSkate.Tests.Editor.Core.Data
             JudgeDetail judgeDetail = new(2);
 
             // データが空なので情報記号は空文字
-            Assert.AreEqual(judgeDetail.tes[0].InfoMark(), "");
+            Assert.AreEqual(judgeDetail.tes[0].UnifiedInfoMark(), "");
             // 意図通り付与される
             var marks0 = new string[] { "q" };
             var infoMarks0 = new JudgeDetail.Tes.InfoMarks()
@@ -21,24 +21,24 @@ namespace Wlg.FigureSkate.Tests.Editor.Core.Data
                 marks = new(marks0)
             };
             judgeDetail.tes[0].infoMarksList.Add(infoMarks0);
-            Assert.AreEqual(judgeDetail.tes[0].InfoMark(), "q");
+            Assert.AreEqual(judgeDetail.tes[0].UnifiedInfoMark(), "q");
             // 国際基準に合わせた順序で付与される
             judgeDetail.tes[0].infoMarksList[0].marks.Add("!");
-            Assert.AreEqual(judgeDetail.tes[0].InfoMark(), "!q");
+            Assert.AreEqual(judgeDetail.tes[0].UnifiedInfoMark(), "!q");
             // 実際はジャンプ系記号(!qなど)とスピン系記号(V)は混在しないが仕組みのうえでは混在は許容している
             judgeDetail.tes[0].infoMarksList[0].marks.Add("V");
-            Assert.AreEqual(judgeDetail.tes[0].InfoMark(), "!qV");
+            Assert.AreEqual(judgeDetail.tes[0].UnifiedInfoMark(), "!qV");
             // より重い罰則の記号のみが付与される
             judgeDetail.tes[0].infoMarksList[0].marks.Add("e");
-            Assert.AreEqual(judgeDetail.tes[0].InfoMark(), "eqV");
+            Assert.AreEqual(judgeDetail.tes[0].UnifiedInfoMark(), "eqV");
             judgeDetail.tes[0].infoMarksList[0].marks.Add("<");
-            Assert.AreEqual(judgeDetail.tes[0].InfoMark(), "e<V");
+            Assert.AreEqual(judgeDetail.tes[0].UnifiedInfoMark(), "e<V");
             judgeDetail.tes[0].infoMarksList[0].marks.Add("<<");
-            Assert.AreEqual(judgeDetail.tes[0].InfoMark(), "e<<V");
+            Assert.AreEqual(judgeDetail.tes[0].UnifiedInfoMark(), "e<<V");
             // 同じ記号が付与されても重複しない
             judgeDetail.tes[0].infoMarksList[0].marks.Add("e");
             judgeDetail.tes[0].infoMarksList[0].marks.Add("<<");
-            Assert.AreEqual(judgeDetail.tes[0].InfoMark(), "e<<V");
+            Assert.AreEqual(judgeDetail.tes[0].UnifiedInfoMark(), "e<<V");
             // コンビネーション中に新たな記号が付与されても一つ目の影響は受けない
             var marks1 = new string[] { "!", "q" };
             var infoMarks1 = new JudgeDetail.Tes.InfoMarks()
@@ -46,8 +46,8 @@ namespace Wlg.FigureSkate.Tests.Editor.Core.Data
                 marks = new List<string>(marks1)
             };
             judgeDetail.tes[1].infoMarksList.Add(infoMarks1);
-            Assert.AreEqual(judgeDetail.tes[1].InfoMark(), "!q");
-            Assert.AreEqual(judgeDetail.tes[0].InfoMark(), "e<<V");
+            Assert.AreEqual(judgeDetail.tes[1].UnifiedInfoMark(), "!q");
+            Assert.AreEqual(judgeDetail.tes[0].UnifiedInfoMark(), "e<<V");
         }
 
         [Test]

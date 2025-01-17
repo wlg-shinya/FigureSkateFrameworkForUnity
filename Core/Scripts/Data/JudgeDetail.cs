@@ -54,7 +54,7 @@ namespace Wlg.FigureSkate.Core.Data
             // この要素の最終スコア
             public float Score() => Round(baseValue + goeScore);
             // この要素の最終情報記号
-            public string InfoMark()
+            public string UnifiedInfoMark()
             {
                 if (infoMarksList.Count() > 0)
                 {
@@ -186,7 +186,7 @@ namespace Wlg.FigureSkate.Core.Data
                     var fallMark = x.fall ? "F" : "";
                     var lastJumpMark = x.lastJump ? "X" : "";
                     var refereeGoes = x.refereeGoe.Aggregate("", (a, c) => Equals(a, "") ? $"{c}" : $"{a},{c}");
-                    return $"{i + 1},{x.executedElement},{x.InfoMark()},{fallMark},{x.baseValue},{lastJumpMark},{x.goeScore},{refereeGoes},{x.Score()}";
+                    return $"{i + 1},{x.executedElement},{x.UnifiedInfoMark()},{fallMark},{x.baseValue},{lastJumpMark},{x.goeScore},{refereeGoes},{x.Score()}";
                 })
                 .Aggregate((a, c) => a + "\n" + c);
             s += separator;
