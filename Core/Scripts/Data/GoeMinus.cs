@@ -16,10 +16,6 @@ namespace Wlg.FigureSkate.Core.Data
         public int minValue;
         // 減点最大値(値的にはminValueより小さい点に注意)
         public int maxValue;
-        // 基礎点倍率
-        public float baseValueFactor = 1.0f;
-        // ダウングレードとなるか
-        public bool isDowngrade;
         // 判定時に付与される記号(存在しない場合は空白)
         public string mark;
         // 適用される構成要素ID。空の場合はすべての構成要素が対象となる

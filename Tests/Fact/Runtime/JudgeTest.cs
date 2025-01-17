@@ -148,7 +148,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 var goeObject = GoeObjectQuery.ById(goeObjectAll, elementObject.data.goeId);
                 var geoMinusMaxCount = goeObject.data.minus
                     .Where((x) => x.targetElementIds.Length <= 0 || x.targetElementIds.Any(x => Equals(x, elementObject.data.id)))
-                    .Where((x) => !(String.IsNullOrEmpty(elementObject.data.downgradeId) && x.isDowngrade))
                     .GroupBy((x) => x.group)
                     .SelectMany((x) => Equals(x.Key, "") ? x.ToArray() : new GoeMinus[] { x.Aggregate((a, c) => a.TotalValue() < c.TotalValue() ? a : c) })
                     .Count();
@@ -271,17 +270,16 @@ namespace Wlg.FigureSkate.Tests.Fact
                             var elementId = component.elementIds[elementIndex];
                             var elementObject = ElementObjectQuery.ById(elementObjectAll, elementId);
                             var goeObject = GoeObjectQuery.ById(goeObjectAll, elementObject.data.goeId);
-                            goeMinus[refereeIndex][elementIndex].Add(goeObject.data.minus.ToList().Find(x => x.isDowngrade));
+                            goeMinus[refereeIndex][elementIndex].Add(goeObject.data.minus.ToList().Find(x => x.mark.Equals("<<")));
                         }
                     }
                     methodInfo.Invoke(judge, new object[] { tes, component, goeMinus });
                     // 情報記号が想定通りか
                     Assert.AreEqual(tes.executedElement, "2A<<+3Lo");
-                    // 一つ目のジャンプがダウングレードしたので基礎点がダウングレード先の値を参照した結果になっているはず
-                    var element0Object = ElementObjectQuery.ById(elementObjectAll, component.elementIds[0]);
-                    var element0DowngradeBaseValueObject = ElementBaseValueObjectQuery.ById(elementBaseValueObjectAll, element0Object.data.downgradeId);
+                    // 合計基礎点はダウングレードした値と一致するはず
+                    var element0BaseValueObject = ElementBaseValueObjectQuery.ById(elementBaseValueObjectAll, component.elementIds[0] + "<<");
                     var element1BaseValueObject = ElementBaseValueObjectQuery.ById(elementBaseValueObjectAll, component.elementIds[1]);
-                    Assert.AreEqual(tes.baseValue, element0DowngradeBaseValueObject.data.baseValue + element1BaseValueObject.data.baseValue);
+                    Assert.AreEqual(tes.baseValue, element0BaseValueObject.data.baseValue + element1BaseValueObject.data.baseValue);
                 }
             }
         }

@@ -47,12 +47,9 @@ namespace Wlg.FigureSkate.Core.Data
             public class InfoMarks
             {
                 public List<string> marks = new();
+                public string Unified() => InfoMarkListToString(marks);
             }
             public List<InfoMarks> infoMarksList = new();
-            // 要素ごとの基礎点倍率
-            public List<float> baseValueFactors = new();
-            // 要素ごとのダウングレード判定
-            public List<bool> isDowngrades = new();
 
             // この要素の最終スコア
             public float Score() => Round(baseValue + goeScore);
@@ -64,9 +61,7 @@ namespace Wlg.FigureSkate.Core.Data
                     var uniqueMarks = infoMarksList
                         .SelectMany(x => x.marks) // 多重リストの平坦化
                         .Distinct(); // 重複削除
-                    return uniqueMarks
-                        .Where(x => !(Equals(x, "<") && uniqueMarks.Any(y => Equals(y, "<<")))) // < と << が同時に含まれている場合は < を除外
-                        .Aggregate("", (a, c) => a + c); // 情報記号を一つの文字列に結合
+                    return InfoMarkListToString(uniqueMarks.ToList());
                 }
                 else
                 {
@@ -106,9 +101,21 @@ namespace Wlg.FigureSkate.Core.Data
                     foreach (var mark in infoMarks.marks) newInfoMarks.marks.Add(mark.Clone() as string);
                     newTes.infoMarksList.Add(newInfoMarks);
                 }
-                foreach (var obj in baseValueFactors) newTes.baseValueFactors.Add(obj);
-                foreach (var obj in isDowngrades) newTes.isDowngrades.Add(obj);
                 return newTes;
+            }
+
+            // 記号群を文字列化
+            // 順序は国際基準( https://current.isu.org/figure-skating/rules/fsk-communications )に準拠
+            static private string InfoMarkListToString(List<string> marks)
+            {
+                string resultMarks = "";
+                if (marks.Any(x => x.Equals("e"))) resultMarks += "e";
+                else if (marks.Any(x => x.Equals("!"))) resultMarks += "!";
+                if (marks.Any(x => x.Equals("<<"))) resultMarks += "<<";
+                else if (marks.Any(x => x.Equals("<"))) resultMarks += "<";
+                else if (marks.Any(x => x.Equals("q"))) resultMarks += "q";
+                if (marks.Any(x => x.Equals("V"))) resultMarks += "V";
+                return resultMarks;
             }
         }
         // 演技構成点

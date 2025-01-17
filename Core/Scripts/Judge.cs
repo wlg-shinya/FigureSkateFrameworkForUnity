@@ -9,7 +9,7 @@ namespace Wlg.FigureSkate.Core
     // MEMO:
     // - +REPは非対応（プログラム構成条件で設定できないようにする想定）
     // - Fall判定はジャンプ単位ではなく構成単位で行っている。そのためジャンプコンビネーションは全部実行される
-    // TODO:ElementBaseValueを活用する形に全面的に変更する
+    // TODO:b(ボーナス)対応
     public class Judge
     {
         public Judge(Program program, ProgramComponent[] programComponents, List<Element> elementAll, List<ElementBaseValue> elementBaseValueAll, List<Goe> goeAll)
@@ -156,8 +156,6 @@ namespace Wlg.FigureSkate.Core
             var minusFails = goe.minus
                 // 対象構成要素のみに絞る
                 .Where((x) => x.targetElementIds.Length <= 0 || x.targetElementIds.Any(x => Equals(x, element.id)))
-                // ダウングレードしようがない要素はダウングレード判定を除外
-                .Where((x) => !(String.IsNullOrEmpty(element.downgradeId) && x.isDowngrade))
                 // 成否判定。失敗したものだけ残す
                 .Where((x) => !successGoeMinus(x, element));
 
@@ -175,7 +173,7 @@ namespace Wlg.FigureSkate.Core
                         }
                         else
                         {
-                            // グループ内で最もGOE減点量が多い項目を選出
+                            // グループ内で最もGOE減点量が多い項目(=値の少ない方)を選出
                             return new GoeMinus[] { x.Aggregate((a, c) => a.TotalValue() < c.TotalValue() ? a : c) };
                         }
                     });
@@ -247,16 +245,10 @@ namespace Wlg.FigureSkate.Core
                         marks = new(minus.Where(x => !Equals(x.mark, "")).Select(x => x.mark))
                     };
                     tes.infoMarksList.Add(infoMarks);
-                    // 基礎点倍率の採用
-                    tes.baseValueFactors.Add(minus.Min(x => x.baseValueFactor));
-                    // ダウングレード判定の採用
-                    tes.isDowngrades.Add(minus.Any(x => x.isDowngrade));
                 }
                 else
                 {
                     tes.infoMarksList.Add(new());
-                    tes.baseValueFactors.Add(1.0f);
-                    tes.isDowngrades.Add(false);
                 }
             }
         }
@@ -264,53 +256,27 @@ namespace Wlg.FigureSkate.Core
         // プログラム構成データで決まる技術点の判定結果の記録
         private void RecordTesByProgramComponentData(JudgeDetail.Tes tes, ProgramComponent component)
         {
-            // 実行済み要素。コンビネーションの場合は+でつなぎ合わせる。各要素の末尾に情報記号を付ける
             if (tes.infoMarksList.Count() == 0)
             {
                 throw new Exception("Not recorded tes.infoMarks");
             }
-            tes.executedElement = component.elementIds
-                .Select((x, i) => (elementId: x, mark: tes.infoMarksList[i].marks))
-                .Aggregate("", (a, c) =>
-                {
-                    var mark = c.mark.Aggregate("", (a, c) => a + c);
-                    var id = c.elementId + mark;
-                    return Equals(a, "") ? id : $"{a}+{id}";
-                });
+            // 記号付きIDリストの構築
+            var markedIds = component.elementIds.Select((x, i) => x + tes.infoMarksList[i].Unified());
+            // 実行済み要素。コンビネーションの場合は+でつなぎ合わせる
+            tes.executedElement = markedIds.Aggregate("", (a, c) => Equals(a, "") ? c : $"{a}+{c}");
             // 最終ジャンプかどうか
             tes.lastJump = ProgramUtility.IsLastJumpElementPlaceableSetId(_program, _programComponents, component.elementPlaceableSetId);
             // 基礎点。採点結果にはジャンプボーナス適用後を設定する
             // 違反による基礎点減少倍率はGOEにも影響するのでローカルbaseValueに適用する
             // ダウングレードの場合はダウングレード先の基礎点を参照する
             // ref. https://results.isu.org/results/season2223/wtt2023/data0203.pdf
-            if (tes.baseValueFactors.Count() == 0)
-            {
-                throw new Exception("Not recorded tes.baseValueFactors");
-            }
-            if (tes.isDowngrades.Count() == 0)
-            {
-                throw new Exception("Not recorded tes.isDowngrades");
-            }
+
             var lastJumpFactor = tes.lastJump ? 1.1f : 1.0f;
-            var baseValue = component.elementIds
-                .Select((x, i) => (elementId: x, isDowngrade: tes.isDowngrades[i], baseValueFactor: tes.baseValueFactors[i]))
-                .Sum(x =>
+            var baseValue = markedIds
+                .Sum(markedId =>
                 {
-                    // 今回の構成要素のデータを取得
-                    var element = _elementAll.Find(element => Equals(element.id, x.elementId)) ?? throw new Exception($"Not found '{x.elementId}'");
-                    // 構成要素データからダウングレード情報を参照して適切な基礎点を算出
-                    var isDowngrade = x.isDowngrade && !String.IsNullOrEmpty(element.downgradeId);
-                    ElementBaseValue elementBaseValue = null;
-                    if (!isDowngrade)
-                    {
-                        elementBaseValue = _elementBaseValueAll.Find(elementBaseValue => Equals(elementBaseValue.id, element.id)) ?? throw new Exception($"Not found element.id({element.id})");
-                    }
-                    else
-                    {
-                        elementBaseValue = _elementBaseValueAll.Find(elementBaseValue => Equals(elementBaseValue.id, element.downgradeId)) ?? throw new Exception($"Not found downgradeId({element.downgradeId}) in elementBaseValue({elementBaseValue.id})");
-                    }
-                    var basevalue = elementBaseValue.baseValue;
-                    return basevalue * x.baseValueFactor;
+                    var elementBaseValue = _elementBaseValueAll.Find(x => Equals(x.id, markedId)) ?? throw new Exception($"Not found '{markedId}' in _elementBaseValueAll");
+                    return elementBaseValue.baseValue;
                 });
             tes.baseValue = baseValue * lastJumpFactor;
             // 全審判の出したGOE平均値から算出される係数と基礎点を掛け合わせてGOEスコアを出す
