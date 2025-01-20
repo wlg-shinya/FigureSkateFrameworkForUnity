@@ -33,7 +33,7 @@ namespace Wlg.FigureSkate.Fact
         {
             return src
                 .Where(competitionObject => competitionObject.eventObjects
-                    .Any(eventObject => Equals(eventObject.targetClassObject.data.id, classId) && Equals(eventObject.targetSexObject.data.id, sexId)))
+                    .Any(eventObject => Equals(eventObject.data.classId, classId) && Equals(eventObject.data.sexId, sexId)))
                 .ToList();
         }
     }

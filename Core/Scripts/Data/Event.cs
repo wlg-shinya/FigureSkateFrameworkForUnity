@@ -6,6 +6,13 @@ namespace Wlg.FigureSkate.Core.Data
     [Serializable]
     public class Event
     {
+        // 一意の記号
+        public string id;
+        // 名称
         public string name;
+        // 対象クラスID
+        public string classId;
+        // 対象性別ID
+        public string sexId;
     }
 }

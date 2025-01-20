@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: SeniorWomenSingle
   m_EditorClassIdentifier: 
   data:
+    id: SeniorWomenSingle
     name: "\u30B7\u30CB\u30A2\u5973\u5B50\u30B7\u30F3\u30B0\u30EB"
+    classId: Senior
+    sexId: Women
   targetClassObject: {fileID: 11400000, guid: 4979b7503dfd72440a61b878288ceef4, type: 2}
   targetSexObject: {fileID: 11400000, guid: 679f07aa21979b3439d4519e9ca5fbe2, type: 2}
   programObjects:

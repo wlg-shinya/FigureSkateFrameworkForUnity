@@ -13,7 +13,7 @@ namespace Wlg.FigureSkate.Fact
         public static List<ProgramObject> ByPlayer(CompetitionObject competitionObject, Player player)
         {
             var list = competitionObject.eventObjects
-                .Where(eventObject => Equals(eventObject.targetClassObject.data.id, player.classId) && Equals(eventObject.targetSexObject.data.id, player.sexId))
+                .Where(eventObject => Equals(eventObject.data.classId, player.classId) && Equals(eventObject.data.sexId, player.sexId))
                 .SelectMany(eventObject => eventObject.programObjects)
                 .ToList();
             if (list.Count() <= 0)

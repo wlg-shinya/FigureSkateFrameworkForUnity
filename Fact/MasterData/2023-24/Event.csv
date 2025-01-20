@@ -1,0 +1,9 @@
+id,name,classId,sexId
+NoviceBMenSingle,ノービスB男子シングル,NoviceB,Men
+NoviceBWomenSingle,ノービスB女子シングル,NoviceB,Women
+NoviceAMenSingle,ノービスA男子シングル,NoviceA,Men
+NoviceAWomenSingle,ノービスA女子シングル,NoviceA,Women
+JuniorMenSingle,ジュニア男子シングル,Junior,Men
+JuniorWomenSingle,ジュニア女子シングル,Junior,Women
+SeniorMenSingle,シニア男子シングル,Senior,Men
+SeniorWomenSingle,シニア女子シングル,Senior,Women

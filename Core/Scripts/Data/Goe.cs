@@ -6,7 +6,7 @@ namespace Wlg.FigureSkate.Core.Data
     [Serializable]
     public class Goe
     {
-        // 一意の名称
+        // 一意の記号
         public string id;
         // 加点項目
         public GoePlus[] plus = new GoePlus[Constant.GOE_PLUS_LENGTH];

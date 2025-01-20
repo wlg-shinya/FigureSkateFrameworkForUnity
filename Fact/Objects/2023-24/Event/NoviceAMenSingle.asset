@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: NoviceAMenSingle
   m_EditorClassIdentifier: 
   data:
+    id: NoviceAMenSingle
     name: "\u30CE\u30FC\u30D3\u30B9A\u7537\u5B50\u30B7\u30F3\u30B0\u30EB"
+    classId: NoviceA
+    sexId: Men
   targetClassObject: {fileID: 11400000, guid: 1a8d74cf5f40f72419189b54c20186cd, type: 2}
   targetSexObject: {fileID: 11400000, guid: f3c09a95e51f87946ab3de8ab5433508, type: 2}
   programObjects:
