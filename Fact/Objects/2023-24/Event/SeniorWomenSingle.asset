@@ -17,8 +17,6 @@ MonoBehaviour:
     name: "\u30B7\u30CB\u30A2\u5973\u5B50\u30B7\u30F3\u30B0\u30EB"
     classId: Senior
     sexId: Women
-  targetClassObject: {fileID: 11400000, guid: 4979b7503dfd72440a61b878288ceef4, type: 2}
-  targetSexObject: {fileID: 11400000, guid: 679f07aa21979b3439d4519e9ca5fbe2, type: 2}
   programObjects:
   - {fileID: 11400000, guid: 8741ed3e258be3943a9da22dd92c9040, type: 2}
   - {fileID: 11400000, guid: 5c5bb9d27d0566440b204bee3e86e3d6, type: 2}

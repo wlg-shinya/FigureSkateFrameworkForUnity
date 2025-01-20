@@ -17,7 +17,5 @@ MonoBehaviour:
     name: "\u30CE\u30FC\u30D3\u30B9B\u5973\u5B50\u30B7\u30F3\u30B0\u30EB"
     classId: NoviceB
     sexId: Women
-  targetClassObject: {fileID: 11400000, guid: 421ae4adaa8226a498b7c182acea1fbd, type: 2}
-  targetSexObject: {fileID: 11400000, guid: 679f07aa21979b3439d4519e9ca5fbe2, type: 2}
   programObjects:
   - {fileID: 11400000, guid: 4ac1c1a2a6f87624ba93b79c4ca12cfe, type: 2}
