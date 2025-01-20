@@ -1,0 +1,6 @@
+id,name,minAge,maxAge
+None,-,0,8
+NoviceB,ノービスB,9,10
+NoviceA,ノービスA,11,12
+Junior,ジュニア,13,19
+Senior,シニア,16,1000

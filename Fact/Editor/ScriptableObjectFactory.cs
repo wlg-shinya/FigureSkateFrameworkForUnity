@@ -27,6 +27,12 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (Element data) => { return $"{data.id}.asset"; },
                     (Element data, ElementObject obj) => { obj.data = data; }
                     );
+                CreateOrUpdateScriptableObjectFromCsv(
+                    path,
+                    "Class.csv",
+                    (Class data) => { return $"{data.id}.asset"; },
+                    (Class data, ClassObject obj) => { obj.data = data; }
+                    );
             }
         }
 
