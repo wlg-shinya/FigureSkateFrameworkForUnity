@@ -8,7 +8,6 @@ using Wlg.FigureSkate.Core.ScriptableObjects;
 namespace Wlg.FigureSkate.Fact.Editor
 {
     // TODO:ScriptableObjectFactory で作成したデータ自体のテスト追加
-    // TODO:可能な限りすべてのデータをcsv->assetの流れにする
     public class ScriptableObjectFactory : AssetPostprocessor
     {
         static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
@@ -45,12 +44,26 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (Core.Data.Event data) => { return $"{data.id}.asset"; },
                     (Core.Data.Event data, EventObject obj) => { obj.data = data; }
                     );
-                // TODO:CSVSerializerでYearMonthDay(ユーザー定義型)の復元をできるようにする
+                // TODO:Competition のcsv化のため、CSVSerializerでYearMonthDay(ユーザー定義型)の復元をできるようにする
                 // CreateOrUpdateScriptableObjectFromCsv(
                 //     path,
                 //     "Competition.csv",
                 //     (Competition data) => { return $"{data.id}.asset"; },
                 //     (Competition data, CompetitionObject obj) => { obj.data = data; }
+                //     );
+                // TODO:Goe のcsv化のため、GoePlus/GoeMinusデータの扱いを変更する
+                // CreateOrUpdateScriptableObjectFromCsv(
+                //     path,
+                //     "Goe.csv",
+                //     (Goe data) => { return $"{data.id}.asset"; },
+                //     (Goe data, GoeObject obj) => { obj.data = data; }
+                //     );
+                // TODO:Program のcsv化のため、ProgramComponentRegulationデータの扱いを変更する
+                // CreateOrUpdateScriptableObjectFromCsv(
+                //     path,
+                //     "Program.csv",
+                //     (Program data) => { return $"{data.id}.asset"; },
+                //     (Program data, ProgramObject obj) => { obj.data = data; }
                 //     );
             }
         }
