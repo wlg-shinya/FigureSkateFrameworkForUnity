@@ -15,48 +15,55 @@ namespace Wlg.FigureSkate.Fact.Editor
         {
             foreach (var path in importedAssets)
             {
-                if (path.IndexOf("/ElementBaseValue.csv") != -1)
+                CreateOrUpdateScriptableObjectFromCsv(
+                    path,
+                    "ElementBaseValue.csv",
+                    (ElementBaseValue data) => { return $"{StringWidthConverter.ConvertToFullWidth(data.id)}.asset"; },
+                    (ElementBaseValue data, ElementBaseValueObject obj) => { obj.data = data; }
+                    );
+                CreateOrUpdateScriptableObjectFromCsv(
+                    path,
+                    "Element.csv",
+                    (Element data) => { return $"{data.id}.asset"; },
+                    (Element data, ElementObject obj) => { obj.data = data; }
+                    );
+            }
+        }
+
+        private delegate string OutputFileName<T>(T data);
+        private delegate void SetScriptableObjectData<T, TObject>(T data, TObject obj);
+        private static void CreateOrUpdateScriptableObjectFromCsv<T, TObject>(
+            string importedAssetPath,
+            string csv,
+            OutputFileName<T> outputFileName,
+            SetScriptableObjectData<T, TObject> setScriptableObjectData)
+            where TObject : ScriptableObject
+        {
+            if (importedAssetPath.IndexOf($"/{csv}") != -1)
+            {
+                // 保存先ディレクトリはcsvデータ置き場の構造を参考にする
+                var outputDir = Path.Combine(
+                    Path.GetDirectoryName(importedAssetPath).Replace("MasterData", "Objects"),
+                    Path.GetFileNameWithoutExtension(importedAssetPath));
+                // csvからデータ読み込み
+                var csvTextAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(importedAssetPath);
+                var dataArray = CSVSerializer.Deserialize<T>(csvTextAsset.text);
+                foreach (var data in dataArray)
                 {
-                    var outputDir = Path.Combine(Path.GetDirectoryName(path).Replace("MasterData", "Objects"), Path.GetFileNameWithoutExtension(path));
-                    var csvTextAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(path);
-                    var elements = CSVSerializer.Deserialize<ElementBaseValue>(csvTextAsset.text);
-                    foreach (var element in elements)
+                    // 保存先ファイルパスを得る
+                    var outputFilePath = Path.Combine(outputDir, outputFileName(data));
+                    // 既存のScriptableObjectの読み込み。存在しない場合は新規作成
+                    TObject obj = AssetDatabase.LoadAssetAtPath<TObject>(outputFilePath);
+                    if (obj == null)
                     {
-                        // 保存先ファイルパスを得る。ファイル名に使用禁止文字が含まれうるのですべて全角に変換しておく
-                        var outputFilePath = Path.Combine(outputDir, $"{StringWidthConverter.ConvertToFullWidth(element.id)}.asset");
-                        // 既存のScriptableObjectの読み込み。存在しない場合は新規作成
-                        ElementBaseValueObject elementObject = AssetDatabase.LoadAssetAtPath<ElementBaseValueObject>(outputFilePath);
-                        if (elementObject == null)
-                        {
-                            elementObject = ScriptableObject.CreateInstance<ElementBaseValueObject>();
-                            AssetDatabase.CreateAsset(elementObject, outputFilePath);
-                        }
-                        // ScriptableObjectにデータを設定
-                        elementObject.data = element;
-                        // 変更した結果をファイル保存
-                        EditorUtility.SetDirty(elementObject);
-                        AssetDatabase.SaveAssets();
+                        obj = ScriptableObject.CreateInstance<TObject>();
+                        AssetDatabase.CreateAsset(obj, outputFilePath);
                     }
-                }
-                if (path.IndexOf("/Element.csv") != -1)
-                {
-                    var outputDir = Path.Combine(Path.GetDirectoryName(path).Replace("MasterData", "Objects"), Path.GetFileNameWithoutExtension(path));
-                    var csvTextAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(path);
-                    var elements = CSVSerializer.Deserialize<Element>(csvTextAsset.text);
-                    foreach (var element in elements)
-                    {
-                        // 保存先ファイルパスを得る
-                        var outputFilePath = Path.Combine(outputDir, $"{element.id}.asset");
-                        ElementObject obj = AssetDatabase.LoadAssetAtPath<ElementObject>(outputFilePath);
-                        if (obj == null)
-                        {
-                            obj = ScriptableObject.CreateInstance<ElementObject>();
-                            AssetDatabase.CreateAsset(obj, outputFilePath);
-                        }
-                        obj.data = element;
-                        EditorUtility.SetDirty(obj);
-                        AssetDatabase.SaveAssets();
-                    }
+                    // ScriptableObjectにデータを設定
+                    setScriptableObjectData(data, obj);
+                    // 変更した結果をファイル保存
+                    EditorUtility.SetDirty(obj);
+                    AssetDatabase.SaveAssets();
                 }
             }
         }
