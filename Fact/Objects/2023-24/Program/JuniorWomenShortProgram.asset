@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: JuniorWomenShortProgram
   m_EditorClassIdentifier: 
   data:
-    name: "\u30B7\u30E7\u30FC\u30C8\u30D7\u30ED\u30B0\u30E9\u30E0"
+    id: JuniorWomenShortProgram
+    name: "\u30B8\u30E5\u30CB\u30A2\u5973\u5B50\u30B7\u30E7\u30FC\u30C8\u30D7\u30ED\u30B0\u30E9\u30E0"
     regulation:
       elementPlaceableSets:
       - id: JumpAxel

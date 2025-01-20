@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: SeniorWomenFreeSkating
   m_EditorClassIdentifier: 
   data:
-    name: "\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
+    id: SeniorWomenFreeSkating
+    name: "\u30B7\u30CB\u30A2\u5973\u5B50\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
     regulation:
       elementPlaceableSets:
       - id: Jump1

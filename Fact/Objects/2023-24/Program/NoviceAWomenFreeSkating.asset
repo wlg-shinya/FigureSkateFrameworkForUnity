@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: NoviceAWomenFreeSkating
   m_EditorClassIdentifier: 
   data:
-    name: "\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
+    id: NoviceAWomenFreeSkating
+    name: "\u30CE\u30FC\u30D3\u30B9A\u7537\u5B50\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
     regulation:
       elementPlaceableSets:
       - id: Jump1

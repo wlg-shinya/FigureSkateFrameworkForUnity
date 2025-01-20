@@ -6,6 +6,8 @@ namespace Wlg.FigureSkate.Core.Data
     [Serializable]
     public class Program
     {
+        // 一意の記号
+        public string id;
         // 名称
         public string name;
         // プログラム構成要素の規則
