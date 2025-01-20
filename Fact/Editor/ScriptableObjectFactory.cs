@@ -33,6 +33,13 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (Class data) => { return $"{data.id}.asset"; },
                     (Class data, ClassObject obj) => { obj.data = data; }
                     );
+                // TODO:CSVSerializerでYearMonthDay(ユーザー定義型)の復元をできるようにする
+                // CreateOrUpdateScriptableObjectFromCsv(
+                //     path,
+                //     "Competition.csv",
+                //     (Competition data) => { return $"{data.id}.asset"; },
+                //     (Competition data, CompetitionObject obj) => { obj.data = data; }
+                //     );
             }
         }
 
