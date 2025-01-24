@@ -8,6 +8,5 @@ namespace Wlg.FigureSkate.Core.ScriptableObjects
     public class CompetitionObject : ScriptableObject
     {
         public Competition data;
-        public List<EventObject> eventObjects;
     }
 }

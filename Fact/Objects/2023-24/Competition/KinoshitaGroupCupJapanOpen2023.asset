@@ -26,6 +26,7 @@ MonoBehaviour:
       year: 2023
       month: 10
       day: 7
-  eventObjects:
-  - {fileID: 11400000, guid: ad559427085a84743a129affd8e4c05d, type: 2}
-  - {fileID: 11400000, guid: 7f09d758ed9507b4fb5d44da7b213754, type: 2}
+    eventIds:
+    - SeniorMenSingle
+    - SeniorWomenSingle
+  eventObjects: []

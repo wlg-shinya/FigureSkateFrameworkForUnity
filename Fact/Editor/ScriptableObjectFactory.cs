@@ -1,7 +1,7 @@
 #if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using Wlg.FigureSkate.Core.Data;
@@ -64,13 +64,14 @@ namespace Wlg.FigureSkate.Fact.Editor
                             var rowsIndex = i + 1;
                             competitions[i] = new Competition
                             {
-                                id = rows[rowsIndex][0],
-                                regionId = rows[rowsIndex][1],
-                                countryId = rows[rowsIndex][2],
-                                name = rows[rowsIndex][3],
-                                isInternational = bool.Parse(rows[rowsIndex][4]),
-                                startDay = new YearMonthDay(rows[rowsIndex][5]),
-                                endDay = new YearMonthDay(rows[rowsIndex][6]),
+                                id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                regionId = rows[rowsIndex][Array.IndexOf(rows[0], "regionId")],
+                                countryId = rows[rowsIndex][Array.IndexOf(rows[0], "countryId")],
+                                name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
+                                isInternational = bool.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "isInternational")]),
+                                startDay = new YearMonthDay(rows[rowsIndex][Array.IndexOf(rows[0], "startDay")]),
+                                endDay = new YearMonthDay(rows[rowsIndex][Array.IndexOf(rows[0], "endDay")]),
+                                eventIds = rows[rowsIndex][Array.IndexOf(rows[0], "eventIds")].Split('/')
                             };
                         }
                         return competitions;

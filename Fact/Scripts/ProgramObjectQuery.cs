@@ -10,9 +10,10 @@ namespace Wlg.FigureSkate.Fact
     public static class ProgramObjectQuery
     {
         // 指定した選手にあったオブジェクトをすべて得る
-        public static List<ProgramObject> ByPlayer(CompetitionObject competitionObject, Player player)
+        public static List<ProgramObject> ByPlayer(CompetitionObject competitionObject, List<EventObject> eventObjects, Player player)
         {
-            var list = competitionObject.eventObjects
+            var list = competitionObject.data.eventIds
+                .Select(x => EventObjectQuery.ById(eventObjects, x))
                 .Where(eventObject => Equals(eventObject.data.classId, player.classId) && Equals(eventObject.data.sexId, player.sexId))
                 .SelectMany(eventObject => eventObject.programObjects)
                 .ToList();
@@ -24,9 +25,9 @@ namespace Wlg.FigureSkate.Fact
         }
 
         // 指定した選手にあったオブジェクトを条件セットアップ済みにしてすべて得る
-        public static List<ProgramObject> ByPlayerWithSetupConditions(CompetitionObject competitionObject, Player player)
+        public static List<ProgramObject> ByPlayerWithSetupConditions(CompetitionObject competitionObject, List<EventObject> eventObjects, Player player)
         {
-            return ByPlayer(competitionObject, player).Select(programObject => SetupConditions(programObject)).ToList();
+            return ByPlayer(competitionObject, eventObjects, player).Select(programObject => SetupConditions(programObject)).ToList();
         }
 
         // 指定したプログラムの構成要素設定条件のセットアップ

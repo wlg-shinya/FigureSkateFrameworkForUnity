@@ -26,4 +26,13 @@ MonoBehaviour:
       year: 2023
       month: 10
       day: 1
+    eventIds:
+    - SeniorMenSingle
+    - SeniorWomenSingle
+    - JuniorMenSingle
+    - JuniorWomenSingle
+    - NoviceAMenSingle
+    - NoviceAWomenSingle
+    - NoviceBMenSingle
+    - NoviceBWomenSingle
   eventObjects: []

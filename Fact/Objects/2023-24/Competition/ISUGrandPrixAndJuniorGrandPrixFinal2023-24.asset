@@ -26,4 +26,9 @@ MonoBehaviour:
       year: 2023
       month: 12
       day: 10
+    eventIds:
+    - SeniorMenSingle
+    - SeniorWomenSingle
+    - JuniorMenSingle
+    - JuniorWomenSingle
   eventObjects: []

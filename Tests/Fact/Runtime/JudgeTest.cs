@@ -362,10 +362,12 @@ namespace Wlg.FigureSkate.Tests.Fact
         private async Task<ProgramComponentHanlder> CreateProgramComponentHanlderAsync()
         {
             var competitionObjectAll = await CompetitionObjectQuery.All(baseday);
+            var eventObjectAll = await EventObjectQuery.All(baseday);
             CompetitionObject competitionObject = CompetitionObjectQuery.ById(competitionObjectAll, "KinoshitaGroupCupJapanOpen2023");
             ProgramComponentHanlder programComponentHanlderHanlder;
             {
-                var programObject = competitionObject.eventObjects
+                var programObject = competitionObject.data.eventIds
+                    .Select(x => EventObjectQuery.ById(eventObjectAll, x))
                     .Select(eventObject => eventObject.programObjects.Find(programObject => Equals(programObject.name, "SeniorMenShortProgram")))
                     .First();
                 programObject = ProgramObjectQuery.SetupConditions(programObject);

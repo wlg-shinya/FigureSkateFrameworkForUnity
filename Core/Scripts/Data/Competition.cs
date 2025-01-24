@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Wlg.FigureSkate.Core.Data
 {
@@ -20,5 +21,7 @@ namespace Wlg.FigureSkate.Core.Data
         public YearMonthDay startDay;
         // 開催終了日
         public YearMonthDay endDay;
+        // 開催イベントID群
+        public string[] eventIds;
     }
 }

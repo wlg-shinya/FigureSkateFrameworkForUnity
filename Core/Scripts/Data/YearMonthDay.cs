@@ -34,7 +34,7 @@ namespace Wlg.FigureSkate.Core.Data
         // MEMO:年月日は"/"区切りでローカライズ影響を受けない
         public YearMonthDay(string yearMonthDayString)
         {
-            var s = yearMonthDayString.Split("/");
+            var s = yearMonthDayString.Split('/');
             year = int.Parse(s[0]);
             month = int.Parse(s[1]);
             day = int.Parse(s[2]);

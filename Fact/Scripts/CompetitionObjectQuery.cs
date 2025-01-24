@@ -29,10 +29,11 @@ namespace Wlg.FigureSkate.Fact
         }
 
         // 指定クラス・性別のイベントがある大会すべてを得る
-        public static List<CompetitionObject> ByClassAndSex(List<CompetitionObject> src, string classId, string sexId)
+        public static List<CompetitionObject> ByClassAndSex(List<CompetitionObject> src, List<EventObject> eventObjects, string classId, string sexId)
         {
             return src
-                .Where(competitionObject => competitionObject.eventObjects
+                .Where(competitionObject => competitionObject.data.eventIds
+                    .Select(x => EventObjectQuery.ById(eventObjects, x))
                     .Any(eventObject => Equals(eventObject.data.classId, classId) && Equals(eventObject.data.sexId, sexId)))
                 .ToList();
         }

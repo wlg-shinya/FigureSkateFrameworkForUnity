@@ -26,4 +26,7 @@ MonoBehaviour:
       year: 2024
       month: 2
       day: 1
+    eventIds:
+    - JuniorMenSingle
+    - JuniorWomenSingle
   eventObjects: []
