@@ -65,9 +65,12 @@ namespace Wlg.FigureSkate.Fact.Editor
                             competitions[i] = new Competition
                             {
                                 id = rows[rowsIndex][0],
-                                name = rows[rowsIndex][1],
-                                startDay = new YearMonthDay(rows[rowsIndex][2]),
-                                endDay = new YearMonthDay(rows[rowsIndex][3]),
+                                regionId = rows[rowsIndex][1],
+                                countryId = rows[rowsIndex][2],
+                                name = rows[rowsIndex][3],
+                                isInternational = bool.Parse(rows[rowsIndex][4]),
+                                startDay = new YearMonthDay(rows[rowsIndex][5]),
+                                endDay = new YearMonthDay(rows[rowsIndex][6]),
                             };
                         }
                         return competitions;

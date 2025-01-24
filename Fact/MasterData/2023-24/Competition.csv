@@ -1,4 +1,39 @@
-id,name,startDay,endDay
-AllJapanNoviceChampionship,全日本ノービス選手権大会,2023/10/22,2023/10/22
-ISUJuniorGrandPrixOsaka,ジュニアグランプリ大阪,2023/9/13,2023/9/16
-KinoshitaGroupCupJapanOpen2023,ジャパンオープン,2023/10/7,2023/10/7
+id,regionId,countryId,name,isInternational,startDay,endDay
+ISUJGPBangkok2023,Bangkok,THA,ジュニアグランプリ バンコク,true,2023/8/23,2023/8/26
+ISUJGPLinz2023,Linz,AUT,ジュニアグランプリ リンツ,true,2023/8/30,2023/9/2	
+ISUJGPIstanbul2023,Istanbul,TUR,ジュニアグランプリ イスタンブール,true,2023/9/6,2023/9/9	
+ISUJGPOsaka2023,Osaka,JPN,ジュニアグランプリ 大阪,true,2023/9/13,2023/9/16
+ISUJGPBudapest2023,Budapest,HUN,ジュニアグランプリ ブタペスト,true,2023/9/20,2023/9/23
+ISUJGPPGESolidarityCup2023,Gdansk,POL,ジュニアグランプリ グダニスク,true,2023/9/27,2023/9/30
+ISUJGPYerevan2023,Yerevan,ARM,ジュニアグランプリ エレバン,true,2023/10/4,2023/10/7	
+ISUGPSkateAmerica2023,Allen,USA,シニアグランプリ アメリカ,true,2023/10/20,2023/10/22
+ISUGPSkateCanadaInternational2023,Vancouver,CAN,シニアグランプリ カナダ,true,2023/10/27,2023/10/29
+ISUGPGrandPrixdeFrance2023,Angers,FRA,シニアグランプリ フランス,true,2023/11/3,2023/11/5
+ISUGPCupofChina2023,Chongqing,CHN,シニアグランプリ 中国,true,2023/11/10,2023/11/12
+ISUGPGrandPrixEspoo2023,Espoo,FIN,シニアグランプリ フィンランド,true,2023/11/17,2023/11/19	
+ISUGPNHKTrophy2023,Osaka,JPN,NHK杯,true,2023/11/24,2023/11/26
+ISUGrandPrixAndJuniorGrandPrixFinal2023-24,Beijing,CHN,グランプリファイナル,true,2023/12/7,2023/12/10
+ISUEuropeanChampionships2024,Kaunas,LTU,欧州フィギュアスケート選手権,true,2024/1/8,2024/1/14
+YouthOlympicGames2024,Gangwon,KOR,ユースオリンピック,true,2024/1/19,2024/2/1	
+ISUFourContinentsChampionships2024,Shanghai,CHN,四大陸フィギュアスケート選手権,true,2024/1/29,2024/2/4
+ISUWorldJuniorChampionships2024,TaipeiCity,TPE,世界ジュニアフィギュアスケート選手権,true,2024/2/26,2024/3/3
+ISUWorldChampionships2024,Montreal,CAN,世界フィギュアスケート選手権,true,2024/3/18,2024/3/24	
+KinoshitaGroupCupJapanOpen2023,Saitama,JPN,ジャパンオープン,true,2023/10/7,2023/10/7
+Tohoku-HokkaidoRegional,Niigata,JPN,東北・北海道選手権大会,false,2023/9/29,2023/10/1
+KantoRegional,Kanagawa,JPN,関東選手権大会,false,2023/10/6,2023/10/9
+TokyoRegional,Tokyo,JPN,東京選手権大会,false,2023/9/21,2023/9/24
+ChubuRegional,Aichi,JPN,中部選手権大会,false,2023/9/22,2023/9/24
+KinkiRegional,Shiga,JPN,近畿選手権大会,false,2023/9/28,2023/10/1
+Chu-Shikoku-KyushuRegional,Fukuoka,JPN,中四国九州選手権大会,false,2023/10/6,2023/10/9
+NationalNovice,Tokyo,JPN,全日本ノービス選手権大会,false,2023/10/20,2023/10/22
+EasternSection,Aomori,JPN,東日本選手権大会,false,2023/11/2,2023/11/5
+WesternSection,Hiroshima,JPN,西日本選手権大会,false,2023/10/26,2023/10/29
+NationalJunior,Shiga,JPN,全日本ジュニア選手権大会,false,2023/11/17,2023/11/19
+Nationals,Nagano,JPN,全日本選手権大会,false,2023/12/20,2023/12/24
+EasternStudentChampionships,Gunma,JPN,東日本学生選手権大会,false,2023/10/13,2023/10/15
+WesternStudentChampionships,Shiga,JPN,西日本学生選手権大会,false,2023/10/21,2023/10/22
+JapanGamesQualifiers,Yamanashi,JPN,国民スポーツ大会冬季大会フィギュア競技予選会,false,2023/12/2,2023/12/3
+JapanStudentIceSportsChampionships,Gunma,JPN,日本学生氷上競技選手権大会,false,2024/1/4,2024/1/7
+NationalHighSchoolSkatingChampionships,Ibaraki,JPN,全国高等学校スケート選手権大会,false,2024/1/17,2024/1/21
+JapanGames,Hokkaido,JPN,国民スポーツ大会冬季大会スケート競技会,false,2024/1/27,2024/1/31
+NationalJuniorHighSchoolSkatingChampionships,Nagano,JPN,全国中学校スケート大会,false,2024/2/3,2024/2/6

@@ -10,22 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 335ea63d814f30a408c17197361357b8, type: 3}
-  m_Name: KinoshitaGroupCupJapanOpen2023
+  m_Name: YouthOlympicGames2024
   m_EditorClassIdentifier: 
   data:
-    id: KinoshitaGroupCupJapanOpen2023
-    regionId: Saitama
-    countryId: JPN
-    name: "\u30B8\u30E3\u30D1\u30F3\u30AA\u30FC\u30D7\u30F3"
+    id: YouthOlympicGames2024
+    regionId: Gangwon
+    countryId: KOR
+    name: "\u30E6\u30FC\u30B9\u30AA\u30EA\u30F3\u30D4\u30C3\u30AF"
     isInternational: 1
     startDay:
-      year: 2023
-      month: 10
-      day: 7
+      year: 2024
+      month: 1
+      day: 19
     endDay:
-      year: 2023
-      month: 10
-      day: 7
-  eventObjects:
-  - {fileID: 11400000, guid: ad559427085a84743a129affd8e4c05d, type: 2}
-  - {fileID: 11400000, guid: 7f09d758ed9507b4fb5d44da7b213754, type: 2}
+      year: 2024
+      month: 2
+      day: 1
+  eventObjects: []

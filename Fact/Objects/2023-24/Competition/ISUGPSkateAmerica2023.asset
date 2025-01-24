@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 335ea63d814f30a408c17197361357b8, type: 3}
-  m_Name: AllJapanNoviceChampionship
+  m_Name: ISUGPSkateAmerica2023
   m_EditorClassIdentifier: 
   data:
-    id: AllJapanNoviceChampionship
-    name: "\u5168\u65E5\u672C\u30CE\u30FC\u30D3\u30B9\u9078\u624B\u6A29\u5927\u4F1A"
+    id: ISUGPSkateAmerica2023
+    regionId: Allen
+    countryId: USA
+    name: "\u30B7\u30CB\u30A2\u30B0\u30E9\u30F3\u30D7\u30EA \u30A2\u30E1\u30EA\u30AB"
+    isInternational: 1
     startDay:
       year: 2023
       month: 10
-      day: 22
+      day: 20
     endDay:
       year: 2023
       month: 10
       day: 22
-  eventObjects:
-  - {fileID: 11400000, guid: 145b4dd686c0a86429ed0cab4f63f532, type: 2}
-  - {fileID: 11400000, guid: d1943fdf373ce334a9c8d63c1d53d337, type: 2}
-  - {fileID: 11400000, guid: 88f52983cb1d42946bc3581dbf8878e2, type: 2}
-  - {fileID: 11400000, guid: 1f4f2fbc05f2e744a879d3de2a730c79, type: 2}
+  eventObjects: []

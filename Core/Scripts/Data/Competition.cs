@@ -8,8 +8,14 @@ namespace Wlg.FigureSkate.Core.Data
     {
         // 一意の記号
         public string id;
+        // 開催地
+        public string regionId;
+        // 開催国コード
+        public string countryId;
         // 名称
         public string name;
+        // 国際大会か
+        public bool isInternational;
         // 開催開始日
         public YearMonthDay startDay;
         // 開催終了日

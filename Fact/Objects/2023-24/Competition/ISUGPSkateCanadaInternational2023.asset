@@ -10,22 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 335ea63d814f30a408c17197361357b8, type: 3}
-  m_Name: KinoshitaGroupCupJapanOpen2023
+  m_Name: ISUGPSkateCanadaInternational2023
   m_EditorClassIdentifier: 
   data:
-    id: KinoshitaGroupCupJapanOpen2023
-    regionId: Saitama
-    countryId: JPN
-    name: "\u30B8\u30E3\u30D1\u30F3\u30AA\u30FC\u30D7\u30F3"
+    id: ISUGPSkateCanadaInternational2023
+    regionId: Vancouver
+    countryId: CAN
+    name: "\u30B7\u30CB\u30A2\u30B0\u30E9\u30F3\u30D7\u30EA \u30AB\u30CA\u30C0"
     isInternational: 1
     startDay:
       year: 2023
       month: 10
-      day: 7
+      day: 27
     endDay:
       year: 2023
       month: 10
-      day: 7
-  eventObjects:
-  - {fileID: 11400000, guid: ad559427085a84743a129affd8e4c05d, type: 2}
-  - {fileID: 11400000, guid: 7f09d758ed9507b4fb5d44da7b213754, type: 2}
+      day: 29
+  eventObjects: []

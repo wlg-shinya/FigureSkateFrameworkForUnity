@@ -14,14 +14,6 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public class IntegrationTest
     {
-        [TestCase("NoviceA", "Men")]
-        [TestCase("NoviceA", "Women")]
-        [TestCase("NoviceB", "Men")]
-        [TestCase("NoviceB", "Women")]
-        public async Task AllJapanNoviceChampionship(string classId, string sexId) => await Competition("AllJapanNoviceChampionship", new(2023, 10, 22), classId, sexId);
-        [TestCase("Junior", "Men")]
-        [TestCase("Junior", "Women")]
-        public async Task ISUJuniorGrandPrixOsaka(string classId, string sexId) => await Competition("ISUJuniorGrandPrixOsaka", new(2023, 9, 13), classId, sexId);
         [TestCase("Senior", "Men")]
         [TestCase("Senior", "Women")]
         public async Task KinoshitaGroupCupJapanOpen2023(string classId, string sexId) => await Competition("KinoshitaGroupCupJapanOpen2023", new(2023, 10, 7), classId, sexId);
