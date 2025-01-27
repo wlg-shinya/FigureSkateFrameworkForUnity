@@ -9,7 +9,6 @@ using Wlg.FigureSkate.Core.ScriptableObjects;
 
 namespace Wlg.FigureSkate.Fact.Editor
 {
-    // TODO:ScriptableObjectFactory で作成したデータ自体のテスト追加
     public class ScriptableObjectFactory : AssetPostprocessor
     {
         static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
