@@ -35,6 +35,10 @@ namespace Wlg.FigureSkate.Core.Data
         public YearMonthDay(string yearMonthDayString)
         {
             var s = yearMonthDayString.Split('/');
+            if (s.Length != 3)
+            {
+                throw new ArgumentException("Not found separator '/' (ex. 2025/1/23)");
+            }
             year = int.Parse(s[0]);
             month = int.Parse(s[1]);
             day = int.Parse(s[2]);

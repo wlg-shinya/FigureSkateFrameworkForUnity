@@ -64,5 +64,46 @@ namespace Wlg.FigureSkate.Tests.Editor.Core.Data
             Assert.IsTrue(ymd6 <= ymd7);
             Assert.IsFalse(ymd6 >= ymd7);
         }
+
+        [Test]
+        public void Constructor()
+        {
+            try
+            {
+                // 意図通りの指定
+                var ymd = new YearMonthDay("2025/1/27");
+            }
+            catch
+            {
+                Assert.IsTrue(false); // ここには到達しないはず
+            }
+            try
+            {
+                // 意図しないの指定 - /を使用していない
+                var ymd = new YearMonthDay("2025,1,27");
+                Assert.IsTrue(false); // ここには到達しないはず
+            }
+            catch
+            {
+            }
+            try
+            {
+                // 意図しないの指定- /がたりない
+                var ymd = new YearMonthDay("2025/127");
+                Assert.IsTrue(false); // ここには到達しないはず
+            }
+            catch
+            {
+            }
+            try
+            {
+                // 意図しないの指定- /が多い
+                var ymd = new YearMonthDay("2025/1/2/7");
+                Assert.IsTrue(false); // ここには到達しないはず
+            }
+            catch
+            {
+            }
+        }
     }
 }
