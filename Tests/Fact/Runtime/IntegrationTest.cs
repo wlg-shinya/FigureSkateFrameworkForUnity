@@ -90,7 +90,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
             else throw new ArgumentException($"sexId = {sexId}");
             var classObjectAll = await ClassObjectQuery.All(startDay);
-            var eventObjectAll = await EventObjectQuery.All(startDay);
+            var eventObjectAll = await EventObjectQuery.All();
             var programObjectAll = await ProgramObjectQuery.All(startDay);
             var competitionObjectAll = await CompetitionObjectQuery.All(startDay);
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(startDay);

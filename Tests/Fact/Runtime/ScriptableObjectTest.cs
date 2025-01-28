@@ -16,7 +16,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             await ClassObjectsTest(baseday);
             await CompetitionObjectsTest(baseday);
             await ElementBaseValueObjectsTest(baseday);
-            await EventObjectsTest(baseday);
             await GoeObjectsTest(baseday);
         }
 
@@ -31,21 +30,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(obj.data.minAge >= 0);
                 Assert.IsTrue(obj.data.maxAge >= 0);
                 Assert.IsTrue(obj.data.minAge <= obj.data.maxAge);
-            }
-        }
-
-        private async Task EventObjectsTest(YearMonthDay baseday)
-        {
-            var allObjs = await EventObjectQuery.All(baseday);
-            foreach (var obj in allObjs)
-            {
-                Assert.IsNotNull(obj.data);
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.classId));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.sexId));
-                Assert.IsNotNull(obj.data.programIds);
-                Assert.IsTrue(obj.data.programIds.Length > 0);
             }
         }
 
@@ -123,6 +107,22 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+            }
+        }
+
+        [Test]
+        public async Task EventObjectsTest()
+        {
+            var allObjs = await EventObjectQuery.All();
+            foreach (var obj in allObjs)
+            {
+                Assert.IsNotNull(obj.data);
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.classId));
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.sexId));
+                Assert.IsNotNull(obj.data.programIds);
+                Assert.IsTrue(obj.data.programIds.Length > 0);
             }
         }
     }

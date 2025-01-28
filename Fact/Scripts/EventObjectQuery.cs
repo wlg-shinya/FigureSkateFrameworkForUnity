@@ -10,10 +10,9 @@ namespace Wlg.FigureSkate.Fact
     public static class EventObjectQuery
     {
         // 全オブジェクトを読み込む
-        public static async Task<List<EventObject>> All(YearMonthDay baseday)
+        public static async Task<List<EventObject>> All()
         {
-            var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
-            return await LoaderUtility.LoadAssetsAsync<EventObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/Event");
+            return await LoaderUtility.LoadAssetsAsync<EventObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event");
         }
 
         // 指定オブジェクト群から指定IDのオブジェクト単体を得る
