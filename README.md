@@ -14,9 +14,14 @@ CoreとFactに分かれています
 - Coreは、フィギュアスケートにおいて必要となるデータ構造を提供します。Coreだけ利用することで、独自のフィギュアスケートルールを作成することができます
 - Factは、Coreを用いて [ISU](https://current.isu.org/) や [JSF](https://www.jsfresults.com/index.htm) を参考に、可能な限り事実に即したフィギュアスケートのルールを提供します。こちらを用いることでリアルなフィギュアスケートルールを実現するアプリを作成することができます
 
+## 対応 Unity バージョン
+
+Unity 6 (6000.0.33f1で動作確認してます)
+
 ## インストール方法
 
-準備中
+1. [リリースページ](https://github.com/wlg-shinya/FigureSkateFrameworkForUnity/releases) にて任意のパッケージをダウンロードします
+2. Unity の Package Manager を開き、ダウンロードしたパッケージに合わせて、disk か tarball でパッケージを追加してください
 
 ## 使い方
 
