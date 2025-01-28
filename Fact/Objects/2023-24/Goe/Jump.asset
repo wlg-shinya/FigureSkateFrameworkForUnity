@@ -14,81 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: Jump
+    plusIds:
+    - JumpP1
+    - JumpP2
+    - JumpP3
+    - JumpP4
+    - JumpP5
+    - JumpP6
+    minusIds:
+    - JumpM1
+    - JumpM2
+    - JumpM3
+    - JumpM4
+    - JumpM5
+    - JumpM6
     plus:
-    - description: "\u9AD8\u3055\u304A\u3088\u3073\u8DDD\u96E2\u304C\u975E\u5E38\u306B\u826F\u3044"
-      important: 1
-    - description: "\u8E0F\u5207\u304A\u3088\u3073\u7740\u6C37\u304C\u826F\u3044"
-      important: 1
-    - description: "\u958B\u59CB\u304B\u3089\u7D42\u4E86\u307E\u3067\u7121\u99C4\u306A\u529B\u304C\u5168\u304F\u7121\u3044"
-      important: 1
-    - description: "\u30B8\u30E3\u30F3\u30D7\u306E\u524D\u306B\u30B9\u30C6\u30C3\u30D7\u3001\u4E88\u60F3\u5916\u307E\u305F\u306F\u5275\u9020\u7684\u306A\u5165\u308A\u65B9"
+    - id: 
+      description: 
       important: 0
-    - description: "\u8E0F\u5207\u304B\u3089\u7740\u6C37\u307E\u3067\u306E\u8EAB\u4F53\u306E\u59FF\u52E2\u304C\u975E\u5E38\u306B\u826F\u3044"
+    - id: 
+      description: 
       important: 0
-    - description: "\u8981\u7D20\u304C\u97F3\u697D\u306B\u5408\u3063\u3066\u3044\u308B"
+    - id: 
+      description: 
       important: 0
-    minus:
-    - description: "\u30C0\u30A6\u30F3\u30B0\u30EC\u30FC\u30C9"
-      group: Rotate
-      minValue: -3
-      maxValue: -4
-      baseValueFactor: 1
-      isDowngrade: 1
-      mark: <<
-      targetElementIds: []
-    - description: "\u56DE\u8EE2\u6570\u4E0D\u8DB3"
-      group: Rotate
-      minValue: -2
-      maxValue: -3
-      baseValueFactor: 0.8
-      isDowngrade: 0
-      mark: <
-      targetElementIds: []
-    - description: "\uFF14\u5206\u306E\uFF11\u4E0D\u8DB3\u3067\u7740\u5730"
-      group: Rotate
-      minValue: -2
-      maxValue: -2
-      baseValueFactor: 1
-      isDowngrade: 0
-      mark: q
-      targetElementIds: []
-    - description: "F/Lz\u306E\u8E0F\u307F\u5207\u308A\u30A8\u30C3\u30B8\u304C\u9055\u3046"
-      group: Edge
-      minValue: -2
-      maxValue: -4
-      baseValueFactor: 0.8
-      isDowngrade: 0
-      mark: e
-      targetElementIds:
-      - F
-      - 2F
-      - 3F
-      - 4F
-      - Lz
-      - 2Lz
-      - 3Lz
-      - 4Lz
-    - description: "F/Lz\u306E\u8E0F\u307F\u5207\u308A\u30A8\u30C3\u30B8\u304C\u4E0D\u660E\u78BA"
-      group: Edge
-      minValue: -1
-      maxValue: -2
-      baseValueFactor: 1
-      isDowngrade: 0
-      mark: '!'
-      targetElementIds:
-      - F
-      - 2F
-      - 3F
-      - 4F
-      - Lz
-      - 2Lz
-      - 3Lz
-      - 4Lz
-    - description: "\u7247\u624B\u307E\u305F\u306F\u30D5\u30EA\u30FC\u30FB\u30D5\u30C3\u30C8\u304C\u30BF\u30C3\u30C1\u30FB\u30C0\u30A6\u30F3\uFF08\u30B8\u30E3\u30F3\u30D7\u9593\u3092\u542B\u3080\uFF09"
-      group: 
-      minValue: -1
-      maxValue: -2
-      baseValueFactor: 1
-      isDowngrade: 0
-      mark: 
-      targetElementIds: []
+    - id: 
+      description: 
+      important: 0
+    - id: 
+      description: 
+      important: 0
+    - id: 
+      description: 
+      important: 0
+    minus: []

@@ -14,45 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: Spin
+    plusIds:
+    - SpinP1
+    - SpinP2
+    - SpinP3
+    - SpinP4
+    - SpinP5
+    - SpinP6
+    minusIds:
+    - SpinM1
+    - SpinM2
     plus:
-    - description: "\u30B9\u30D4\u30F3\u4E2D\u306E\u56DE\u8EE2\u901F\u5EA6\u304A\u3088\u3073\uFF0F\u307E\u305F\u306F\u56DE\u8EE2\u901F\u5EA6\u306E\u5897\u52A0\u304C\u5341\u5206"
-      important: 1
-    - description: "\u826F\u304F\u30B3\u30F3\u30C8\u30ED\u30FC\u30EB\u3055\u308C\u305F\u3001\u660E\u78BA\u306A\u59FF\u52E2"
-      important: 1
-    - description: "\u958B\u59CB\u304B\u3089\u7D42\u4E86\u307E\u3067\u7121\u99C4\u306A\u529B\u304C\u5168\u304F\u7121\u3044"
-      important: 1
-    - description: "\u56DE\u8EE2\u8EF8\u3092\u7DAD\u6301\u3059\u308B"
+    - id: 
+      description: 
       important: 0
-    - description: "\u5275\u9020\u7684"
+    - id: 
+      description: 
       important: 0
-    - description: "\u8981\u7D20\u304C\u97F3\u697D\u306B\u5408\u3063\u3066\u3044\u308B"
+    - id: 
+      description: 
       important: 0
-    minus:
-    - description: "\u30D0\u30E9\u30F3\u30B9\u3092\u5D29\u3057\u305F"
-      group: 
-      minValue: -1
-      maxValue: -3
-      mark: 
-      targetElementIds: []
-    - description: "\u57FA\u672C\u59FF\u52E2\u3092\uFF12\u7A2E\u985E\u3057\u304B\u542B\u307E\u306A\u304B\u3063\u305F"
-      group: 
-      minValue: 0
-      maxValue: 0
-      mark: V
-      targetElementIds:
-      - FUSp
-      - FLSp
-      - FCSp
-      - FSSp
-      - CUSp
-      - FCUSp
-      - CLSp
-      - FCLSp
-      - CCSp
-      - FCCSp
-      - CSSp
-      - FCSSp
-      - CoSp
-      - FCoSp
-      - CCoSp
-      - FCCoSp
+    - id: 
+      description: 
+      important: 0
+    - id: 
+      description: 
+      important: 0
+    - id: 
+      description: 
+      important: 0
+    minus: []

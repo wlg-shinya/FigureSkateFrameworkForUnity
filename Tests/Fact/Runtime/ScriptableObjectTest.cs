@@ -17,6 +17,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             await CompetitionObjectsTest(baseday);
             await ElementBaseValueObjectsTest(baseday);
             await GoeObjectsTest(baseday);
+            await GoePlusObjectsTest(baseday);
+            await GoeMinusObjectsTest(baseday);
         }
 
         private async Task ClassObjectsTest(YearMonthDay baseday)
@@ -77,10 +79,36 @@ namespace Wlg.FigureSkate.Tests.Fact
             {
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsNotNull(obj.data.plus);
-                Assert.IsTrue(obj.data.plus.Length > 0);
-                Assert.IsNotNull(obj.data.minus);
-                Assert.IsTrue(obj.data.minus.Length > 0);
+                Assert.IsNotNull(obj.data.plusIds);
+                Assert.IsTrue(obj.data.plusIds.Length > 0);
+                Assert.IsNotNull(obj.data.minusIds);
+                Assert.IsTrue(obj.data.minusIds.Length > 0);
+            }
+        }
+
+        private async Task GoePlusObjectsTest(YearMonthDay baseday)
+        {
+            var allObjs = await GoePlusObjectQuery.All(baseday);
+            foreach (var obj in allObjs)
+            {
+                Assert.IsNotNull(obj.data);
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.description));
+            }
+        }
+
+        private async Task GoeMinusObjectsTest(YearMonthDay baseday)
+        {
+            var allObjs = await GoeMinusObjectQuery.All(baseday);
+            foreach (var obj in allObjs)
+            {
+                Assert.IsNotNull(obj.data);
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.description));
+                Assert.IsTrue(obj.data.minValue <= 0);
+                Assert.IsTrue(obj.data.maxValue <= 0);
+                Assert.IsTrue(obj.data.maxValue <= obj.data.minValue);
+                // group, mark, targetElementIds はデータなしを許容
             }
         }
 
@@ -94,7 +122,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.goeId));
-                // upgradeId と downgradeId は null/空文字許容
+                // upgradeId, downgradeId はデータなしを許容
             }
         }
 

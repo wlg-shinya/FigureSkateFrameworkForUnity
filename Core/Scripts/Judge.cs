@@ -12,13 +12,23 @@ namespace Wlg.FigureSkate.Core
     // TODO:b(ボーナス)対応
     public class Judge
     {
-        public Judge(Program program, ProgramComponent[] programComponents, List<Element> elementAll, List<ElementBaseValue> elementBaseValueAll, List<Goe> goeAll)
+        public Judge(
+            Program program,
+            ProgramComponent[] programComponents,
+            List<Element> elementAll,
+            List<ElementBaseValue> elementBaseValueAll,
+            List<Goe> goeAll,
+            List<GoePlus> goePlusAll,
+            List<GoeMinus> goeMinusAll
+            )
         {
             _program = program;
             _programComponents = programComponents;
             _elementAll = elementAll;
             _elementBaseValueAll = elementBaseValueAll;
             _goeAll = goeAll;
+            _goePlusAll = goePlusAll;
+            _goeMinusAll = goeMinusAll;
 
             // 判定の詳細データの初期化
             var componentLength = _programComponents.Length;
@@ -132,16 +142,17 @@ namespace Wlg.FigureSkate.Core
         // GOE加点値の判定
         private int CheckTesGoePlusValue(Element element, SuccessGoePlus successGoePlus)
         {
-            var goe = _goeAll.Find(x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found '{element.goeId}'");
+            var goe = _goeAll.Find(x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found goe '{element.goeId}'");
+            var goePlusObjs = goe.plusIds.Select(id => _goePlusAll.Find(obj => obj.id.Equals(id)) ?? throw new Exception($"Not found goePlus '{id}'")).ToList();
 
             // 成否判定
-            var result = goe.plus.Select(x => successGoePlus(x, element));
+            var result = goePlusObjs.Select(x => successGoePlus(x, element));
 
             // GOEの重要項目数と実際に成功した重要項目数が一致していたら、全体の達成項目数かGOE最大値の低いほうをGOE加点として採用
             // そうでなければ全体の達成項目数かGOEの重要項目数の低いほうをGOE加点として採用
             // ref. https://www.jsports.co.jp/skate/about/game/
-            var requiredCount = goe.plus.Count((x) => x.important == true);
-            var requiredSuccessCount = result.Where((x, i) => x && goe.plus[i].important).Count();
+            var requiredCount = goePlusObjs.Count((x) => x.important == true);
+            var requiredSuccessCount = result.Where((x, i) => x && goePlusObjs[i].important).Count();
             var successCount = result.Count((x) => x == true);
             return requiredCount == requiredSuccessCount ? Math.Min(successCount, Constant.GOE_MAX_VALUE) : Math.Min(successCount, requiredCount);
         }
@@ -150,10 +161,11 @@ namespace Wlg.FigureSkate.Core
         // 減点項目(GoeMinus)の生成も行う
         private int CheckTesGoeMinusValue(Element element, List<GoeMinus> goeMinus, SuccessGoeMinus successGoeMinus, CheckGoeMinusValue checkGoeMinusValue)
         {
-            var goe = _goeAll.Find(x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found '{element.goeId}'");
+            var goe = _goeAll.Find(x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found goe '{element.goeId}'");
+            var goeMinusObjs = goe.minusIds.Select(id => _goeMinusAll.Find(obj => obj.id.Equals(id)) ?? throw new Exception($"Not found goeMinus '{id}'")).ToList();
 
             // 成否判定を行いチェックに引っかかった減点項目の一覧を得る
-            var minusFails = goe.minus
+            var minusFails = goeMinusObjs
                 // 対象構成要素のみに絞る
                 .Where((x) => x.targetElementIds.Length <= 0 || x.targetElementIds.Any(x => Equals(x, element.id)))
                 // 成否判定。失敗したものだけ残す
@@ -345,6 +357,10 @@ namespace Wlg.FigureSkate.Core
         private readonly List<ElementBaseValue> _elementBaseValueAll;
         // 全GOE
         private readonly List<Goe> _goeAll;
+        // 全GOE加点項目
+        private readonly List<GoePlus> _goePlusAll;
+        // 全GOE減点項目
+        private readonly List<GoeMinus> _goeMinusAll;
 
         // GOE減点項目
         private readonly List<GoeMinus>[][][] _goeMinus;

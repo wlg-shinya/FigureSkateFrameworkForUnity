@@ -95,6 +95,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             var competitionObjectAll = await CompetitionObjectQuery.All(startDay);
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(startDay);
             var goeObjectAll = await GoeObjectQuery.All(startDay);
+            var goePlusObjectAll = await GoePlusObjectQuery.All(startDay);
+            var goeMinusObjectAll = await GoeMinusObjectQuery.All(startDay);
             var sexObjectAll = await SexObjectQuery.All();
             var className = ClassObjectQuery.ById(classObjectAll, player.classId).data.name;
             var sexName = SexObjectQuery.ById(sexObjectAll, player.sexId).data.name;
@@ -192,17 +194,27 @@ namespace Wlg.FigureSkate.Tests.Fact
                     programComponentHanlder.ProgramComponents,
                     elementObjectAll.Select(x => x.data).ToList(),
                     elementBaseValueObjectAll.Select(x => x.data).ToList(),
-                    goeObjectAll.Select(x => x.data).ToList()
+                    goeObjectAll.Select(x => x.data).ToList(),
+                    goePlusObjectAll.Select(x => x.data).ToList(),
+                    goeMinusObjectAll.Select(x => x.data).ToList()
                     );
             }
         }
 
-        private void Judge(Program program, ProgramComponent[] programComponents, List<Element> elementAll, List<ElementBaseValue> elementBaseValueAll, List<Goe> goeAll)
+        private void Judge(
+            Program program,
+            ProgramComponent[] programComponents,
+            List<Element> elementAll,
+            List<ElementBaseValue> elementBaseValueAll,
+            List<Goe> goeAll,
+            List<GoePlus> goePlusAll,
+            List<GoeMinus> goeMinusAll
+            )
         {
             UnityEngine.Random.InitState(DateTime.Now.Millisecond);
             int Random0To99() => UnityEngine.Random.Range(0, 100);
 
-            var judge = new Judge(program, programComponents, elementAll, elementBaseValueAll, goeAll);
+            var judge = new Judge(program, programComponents, elementAll, elementBaseValueAll, goeAll, goePlusAll, goeMinusAll);
             judge.Execute(
                 // GOE加点項目のチェックを通ったらtrueを返す
                 (GoePlus goePlus, Element element) =>

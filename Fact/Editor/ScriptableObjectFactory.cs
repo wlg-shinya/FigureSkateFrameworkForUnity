@@ -60,7 +60,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                 name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
                                 classId = rows[rowsIndex][Array.IndexOf(rows[0], "classId")],
                                 sexId = rows[rowsIndex][Array.IndexOf(rows[0], "sexId")],
-                                programIds = rows[rowsIndex][Array.IndexOf(rows[0], "programIds")].Split('/')
+                                programIds = rows[rowsIndex][Array.IndexOf(rows[0], "programIds")].Split('/'),
                             };
                         }
                         return events;
@@ -87,7 +87,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                 isInternational = bool.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "isInternational")]),
                                 startDay = new YearMonthDay(rows[rowsIndex][Array.IndexOf(rows[0], "startDay")]),
                                 endDay = new YearMonthDay(rows[rowsIndex][Array.IndexOf(rows[0], "endDay")]),
-                                eventIds = rows[rowsIndex][Array.IndexOf(rows[0], "eventIds")].Split('/')
+                                eventIds = rows[rowsIndex][Array.IndexOf(rows[0], "eventIds")].Split('/'),
                             };
                         }
                         return competitions;
@@ -95,13 +95,28 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (Competition data) => { return $"{data.id}.asset"; },
                     (Competition data, CompetitionObject obj) => { obj.data = data; }
                     );
-                // TODO:Goe のcsv化のため、GoePlus/GoeMinusデータの扱いを変更する
-                // CreateOrUpdateScriptableObjectFromCsv(
-                //     path,
-                //     "Goe.csv",
-                //     (Goe data) => { return $"{data.id}.asset"; },
-                //     (Goe data, GoeObject obj) => { obj.data = data; }
-                //     );
+                CreateOrUpdateScriptableObjectFromCsv(
+                    path,
+                    "Goe.csv",
+                    (List<string[]> rows) =>
+                    {
+                        // 配列(plusIds,minusIds)を扱うため独自に値を設定する
+                        var goes = new Goe[rows.Count - 1];
+                        for (var i = 0; i < goes.Length; ++i)
+                        {
+                            var rowsIndex = i + 1;
+                            goes[i] = new Goe
+                            {
+                                id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                plusIds = rows[rowsIndex][Array.IndexOf(rows[0], "plusIds")].Split('/'),
+                                minusIds = rows[rowsIndex][Array.IndexOf(rows[0], "minusIds")].Split('/'),
+                            };
+                        }
+                        return goes;
+                    },
+                    (Goe data) => { return $"{data.id}.asset"; },
+                    (Goe data, GoeObject obj) => { obj.data = data; }
+                    );
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "GoePlus.csv",

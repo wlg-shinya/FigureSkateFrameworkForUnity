@@ -1,0 +1,5 @@
+id,plusIds,minusIds
+Jump,JumpP1/JumpP2/JumpP3/JumpP4/JumpP5/JumpP6,JumpM1/JumpM2/JumpM3/JumpM4/JumpM5/JumpM6,
+Spin,SpinP1/SpinP2/SpinP3/SpinP4/SpinP5/SpinP6,SpinM1/SpinM2
+StepSequence,StepSequenceP1/StepSequenceP2/StepSequenceP3/StepSequenceP4/StepSequenceP5/StepSequenceP6,StepSequenceM1
+ChoreographicSequence,ChoreographicSequenceP1/ChoreographicSequenceP2/ChoreographicSequenceP3/ChoreographicSequenceP4/ChoreographicSequenceP5/ChoreographicSequenceP6,ChoreographicSequenceM1

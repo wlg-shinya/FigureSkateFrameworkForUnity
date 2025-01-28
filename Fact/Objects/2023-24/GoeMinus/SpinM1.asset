@@ -18,5 +18,5 @@ MonoBehaviour:
     group: 
     minValue: -1
     maxValue: -3
-    mark: <<
+    mark: 
     targetElementIds: []

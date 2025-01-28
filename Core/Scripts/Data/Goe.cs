@@ -8,9 +8,9 @@ namespace Wlg.FigureSkate.Core.Data
     {
         // 一意の記号
         public string id;
-        // 加点項目
-        public GoePlus[] plus = new GoePlus[Constant.GOE_PLUS_LENGTH];
-        // 減点項目
-        public GoeMinus[] minus;
+        // 加点項目ID群
+        public string[] plusIds;
+        // 減点項目ID群
+        public string[] minusIds;
     }
 }
