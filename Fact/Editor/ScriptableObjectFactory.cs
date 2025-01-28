@@ -43,6 +43,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (Sex data) => { return $"{data.id}.asset"; },
                     (Sex data, SexObject obj) => { obj.data = data; }
                     );
+                //TODO:programObjectsのcsv化
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "Event.csv",
