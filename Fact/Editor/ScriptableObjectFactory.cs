@@ -50,11 +50,11 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (List<string[]> rows) =>
                     {
                         // 配列(programIds)を扱うため独自に値を設定する
-                        var events = new Core.Data.Event[rows.Count - 1];
-                        for (var i = 0; i < events.Length; ++i)
+                        var result = new Core.Data.Event[rows.Count - 1];
+                        for (var i = 0; i < result.Length; ++i)
                         {
                             var rowsIndex = i + 1;
-                            events[i] = new Core.Data.Event
+                            result[i] = new Core.Data.Event
                             {
                                 id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
                                 name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
@@ -63,7 +63,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                 programIds = rows[rowsIndex][Array.IndexOf(rows[0], "programIds")].Split('/'),
                             };
                         }
-                        return events;
+                        return result;
                     },
                     (Core.Data.Event data) => { return $"{data.id}.asset"; },
                     (Core.Data.Event data, EventObject obj) => { obj.data = data; }
@@ -74,11 +74,11 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (List<string[]> rows) =>
                     {
                         // ユーザー型(YearMonthDay)と配列(eventIds)を扱うため独自に値を設定する
-                        var competitions = new Competition[rows.Count - 1];
-                        for (var i = 0; i < competitions.Length; ++i)
+                        var result = new Competition[rows.Count - 1];
+                        for (var i = 0; i < result.Length; ++i)
                         {
                             var rowsIndex = i + 1;
-                            competitions[i] = new Competition
+                            result[i] = new Competition
                             {
                                 id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
                                 regionId = rows[rowsIndex][Array.IndexOf(rows[0], "regionId")],
@@ -90,7 +90,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                 eventIds = rows[rowsIndex][Array.IndexOf(rows[0], "eventIds")].Split('/'),
                             };
                         }
-                        return competitions;
+                        return result;
                     },
                     (Competition data) => { return $"{data.id}.asset"; },
                     (Competition data, CompetitionObject obj) => { obj.data = data; }
@@ -101,18 +101,18 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (List<string[]> rows) =>
                     {
                         // 配列(plusIds,minusIds)を扱うため独自に値を設定する
-                        var goes = new Goe[rows.Count - 1];
-                        for (var i = 0; i < goes.Length; ++i)
+                        var result = new Goe[rows.Count - 1];
+                        for (var i = 0; i < result.Length; ++i)
                         {
                             var rowsIndex = i + 1;
-                            goes[i] = new Goe
+                            result[i] = new Goe
                             {
                                 id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
                                 plusIds = rows[rowsIndex][Array.IndexOf(rows[0], "plusIds")].Split('/'),
                                 minusIds = rows[rowsIndex][Array.IndexOf(rows[0], "minusIds")].Split('/'),
                             };
                         }
-                        return goes;
+                        return result;
                     },
                     (Goe data) => { return $"{data.id}.asset"; },
                     (Goe data, GoeObject obj) => { obj.data = data; }
@@ -138,6 +138,27 @@ namespace Wlg.FigureSkate.Fact.Editor
                 //     (Program data) => { return $"{data.id}.asset"; },
                 //     (Program data, ProgramObject obj) => { obj.data = data; }
                 //     );
+                CreateOrUpdateScriptableObjectFromCsv(
+                    path,
+                    "ElementPlaceable.csv",
+                    (List<string[]> rows) =>
+                    {
+                        // 配列(elementIds)を扱うため独自に値を設定する
+                        var result = new ElementPlaceable[rows.Count - 1];
+                        for (var i = 0; i < result.Length; ++i)
+                        {
+                            var rowsIndex = i + 1;
+                            result[i] = new ElementPlaceable
+                            {
+                                id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                elementIds = rows[rowsIndex][Array.IndexOf(rows[0], "elementIds")].Split('/'),
+                            };
+                        }
+                        return result;
+                    },
+                    (ElementPlaceable data) => { return $"{data.id}.asset"; },
+                    (ElementPlaceable data, ElementPlaceableObject obj) => { obj.data = data; }
+                    );
             }
         }
 

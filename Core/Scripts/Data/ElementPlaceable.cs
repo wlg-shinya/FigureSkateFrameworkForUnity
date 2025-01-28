@@ -6,6 +6,8 @@ namespace Wlg.FigureSkate.Core.Data
     [Serializable]
     public class ElementPlaceable
     {
+        // 一意の記号
+        public string id;
         // 登録可能な構成要素のID
         public string[] elementIds;
     }

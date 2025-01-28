@@ -7,6 +7,7 @@ using Assert = UnityEngine.Assertions.Assert;
 
 namespace Wlg.FigureSkate.Tests.Fact
 {
+    // TODO:データ数とファイル数が一致するかどうかのテストの追加
     public class ScriptableObjectTest
     {
         [TestCase("2024/1/1")]
@@ -19,6 +20,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             await GoeObjectsTest(baseday);
             await GoePlusObjectsTest(baseday);
             await GoeMinusObjectsTest(baseday);
+            await ElementPlaceableObjectsTest(baseday);
         }
 
         private async Task ClassObjectsTest(YearMonthDay baseday)
@@ -109,6 +111,19 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(obj.data.maxValue <= 0);
                 Assert.IsTrue(obj.data.maxValue <= obj.data.minValue);
                 // group, mark, targetElementIds はデータなしを許容
+            }
+        }
+
+        private async Task ElementPlaceableObjectsTest(YearMonthDay baseday)
+        {
+            var allObjs = await ElementPlaceableObjectQuery.All(baseday);
+            foreach (var obj in allObjs)
+            {
+                Assert.IsNotNull(obj.data);
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
+                Assert.IsNotNull(obj.data.elementIds);
+                Assert.IsTrue(obj.data.elementIds.Length > 0);
+                // TODO:配列化した結果が同一なデータの検出テストの追加
             }
         }
 

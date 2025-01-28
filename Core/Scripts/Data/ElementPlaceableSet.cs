@@ -7,7 +7,7 @@ namespace Wlg.FigureSkate.Core.Data
     [Serializable]
     public class ElementPlaceableSet
     {
-        // ID
+        // 一意の記号
         public string id;
         // 名称
         public string name;

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b4f709ae3190a47b4ee8670c92b44e, type: 3}
+  m_Name: SpinCSpSSpNoFlying
+  m_EditorClassIdentifier: 
+  data:
+    id: SpinCSpSSpNoFlying
+    elementIds:
+    - CSpB
+    - CSp1
+    - CSp2
+    - CSp3
+    - CSp4
+    - SSpB
+    - SSp1
+    - SSp2
+    - SSp3
+    - SSp4
+    - CCSpB
+    - CCSp1
+    - CCSp2
+    - CCSp3
+    - CCSp4
+    - CSSpB
+    - CSSp1
+    - CSSp2
+    - CSSp3
+    - CSSp4
