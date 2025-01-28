@@ -44,8 +44,8 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.classId));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.sexId));
-                Assert.IsNotNull(obj.programObjects);
-                Assert.IsTrue(obj.programObjects.Count() > 0);
+                Assert.IsNotNull(obj.data.programIds);
+                Assert.IsTrue(obj.data.programIds.Length > 0);
             }
         }
 

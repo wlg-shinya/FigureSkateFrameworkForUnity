@@ -17,6 +17,6 @@ MonoBehaviour:
     name: "\u30B7\u30CB\u30A2\u7537\u5B50\u30B7\u30F3\u30B0\u30EB"
     classId: Senior
     sexId: Men
-  programObjects:
-  - {fileID: 11400000, guid: b582501fee0e3e84987481d3de706187, type: 2}
-  - {fileID: 11400000, guid: 67df4f8827f228a40b4bf81007a1948e, type: 2}
+    programIds:
+    - SeniorMenShortProgram
+    - SeniorMenFreeSkating

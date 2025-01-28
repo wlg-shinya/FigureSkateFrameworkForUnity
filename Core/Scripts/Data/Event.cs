@@ -14,5 +14,7 @@ namespace Wlg.FigureSkate.Core.Data
         public string classId;
         // 対象性別ID
         public string sexId;
+        // このイベントに含まれるプログラムID群
+        public string[] programIds;
     }
 }

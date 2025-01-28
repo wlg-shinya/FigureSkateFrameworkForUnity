@@ -363,13 +363,17 @@ namespace Wlg.FigureSkate.Tests.Fact
         {
             var competitionObjectAll = await CompetitionObjectQuery.All(baseday);
             var eventObjectAll = await EventObjectQuery.All(baseday);
+            var programObjectAll = await ProgramObjectQuery.All(baseday);
             CompetitionObject competitionObject = CompetitionObjectQuery.ById(competitionObjectAll, "KinoshitaGroupCupJapanOpen2023");
             ProgramComponentHanlder programComponentHanlderHanlder;
             {
-                var programObject = competitionObject.data.eventIds
-                    .Select(x => EventObjectQuery.ById(eventObjectAll, x))
-                    .Select(eventObject => eventObject.programObjects.Find(programObject => Equals(programObject.name, "SeniorMenShortProgram")))
-                    .First();
+                var programObject = ProgramObjectQuery.ById(
+                    programObjectAll,
+                    competitionObject.data.eventIds
+                        .Select(x => EventObjectQuery.ById(eventObjectAll, x))
+                        .Select(eventObject => eventObject.data.programIds.Where(programId => Equals(programId, "SeniorMenShortProgram")).First())
+                        .First()
+                    );
                 programObject = ProgramObjectQuery.SetupConditions(programObject);
                 var programComponents = ProgramComponentQuery.Create(programObject.data);
                 programComponentHanlderHanlder = new ProgramComponentHanlder(programObject.data, programComponents);

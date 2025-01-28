@@ -90,11 +90,12 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
             else throw new ArgumentException($"sexId = {sexId}");
             var classObjectAll = await ClassObjectQuery.All(startDay);
+            var eventObjectAll = await EventObjectQuery.All(startDay);
+            var programObjectAll = await ProgramObjectQuery.All(startDay);
             var competitionObjectAll = await CompetitionObjectQuery.All(startDay);
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(startDay);
             var goeObjectAll = await GoeObjectQuery.All(startDay);
             var sexObjectAll = await SexObjectQuery.All();
-            var eventObjectAll = await EventObjectQuery.All(startDay);
             var className = ClassObjectQuery.ById(classObjectAll, player.classId).data.name;
             var sexName = SexObjectQuery.ById(sexObjectAll, player.sexId).data.name;
             Debug.Log($"{player.name}({YearMonthDayUtility.GetAge(startDay, player.birthday)}) / {className} / {sexName}");
@@ -107,7 +108,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             Assert.AreEqual(competitionObject.data.startDay, startDay);
 
             // 大会中のイベントに合わせてプログラム構成を構築
-            var programObjects = ProgramObjectQuery.ByPlayerWithSetupConditions(competitionObject, eventObjectAll, player);
+            var programObjects = ProgramObjectQuery.ByPlayerWithSetupConditions(competitionObject, eventObjectAll, programObjectAll, player);
             player.programComponentsList = new Player.ProgramComponents[programObjects.Count()];
             var programComponentHanlders = new List<ProgramComponentHanlder>();
             for (var i = 0; i < programObjects.Count(); i++)

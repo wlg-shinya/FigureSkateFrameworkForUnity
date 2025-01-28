@@ -44,11 +44,27 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (Sex data) => { return $"{data.id}.asset"; },
                     (Sex data, SexObject obj) => { obj.data = data; }
                     );
-                //TODO:programObjectsのcsv化
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "Event.csv",
-                    (List<string[]> rows) => { return CSVSerializer.Deserialize<Core.Data.Event>(rows); },
+                    (List<string[]> rows) =>
+                    {
+                        // 配列(programIds)を扱うため独自に値を設定する
+                        var events = new Core.Data.Event[rows.Count - 1];
+                        for (var i = 0; i < events.Length; ++i)
+                        {
+                            var rowsIndex = i + 1;
+                            events[i] = new Core.Data.Event
+                            {
+                                id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
+                                classId = rows[rowsIndex][Array.IndexOf(rows[0], "classId")],
+                                sexId = rows[rowsIndex][Array.IndexOf(rows[0], "sexId")],
+                                programIds = rows[rowsIndex][Array.IndexOf(rows[0], "programIds")].Split('/')
+                            };
+                        }
+                        return events;
+                    },
                     (Core.Data.Event data) => { return $"{data.id}.asset"; },
                     (Core.Data.Event data, EventObject obj) => { obj.data = data; }
                     );
@@ -57,8 +73,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                     "Competition.csv",
                     (List<string[]> rows) =>
                     {
-                        // ユーザー型(YearMonthDay)を扱うため CSVSerializer.Deserialize だと都合が悪いので独自に値を設定する
-                        // ヘッダ部を無視するために確保する配列数とイテレーションするインデックス数に気を付ける
+                        // ユーザー型(YearMonthDay)と配列(eventIds)を扱うため独自に値を設定する
                         var competitions = new Competition[rows.Count - 1];
                         for (var i = 0; i < competitions.Length; ++i)
                         {

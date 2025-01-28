@@ -7,7 +7,5 @@ namespace Wlg.FigureSkate.Core.ScriptableObjects
     public class EventObject : ScriptableObject
     {
         public Data.Event data;
-        // このイベントに含まれる全プログラム
-        public List<ProgramObject> programObjects;
     }
 }

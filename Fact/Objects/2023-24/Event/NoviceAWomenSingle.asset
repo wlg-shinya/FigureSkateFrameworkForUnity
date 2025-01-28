@@ -17,5 +17,5 @@ MonoBehaviour:
     name: "\u30CE\u30FC\u30D3\u30B9A\u5973\u5B50\u30B7\u30F3\u30B0\u30EB"
     classId: NoviceA
     sexId: Women
-  programObjects:
-  - {fileID: 11400000, guid: e6c28bcfab8b4de488568c495f5503cd, type: 2}
+    programIds:
+    - NoviceAWomenFreeSkating

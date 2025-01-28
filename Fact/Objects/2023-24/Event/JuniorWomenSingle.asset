@@ -17,6 +17,6 @@ MonoBehaviour:
     name: "\u30B8\u30E5\u30CB\u30A2\u5973\u5B50\u30B7\u30F3\u30B0\u30EB"
     classId: Junior
     sexId: Women
-  programObjects:
-  - {fileID: 11400000, guid: 884354782f5b9794bbe97a9caf37b28a, type: 2}
-  - {fileID: 11400000, guid: d2a8a0dbd86de8640bfa759981056200, type: 2}
+    programIds:
+    - JuniorWomenShortProgram
+    - JuniorWomenFreeSkating
