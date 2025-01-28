@@ -23,9 +23,9 @@ Unity 6 (6000.0.33f1で動作確認してます)
 1. [リリースページ](https://github.com/wlg-shinya/FigureSkateFrameworkForUnity/releases) にて任意のパッケージをダウンロードします
 2. Unity の Package Manager を開き、ダウンロードしたパッケージに合わせて、disk か tarball でパッケージを追加してください
 
-## 使い方
+## Fact の使い方
 
-準備中
+[IntegrationTest.Competition](https://github.com/wlg-shinya/FigureSkateFrameworkForUnity/blob/d38c282963d525bbf30f65f22f628cc72b6632b4/Tests/Fact/Runtime/IntegrationTest.cs#L21C28-L21C39) に選手を用意して構成要素を設定して判定する一連の実装がありますので参考にしてください。もっとわかりやすい資料は鋭意作成中です
 
 ## 各機能の説明
 
