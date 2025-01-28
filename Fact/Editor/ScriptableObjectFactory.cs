@@ -109,6 +109,13 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (GoePlus data) => { return $"{data.id}.asset"; },
                     (GoePlus data, GoePlusObject obj) => { obj.data = data; }
                     );
+                CreateOrUpdateScriptableObjectFromCsv(
+                    path,
+                    "GoeMinus.csv",
+                    (List<string[]> rows) => { return CSVSerializer.Deserialize<GoeMinus>(rows); },
+                    (GoeMinus data) => { return $"{data.id}.asset"; },
+                    (GoeMinus data, GoeMinusObject obj) => { obj.data = data; }
+                    );
                 // TODO:Program のcsv化のため、ProgramComponentRegulationデータの扱いを変更する
                 // CreateOrUpdateScriptableObjectFromCsv(
                 //     path,

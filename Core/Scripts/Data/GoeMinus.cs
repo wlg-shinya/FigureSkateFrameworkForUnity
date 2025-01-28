@@ -6,6 +6,8 @@ namespace Wlg.FigureSkate.Core.Data
     [Serializable]
     public class GoeMinus
     {
+        // 一意の記号
+        public string id;
         // チェックの説明
         public string description;
         // グループ名
