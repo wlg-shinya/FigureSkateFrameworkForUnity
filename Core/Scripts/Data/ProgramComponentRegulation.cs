@@ -8,6 +8,8 @@ namespace Wlg.FigureSkate.Core.Data
     public class ProgramComponentRegulation
     {
         public string id;
+        public string[] elementPlaceableSetIds;
+
         public ElementPlaceableSet[] elementPlaceableSets;
         public List<ProgramComponentCondition> Conditions { get; private set; } = new(); // このプロパティはプログラム上でセットアップする
     }

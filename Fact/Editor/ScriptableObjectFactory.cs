@@ -131,13 +131,6 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (GoeMinus data) => { return $"{data.id}.asset"; },
                     (GoeMinus data, GoeMinusObject obj) => { obj.data = data; }
                     );
-                // TODO:Program のcsv化のため、ProgramComponentRegulationデータの扱いを変更する
-                // CreateOrUpdateScriptableObjectFromCsv(
-                //     path,
-                //     "Program.csv",
-                //     (Program data) => { return $"{data.id}.asset"; },
-                //     (Program data, ProgramObject obj) => { obj.data = data; }
-                //     );
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "ElementPlaceable.csv",
@@ -159,6 +152,57 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (ElementPlaceable data) => { return $"{data.id}.asset"; },
                     (ElementPlaceable data, ElementPlaceableObject obj) => { obj.data = data; }
                     );
+                CreateOrUpdateScriptableObjectFromCsv(
+                    path,
+                    "ElementPlaceableSet.csv",
+                    (List<string[]> rows) =>
+                    {
+                        // 配列(elementPlaceableIds)を扱うため独自に値を設定する
+                        var result = new ElementPlaceableSet[rows.Count - 1];
+                        for (var i = 0; i < result.Length; ++i)
+                        {
+                            var rowsIndex = i + 1;
+                            result[i] = new ElementPlaceableSet
+                            {
+                                id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
+                                jump = bool.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "jump")]),
+                                elementPlaceableIds = rows[rowsIndex][Array.IndexOf(rows[0], "elementPlaceableIds")].Split('/'),
+                            };
+                        }
+                        return result;
+                    },
+                    (ElementPlaceableSet data) => { return $"{data.id}.asset"; },
+                    (ElementPlaceableSet data, ElementPlaceableSetObject obj) => { obj.data = data; }
+                    );
+                CreateOrUpdateScriptableObjectFromCsv(
+                    path,
+                    "ProgramComponentRegulation.csv",
+                    (List<string[]> rows) =>
+                    {
+                        // 配列(elementIds)を扱うため独自に値を設定する
+                        var result = new ProgramComponentRegulation[rows.Count - 1];
+                        for (var i = 0; i < result.Length; ++i)
+                        {
+                            var rowsIndex = i + 1;
+                            result[i] = new ProgramComponentRegulation
+                            {
+                                id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                elementPlaceableSetIds = rows[rowsIndex][Array.IndexOf(rows[0], "elementPlaceableSetIds")].Split('/'),
+                            };
+                        }
+                        return result;
+                    },
+                    (ProgramComponentRegulation data) => { return $"{data.id}.asset"; },
+                    (ProgramComponentRegulation data, ProgramComponentRegulationObject obj) => { obj.data = data; }
+                    );
+                // TODO:Program のcsv化のため、ProgramComponentRegulationデータの扱いを変更する
+                // CreateOrUpdateScriptableObjectFromCsv(
+                //     path,
+                //     "Program.csv",
+                //     (Program data) => { return $"{data.id}.asset"; },
+                //     (Program data, ProgramObject obj) => { obj.data = data; }
+                //     );
             }
         }
 

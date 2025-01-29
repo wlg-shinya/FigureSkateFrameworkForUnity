@@ -21,6 +21,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             await GoePlusObjectsTest(baseday);
             await GoeMinusObjectsTest(baseday);
             await ElementPlaceableObjectsTest(baseday);
+            await ElementPlaceableSetObjectsTest(baseday);
+            await ProgramComponentRegulationObjectsTest(baseday);
         }
 
         private async Task ClassObjectsTest(YearMonthDay baseday)
@@ -124,6 +126,31 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsNotNull(obj.data.elementIds);
                 Assert.IsTrue(obj.data.elementIds.Length > 0);
                 // TODO:配列化した結果が同一なデータの検出テストの追加
+            }
+        }
+
+        private async Task ElementPlaceableSetObjectsTest(YearMonthDay baseday)
+        {
+            var allObjs = await ElementPlaceableSetObjectQuery.All(baseday);
+            foreach (var obj in allObjs)
+            {
+                Assert.IsNotNull(obj.data);
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+                Assert.IsNotNull(obj.data.elementPlaceableIds);
+                Assert.IsTrue(obj.data.elementPlaceableIds.Length > 0);
+            }
+        }
+
+        private async Task ProgramComponentRegulationObjectsTest(YearMonthDay baseday)
+        {
+            var allObjs = await ProgramComponentRegulationObjectQuery.All(baseday);
+            foreach (var obj in allObjs)
+            {
+                Assert.IsNotNull(obj.data);
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
+                Assert.IsNotNull(obj.data.elementPlaceableSetIds);
+                Assert.IsTrue(obj.data.elementPlaceableSetIds.Length > 0);
             }
         }
 

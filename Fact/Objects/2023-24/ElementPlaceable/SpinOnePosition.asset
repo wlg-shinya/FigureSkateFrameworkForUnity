@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpinOnePosition
   m_EditorClassIdentifier: 
   data:
-    id: SpinOnePosition
+    id: SpinOneposition
     elementIds:
     - USpB
     - USp1
