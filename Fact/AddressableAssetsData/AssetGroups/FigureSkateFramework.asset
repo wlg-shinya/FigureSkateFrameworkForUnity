@@ -1,0 +1,3318 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: FigureSkateFramework
+  m_EditorClassIdentifier: 
+  m_GroupName: FigureSkateFramework
+  m_GUID: 1cc483a07f39b3d41bfbb3446a22376e
+  m_SerializeEntries:
+  - m_GUID: 0061c47ae815e2c4cb06b2a9ea46adea
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0081b831f71f3ef449f6879253955d2c
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF54\uFF33\uFF51\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0123db4f7672e6b49b1d314c930cea84
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinOneposition.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 015b9610756537a43a88a8e3c74974fe
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0201d1044a2ffb64785c0232ef45fe89
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/Jump34.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 024b5538c2ddf5244b0ee56ceb52ba66
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 024fdb2cf97c20d48aa47ee5d2a9bdb1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF45.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 036a74e82d46d934b80fd7f11de57449
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0405d8c20bb18f9499f2aeeb569f9f93
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/Jump23Lz.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0450c27c10f6db74d9eff52783e1315b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/Jump3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 04ada01813d70b142a143cba1e14c2cb
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 04baccef33007bb41b3f957fe6cd179b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 052b9e487361eb349adf3b12ad57e3ac
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump23Lz.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 053dc4ad6f3d54c49b9562444924f384
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0599075edaa181e42882f48303d17f17
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 05bc26a908b76604eaeff29d6e0e6e02
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF01.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 062814d4197a2a64bb61850c5e4cab7e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0690af189a7653941a9b8f3fef4c6ccc
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FLSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0694bc7d9ad255d4fa64c9b0b18c1dd3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06ebbecf108c0354482651f18401ba9f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCoSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 071105f22c390f24c838b559eeb0f634
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF33\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07484b08f62f54044bb4a175b4d747d5
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF01\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07583e34cb3dddb4d938fdbd61448e58
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF01\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07e01a40bd519cd4094129eab38164de
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07f9b60f10e444f4d94c20a5a721cd15
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0832fb1959cb6124e8cd23f1473f50be
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Goe/ChoreographicSequence.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08a5a56549ab21943b516292ca0ff098
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF34\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08bcbdb5c1838e24489cf84d961e4756
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CLSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08d6582715e8ecf43b531c31c0bff9e6
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinCamelSit.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09328b8c20c77774a8d4b77a40bde34f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF01.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 097a2ea9a9ff84d4c98972379f5dd47a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09a1703afd3ff754aa60728ed4e22826
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/SSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09ae1a33cd0d33d4087e95bc5ba35554
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09b128b889b712844a35b7a2b943f3ca
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09e308a71b9d7114f907b74f085f3637
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/1S.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b302ac5f404e994eb50a132e4d65400
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinCombinationChangefoot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bbae6e8b8c552746af4b6f691e51ccd
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCLSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0be710772d3369147af6b3fe44eaafd6
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cadc3a84607ab140bf576f4a44fc3d2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF21\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ce76becfb02384479273e9a8504a2f2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FLSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cf58532d7dbdb64ba9dbbe998e8d383
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/YouthOlympicGames2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d04d378752ee7144b98a6e383ad75c0
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF45\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d4e226a9d909fc468240c21ffbe6ceb
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCoSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d6a3658a04d773408c49dfa3d96cb3d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/2Lo.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0e5b1d19f075f1e4aa40d2b517562c2e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinCombinationNoflying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ed4e75ca5359e54ebac3c1a5d728e72
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF2C\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f45f28afe0c48148a2e12bfc12d5245
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f9d8dfeca87da745a56e5a6968b89c6
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF34\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1017e2134c197304f933b6a7360ef3d7
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF01\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 109f83d209117cb46982a2afb7a3e49e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10c16cc2fedca6d48bf2bf3eb78403b4
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10e22cc375e21b9419a7f4a816916aa5
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/SSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1103ed3daab14e44292895422243ec58
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Goe/StepSequence.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11da13289a63a394cb79c79aa02863b9
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11e524a9549afc04794f1c8fe878f6b2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCoSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 133cf895e0630b141a0d5111af9d018d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1428c80aed064e24bb3819afc457a65b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/USpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14337b366b53d054c8caa176c2b22421
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF21\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 145b4dd686c0a86429ed0cab4f63f532
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/NoviceAMenSingle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1493728c495b19543bedcbc6b7881595
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF35\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15011feba16615d45af6e2de21b6d3cb
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF45\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 152b1ead1d05c2e4b9126406ad75ab43
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCoSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1534bbb2f5dda3448912eabceee9db4d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 155f752d45951334682b58f22cbc2eed
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15628438caa919d44a5e05bd408c92c4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF45\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15a56aac4b4bf2b4d9e0758642889ca0
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15b23e145c3db85499a7dfdc262b9d62
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15b6724772b50c248ac01f9fb2fd4529
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF2C\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1641555f01aa3c54e99e9a119a60e1f0
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16e0b9d38617b2b47969d3f368d0d189
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/SSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16fccfc09a537ca4490d780e4c08fc8f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF45\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 176be8714779181418623cc3ea939970
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/LSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 183879ce4e285ef47a346b2ce92e666c
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18a6eff8cf9f5b9499ee84182ffb396e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/StepSequence.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18b95b57e37298e41a72c9ef41798ef3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18e52127c4e62514eadd99d341449bb5
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18f690641cd414c42880a0a5d8fde6c2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF01.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19ad25cedb6995f4f9f96ced3d0d0272
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a8d74cf5f40f72419189b54c20186cd
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Class/NoviceA.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b1e94cb9de342e418bf3c8b2e2f4c94
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b38dfeb0ad6e5f4f99cd8d03a82b244
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ChubuRegional.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c1d7fd2f83134242a35c67c6388b510
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/3S.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c582b9e1193ca049965407ee2828ae4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c5a91825cf50c24992a47de5ef0e63b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Goe/Jump.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c94fef8ad7d7774688f1379321b1709
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCoSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1cd71d882aef59a48a297e88967adb5b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF25\uFF55.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d011ae8fc3d2a94cae74018637e1086
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF34\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d570beec14f84c409fd0b3d672a3c47
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinCombinationNoflying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1dc4be695a54a9041b2568aff83e452a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e45609669c5b6e4e9a2eff6cc0d14c5
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ea686afb5d822e4886f7a9fe04c96f8
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF45\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ee4af333774671408dad87b61066067
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF4F\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f4f2fbc05f2e744a879d3de2a730c79
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/NoviceBWomenSingle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f615abca4bce7942abd6ac59415562e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF01\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2004dfeb418102f4cae65ff301f66906
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF33.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2019cc276eeb21e45a851da783ebddfb
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/SeniorMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20d3b9ae92a06954ca26c855723d194d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinCamel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20ed5c687c0531c4c8d2208cdcadbf28
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2104166cc70b8a9468cc627ea3816f6d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF4F\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 213b1bc823840904aa52ef3240346347
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/JumpM3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 218d76cac761cc847a00429d0b879590
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUJGPYerevan2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21a070a4aea45514fb13b927d94e944e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF34\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21a8629a9b0279943a878c8f16d931a0
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/StepSequence.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21ee360d7fa2334419cee6168ac99436
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 224c6406f03a352449bb70ded2675e49
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2281cd64491e20443b3c0e39719292d1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF01.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 22f47910db0a5ed4f9c7d83c40072dea
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 234f0dd2ee139904b959262c58b769fa
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2395ec7528686014789f417321ce7909
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24ac23c5e21c1ce4c8171cf4cac53a15
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF45\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 25a9944a041b90043858b5e9e79d98c7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 25b9909c4420a4a48983a23f6e2d3146
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 266caeb9ec38f7a4793ec64bf5a821f4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26ce472561637ea4da2c826e1798b32e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump3Combination.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26ece45b3bbe9a94aa00308a994699f9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 273fb0e3f5fda564fbcbdb4bd00ca447
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27497cdc72f008546a57ed6e95b93820
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2793e05ebf6586643af10de47e1fecfa
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 279a1a1d6dc31344989713c4421fb70c
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 283a2c4c1091e5d4ab95e904131de2c3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28ce8a2d3f7a2484e8463b8ebca2776e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28da8a25936d54048b987fda2e3ca89d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF4F\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28fe10e24c233a343816db0640758069
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 290a1ac5a73f4a34ca8d37fba264e594
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/2S.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 297afacab79a68a4bb6ba9b890ac24ff
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29ce78496098dc342ab1675df60f114a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ac4ec6910e5e44479d8543b0042377e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2aed3da4269536548acb65091f605c77
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/Nationals.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b2da8baf9aa1884c85ac7a50668ed68
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c7ea77b6ac615a4aa1fe568ba3d37b5
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinOnepositionCamelSitLaybackNoflying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2cd80c8eae5f8954e8b532829bff4f6f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF21.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2cd974c0f196b634881ed8594062ad46
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d74fed49e3f0dd4cae0751cc24990f3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/JuniorWomenSingle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e45992ee9a46a44ab931091c0c5098d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e621d32b03662048927f6f786ed6cdf
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e80dfd11facf874895acfaa27ed6093
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ea27e489028f45439bebd406d23d65e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF4F\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ed160978e43a934ab55fe8a538c193b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ed3749dbdcaf8d44aa3e1ded7b487cb
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2eff59f4702e458409f80e2721729e03
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2fb9dbe76ae70b241bf9ba476e2287dc
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 302ec0fc5409eae45a6da81ea91f6bc6
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3041439b2891f4a4f9b59c83c4ad7b60
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3052a4633cb36f54ab4aa3dbb78ea3eb
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30ab9f1ed7f0aeb4a893dba3c0fb3a97
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30e6ddbaa1aceec409e7dfadf14641f0
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF34.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3152c7286e4921f4a95df4fe0288aa6a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF21\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 315e3cd8bf5d94f48903293dec155989
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31cd1d57df4df2d4fade4b6c8dfd3e62
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FLSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32a6c3201aac6134388b6edf5d60780f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32c10ef77cd42764f913305358c69aec
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/Jump23.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32eeecfd35065084caf68825a2ca9294
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33baa11fa4b2ceb4f8ed7b2eb1781fa5
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/NoviceBMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3433bfe20bc6f9a4fa18e86ea99cff82
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF34\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 345b3299d78e65544aeaf8190208a43f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/LSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 353c6a7f9b84e4e498180313cf080b8f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCoSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3573b635cde87614cbd45e2c47bfc135
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35c3211ebfd849c4fb0d29fde8b2e2d4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 367c9a0eefbe4f145b6cddfa58aa0ed0
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump34.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 374c5671c56ad854688d0a9c8803f0c2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/4T.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 377c3c12fbc35c04aa746d5431d73fb4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37b31dc341cd0ed4f9133ef2a2fcc207
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF45\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 380e00212e1bbad4ea1d7afa8f679d2d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/JumpM4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 387d5fc9b3b1ce644816cbca0215af39
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38a20999aacbd5e4d89244740365e4d4
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinCombination.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 392d89690a7b7b447a089364409db334
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF35\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 396321a2fd46fc0478a4b7ba8329722a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39b5ad0f26a9f79429aea12bdd2eaf35
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUJGPBudapest2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ae0cbebed2bb57448bff02371a81fe6
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCLSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ae39d9573a440840bc267f08fb84f1f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF4F\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b065dffd87f1f647bf6d147fbb5094a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CUSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b421689855e5e845aab00c5ee7c8eee
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c3b526fc16cab04b8fc042b3da1b070
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ddf46e8dce11c04cae07ebca90fcab1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3dfd53782590fe444833bafa42dcda1a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/StSq2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e1169a9e7ff79343951cdefb33251f1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e419ce8370b1454f983a49b74192bbe
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e905e44ca4982149a346103590c8446
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ed4807ef7295c94ea0dd790908b810c
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/2T.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 401da18144a69fb4daf9cda533551498
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF34\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4080023f98cc6d24abbf304f9f73cb34
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/4A.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40dd130a0eff5304f8151628456e1964
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinOnepositionCamelLayback.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41bb03a4c621c9f44bd5e68a49373a80
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinCamelSitNoflying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41cc9d3aaa03e32439b1d8dc06df6e5e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41d2558a25030694a9104451e83d8572
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FSSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 421ae4adaa8226a498b7c182acea1fbd
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Class/NoviceB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 422fd6babdbcf974e840d508c7b91e78
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/1A.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 427a5657254f3824e9f367ab6026e722
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/JumpAll.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 433bcb293c8e02645bc2070f68ec6dfe
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43c76219a73b827499c63b0d1d2b33f0
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF34.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43d6aec91d6e13b478eabe4918bbc8f0
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF4F\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 440633cfb06f62d409fdec9a8dfb9d5b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCoSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4448fb46cf4d944429a168371ec30e8a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinCamel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44b1ac90d466106469f661a2f7ee54e9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 452413e830142ec48897dd51883f6633
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/SeniorWomenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45869ef0a538ba14a9d32d4d88b669ea
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45ea9ded75c15524fb6190fc0600ec10
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46e2207ae4a666d4db4ea327a67916d9
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/KantoRegional.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46ea41fa8bb0fe641ab9ff66ec9d7c99
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47685e2579104594091f15fb459eaa06
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4979b7503dfd72440a61b878288ceef4
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Class/Senior.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 498e023ed9d39b942a176d75572dca1f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 499ce951eb1b71945a728f532f8d3a2d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCoSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49a3e684e30626140a7639775b430865
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49ae8762ffa840140a18b9bac2d3446f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinCamelSit.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a1aeb0965a6b1e42b4b6432decbe329
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a1b6859e5ff68c4782e603b970100cd
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCUSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ac1c1a2a6f87624ba93b79c4ca12cfe
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/NoviceBWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b2a9e52a4b17034db3fb0327f9743c4
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c4486de86401674d91b58a6ade10481
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinSitFlying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c534e04c9753a6428f1838be31a8eeb
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/1Lz.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c8b91cf496a3844a951e3c9d02be5b1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d16dc00cd41c6e41be4f0f429fef592
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d5a4c4cf6681c347aade2d317480bf5
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d80f84ffaa50f24a9bc062b790a2753
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF45\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4dd285d856de0514899e05c78b318938
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/JumpM6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4de106a21a006ad46ace7791e7db2ae4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e35932d701d80b46a4199ee4993a76b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF21\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e5bc26147ddc8f4ca1d76103abd4ef7
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e91bc28d5a6a1045987e643f3cc2cfd
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ef0a8b9dbb87fa49865e8e5b7e235c1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF54\uFF33\uFF51\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f031e5845ce8fe47bed7d68a298b7ff
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/NoviceAMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f195bd37450c764697a460c66d1bf10
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF45\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f9476616963c154492662bc36f2f9c2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4fa6b6e76d8c46e47ad17b0188808358
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4fbaa12dc94be6449b1810e9a094d049
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5026903daa826c943bd09c48b99ca9d9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF4F\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50f318df04d01474499fadc53aff3daf
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 516bd24ad6c0881458fa30083a12e5f7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/Tohoku-HokkaidoRegional.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51c0310c67d97a74c95db02b9c19718f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF01.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51c8bf31dc661a84abdb52533ec65bb4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 528f98033e8d8bf47ab595ae8f61efd6
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUGPGrandPrixdeFrance2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 529d3d3a8d50049479166afc793bb16c
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUJGPOsaka2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52aa3ea06dc3e814a914888d3507c7b6
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 530d5f6dc55adb347ace9ef03054d0d8
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CoSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53310fe8c06339943961f277a8247053
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53be294ef48869f4d96c20482fbb4c9b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53dd7bed73257be45a4d57c68e0800c3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF45\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 540b87472070b894ea0efb240a95026e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF21.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 546052bb764a56a48be0fc042b58cd76
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/JuniorMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54e009b31057824428c68848976cce1d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump2Combination.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 555ee903a05ca324bb54aaa08be7b882
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/SSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 559d1f9b27c4da84d9826d2f98e52dbc
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCUSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55eccd9e9dc54e7468e9fc5c524144c3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 561e4f9978f6bb24c82decefa56dcfe1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 583f35d7e3fe13e46b6d34e2b50aac0b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUGPSkateAmerica2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58d93b50eeb0bb14fa67cb2a9db5f5fa
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCLSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59408416e7480f147a151d8533491bbf
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a867de60ce167047bfd335e7b0cbab0
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a9334064794a45489088f844a9327e2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c120a5df18eb4a4abbf5d4ad4d11889
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF21\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c403e7a22177ce4ab0ec7d3b947c939
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c5bb9d27d0566440b204bee3e86e3d6
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/SeniorWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c824d3d2f36e534ba6d2a9e2860db0d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/Chu-Shikoku-KyushuRegional.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ccd329fca77db04abf2605194504b63
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e0d4ab334537f64d8d52d808e9e88df
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e7538df08399a34f9ac53344e229a1c
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF21\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ff6bc2ca02b26b4791a3fb3a41e844d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/UI/JudgesScoreExecutedElementItem.uxml
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6023e61b8863e3549a4c4ccb743cf380
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CLSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60249c5bfcd01524398e4b008f7be348
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60978d4270dfd574a81ddd470f7be7e8
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 609cc4d248073f745afc4fb074de1187
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUWorldJuniorChampionships2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6144b463f144f2c4a84baf36edab8656
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 614d03bf1a97d75488627164b7da76e7
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 616330e3d9d4f074a83eb03ecda28342
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61891fabf14730043ab77925c5146970
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61beb3d071c5c2e45b00096b4b173cca
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/1Eu.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61e1d59bccad7f44b8437a44bb299ade
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinCombination.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 626fbdd5de6f6a24db4b522dbf196acc
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62f6954ef3d2f6f4393e69d7835b9c3a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUGPGrandPrixEspoo2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63a2d28d26c5f35498c8604e1ebe27dd
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63fc76e77b8400842a26f167aadb6470
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 656b6ae5747e1ac43b19d0ea64679f67
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/USp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65bdeca1aff3f7e49985354d1c6682f2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF21\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66e6f10ec1596aa4c8c7bbbd047f443f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF21\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6743f5d26e56e9f46bf818eba1374457
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 679f07aa21979b3439d4519e9ca5fbe2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Sex/Women.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67b21097b00f1d84d8cdd54bda647ccc
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF01\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67df4f8827f228a40b4bf81007a1948e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/SeniorMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 682dcc55b1b5e9142af3f036e4650145
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6872798b39a425945986a7a936c2f6cb
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCoSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68daeb3073e8af24c8dcd842da19fd4b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6902a124af2f832418bbc9d33065d4f3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/2A.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6903164bc941a424d90088fa10273649
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF4F\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6924a283ec6d1ed4dac0f16aa9b1f23e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF33.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a75a5c8e06c634409530ed24f6c3aff
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CUSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6abcf0f6ccd8ebd418793202ac0dbb4e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF2C\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b33e1a476ad8b9489fe8e2aafa35510
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6bcfabd3e6b009544afbea5944b2810e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6bf4bc5b5840cbf40b463ece3e600e54
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FUSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c831cd041d987846a26844c95493320
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/1T.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ca9bc611395e5e49aad7b86080e50ad
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6cc84cfebc81aed44818421c9f3f1e40
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6cde094eb0089e64891af96ab9e3c106
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/JumpTLoEu.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ded034af460c094abbe7113b7e99a9f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinOnepositionCamelLayback.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e4175b1a17cf2148818c4180856fd3d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e6c1c3179d2e7940b2e642fd6db7eeb
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF4F.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ec5a758beb379a408795302a8501ec4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f36805acb126f946bfdbc9065d594e1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/StSqB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f5a550dc90470e4ea1b12d5ea8d7234
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF21.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70b4b035f2494cd4cbb8eefb49e502f5
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF34.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70fe2ef2f5c5caa4f9541b5c319e76de
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF45\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7258071d5be730d40919bb4bad05115c
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 728ce541dd1db0e4db51c28f7eb86130
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/StSq1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 729c5e51ef55f4648947a30a799c4d1d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73395acda0839c747bec04f9f02379a6
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7394bb7a8b746054d8d4ac8d589a0ec8
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/JuniorWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7448265dac161264287a3cfedc696f8b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7453bcc24f542df4f82034cfa8a3e64c
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF4F\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 74a4f309421f32443a0585945bb32534
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 74b7592f0a3395c4a9e7ef5a7e12f3ad
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF45\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75a7b5daacb2dac418c9b8faaad8d7b3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75ff6f45bcf70684c9d96d017ff0dc4f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 762e852f48157c94db9fc3f94cee023d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/4S.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 76d88d1292b1b084fa29a2828cb3f79d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 76e56940561c75a459aa04f1ae3b9440
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/SpinM2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77452354edd9ad8408ee035be1f632b3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 780fd961ca7813448aa15627a1181fb6
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF45\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 784759c5e6486a745a72876b9de9fa7c
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 785b7667f3b3af44caac9cdc798d07dc
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF33\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 788edf0b4e1fecc408082a4a8873fd0b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF01\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7955019e8b7a1c046a48f1dcd86d9044
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/SeniorMenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7991b3e6b27e9e44486b36d59d0906ea
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF33\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79bf3bdb35f938a45958410c56e417f5
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF2C\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a11160c1202b0949be6b5117ddd08a6
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b2e101fdcfb2d242820e7ea2b9e0731
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF01\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7bcd364b96cdcf447b7438d127381328
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/EasternSection.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7be3cc9a4b15e9e4c9ff0be02929bc5a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF21\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c070e556e604f442bc979c7635099cf
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF34.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c9653b0e7ec9614babb4b3245f061c1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d23a9f65b6ce054097ea1d3b0511da2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d4b2e01855127248a665f17387e3ab2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7dbd99cc66c6d244d9989bd5edecae46
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e129ede8be355f4ea7aaa4da5be28c1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e21022ced09bbc41894be24a29406ca
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/1Lo.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e9d0d24da3bee14da7ad5730116ae36
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF45.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f09d758ed9507b4fb5d44da7b213754
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/SeniorWomenSingle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fb91fb992ebaaa428e7805819999ff7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/3F.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fb96661d65d19a4abe68e0ad8ec4e0b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/Jump23A.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8002cd52c6eb7684a893af701a06e68d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8082fb74295635947ac887c9c44bb808
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 809b0c9f35c125348b07b22006cf54c8
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/StepSequenceM1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80a418415a83a19438a8c982f423a9c0
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 813ed6cbaebfbef4096ff642543ccda1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/NoviceAWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 81b42094a1684b84ea67f241e143f9b3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FUSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82a7a3712412e0f4dac1a870764d4320
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF33\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82f49b296d1036b4e8ff86513a783c94
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 831c804357dacc24890e276d21c7442f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF21\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 842a0387a07d6a742909cf14cfcaa6da
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 843ffc9149c109846989b82ec694df76
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF33.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84cdfb64ddddda44aa3873f1e6555166
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84ec1ee63de829c4e9ba508a907673ae
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8539b488cceeaf84687ae89f1489a1be
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/SSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 860ff6c09ea16f843a97126de8f92fd9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF45\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8741ed3e258be3943a9da22dd92c9040
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/SeniorWomenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87bbb0225899f294e933241ce2253560
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUJGPIstanbul2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 884354782f5b9794bbe97a9caf37b28a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/JuniorWomenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8864523a5ff27a347b93a95293bda569
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/4Lz.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88820df27c1e5c14d827bdd10042da66
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88a4573a0ac52bd4097daf2097f54c20
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88f52983cb1d42946bc3581dbf8878e2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/NoviceBMenSingle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8946f704843fc04479def49b9cac4e37
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 895b9832afba52447be266a8546befb9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF01\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 895cd9a3747abfe4b867554e9e1208dc
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89953096079a0994e8f5a420ff016193
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a274d27055291e49b685b41ea8f4f25
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CoSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a4ddf7a7d787d547889ba5b3c59ddd8
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF21\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8aae75dff2ff8554a815e3395a30f71a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CoSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b0b39e3dfd60a24da400712deef7393
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUGPSkateCanadaInternational2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c0fffb9ec74a654bb3978410dfc7cc7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/ChoreographicSequence.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d33d93cbedc8f24b8706c90804e25d1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF45\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d422cbac05830246bef5116e765e34a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF33\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8dae38351e6cf574392d62ff50eeea07
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Class/Junior.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8df648c3813fa5f4fb69e3d864e6a251
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CUSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e23f571366db1340bc664dc6f54391e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF33\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e393865acbb40948bbb0a39aacda18e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/JuniorMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f38f5a80fff2f443903cd826be13b96
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF45\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f71848ecb588b643aa3291a68344e66
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 903b0d287bd9d704b9ec07616fa06022
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF48\uFF33\uFF51\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9059f14f8c489e64bb64cfa3c31ade8d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90e8e8c21d6d3214fb669e0c5a923cdd
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF45.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9159ca9de45b06f45988f52f527df3fb
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/LSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9180a498ab9938c44bdb5cc54ade49c2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9237559de4b944d4baa48583366dc3de
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF45\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 926cc0fd9f14acd4aac8e83b0327adee
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF35\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9295edae86212f1489fd09ec3cee881e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CoSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 933deef5c43f9c240bfc6ae610bd9f49
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/1F.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 940ee3d9c656e644faa9dccad8628740
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF21\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 942b2256df2b66744b4a26a9e0912048
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCoSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96da4e41bd159524a960e5b7fc78340f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 970a0ce4e2b26e54fb02634a6d505623
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinOnepositionCamelSitLaybackNoflying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 976f3df8d1ecd1640a06677d9510c23f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97b781cf46d98cd41973b54f5b8c36d8
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98794e52ed52cba478dcfb68bdf7e81e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF01\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 989230f8f37733e42becc04c4b5b3717
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF2C\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9896ba8283899c7428558f2751245aee
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98b5b1a30f04ffa46aae362b4aa7e767
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98bc9b313df109c4bb33bd789f19ff0f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9906a4570c1f9df47abd4f9cbbb98b74
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump23-33Combination.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99110a2759c2776478b957cd3091bc26
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF54\uFF33\uFF51\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99cba4f3374507d419f8cd635807e290
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF21\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99e596d1e16144543b07dab1b522b7c9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF34\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a6aad3f2d51d804cb506634d56aa518
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FLSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ae9bdcb05b2cbd47b6e98cc54a0f330
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b2162c7aa44e1542a20f4d9e3e067b8
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF01\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b52375367b0d7440a4f1edfff602736
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b603b8e9df13f84ea7dbdfda150c4ea
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/JumpM1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9bc58f31686f83e4293e8072525dddc5
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/3Lo.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c314d709c2bbd549b884939948906e8
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ce07bf5fd8cad84d8b8fab9a9c53ff7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ce99ce14b208f34c8355e334951b98a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF45.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cf11865494a1db4f80d511a0f1d3ed3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/JuniorWomenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d9f75536d22ad84f84f0cb22b69916e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e5d32b4f52138e42a8776a7d6c8fb9e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF4F\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a09a0d4bba3ce9a45936e7985ef8626c
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCLSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a192e24940c38b84fbbb8b0e58d05087
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF4F\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2195eb202e7f0747b69f0d62d2c8f52
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/3T.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a22eedc3031dff14cb9a7ebb7a352950
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a245cca95f307194badf9e50702368c9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF45.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a268b8ed07930ac4d880d79310fa323d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUEuropeanChampionships2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a287d2cac92c03c4190c05f2db8debc4
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/Jump3TLo.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a28b9933229269a4491ab3498efad72a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF45.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2aa947329c284842888d249414b2715
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2e1c80a51b61f344a376abba6c9a0da
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF35\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2e5d2f27ed35f44397803c236fa8240
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FSSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2f61dadb87c5a74d88a76a8662471fa
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/SpinM1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a356189f73d5cb7429b4dd2a8026c135
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/4Lo.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3bc773fc873bd54285786b08d30a6e2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/4F.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3c40d1eddb07c447a60ac57b16b42c8
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/NationalNovice.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4164a0ed22186c479c9e38631d84e22
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinFlying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a432cf7ddcffc85419f962b3064ca9d6
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a46a4b65c0f0a4348a7c0c3255438199
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/LSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a47fc16de5207f043b06ff9a2a08d5e3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF33\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4bf316966bcb864a9505418af7e01dc
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF4F.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4dca8dc384c57044927242c64751f1e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a551f43ea0012554dad14c28b951c1f9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5be9c1a3c84d9e43a84bd16d19e2c54
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7214fe9833103746ad068131fa5073a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF34\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a861762a53c51904cbf5cf9958cfba08
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/Jump2A.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a87eed5ddeaf20446ad54ab661b772de
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8d58c0f41855cf4882a543c2e805b82
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF21\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8e496909ca2ad24ea11e75c8b39df33
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a90a84a22b31ae94ebad798f2dbcead8
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a97d2392673d7254a8bed60caefe9f3e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF01\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa0a37913ab9ad94a949444419d9e64d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF45\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa8efc02f09e9c74ca01447afa3f3f5e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aaa6b1dc5da78b148bebfb44ae75cc33
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF33\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab2a4bb0484f2f441b1331de4b5e202f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/Jump234.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab55f9260adc8594f946d5a914cc4045
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/JumpM5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab633fd4e05e334419bbf51fbe51f3d1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/NationalJunior.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: abf8b827da7ac34478187fd9c7d910be
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/ChSq1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac12e4159e446f94096de31f86b3de78
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac45a78b370959f49ba68356d171c5b9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF01\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac7b58a07ec4e53408716fd33a2c1e0c
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad41528a85de00840ad03b80e11c5fe2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/3A.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad559427085a84743a129affd8e4c05d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/SeniorMenSingle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad646a20bff3e11408ad0d04da1cbde6
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/TokyoRegional.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: add6c57a7423d0246b17758e430e63f3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCUSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: adebf98340274004b84e111847529c0b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aec8a4b12bb1bf94d9bcf3e630ab591e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF33\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b03b517083efed24994f6b674452fd06
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b11c6cbe34db2764d901246fc826adf3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b11e88dc32ce4994eb1537e27d950495
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1300738950675747aa5b208895033fb
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b14cfdf2ae72b4344a8225b62f3f826d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinFlying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1622c76824020746929756e9abb3183
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b21d613a10e32bf419ac564b5ecd9ff3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF34\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2326c1b932264e429f85983e13c2201
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FSSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4785204dc8338143aeb62405275f07b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinSitFlying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b582501fee0e3e84987481d3de706187
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/SeniorMenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b58c01d154310724e9b1fdee0cc2ba3c
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF01.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5b3e098fe3630e4fb8511482c008241
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b60c827cb180bf54e81bb1ec9eda8699
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6504856f62942b4dbf3d2670ad0e71e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6596281695156149870b71d38aacc69
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCoSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6633db18c90e8f408367b8a76856395
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUJGPBangkok2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b66c6e006ca087b4983fa1f2fcfea386
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/KinoshitaGroupCupJapanOpen2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b68664d551ecd25459d720cc31f703d1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF33\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6e44f0120efc5344b069b4db8ae161f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF54\uFF33\uFF51\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b78a949ad06eac74b84b4bbd793d9794
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b8177b4c44d8b294d874ba88e34cb681
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b831f68f62a88a04584757777945f2bf
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF45.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b8770937f2c031f4c80f2373c3984305
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b8db2b0211df1eb44a623a5d45922ff5
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b97eee79246268640aabd1dbb316a454
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CLSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b99bdc6ce2ab2034bb04bf8093f93577
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba266e23a3138df40a683fc073be7475
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba63f93ca4e994a44b9b23774f8f43a2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb5ed19a2342622459961c5725156742
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF34\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc6194f9ddcbe63419e231eb1c77b0e7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump2A.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc62614da7ba00245a4d36a40f2a0a4f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF01\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc82dfd6330e32f43b2f50cbf0e4d9e3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF01\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bccf4b9231f94024286e26fcc80c3cd2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FSSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be4bd5cf197ae1041ae5077ee79e2048
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FUSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be72d5756f992b648835a00e3a58e9d8
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF01.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: beb3454b067f6bc4daac43635016f2eb
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bedd9c5c76dfc5d429dbf7008daf4697
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf010578f713a3044bafda277f03b17f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF33\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf0a8f34373523e458024e0f0f92d588
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf42e23134cfb5d41a258425938b290c
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf4b5eb3f90aea74b9607cc27231c71c
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CLSp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bfb90c54510c0ae45abbff4ce93aee71
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinCombinationChangefoot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c04d07879ef207e4a83a94ba16f4613a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/JuniorMenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c058e95a1efda0f419d81a98f0c81481
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/NoviceBMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c15d2104fa669bb43b0b551f32aaffb6
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF4F\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c1e055d8b3124aa4ca563fc56fc566dd
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c27865b8d328a7a43be68d07b3244fce
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF45\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c27a40b962a918c48b811d2edde4cd7c
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2a9db46712c82b48a0ed692c07ca4da
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Class/None.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2cad2e8b1496c245a516ee7b7142c68
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/3Lz.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c396b9423533b504a8565c162179a1b7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCoSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3d54c934ba31b04181f03ed2dfd57d2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3f8aa2f294bdab41b1423d8fa6eea89
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c4ca1e818ce0901469fce78a98b2d5b3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF21.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c55d6ce123353a74bb2b30ade02fca60
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5ad4fc84e2a4114ea3c47fa1fff1af1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6384b49ba2661b46bbd4b1f21d9bed7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinCamelSitNoflying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c68deb0ce71217f46be88877a9682df5
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6df68c1b586184498108984033aa63d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF01\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7ac0e79e5fc3d847a2e23151bafb7e1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF54\uFF33\uFF51\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c82f91b714e35844a98e802091c5df8f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF4F.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c841a5bf76093824cadee30dbd7d2c2d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FLSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c85b972c28415fd4a8cad77cb50c0813
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8c1470ec3376cb4a821e0c272e401a3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8c1e05b73feaa847be13a89b966b0c3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c973645d6ab2aff4da8d083f5c5afa7b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Goe/Spin.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c97c6f71a4932aa4f814dcde69f9e8cf
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUFourContinentsChampionships2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c993c4633ce81774cb8ae98f55c76daf
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CLSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca33aec705e1d854b9d5fba5478b3c01
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF4F\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca6073d3aca4ee84494f69787dc42a8d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cad7023416aa25f419a91d4518fbef6c
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUGPCupofChina2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cae1b0f70802db846beef400333d05ee
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinOnepositionFlying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb55e0ca506fe0d4c8aaa289ce24fd17
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb56d1d7fefdfce4887ccd7b5cc28d4d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb9b52e2fa1bcbd408ff799f70fa9125
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF33\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc1412415b23b7a49beef0dbbba4c0dc
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF34\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cced523c1dee5f54aaf6516bd2e473ba
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd100b80831bb67459c3ac0dda493a01
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCoSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd2e715eb54107a4d975bbaf283ac0a1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF35\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cda0a871bd0f67d4c85bd325d5e3f99e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinOnepositionFlying.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cdcacd767fba83248ac670e63ff81c0d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FUSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf03519e1dc402d46ba5fe13a8c4ba5d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf1dba213f37d0d48878604911fb603d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/2Lz.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf346f720cba4ea4a9145cf77e9aa2ec
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cfae87d283110164984979af60edab8d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF01\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d12797405ec91ff4f96e952414e43a1d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF34\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d135c09fe905cb049b1a03b62a3f23de
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1943fdf373ce334a9c8d63c1d53d337
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/NoviceAWomenSingle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1a7c2fd00e84fe46b9565818d27e3cc
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2a8a0dbd86de8640bfa759981056200
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/JuniorWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2c61cf9d559c1d4faa62833f2282d55
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/USp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d37cb5c49564ec84fa686d79c4e15990
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/Jump23TLo.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d3ebf1b7172fda748a399309d650c786
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d3f5d8c5bf095124f94e520cc66e8676
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4006ad02debd5d42942e2159d8e961d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF4F\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d48bdd9adfea1f94c8fe51e94542efe9
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5e272b34d760844e8a71dc881d142c5
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5fad9efae73e854095ac1bef092be00
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCoSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7219d947b3eab14c9cbc0f18fc3e61a
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF45\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d735109dd03e5db409cd8e673b9991bd
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d735c57f230828b4eb0a58473bc40349
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8b4b4aa4b9570044b8f758dc98f3461
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/NoviceBWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d97a1e8ea51e3934cb5bd9428645ec20
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF01.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9973f80c9231af438be781510a9e127
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FUSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da4bd98480dae8649ae468ea82dbfb0b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF4F.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: daedc5c60ed0dde46bb177ad3bfc0fd2
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF01\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db13a6380e20e3541829986400d322c1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCUSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db812b9c800d05049891abceaaba7eae
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUJGPLinz2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc01558aed0d89e428f2703225adc32e
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF35\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc0be23b97dc17d47912b0e6e92071d2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/ChoreographicSequence.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc3701508b151e642946491b6fd388f3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dcc0620a5419d4f4bb44149e5eacd227
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCoSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd21bd45796986a48907e18d15edd1f1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/SeniorWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de3492e3e346b724f9b29fe9e2d28378
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF14\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de52b00a6f722c449b46d239dd623400
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF01\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de937776e63845b48a6844ae6db62cc1
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF21\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df12049955b7c8848b5aa0dd18cda58f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df176a449f9c8244687f155bf4d8626e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUGrandPrixAndJuniorGrandPrixFinal2023-24.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df554fe5c3783c84ead6e290e81520e4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfecd1106312ffa42aaec6039b636a39
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF33\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e05c3ab9a43d6644180232cca69539e3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/WesternSection.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e10c5482da15d0b4588ea29934a55e21
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1549bf67bae66e4bafc2aafba3bde26
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF33\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e20ebf944f691d2498bca54908ac12ba
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CUSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e242f9665df65b9429f97c0edf155ab3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e359197381666c14399a2d8ed0491d38
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e39f7c388c183ab4db64fd4a5c5d7052
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF2C\uFF5A\uFF45.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3c432c41be603d4285e073b756d053d
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3ef7f0acd8d8aa41b52677e8baf9364
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e42a23e0e34e88440a61d061491d4a91
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4689fb796b0bc74695a8d2a1ce1ea53
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e531b408ea3715d42a5b620449a22e78
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF33\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5a0bbf3175735e4686b31a17c84a0a7
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF45\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5be7e156eed193409fe52fec29eead5
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/StSq3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5bfbc890ca5edd4482adf85beeaf8f5
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/SpinOnepositionCamelSitLayback.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5dcc43d6d1a4fc4489999905468a9cc
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e64abd677d8c26d4e9e8351bb085a3e1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump23-33-42-43Combination.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6c28bcfab8b4de488568c495f5503cd
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/NoviceAWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e73a0eafc857dc1428c09a663c484999
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7a37b98696e97a4aa794da9579bdc1f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF2C\uFF5A\uFF45\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e81773aaddb5a694780cb9a6d7c74196
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e859fa81f4660734592c0e473461a1b5
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF33.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8620f2acb7563f478e9c5a3c02443ca
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCLSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8901d45bbf201c448bfc2348f39ac3f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8c5173df8765bf47a8f1ff723bb15fe
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e968200d7d506e44a8472e58535384f8
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9a66450f7059db44b079cec8430c492
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF26\uFF45\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea730e6f5c001c34fa58cd52e6a7ecd5
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eac946e9cb4cbbc4ea60dbf0fd322fed
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FSSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb7a975dfdfc95d45ae2f355dea36543
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb7ae79dacbbf9e49bd63e503d7b1947
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF21\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ecfb699a3affd124cb50f11b0735f487
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF34\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee36327f316155d4a820a1d85b877dbd
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump23A.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eed7ab452b33f6d44aab93f2cede173a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/USp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef287b1ed92730248abe455c60b6337f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF45\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef9d55cd341ba4941be93591e3b676b4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efb1b531915800d4a803165a00a614f9
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/USp4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f03ca1f476fccad4cafd14e14e95cbf3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1056dc16f8ad904db46f78b3b3567f1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinOnepositionCamelSitLayback.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1286539de068db49a8fc2e71cc8ffd4
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1a32920eab0cc641b06f0bd12dab3a7
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1b44c0f8cf7d8a4f8f1f6ce51ebdb43
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUGPNHKTrophy2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1f22ed34f8ce0d488f326ae90d635b7
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1f90916462a0064da1ddb76f7ee5052
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CoSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f36b5c7b108401b48a36a4aef98d2f83
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceable/JumpTLo.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f37acb51fc95ede4b848bda74316c0c4
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3c09a95e51f87946ab3de8ab5433508
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Sex/Men.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3cc5f748982f574b876ad96de2b7da0
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/StSq4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3cea497542a97a4ea833fe54c9f5634
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF12\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f47bc56e3ad652d4e8dc1fe43f0292b9
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/Jump.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f52d1a7f38724814e8467a8538842a45
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/NoviceAMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5a35abf2cc12d642ad15d0c9416ff29
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f60358aaabb5c644bbf46811fa4de3e0
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f62e862661ce9434ab02325686f511fd
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/JumpM2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f68adcfef2460fc4db41565b8d59b5b9
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/LSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f765f70753081db448b9def2728b58b1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUJGPPGESolidarityCup2023.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7c3aac6037f0a8449987427e0ade10a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CUSp2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7f0be2bdb95923468c712cb12a8c352
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8678632929631049bcec313911b50fe
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/JuniorMenSingle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f890b92a14b088b4c8e51164da98763b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF34\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f898b912615bb9a4d9a144670c627e9f
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF25\uFF55\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8e1678aca0fd5f44bd1b9dfbbc172d9
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/2F.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9b784a442937d445a4ae82db2a06e78
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCUSpB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa02ad1b5b5378e4c81e7869ab7c2f6b
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF12.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: faa8c56b9f583ec46ba987529d5a034b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/JuniorMenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fad1d14e89602de48aa4fbcf46081ad8
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF12\uFF26\uFF01\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb01d944fd0862b4aa82d23ec0d78bfe
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb4ed9edb5b472241bf935b41502ebb9
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSp1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbd38e3dc1423094086f21591712e7e1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbdacc2bf24d92e42846adf91f9905d0
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc0937c86b4d88c4ba9094af6f927806
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementPlaceableSet/SpinOneposition.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc648431d09f67e469a79575ed0707a3
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc70dd6a92602184d9e6901ad9a0a955
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF01\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcc1aca26d3f39142bee24c61a393ed7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd45d8722a79c8a4185fe05b49f9c96a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/KinkiRegional.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdf728918185815478536c8d03619fef
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdfc048903a76a8468415460a7cfb46e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Competition/ISUWorldChampionships2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: feb5663ee9445f24cbaaa596b50c1610
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/UI/JudgesScore.uxml
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff6a1194699e29a4985a39405a188642
+    m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF33\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: f704bbf972370b644999ef8b0b5c9d31, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: bfcc2fe163d48bd41b2749b58ad661a2, type: 2}
+    - {fileID: 11400000, guid: f5a965979d43dbf47b1dcc8e3472aa27, type: 2}
