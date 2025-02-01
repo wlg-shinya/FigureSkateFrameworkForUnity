@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Wlg.FigureSkate.Core.Data;
 
@@ -11,10 +12,19 @@ namespace Wlg.FigureSkate.Core
         public ProgramComponent[] ProgramComponents { get; private set; }
         public string ErrorMessage { get; private set; } = "";
 
-        public ProgramComponentHanlder(Program program, ProgramComponent[] programComponent)
+        public ProgramComponentHanlder(
+            Program program,
+            ProgramComponent[] programComponent,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             Program = program;
             ProgramComponents = programComponent;
+            _programComponentRegulationAll = programComponentRegulationAll;
+            _elementPlaceableSetAll = elementPlaceableSetAll;
+            _elementPlaceableAll = elementPlaceableAll;
             UpdateErrorMessage();
         }
 
@@ -36,8 +46,8 @@ namespace Wlg.FigureSkate.Core
             // インデックス範囲チェック
             CheckIndexOutOfRange(componentIndex, elementIndex);
 
-            var elementPlaceableSet = ProgramUtility.ElementPlaceableSetById(Program, ProgramComponents[componentIndex].elementPlaceableSetId);
-            var elementPlaceable = elementPlaceableSet.elementPlaceables[elementIndex];
+            var elementPlaceableSet = Array.Find(_elementPlaceableSetAll, x => x.id.Equals(ProgramComponents[componentIndex].elementPlaceableSetId)) ?? throw new Exception($"Not found '{ProgramComponents[componentIndex].elementPlaceableSetId}'");
+            var elementPlaceable = Array.Find(_elementPlaceableAll, x => x.id.Equals(elementPlaceableSet.elementPlaceableIds[elementIndex])) ?? throw new Exception($"Not found '{elementPlaceableSet.elementPlaceableIds[elementIndex]}'");
 
             // 今回の要素を追加したうえで一つでも設定可能条件を満たしていない場合は追加不可
             var elementIds = ProgramComponents[componentIndex].elementIds;
@@ -84,7 +94,8 @@ namespace Wlg.FigureSkate.Core
         public void UpdateErrorMessage()
         {
             // 構成全体をみて配置可能な要素としての条件を満たしていないものを探し出す
-            var condition = Program.regulation.Conditions.Find(condition => !condition.Condition(ProgramComponents));
+            var regulation = ProgramUtility.GetProgramComponentRegulationById(_programComponentRegulationAll, Program.programComponentRegulationId);
+            var condition = regulation.Conditions.Find(condition => !condition.Condition(ProgramComponents));
 
             // エラーメッセージの更新
             ErrorMessage = condition != null ? condition.falseMessage : "";
@@ -103,6 +114,10 @@ namespace Wlg.FigureSkate.Core
                 throw new ArgumentOutOfRangeException($"elementIndex = {elementIndex}");
             }
         }
+
+        private readonly ProgramComponentRegulation[] _programComponentRegulationAll;
+        private readonly ElementPlaceableSet[] _elementPlaceableSetAll;
+        private readonly ElementPlaceable[] _elementPlaceableAll;
 
         // 内部で使う一時変数の事前確保。要素数は最大コンビネーション数と同値
         private readonly string[] _placedElementIdsBuffer = new string[Constant.ELEMENT_IN_COMBINATION_MAX_COUNT];

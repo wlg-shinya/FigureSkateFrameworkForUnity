@@ -29,14 +29,18 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
+            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
-                elementObjectAll.Select(x => x.data).ToList(),
-                elementBaseValueObjectAll.Select(x => x.data).ToList(),
-                goeObjectAll.Select(x => x.data).ToList(),
-                goePlusObjectAll.Select(x => x.data).ToList(),
-                goeMinusObjectAll.Select(x => x.data).ToList()
+                elementObjectAll.Select(x => x.data).ToArray(),
+                elementBaseValueObjectAll.Select(x => x.data).ToArray(),
+                goeObjectAll.Select(x => x.data).ToArray(),
+                goePlusObjectAll.Select(x => x.data).ToArray(),
+                goeMinusObjectAll.Select(x => x.data).ToArray(),
+                programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
+                elementPlaceableSetObjectAll.Select(x => x.data).ToArray()
                 );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("CheckTesGoePlusValue", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -106,14 +110,18 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
+            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
-                elementObjectAll.Select(x => x.data).ToList(),
-                elementBaseValueObjectAll.Select(x => x.data).ToList(),
-                goeObjectAll.Select(x => x.data).ToList(),
-                goePlusObjectAll.Select(x => x.data).ToList(),
-                goeMinusObjectAll.Select(x => x.data).ToList()
+                elementObjectAll.Select(x => x.data).ToArray(),
+                elementBaseValueObjectAll.Select(x => x.data).ToArray(),
+                goeObjectAll.Select(x => x.data).ToArray(),
+                goePlusObjectAll.Select(x => x.data).ToArray(),
+                goeMinusObjectAll.Select(x => x.data).ToArray(),
+                programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
+                elementPlaceableSetObjectAll.Select(x => x.data).ToArray()
                 );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("CheckTesGoeMinusValue", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -213,14 +221,18 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
+            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
-                elementObjectAll.Select(x => x.data).ToList(),
-                elementBaseValueObjectAll.Select(x => x.data).ToList(),
-                goeObjectAll.Select(x => x.data).ToList(),
-                goePlusObjectAll.Select(x => x.data).ToList(),
-                goeMinusObjectAll.Select(x => x.data).ToList()
+                elementObjectAll.Select(x => x.data).ToArray(),
+                elementBaseValueObjectAll.Select(x => x.data).ToArray(),
+                goeObjectAll.Select(x => x.data).ToArray(),
+                goePlusObjectAll.Select(x => x.data).ToArray(),
+                goeMinusObjectAll.Select(x => x.data).ToArray(),
+                programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
+                elementPlaceableSetObjectAll.Select(x => x.data).ToArray()
                 );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("CheckTesJump", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -253,14 +265,18 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
+            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
-                elementObjectAll.Select(x => x.data).ToList(),
-                elementBaseValueObjectAll.Select(x => x.data).ToList(),
-                goeObjectAll.Select(x => x.data).ToList(),
-                goePlusObjectAll.Select(x => x.data).ToList(),
-                goeMinusObjectAll.Select(x => x.data).ToList()
+                elementObjectAll.Select(x => x.data).ToArray(),
+                elementBaseValueObjectAll.Select(x => x.data).ToArray(),
+                goeObjectAll.Select(x => x.data).ToArray(),
+                goePlusObjectAll.Select(x => x.data).ToArray(),
+                goeMinusObjectAll.Select(x => x.data).ToArray(),
+                programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
+                elementPlaceableSetObjectAll.Select(x => x.data).ToArray()
                 );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("RecordTes", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -315,14 +331,18 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
+            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
-                elementObjectAll.Select(x => x.data).ToList(),
-                elementBaseValueObjectAll.Select(x => x.data).ToList(),
-                goeObjectAll.Select(x => x.data).ToList(),
-                goePlusObjectAll.Select(x => x.data).ToList(),
-                goeMinusObjectAll.Select(x => x.data).ToList()
+                elementObjectAll.Select(x => x.data).ToArray(),
+                elementBaseValueObjectAll.Select(x => x.data).ToArray(),
+                goeObjectAll.Select(x => x.data).ToArray(),
+                goePlusObjectAll.Select(x => x.data).ToArray(),
+                goeMinusObjectAll.Select(x => x.data).ToArray(),
+                programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
+                elementPlaceableSetObjectAll.Select(x => x.data).ToArray()
                 );
             Assert.IsNotNull(judge);
             var methodInfo = judge.GetType().GetMethod("CheckPcs", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -386,6 +406,9 @@ namespace Wlg.FigureSkate.Tests.Fact
             var competitionObjectAll = await CompetitionObjectQuery.All(baseday);
             var eventObjectAll = await EventObjectQuery.All();
             var programObjectAll = await ProgramObjectQuery.All(baseday);
+            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
+            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All(baseday);
             CompetitionObject competitionObject = CompetitionObjectQuery.ById(competitionObjectAll, "KinoshitaGroupCupJapanOpen2023");
             ProgramComponentHanlder programComponentHanlderHanlder;
             {
@@ -396,9 +419,16 @@ namespace Wlg.FigureSkate.Tests.Fact
                         .Select(eventObject => eventObject.data.programIds.Where(programId => Equals(programId, "SeniorMenShortProgram")).First())
                         .First()
                     );
-                programObject = ProgramObjectQuery.SetupConditions(programObject);
-                var programComponents = ProgramComponentQuery.Create(programObject.data);
-                programComponentHanlderHanlder = new ProgramComponentHanlder(programObject.data, programComponents);
+                programObject = ProgramObjectQuery.SetupConditions(programObject, programComponentRegulationObjectAll, elementPlaceableSetObjectAll);
+                var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjectAll, programObject.data.programComponentRegulationId);
+                var programComponents = ProgramComponentQuery.Create(regulation.data, elementPlaceableSetObjectAll);
+                programComponentHanlderHanlder = new ProgramComponentHanlder(
+                    programObject.data,
+                    programComponents,
+                    programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
+                    elementPlaceableSetObjectAll.Select(x => x.data).ToArray(),
+                    elementPlaceableObjectAll.Select(x => x.data).ToArray()
+                    );
                 Assert.IsNotNull(programComponentHanlderHanlder);
             }
             programComponentHanlderHanlder.TrySet(0, 0, "3A");

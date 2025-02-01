@@ -17,6 +17,15 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("Senior", "Men")]
         [TestCase("Senior", "Women")]
         public async Task KinoshitaGroupCupJapanOpen2023(string classId, string sexId) => await Competition("KinoshitaGroupCupJapanOpen2023", new(2023, 10, 7), classId, sexId);
+        [TestCase("Junior", "Men")]
+        [TestCase("Junior", "Women")]
+        public async Task ISUWorldJuniorChampionships2024(string classId, string sexId) => await Competition("ISUWorldJuniorChampionships2024", new(2024, 2, 26), classId, sexId);
+        [TestCase("NoviceA", "Men")]
+        [TestCase("NoviceA", "Women")]
+        [TestCase("NoviceB", "Men")]
+        [TestCase("NoviceB", "Women")]
+        public async Task NationalNovice(string classId, string sexId) => await Competition("NationalNovice", new(2023, 10, 20), classId, sexId);
+
 
         private async Task Competition(string competitionName, YearMonthDay startDay, string classId, string sexId)
         {
@@ -92,6 +101,9 @@ namespace Wlg.FigureSkate.Tests.Fact
             var classObjectAll = await ClassObjectQuery.All(startDay);
             var eventObjectAll = await EventObjectQuery.All();
             var programObjectAll = await ProgramObjectQuery.All(startDay);
+            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(startDay);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(startDay);
+            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All(startDay);
             var competitionObjectAll = await CompetitionObjectQuery.All(startDay);
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(startDay);
             var goeObjectAll = await GoeObjectQuery.All(startDay);
@@ -110,77 +122,83 @@ namespace Wlg.FigureSkate.Tests.Fact
             Assert.AreEqual(competitionObject.data.startDay, startDay);
 
             // 大会中のイベントに合わせてプログラム構成を構築
-            var programObjects = ProgramObjectQuery.ByPlayerWithSetupConditions(competitionObject, eventObjectAll, programObjectAll, player);
+            var programObjects = ProgramObjectQuery.ByPlayerWithSetupConditions(competitionObject, eventObjectAll, programObjectAll, programComponentRegulationObjectAll, elementPlaceableSetObjectAll, player);
             player.programComponentsList = new Player.ProgramComponents[programObjects.Count()];
             var programComponentHanlders = new List<ProgramComponentHanlder>();
+
+            var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
+            var elementBaseValueAll = elementBaseValueObjectAll.Select(x => x.data).ToArray();
             for (var i = 0; i < programObjects.Count(); i++)
             {
                 var programObject = programObjects[i];
+                var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjectAll, programObject.data.programComponentRegulationId);
                 player.programComponentsList[i] = new()
                 {
-                    components = ProgramComponentQuery.Create(programObject.data)
+                    components = ProgramComponentQuery.Create(regulation.data, elementPlaceableSetObjectAll)
                 };
                 if (Equals(programObject.name, "SeniorMenShortProgram"))
                 {
-                    var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, player.programComponentsList[i].components);
+                    var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
                     programComponentHanlders.Add(programComponentHanlder);
 
                     // 合計基礎点テスト
                     {
-                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementBaseValueObjectAll, 0), 39.72f);
+                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementPlaceableSetAll, elementBaseValueAll, 0), 39.72f);
                         // 入れ替えによってジャンプボーナスが変わっているはず
                         programComponentHanlder.Swap(0, 2);
-                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementBaseValueObjectAll, 0), 39.7f);
+                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementPlaceableSetAll, elementBaseValueAll, 0), 39.7f);
                         // 入れ替えたものを元に戻す
                         programComponentHanlder.Swap(2, 0);
                         // GOE最大・最小の値が想定通りか
-                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementBaseValueObjectAll, -5), 19.86f);
-                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementBaseValueObjectAll, 5), 59.58f);
+                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementPlaceableSetAll, elementBaseValueAll, -5), 19.86f);
+                        Assert.AreApproximatelyEqual(ProgramUtility.EstimateTotalBaseValue(programObject.data, player.programComponentsList[i].components, elementPlaceableSetAll, elementBaseValueAll, 5), 59.58f);
                     }
                 }
                 else if (Equals(programObject.name, "SeniorWomenShortProgram"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "SeniorMenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "SeniorWomenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorWomenFreeSkating(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorWomenFreeSkating(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorMenShortProgram"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorWomenShortProgram"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorMenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorMenFreeSkating(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorMenFreeSkating(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorWomenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "NoviceAMenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceAMenFreeSkating(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceAMenFreeSkating(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "NoviceAWomenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceAWomenFreeSkating(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceAWomenFreeSkating(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "NoviceBMenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceBMenFreeSkating(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceBMenFreeSkating(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "NoviceBWomenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceBWomenFreeSkating(programObject.data, player.programComponentsList[i].components));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceBWomenFreeSkating(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else throw new Exception($"Invalid ProgramObject.name = {programObject.name}");
             }
@@ -192,11 +210,13 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Judge(
                     programComponentHanlder.Program,
                     programComponentHanlder.ProgramComponents,
-                    elementObjectAll.Select(x => x.data).ToList(),
-                    elementBaseValueObjectAll.Select(x => x.data).ToList(),
-                    goeObjectAll.Select(x => x.data).ToList(),
-                    goePlusObjectAll.Select(x => x.data).ToList(),
-                    goeMinusObjectAll.Select(x => x.data).ToList()
+                    elementObjectAll.Select(x => x.data).ToArray(),
+                    elementBaseValueAll,
+                    goeObjectAll.Select(x => x.data).ToArray(),
+                    goePlusObjectAll.Select(x => x.data).ToArray(),
+                    goeMinusObjectAll.Select(x => x.data).ToArray(),
+                    programComponentRegulationAll,
+                    elementPlaceableSetAll
                     );
             }
         }
@@ -204,17 +224,19 @@ namespace Wlg.FigureSkate.Tests.Fact
         private void Judge(
             Program program,
             ProgramComponent[] programComponents,
-            List<Element> elementAll,
-            List<ElementBaseValue> elementBaseValueAll,
-            List<Goe> goeAll,
-            List<GoePlus> goePlusAll,
-            List<GoeMinus> goeMinusAll
+            Element[] elementAll,
+            ElementBaseValue[] elementBaseValueAll,
+            Goe[] goeAll,
+            GoePlus[] goePlusAll,
+            GoeMinus[] goeMinusAll,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll
             )
         {
             UnityEngine.Random.InitState(DateTime.Now.Millisecond);
             int Random0To99() => UnityEngine.Random.Range(0, 100);
 
-            var judge = new Judge(program, programComponents, elementAll, elementBaseValueAll, goeAll, goePlusAll, goeMinusAll);
+            var judge = new Judge(program, programComponents, elementAll, elementBaseValueAll, goeAll, goePlusAll, goeMinusAll, programComponentRegulationAll, elementPlaceableSetAll);
             judge.Execute(
                 // GOE加点項目のチェックを通ったらtrueを返す
                 (GoePlus goePlus, Element element) =>

@@ -16,15 +16,15 @@ namespace Wlg.FigureSkate.Core.Data
             var groups = components.Where(argument => elementPlaceableSetIds.Any(id => Equals(id, argument.elementPlaceableSetId)));
 
             // ほかの構成の中に自身に設定されている構成要素がひとつでも含まれていたらfalse
-            return !groups.Any(group =>
+            return !groups.Any(group1 =>
             {
-                return group.elementIds.Any(elementId =>
+                return group1.elementIds.Any(elementId =>
                 {
                     if (!string.IsNullOrEmpty(elementId))
                     {
                         return groups.Any(group2 =>
                         {
-                            if (!Equals(group.elementPlaceableSetId, group2.elementPlaceableSetId))
+                            if (!ReferenceEquals(group1, group2))
                             {
                                 return group2.elementIds.Any(x => Equals(x, elementId));
                             }

@@ -15,6 +15,10 @@ MonoBehaviour:
   data:
     falseMessage: "\u540C\u3058\u30B8\u30E3\u30F3\u30D7\u3092\u8907\u6570\u69CB\u6210\u3059\u308B\u3053\u3068\u306F\u3067\u304D\u307E\u305B\u3093"
     elementPlaceableSetIds:
-    - JumpAxel
-    - JumpSingle
-    - JumpCombination
+    - Jump2A
+    - Jump23Lz
+    - Jump23-33Combination
+    - Jump23A
+    - Jump34
+    - Jump23-33-42-43Combination
+    - Jump3

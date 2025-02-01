@@ -19,4 +19,28 @@ MonoBehaviour:
     minValue: -2
     maxValue: -2
     mark: q
-    targetElementIds: []
+    targetElementIds:
+    - 1T
+    - 1S
+    - 1Lo
+    - 1F
+    - 1Lz
+    - 1A
+    - 2T
+    - 2S
+    - 2Lo
+    - 2F
+    - 2Lz
+    - 2A
+    - 3T
+    - 3S
+    - 3Lo
+    - 3F
+    - 3Lz
+    - 3A
+    - 4T
+    - 4S
+    - 4Lo
+    - 4F
+    - 4Lz
+    - 4A

@@ -1,11 +1,11 @@
 id,description,group,minValue,maxValue,mark,targetElementIds
 JumpM1,ダウングレード,Rotate,-3,-4,<<,
-JumpM2,回転数不足,Rotate,-2,-3,<,
-JumpM3,４分の１不足で着地,Rotate,-2,-2,q,
+JumpM2,回転数不足,Rotate,-2,-3,<,1T/1S/1Lo/1F/1Lz/1A/2T/2S/2Lo/2F/2Lz/2A/3T/3S/3Lo/3F/3Lz/3A/4T/4S/4Lo/4F/4Lz/4A
+JumpM3,４分の１不足で着地,Rotate,-2,-2,q,1T/1S/1Lo/1F/1Lz/1A/2T/2S/2Lo/2F/2Lz/2A/3T/3S/3Lo/3F/3Lz/3A/4T/4S/4Lo/4F/4Lz/4A
 JumpM4,F/Lzの踏み切りエッジが違う,Edge,-2,-4,e,F/2F/3F/4F/Lz/2Lz/3Lz/4Lz
 JumpM5,F/Lzの踏み切りエッジが不明確,Edge,-1,-2,!,F/2F/3F/4F/Lz/2Lz/3Lz/4Lz
 JumpM6,片手またはフリー・フットがタッチ・ダウン（ジャンプ間を含む）,,-1,-2,,
-SpinM1,バランスを崩した,,-1,-3,<<,
+SpinM1,バランスを崩した,,-1,-3,,
 SpinM2,基本姿勢を２種類しか含まなかった,,0,0,V,FUSp/FLSp/FCSp/FSSp/CUSp/FCUSp/CLSp/FCLSp/CCSp/FCCSp/CSSp/FCSSp/CoSp/FCoSp/CCoSp/FCCoSp
 StepSequenceM1,つまずき,,-1,-3,,
 ChoreographicSequenceM1,つまずき,,-1,-3,,

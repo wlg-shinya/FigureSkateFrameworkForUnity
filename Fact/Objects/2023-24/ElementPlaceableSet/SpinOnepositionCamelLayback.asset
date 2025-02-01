@@ -17,5 +17,4 @@ MonoBehaviour:
     name: "\u5358\u4E00\u59FF\u52E2\u30AD\u30E3\u30E1\u30EB/\u30EC\u30A4\u30D0\u30C3\u30AF\u30B9\u30D4\u30F3"
     jump: 0
     elementPlaceableIds:
-    - SpinCamelLaybackNoChangefoot
-    elementPlaceables: []
+    - SpinOnepositionCamelLayback

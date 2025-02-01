@@ -18,4 +18,3 @@ MonoBehaviour:
     jump: 1
     elementPlaceableIds:
     - Jump23Lz
-    elementPlaceables: []

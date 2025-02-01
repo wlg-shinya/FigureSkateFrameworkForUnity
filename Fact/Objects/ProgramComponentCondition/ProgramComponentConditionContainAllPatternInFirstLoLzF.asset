@@ -15,11 +15,8 @@ MonoBehaviour:
   data:
     falseMessage: "\u7B2C1\u30B8\u30E3\u30F3\u30D7\u306B\u30EB\u30FC\u30D7\u3001\u30EB\u30C3\u30C4\u3001\u30D5\u30EA\u30C3\u30D7\u306E3\u7A2E\u985E\u3092\u542B\u3081\u3066\u304F\u3060\u3055\u3044"
     elementPlaceableSetIds:
-    - Jump1
-    - Jump2
-    - Jump3
-    - Jump4
-    - Jump2Combination1
+    - Jump
+    - Jump2Combination
     - Jump3Combination
     patterns:
     - .*Lo$

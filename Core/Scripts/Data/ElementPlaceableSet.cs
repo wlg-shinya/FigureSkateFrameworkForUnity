@@ -16,8 +16,6 @@ namespace Wlg.FigureSkate.Core.Data
         // プログラム構成に設定可能な構成要素ID群。コンビネーションジャンプの場合は配列要素数が増加する
         public string[] elementPlaceableIds;
 
-        // プログラム構成に設定可能な構成要素群。ジャンプの単独かコンビネーションかを表現
-        public ElementPlaceable[] elementPlaceables;
         // 項目内が規則に準じているかの判定群
         public List<ElementPlaceableSetCondition> Conditions { get; private set; } = new(); // このプロパティはプログラム上でセットアップする
     }

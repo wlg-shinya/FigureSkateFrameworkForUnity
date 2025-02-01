@@ -15,11 +15,13 @@ namespace Wlg.FigureSkate.Core
         public Judge(
             Program program,
             ProgramComponent[] programComponents,
-            List<Element> elementAll,
-            List<ElementBaseValue> elementBaseValueAll,
-            List<Goe> goeAll,
-            List<GoePlus> goePlusAll,
-            List<GoeMinus> goeMinusAll
+            Element[] elementAll,
+            ElementBaseValue[] elementBaseValueAll,
+            Goe[] goeAll,
+            GoePlus[] goePlusAll,
+            GoeMinus[] goeMinusAll,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll
             )
         {
             _program = program;
@@ -29,6 +31,8 @@ namespace Wlg.FigureSkate.Core
             _goeAll = goeAll;
             _goePlusAll = goePlusAll;
             _goeMinusAll = goeMinusAll;
+            _programComponentRegulationAll = programComponentRegulationAll;
+            _elementPlaceableSetAll = elementPlaceableSetAll;
 
             // 判定の詳細データの初期化
             var componentLength = _programComponents.Length;
@@ -101,7 +105,9 @@ namespace Wlg.FigureSkate.Core
 
                 // 審判ごとのGOEを判定
                 CheckTesRefereeGoe(tes, component, goeMinus, successGoePlus, successGoeMinus, checkGoeMinusValue);
-                if (_program.regulation.elementPlaceableSets[ProgramComponentIndex].jump)
+                var regulation = ProgramUtility.GetProgramComponentRegulationById(_programComponentRegulationAll, _program.programComponentRegulationId);
+                var elementPlaceableSet = Array.Find(_elementPlaceableSetAll, x => x.id.Equals(regulation.elementPlaceableSetIds[ProgramComponentIndex])) ?? throw new Exception($"Not found '{regulation.elementPlaceableSetIds[ProgramComponentIndex]}'");
+                if (elementPlaceableSet.jump)
                 {
                     // ジャンプ専用の転倒判定
                     // 転倒した場合は審判GOEも更新するのでこれ以降に審判GOEを変えると転倒ペナルティが正常に反映されないので注意
@@ -129,7 +135,7 @@ namespace Wlg.FigureSkate.Core
                     .Min((data) => // 連続で要素を実行する場合のGOEは最も低い値を採用する
                     {
                         // プログラム構成した要素から要素データを特定
-                        var element = _elementAll.Find(x => Equals(x.id, data.elementId)) ?? throw new Exception($"Not found '{data.elementId}'");
+                        var element = Array.Find(_elementAll, x => Equals(x.id, data.elementId)) ?? throw new Exception($"Not found '{data.elementId}'");
                         // 要素データを用いてGOE判定を行う
                         var goePlusValue = CheckTesGoePlusValue(element, successGoePlus);
                         var goeMinusValue = CheckTesGoeMinusValue(element, goeMinus[refereeIndex][data.index], successGoeMinus, checkGoeMinusValue);
@@ -142,8 +148,8 @@ namespace Wlg.FigureSkate.Core
         // GOE加点値の判定
         private int CheckTesGoePlusValue(Element element, SuccessGoePlus successGoePlus)
         {
-            var goe = _goeAll.Find(x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found goe '{element.goeId}'");
-            var goePlusObjs = goe.plusIds.Select(id => _goePlusAll.Find(obj => obj.id.Equals(id)) ?? throw new Exception($"Not found goePlus '{id}'")).ToList();
+            var goe = Array.Find(_goeAll, x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found goe '{element.goeId}'");
+            var goePlusObjs = goe.plusIds.Select(id => Array.Find(_goePlusAll, obj => obj.id.Equals(id)) ?? throw new Exception($"Not found goePlus '{id}'")).ToList();
 
             // 成否判定
             var result = goePlusObjs.Select(x => successGoePlus(x, element));
@@ -161,8 +167,8 @@ namespace Wlg.FigureSkate.Core
         // 減点項目(GoeMinus)の生成も行う
         private int CheckTesGoeMinusValue(Element element, List<GoeMinus> goeMinus, SuccessGoeMinus successGoeMinus, CheckGoeMinusValue checkGoeMinusValue)
         {
-            var goe = _goeAll.Find(x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found goe '{element.goeId}'");
-            var goeMinusObjs = goe.minusIds.Select(id => _goeMinusAll.Find(obj => obj.id.Equals(id)) ?? throw new Exception($"Not found goeMinus '{id}'")).ToList();
+            var goe = Array.Find(_goeAll, x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found goe '{element.goeId}'");
+            var goeMinusObjs = goe.minusIds.Select(id => Array.Find(_goeMinusAll, obj => obj.id.Equals(id)) ?? throw new Exception($"Not found goeMinus '{id}'")).ToList();
 
             // 成否判定を行いチェックに引っかかった減点項目の一覧を得る
             var minusFails = goeMinusObjs
@@ -277,7 +283,7 @@ namespace Wlg.FigureSkate.Core
             // 実行済み要素。コンビネーションの場合は+でつなぎ合わせる
             tes.executedElement = markedIds.Aggregate("", (a, c) => Equals(a, "") ? c : $"{a}+{c}");
             // 最終ジャンプかどうか
-            tes.lastJump = ProgramUtility.IsLastJumpElementPlaceableSetId(_program, _programComponents, component.elementPlaceableSetId);
+            tes.lastJump = ProgramUtility.IsLastJumpElementPlaceableSetId(_program, _programComponents, _elementPlaceableSetAll, component.elementPlaceableSetId);
             // 基礎点。採点結果にはジャンプボーナス適用後を設定する
             // 違反による基礎点減少倍率はGOEにも影響するのでローカルbaseValueに適用する
             // ダウングレードの場合はダウングレード先の基礎点を参照する
@@ -287,7 +293,7 @@ namespace Wlg.FigureSkate.Core
             var baseValue = markedIds
                 .Sum(markedId =>
                 {
-                    var elementBaseValue = _elementBaseValueAll.Find(x => Equals(x.id, markedId)) ?? throw new Exception($"Not found '{markedId}' in _elementBaseValueAll");
+                    var elementBaseValue = Array.Find(_elementBaseValueAll, x => Equals(x.id, markedId)) ?? throw new Exception($"Not found '{markedId}' in _elementBaseValueAll");
                     return elementBaseValue.baseValue;
                 });
             tes.baseValue = baseValue * lastJumpFactor;
@@ -352,15 +358,19 @@ namespace Wlg.FigureSkate.Core
         // 採点するプログラム構成
         private readonly ProgramComponent[] _programComponents;
         // 採点対象の全構成要素
-        private readonly List<Element> _elementAll;
+        private readonly Element[] _elementAll;
         // 採点対象の全構成要素の基礎点
-        private readonly List<ElementBaseValue> _elementBaseValueAll;
+        private readonly ElementBaseValue[] _elementBaseValueAll;
         // 全GOE
-        private readonly List<Goe> _goeAll;
+        private readonly Goe[] _goeAll;
         // 全GOE加点項目
-        private readonly List<GoePlus> _goePlusAll;
+        private readonly GoePlus[] _goePlusAll;
         // 全GOE減点項目
-        private readonly List<GoeMinus> _goeMinusAll;
+        private readonly GoeMinus[] _goeMinusAll;
+        // 全プログラム構成要素の規則データ
+        private readonly ProgramComponentRegulation[] _programComponentRegulationAll;
+        // 全プログラム構成項目データ
+        private readonly ElementPlaceableSet[] _elementPlaceableSetAll;
 
         // GOE減点項目
         private readonly List<GoeMinus>[][][] _goeMinus;

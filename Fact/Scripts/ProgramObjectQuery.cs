@@ -41,24 +41,38 @@ namespace Wlg.FigureSkate.Fact
         }
 
         // 指定した選手にあったオブジェクトを条件セットアップ済みにしてすべて得る
-        public static List<ProgramObject> ByPlayerWithSetupConditions(CompetitionObject competitionObject, List<EventObject> eventObjects, List<ProgramObject> programObjects, Player player)
+        public static List<ProgramObject> ByPlayerWithSetupConditions(
+            CompetitionObject competitionObject,
+            List<EventObject> eventObjects,
+            List<ProgramObject> programObjects,
+            List<ProgramComponentRegulationObject> programComponentRegulationObjects,
+            List<ElementPlaceableSetObject> elementPlaceableSetObjects,
+            Player player
+            )
         {
-            return ByPlayer(competitionObject, eventObjects, programObjects, player).Select(programObject => SetupConditions(programObject)).ToList();
+            return ByPlayer(competitionObject, eventObjects, programObjects, player)
+                .Select(programObject => SetupConditions(programObject, programComponentRegulationObjects, elementPlaceableSetObjects))
+                .ToList();
         }
 
         // 指定したプログラムの構成要素設定条件のセットアップ
-        public static ProgramObject SetupConditions(ProgramObject programObject)
+        public static ProgramObject SetupConditions(
+            ProgramObject programObject,
+            List<ProgramComponentRegulationObject> programComponentRegulationObjects,
+            List<ElementPlaceableSetObject> elementPlaceableSetObjects
+            )
         {
             // 構成ひとつに対する条件設定をプログラムにつなぎ合わせる
             foreach (var data in programObject.elementPlaceableSetConditionObjectDataList)
             {
-                var elementPlaceableSet = programObject.data.regulation.elementPlaceableSets.ToList().Find(x => x.id == data.id) ?? throw new Exception($"Not found id '{data.id}' in elementPlaceableSets");
+                var elementPlaceableSet = ElementPlaceableSetObjectQuery.ById(elementPlaceableSetObjects, data.id).data;
                 elementPlaceableSet.Conditions.Add(data.obj.Data());
             }
             // 構成全体に対する条件設定をプログラムにつなぎ合わせる
+            var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjects, programObject.data.programComponentRegulationId).data;
             foreach (var obj in programObject.ProgramComponentConditionObjects)
             {
-                programObject.data.regulation.Conditions.Add(obj.Data());
+                regulation.Conditions.Add(obj.Data());
             }
             return programObject;
         }

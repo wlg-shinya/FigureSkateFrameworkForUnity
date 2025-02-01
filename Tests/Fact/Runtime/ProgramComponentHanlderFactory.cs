@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Wlg.FigureSkate.Core;
 using Wlg.FigureSkate.Core.Data;
 using Assert = UnityEngine.Assertions.Assert;
@@ -7,10 +8,16 @@ namespace Wlg.FigureSkate.Tests.Fact
     public static class ProgramComponentHanlderFactory
     {
         // ここで ProgramComponentHanlder クラス自体のテストも兼ねる
-        public static ProgramComponentHanlder SeniorMenShortProgram(Program program, ProgramComponent[] components)
+        public static ProgramComponentHanlder SeniorMenShortProgram(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, components);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -69,10 +76,16 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder SeniorWomenShortProgram(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder SeniorWomenShortProgram(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponent);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -124,10 +137,16 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder SeniorMenFreeSkating(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder SeniorMenFreeSkating(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponent);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -253,7 +272,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     SetupValidProgramComponent(programComponentHanlder);
                 }
 
-                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るのでやめましょう"
+                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
                 {
                     programComponentHanlder.TrySet(0, 0, "4T");
                     programComponentHanlder.TrySet(2, 0, "4T");
@@ -279,15 +298,27 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder SeniorWomenFreeSkating(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder SeniorWomenFreeSkating(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
-            return SeniorMenFreeSkating(program, programComponent);
+            return SeniorMenFreeSkating(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
         }
 
-        public static ProgramComponentHanlder JuniorMenShortProgram(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder JuniorMenShortProgram(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponent);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -328,10 +359,16 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder JuniorWomenShortProgram(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder JuniorWomenShortProgram(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponent);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -372,10 +409,16 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder JuniorMenFreeSkating(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder JuniorMenFreeSkating(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponent);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -500,7 +543,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     SetupValidProgramComponent(programComponentHanlder);
                 }
 
-                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るのでやめましょう"
+                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
                 {
                     programComponentHanlder.TrySet(0, 0, "4T");
                     programComponentHanlder.TrySet(2, 0, "4T");
@@ -526,15 +569,27 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder JuniorWomenFreeSkating(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder JuniorWomenFreeSkating(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
-            return JuniorMenFreeSkating(program, programComponent);
+            return JuniorMenFreeSkating(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
         }
 
-        public static ProgramComponentHanlder NoviceAMenFreeSkating(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder NoviceAMenFreeSkating(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponent);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -669,7 +724,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     SetupValidProgramComponent(programComponentHanlder);
                 }
 
-                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るのでやめましょう"
+                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
                 {
                     programComponentHanlder.TrySet(1, 0, "3T");
                     programComponentHanlder.TrySet(3, 0, "3T");
@@ -698,10 +753,16 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder NoviceAWomenFreeSkating(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder NoviceAWomenFreeSkating(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponent);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -836,7 +897,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     SetupValidProgramComponent(programComponentHanlder);
                 }
 
-                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るのでやめましょう"
+                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
                 {
                     programComponentHanlder.TrySet(1, 0, "3T");
                     programComponentHanlder.TrySet(3, 0, "3T");
@@ -865,10 +926,16 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder NoviceBMenFreeSkating(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder NoviceBMenFreeSkating(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponent);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -1003,7 +1070,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     SetupValidProgramComponent(programComponentHanlder);
                 }
 
-                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るのでやめましょう"
+                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
                 {
                     programComponentHanlder.TrySet(3, 0, "3Lz");
                     programComponentHanlder.TrySet(0, 0, "3F");
@@ -1033,10 +1100,16 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder NoviceBWomenFreeSkating(Program program, ProgramComponent[] programComponent)
+        public static ProgramComponentHanlder NoviceBWomenFreeSkating(
+            Program program,
+            ProgramComponent[] programComponents,
+            ProgramComponentRegulation[] programComponentRegulationAll,
+            ElementPlaceableSet[] elementPlaceableSetAll,
+            ElementPlaceable[] elementPlaceableAll
+            )
         {
             // プログラム構成
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponent);
+            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             {
                 // 構成セット
                 void SetupValidProgramComponent(ProgramComponentHanlder programComponentHanlder)
@@ -1171,7 +1244,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     SetupValidProgramComponent(programComponentHanlder);
                 }
 
-                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るのでやめましょう"
+                // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
                 {
                     programComponentHanlder.TrySet(3, 0, "3Lz");
                     programComponentHanlder.TrySet(0, 0, "3F");

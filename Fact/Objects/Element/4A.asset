@@ -17,4 +17,4 @@ MonoBehaviour:
     name: "\u30AF\u30A2\u30C9\u30A2\u30AF\u30BB\u30EB"
     goeId: Jump
     upgradeId: 
-    downgradeId: "3\u0410"
+    downgradeId: 3A

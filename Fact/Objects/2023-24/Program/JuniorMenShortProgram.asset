@@ -13,103 +13,11 @@ MonoBehaviour:
   m_Name: JuniorMenShortProgram
   m_EditorClassIdentifier: 
   data:
-    id: JuniorMenFreeSkating
+    id: JuniorMenShortProgram
     name: "\u30B8\u30E5\u30CB\u30A2\u7537\u5B50\u30B7\u30E7\u30FC\u30C8\u30D7\u30ED\u30B0\u30E9\u30E0"
-    regulation:
-      elementPlaceableSets:
-      - id: JumpAxel
-        name: "\u30C0\u30D6\u30EB\u30A2\u30AF\u30BB\u30EB\u30B8\u30E3\u30F3\u30D7"
-        jump: 1
-        elementPlaceables:
-        - elementIds:
-          - 2A
-      - id: JumpSingle
-        name: "\u5358\u72EC\u30EB\u30C3\u30C4\u30B8\u30E3\u30F3\u30D7"
-        jump: 1
-        elementPlaceables:
-        - elementIds:
-          - 2Lz
-          - 3Lz
-      - id: JumpCombination
-        name: "\u30B8\u30E3\u30F3\u30D7\u30B3\u30F3\u30D3\u30CD\u30FC\u30B7\u30E7\u30F3"
-        jump: 1
-        elementPlaceables:
-        - elementIds:
-          - 2T
-          - 2S
-          - 2Lo
-          - 2F
-          - 2Lz
-          - 3T
-          - 3S
-          - 3Lo
-          - 3F
-          - 3Lz
-        - elementIds:
-          - 3T
-          - 3Lo
-      - id: Spin
-        name: "\u30AD\u30E3\u30E1\u30EB\u30B9\u30D4\u30F3"
-        jump: 0
-        elementPlaceables:
-        - elementIds:
-          - CSpB
-          - CSp1
-          - CSp2
-          - CSp3
-          - CSp4
-          - FCSpB
-          - FCSp1
-          - FCSp2
-          - FCSp3
-          - FCSp4
-          - CCSpB
-          - CCSp1
-          - CCSp2
-          - CCSp3
-          - CCSp4
-          - FCCSpB
-          - FCCSp1
-          - FCCSp2
-          - FCCSp3
-          - FCCSp4
-      - id: SpinFlying
-        name: "\u30D5\u30E9\u30A4\u30F3\u30B0\u30B7\u30C3\u30C8\u30B9\u30D4\u30F3"
-        jump: 0
-        elementPlaceables:
-        - elementIds:
-          - FSSpB
-          - FSSp1
-          - FSSp2
-          - FSSp3
-          - FSSp4
-      - id: SpinCombination
-        name: "\u30B9\u30D4\u30F3\u30B3\u30F3\u30D3\u30CD\u30FC\u30B7\u30E7\u30F3"
-        jump: 0
-        elementPlaceables:
-        - elementIds:
-          - CCoSpB
-          - CCoSp1
-          - CCoSp2
-          - CCoSp3
-          - CCoSp4
-          - FCCoSpB
-          - FCCoSp1
-          - FCCoSp2
-          - FCCoSp3
-          - FCCoSp4
-      - id: StepSequence
-        name: "\u30B9\u30C6\u30C3\u30D7\u30B7\u30FC\u30AF\u30A7\u30F3\u30B9"
-        jump: 0
-        elementPlaceables:
-        - elementIds:
-          - StSqB
-          - StSq1
-          - StSq2
-          - StSq3
-          - StSq4
     lastJumpSpecialFactorCount: 1
     pcsFactor: 1.67
+    programComponentRegulationId: JuniorMenShortProgram
   elementPlaceableSetConditionObjectDataList: []
   ProgramComponentConditionObjects:
   - {fileID: 11400000, guid: 0e474f596fc93e241b4253eea5c7d860, type: 2}

@@ -23,7 +23,7 @@ id,name,goeId,upgradeId,downgradeId
 4Lo,クアドループ,Jump,,3Lo
 4F,クアドフリップ,Jump,,3F
 4Lz,クアドルッツ,Jump,,3Lz
-4A,クアドアクセル,Jump,,3А
+4A,クアドアクセル,Jump,,3A
 USpB,アップライトスピン ベース,Spin,USp1,
 USp1,アップライトスピン Lv.1,Spin,USp2,USpB
 USp2,アップライトスピン Lv.2,Spin,USp3,USp1

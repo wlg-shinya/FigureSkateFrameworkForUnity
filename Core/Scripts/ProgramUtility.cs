@@ -2,19 +2,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Wlg.FigureSkate.Core.Data;
-using Wlg.FigureSkate.Core.ScriptableObjects;
 
 namespace Wlg.FigureSkate.Core
 {
     // プログラムに関するユーティリティクラス
     public static class ProgramUtility
     {
-        // 構成要素項目オブジェクトを指定IDから得る
-        public static ElementPlaceableSet ElementPlaceableSetById(Program program, string id) => program.regulation.elementPlaceableSets.ToList().Find(x => x.id == id) ?? throw new Exception($"Not found '{id}'");
+        // プログラム構成要素の規則データを指定IDから得る
+        public static ProgramComponentRegulation GetProgramComponentRegulationById(ProgramComponentRegulation[] programComponentRegulationAll, string id)
+        {
+            return Array.Find(programComponentRegulationAll, x => x.id.Equals(id));
+        }
+
+        // 構成要素項目データを指定IDから得る
+        public static ElementPlaceableSet GetElementPlaceableSetById(ElementPlaceableSet[] elementPlaceableSetAll, string id)
+        {
+            return Array.Find(elementPlaceableSetAll, x => x.id.Equals(id));
+        }
 
         // 登録した構成要素の合計基礎点（ジャンプボーナス込み、GOE考慮）の見積もり算出
         // 正式な値は Judge をする必要がある。これで得られるものはあくまでも机上の値
-        public static float EstimateTotalBaseValue(Program program, ProgramComponent[] components, List<ElementBaseValueObject> elementObjects, int goe)
+        public static float EstimateTotalBaseValue(Program program, ProgramComponent[] components, ElementPlaceableSet[] elementPlaceableSetAll, ElementBaseValue[] elementBaseValueAll, int goe)
         {
             if (Constant.GOE_MIN_VALUE > goe || goe > Constant.GOE_MAX_VALUE)
             {
@@ -22,23 +30,23 @@ namespace Wlg.FigureSkate.Core
             }
             return components.Aggregate(0.0f, (a1, c1) =>
             {
-                var factor = IsLastJumpElementPlaceableSetId(program, components, c1.elementPlaceableSetId) ? 1.1f : 1.0f;
+                var factor = IsLastJumpElementPlaceableSetId(program, components, elementPlaceableSetAll, c1.elementPlaceableSetId) ? 1.1f : 1.0f;
                 return c1.elementIds.Aggregate(0.0f, (a2, c2) =>
                 {
-                    var elementObject = elementObjects.Find(x => x.data.id.Equals(c2));
-                    var baseValue = elementObject.data.baseValue;
+                    var elementObject = Array.Find(elementBaseValueAll, x => x.id.Equals(c2));
+                    var baseValue = elementObject.baseValue;
                     switch (goe)
                     {
-                        case -5: baseValue += elementObject.data.baseValueM5; break;
-                        case -4: baseValue += elementObject.data.baseValueM4; break;
-                        case -3: baseValue += elementObject.data.baseValueM3; break;
-                        case -2: baseValue += elementObject.data.baseValueM2; break;
-                        case -1: baseValue += elementObject.data.baseValueM1; break;
-                        case 1: baseValue += elementObject.data.baseValueP1; break;
-                        case 2: baseValue += elementObject.data.baseValueP2; break;
-                        case 3: baseValue += elementObject.data.baseValueP3; break;
-                        case 4: baseValue += elementObject.data.baseValueP4; break;
-                        case 5: baseValue += elementObject.data.baseValueP5; break;
+                        case -5: baseValue += elementObject.baseValueM5; break;
+                        case -4: baseValue += elementObject.baseValueM4; break;
+                        case -3: baseValue += elementObject.baseValueM3; break;
+                        case -2: baseValue += elementObject.baseValueM2; break;
+                        case -1: baseValue += elementObject.baseValueM1; break;
+                        case 1: baseValue += elementObject.baseValueP1; break;
+                        case 2: baseValue += elementObject.baseValueP2; break;
+                        case 3: baseValue += elementObject.baseValueP3; break;
+                        case 4: baseValue += elementObject.baseValueP4; break;
+                        case 5: baseValue += elementObject.baseValueP5; break;
                     }
                     return (elementObject != null ? baseValue * factor : 0.0f) + a2;
                 }) + a1;
@@ -46,15 +54,15 @@ namespace Wlg.FigureSkate.Core
         }
 
         // 指定データはジャンプボーナス対象か
-        public static bool IsLastJumpElementPlaceableSetId(Program program, ProgramComponent[] components, string elementPlaceableSetId)
+        public static bool IsLastJumpElementPlaceableSetId(Program program, ProgramComponent[] components, ElementPlaceableSet[] elementPlaceableSetAll, string elementPlaceableSetId)
         {
-            return LastJumpElementPlaceableSetIds(program, components).Any(x => x.Equals(elementPlaceableSetId));
+            return LastJumpElementPlaceableSetIds(program, components, elementPlaceableSetAll).Any(x => x.Equals(elementPlaceableSetId));
         }
 
         // ジャンプボーナス対象の構成一覧
-        public static IEnumerable<string> LastJumpElementPlaceableSetIds(Program program, ProgramComponent[] components)
+        public static IEnumerable<string> LastJumpElementPlaceableSetIds(Program program, ProgramComponent[] components, ElementPlaceableSet[] elementPlaceableSetAll)
         {
-            var jumps = components.Where(x => ElementPlaceableSetById(program, x.elementPlaceableSetId).jump);
+            var jumps = components.Where(x => GetElementPlaceableSetById(elementPlaceableSetAll, x.elementPlaceableSetId).jump);
             return jumps
                 // 末尾から最終ジャンプ数だけデータを残す
                 .Select((x, i) => jumps.Count() - i <= program.lastJumpSpecialFactorCount ? x : null)

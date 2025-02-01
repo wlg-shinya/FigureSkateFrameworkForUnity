@@ -127,7 +127,29 @@ namespace Wlg.FigureSkate.Fact.Editor
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "GoeMinus.csv",
-                    (List<string[]> rows) => { return CSVSerializer.Deserialize<GoeMinus>(rows); },
+                    (List<string[]> rows) =>
+                    {
+                        // 配列(targetElementIds)を扱うため独自に値を設定する
+                        var result = new GoeMinus[rows.Count - 1];
+                        for (var i = 0; i < result.Length; ++i)
+                        {
+                            var rowsIndex = i + 1;
+                            result[i] = new GoeMinus
+                            {
+                                id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                description = rows[rowsIndex][Array.IndexOf(rows[0], "description")],
+                                group = rows[rowsIndex][Array.IndexOf(rows[0], "group")],
+                                minValue = int.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "minValue")]),
+                                maxValue = int.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "maxValue")]),
+                                mark = rows[rowsIndex][Array.IndexOf(rows[0], "mark")]
+                            };
+                            // targetElementIds は空データを許容しているので
+                            // データがある場合は分割データ、空データの場合は空配列を設定する
+                            var targetElementIdsIndex = Array.IndexOf(rows[0], "targetElementIds");
+                            result[i].targetElementIds = rows[rowsIndex].Length > targetElementIdsIndex ? rows[rowsIndex][targetElementIdsIndex].Split('/') : new string[] { };
+                        }
+                        return result;
+                    },
                     (GoeMinus data) => { return $"{data.id}.asset"; },
                     (GoeMinus data, GoeMinusObject obj) => { obj.data = data; }
                     );
@@ -196,13 +218,13 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (ProgramComponentRegulation data) => { return $"{data.id}.asset"; },
                     (ProgramComponentRegulation data, ProgramComponentRegulationObject obj) => { obj.data = data; }
                     );
-                // TODO:Program のcsv化のため、ProgramComponentRegulationデータの扱いを変更する
-                // CreateOrUpdateScriptableObjectFromCsv(
-                //     path,
-                //     "Program.csv",
-                //     (Program data) => { return $"{data.id}.asset"; },
-                //     (Program data, ProgramObject obj) => { obj.data = data; }
-                //     );
+                CreateOrUpdateScriptableObjectFromCsv(
+                    path,
+                    "Program.csv",
+                    (List<string[]> rows) => { return CSVSerializer.Deserialize<Program>(rows); },
+                    (Program data) => { return $"{data.id}.asset"; },
+                    (Program data, ProgramObject obj) => { obj.data = data; }
+                    );
             }
         }
 

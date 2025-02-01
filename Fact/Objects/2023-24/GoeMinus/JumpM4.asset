@@ -20,4 +20,11 @@ MonoBehaviour:
     maxValue: -4
     mark: e
     targetElementIds:
-    - F/2F/3F/4F/Lz/2Lz/3Lz/4Lz
+    - F
+    - 2F
+    - 3F
+    - 4F
+    - Lz
+    - 2Lz
+    - 3Lz
+    - 4Lz

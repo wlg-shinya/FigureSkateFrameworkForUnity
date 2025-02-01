@@ -14,8 +14,7 @@ namespace Wlg.FigureSkate.Core.Data
         public int lastJumpSpecialFactorCount;
         // 演技構成点倍率
         public float pcsFactor;
-
-        // プログラム構成要素の規則
-        public ProgramComponentRegulation regulation;
+        // プログラム構成要素の規則ID
+        public string programComponentRegulationId;
     }
 }

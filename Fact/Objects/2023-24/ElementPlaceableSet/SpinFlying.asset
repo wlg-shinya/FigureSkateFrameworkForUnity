@@ -18,4 +18,3 @@ MonoBehaviour:
     jump: 0
     elementPlaceableIds:
     - SpinFlying
-    elementPlaceables: []
