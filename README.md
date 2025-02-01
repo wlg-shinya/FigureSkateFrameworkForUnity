@@ -16,12 +16,14 @@ CoreとFactに分かれています
 
 ## 対応 Unity バージョン
 
-Unity 6 (6000.0.33f1で動作確認してます)
+- Unity 6 (6000.0.33f1で動作確認してます)
+- [Unity Addressables](https://docs.unity3d.com/Packages/com.unity.addressables@2.2/manual/index.html) (2.2.2 で動作確認してます)
 
 ## インストール方法
 
 1. [リリースページ](https://github.com/wlg-shinya/FigureSkateFrameworkForUnity/releases) にて任意のパッケージをダウンロードします
 2. Unity の Package Manager を開き、ダウンロードしたパッケージに合わせて、disk か tarball でパッケージを追加してください
+3. Unity エディタのメニューから Window > Asset Management > Addressables > Groups を選択して、表示されたウィンドウに Packages/com.welovegamesinc.figureskate-framework/Fact/AddressableAssetsData/AssetGroups/FigureSkateFramework.asset を登録してください
 
 ## 使い方
 ### Fact
