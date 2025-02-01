@@ -14,7 +14,7 @@ CoreとFactに分かれています
 - Coreは、フィギュアスケートにおいて必要となるデータ構造を提供します。Coreだけ利用することで、独自のフィギュアスケートルールを作成することができます
 - Factは、Coreを用いて [ISU](https://current.isu.org/) や [JSF](https://www.jsfresults.com/index.htm) を参考に、可能な限り事実に即したフィギュアスケートのルールを提供します。こちらを用いることでリアルなフィギュアスケートルールを実現するアプリを作成することができます
 
-## 対応 Unity バージョン
+## 動作環境
 
 - Unity 6 (6000.0.33f1で動作確認してます)
 - [Unity Addressables](https://docs.unity3d.com/Packages/com.unity.addressables@2.2/manual/index.html) (2.2.2 で動作確認してます)
