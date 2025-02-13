@@ -11,7 +11,7 @@
 ## 特徴
 
 CoreとFactに分かれています
-- Coreは、フィギュアスケートにおいて必要となるデータ構造を提供します。Coreだけ利用することで、独自のフィギュアスケートルールを作成することができます
+- Coreは、フィギュアスケートにおいて必要となるデータ構造と判定の仕組みを提供します。Coreだけ利用することで、独自のフィギュアスケートルールを作成することができます
 - Factは、Coreを用いて [ISU](https://current.isu.org/) や [JSF](https://www.jsfresults.com/index.htm) を参考に、可能な限り事実に即したフィギュアスケートのルールを提供します。こちらを用いることでリアルなフィギュアスケートルールを実現するアプリを作成することができます
 
 ## 動作環境
@@ -24,6 +24,8 @@ CoreとFactに分かれています
 1. [リリースページ](https://github.com/wlg-shinya/FigureSkateFrameworkForUnity/releases) にて任意のパッケージをダウンロードします
 2. Unity の Package Manager を開き、ダウンロードしたパッケージに合わせて、disk か tarball でパッケージを追加してください
 3. Unity エディタのメニューから Window > Asset Management > Addressables > Groups を選択して、表示されたウィンドウに Packages/com.welovegamesinc.figureskate-framework/Fact/AddressableAssetsData/AssetGroups/FigureSkateFramework.asset を登録してください
+
+注意点として、パッケージフォルダ名は実際に **com.welovegamesinc.figureskate-framework** となるようにしてください。uss編集時などで不都合が発生することを確認しています
 
 ## 使い方
 ### Fact
