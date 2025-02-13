@@ -22,10 +22,9 @@ CoreとFactに分かれています
 ## インストール方法
 
 1. [リリースページ](https://github.com/wlg-shinya/FigureSkateFrameworkForUnity/releases) にて任意のパッケージをダウンロードします
-2. Unity の Package Manager を開き、ダウンロードしたパッケージに合わせて、disk か tarball でパッケージを追加してください
-3. Unity エディタのメニューから Window > Asset Management > Addressables > Groups を選択して、表示されたウィンドウに Packages/com.welovegamesinc.figureskate-framework/Fact/AddressableAssetsData/AssetGroups/FigureSkateFramework.asset を登録してください
-
-注意点として、パッケージフォルダ名は実際に **com.welovegamesinc.figureskate-framework** となるようにしてください。uss編集時などで不都合が発生することを確認しています
+2. 解凍したフォルダ名を **com.welovegamesinc.figureskate-framework** に書き換えてプロジェクト直下の Packages 以下に配置します
+3. Unity の Package Manager を開いてパッケージを追加します
+4. Unity エディタのメニューから Window > Asset Management > Addressables > Groups を選択して、表示されたウィンドウに Packages/com.welovegamesinc.figureskate-framework/Fact/AddressableAssetsData/AssetGroups/FigureSkateFramework.asset を登録します
 
 ## 使い方
 ### Fact
