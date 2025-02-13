@@ -1,5 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/index.uss?fileID=7433441132597879392&amp;guid=682cf3aca532cd14f8c5127782c1299b&amp;type=3#index" />
     <ui:VisualElement name="Top" style="flex-grow: 0; flex-direction: row; justify-content: flex-start; margin-bottom: 2px;">
         <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Number" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
         <ui:Label tabindex="-1" text="4F" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExecutedElement" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
