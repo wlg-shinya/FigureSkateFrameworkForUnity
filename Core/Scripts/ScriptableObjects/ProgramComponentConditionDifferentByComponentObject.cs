@@ -3,7 +3,7 @@ using Wlg.FigureSkate.Core.Data;
 
 namespace Wlg.FigureSkate.Core.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "ProgramComponentConditionDifferentByComposition", menuName = "ScriptableObjects/ProgramComponentCondition/ProgramComponentConditionDifferentByComposition")]
+    [CreateAssetMenu(fileName = "ProgramComponentConditionDifferentByComposition", menuName = "ScriptableObjects/FigureSkateFramework/ProgramComponentCondition/ProgramComponentConditionDifferentByComposition")]
     public class ProgramComponentConditionDifferentByComponentObject : ProgramComponentConditionObject
     {
         public ProgramComponentConditionDifferentByComponent data;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Wlg.FigureSkate.Core.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "Program", menuName = "ScriptableObjects/Program")]
+    [CreateAssetMenu(fileName = "Program", menuName = "ScriptableObjects/FigureSkateFramework/Program")]
     public class ProgramObject : ScriptableObject
     {
         public Data.Program data;

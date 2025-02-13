@@ -3,7 +3,7 @@ using Wlg.FigureSkate.Core.Data;
 
 namespace Wlg.FigureSkate.Core.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "ProgramComponentConditionAllPlaced", menuName = "ScriptableObjects/ProgramComponentCondition/ProgramComponentConditionAllPlaced")]
+    [CreateAssetMenu(fileName = "ProgramComponentConditionAllPlaced", menuName = "ScriptableObjects/FigureSkateFramework/ProgramComponentCondition/ProgramComponentConditionAllPlaced")]
     public class ProgramComponentConditionAllPlacedObject : ProgramComponentConditionObject
     {
         public ProgramComponentConditionAllPlaced data;

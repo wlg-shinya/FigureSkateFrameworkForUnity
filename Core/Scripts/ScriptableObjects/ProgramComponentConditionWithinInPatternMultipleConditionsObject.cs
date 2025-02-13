@@ -3,7 +3,7 @@ using Wlg.FigureSkate.Core.Data;
 
 namespace Wlg.FigureSkate.Core.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "ProgramComponentConditionWithinInPatternMultipleConditions", menuName = "ScriptableObjects/ProgramComponentCondition/ProgramComponentConditionWithinInPatternMultipleConditions")]
+    [CreateAssetMenu(fileName = "ProgramComponentConditionWithinInPatternMultipleConditions", menuName = "ScriptableObjects/FigureSkateFramework/ProgramComponentCondition/ProgramComponentConditionWithinInPatternMultipleConditions")]
     public class ProgramComponentConditionWithinInPatternMultipleConditionsObject : ProgramComponentConditionObject
     {
         public ProgramComponentConditionWithinInPatternMultipleConditions data;

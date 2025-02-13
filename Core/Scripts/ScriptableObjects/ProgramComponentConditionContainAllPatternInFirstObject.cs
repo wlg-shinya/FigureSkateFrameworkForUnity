@@ -3,7 +3,7 @@ using Wlg.FigureSkate.Core.Data;
 
 namespace Wlg.FigureSkate.Core.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "ProgramComponentConditionContainAllPatternInFirst", menuName = "ScriptableObjects/ProgramComponentCondition/ProgramComponentConditionContainAllPatternInFirst")]
+    [CreateAssetMenu(fileName = "ProgramComponentConditionContainAllPatternInFirst", menuName = "ScriptableObjects/FigureSkateFramework/ProgramComponentCondition/ProgramComponentConditionContainAllPatternInFirst")]
     public class ProgramComponentConditionContainAllPatternInFirstObject : ProgramComponentConditionObject
     {
         public ProgramComponentConditionContainAllPatternInFirst data;
