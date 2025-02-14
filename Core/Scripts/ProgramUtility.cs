@@ -33,22 +33,29 @@ namespace Wlg.FigureSkate.Core
                 var factor = IsLastJumpElementPlaceableSetId(program, components, elementPlaceableSetAll, c1.elementPlaceableSetId) ? 1.1f : 1.0f;
                 return c1.elementIds.Aggregate(0.0f, (a2, c2) =>
                 {
-                    var elementObject = Array.Find(elementBaseValueAll, x => x.id.Equals(c2));
-                    var baseValue = elementObject.baseValue;
-                    switch (goe)
+                    var elementBaseValue = Array.Find(elementBaseValueAll, x => x.id.Equals(c2));
+                    if (elementBaseValue == null)
                     {
-                        case -5: baseValue += elementObject.baseValueM5; break;
-                        case -4: baseValue += elementObject.baseValueM4; break;
-                        case -3: baseValue += elementObject.baseValueM3; break;
-                        case -2: baseValue += elementObject.baseValueM2; break;
-                        case -1: baseValue += elementObject.baseValueM1; break;
-                        case 1: baseValue += elementObject.baseValueP1; break;
-                        case 2: baseValue += elementObject.baseValueP2; break;
-                        case 3: baseValue += elementObject.baseValueP3; break;
-                        case 4: baseValue += elementObject.baseValueP4; break;
-                        case 5: baseValue += elementObject.baseValueP5; break;
+                        return a2;
                     }
-                    return (elementObject != null ? baseValue * factor : 0.0f) + a2;
+                    else
+                    {
+                        var baseValue = elementBaseValue.baseValue;
+                        switch (goe)
+                        {
+                            case -5: baseValue += elementBaseValue.baseValueM5; break;
+                            case -4: baseValue += elementBaseValue.baseValueM4; break;
+                            case -3: baseValue += elementBaseValue.baseValueM3; break;
+                            case -2: baseValue += elementBaseValue.baseValueM2; break;
+                            case -1: baseValue += elementBaseValue.baseValueM1; break;
+                            case 1: baseValue += elementBaseValue.baseValueP1; break;
+                            case 2: baseValue += elementBaseValue.baseValueP2; break;
+                            case 3: baseValue += elementBaseValue.baseValueP3; break;
+                            case 4: baseValue += elementBaseValue.baseValueP4; break;
+                            case 5: baseValue += elementBaseValue.baseValueP5; break;
+                        }
+                        return (baseValue * factor) + a2;
+                    }
                 }) + a1;
             });
         }
