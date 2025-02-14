@@ -21,5 +21,12 @@ namespace Wlg.FigureSkate.Fact
             if (src == null) throw new Exception($"src is null");
             return src.Find(x => Equals(x.data.id, id)) ?? throw new Exception($"Not found '{id}'");
         }
+
+        // 指定オブジェクト群から指定クラスIDと性別IDに一致するオブジェクト単体を得る
+        public static EventObject ByClassIdAndSexId(List<EventObject> src, string classId, string sexId)
+        {
+            if (src == null) throw new Exception($"src is null");
+            return src.Find(x => Equals(x.data.classId, classId) && Equals(x.data.sexId, sexId)) ?? throw new Exception($"Not found '{classId}' or '{sexId}'");
+        }
     }
 }
