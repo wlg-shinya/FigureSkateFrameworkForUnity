@@ -21,8 +21,18 @@ namespace Wlg.FigureSkate.Fact
         // 指定オブジェクト群から指定IDのオブジェクト単体を得る
         public static ProgramObject ById(List<ProgramObject> src, string id)
         {
-            if (src == null) throw new Exception($"src is null");
+            if (src == null) throw new ArgumentException($"src is null");
             return src.Find(x => Equals(x.data.id, id)) ?? throw new Exception($"Not found '{id}'");
+        }
+
+        // 指定オブジェクト群から複数の指定IDのオブジェクトをすべて得る
+        public static List<ProgramObject> ByIds(List<ProgramObject> src, string[] ids)
+        {
+            if (src == null) throw new ArgumentException($"src is null");
+            if (ids.Length == 0) throw new ArgumentException($"ids is empty");
+            var result = src.Where(obj => ids.Any(id => obj.data.id.Equals(id)));
+            if (result.Count() == 0) throw new Exception($"Not found ids([0]='{ids[0]}')");
+            return result.ToList();
         }
 
         // 指定した選手にあったオブジェクトをすべて得る
