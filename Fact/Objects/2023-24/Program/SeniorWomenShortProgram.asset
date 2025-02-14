@@ -15,6 +15,7 @@ MonoBehaviour:
   data:
     id: SeniorWomenShortProgram
     name: "\u30B7\u30CB\u30A2\u5973\u5B50\u30B7\u30E7\u30FC\u30C8\u30D7\u30ED\u30B0\u30E9\u30E0"
+    shortName: "\u30B7\u30E7\u30FC\u30C8\u30D7\u30ED\u30B0\u30E9\u30E0"
     lastJumpSpecialFactorCount: 1
     pcsFactor: 1.33
     programComponentRegulationId: SeniorWomenShortProgram

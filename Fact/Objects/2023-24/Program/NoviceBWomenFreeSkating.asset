@@ -15,6 +15,7 @@ MonoBehaviour:
   data:
     id: NoviceBWomenFreeSkating
     name: "\u30CE\u30FC\u30D3\u30B9B\u5973\u5B50\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
+    shortName: "\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
     lastJumpSpecialFactorCount: 0
     pcsFactor: 2.67
     programComponentRegulationId: NoviceBWomenFreeSkating

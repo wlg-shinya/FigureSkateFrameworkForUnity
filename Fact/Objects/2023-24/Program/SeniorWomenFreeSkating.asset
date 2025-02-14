@@ -15,6 +15,7 @@ MonoBehaviour:
   data:
     id: SeniorWomenFreeSkating
     name: "\u30B7\u30CB\u30A2\u5973\u5B50\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
+    shortName: "\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
     lastJumpSpecialFactorCount: 3
     pcsFactor: 2.67
     programComponentRegulationId: SeniorWomenFreeSkating

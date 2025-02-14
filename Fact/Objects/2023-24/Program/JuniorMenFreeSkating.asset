@@ -15,6 +15,7 @@ MonoBehaviour:
   data:
     id: JuniorMenFreeSkating
     name: "\u30B8\u30E5\u30CB\u30A2\u7537\u5B50\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
+    shortName: "\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
     lastJumpSpecialFactorCount: 3
     pcsFactor: 3.33
     programComponentRegulationId: JuniorMenFreeSkating
