@@ -21,7 +21,7 @@ namespace Wlg.FigureSkate.Fact.Data
         // 国籍
         public string nation;
         // 実行可能な構成要素
-        public List<string> elementIdList = new();
+        public List<string> elementIdList;
         // プログラム構成
         [Serializable]
         public class ProgramComponents

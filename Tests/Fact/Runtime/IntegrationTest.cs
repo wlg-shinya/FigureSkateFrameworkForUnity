@@ -48,7 +48,8 @@ namespace Wlg.FigureSkate.Tests.Fact
                     birthday = birthday,
                     sexId = sexId,
                     classId = classId,
-                    nation = nation
+                    nation = nation,
+                    elementIdList = new()
                 };
                 foreach (var elementObject in elementObjectAll)
                 {
