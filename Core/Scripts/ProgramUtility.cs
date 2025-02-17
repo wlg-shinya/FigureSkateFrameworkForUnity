@@ -30,7 +30,7 @@ namespace Wlg.FigureSkate.Core
             }
             return components.Aggregate(0.0f, (a1, c1) =>
             {
-                var factor = IsLastJumpElementPlaceableSetId(program, components, elementPlaceableSetAll, c1.elementPlaceableSetId) ? 1.1f : 1.0f;
+                var factor = IsLastJumpProgramComponent(program, components, elementPlaceableSetAll, c1) ? 1.1f : 1.0f;
                 return c1.elementIds.Aggregate(0.0f, (a2, c2) =>
                 {
                     var elementBaseValue = Array.Find(elementBaseValueAll, x => x.id.Equals(c2));
@@ -61,21 +61,19 @@ namespace Wlg.FigureSkate.Core
         }
 
         // 指定データはジャンプボーナス対象か
-        public static bool IsLastJumpElementPlaceableSetId(Program program, ProgramComponent[] components, ElementPlaceableSet[] elementPlaceableSetAll, string elementPlaceableSetId)
+        public static bool IsLastJumpProgramComponent(Program program, ProgramComponent[] components, ElementPlaceableSet[] elementPlaceableSetAll, ProgramComponent targetProgramComponent)
         {
-            return LastJumpElementPlaceableSetIds(program, components, elementPlaceableSetAll).Any(x => x.Equals(elementPlaceableSetId));
+            return LastJumpProgramComponents(program, components, elementPlaceableSetAll).Any(x => ReferenceEquals(x, targetProgramComponent));
         }
 
         // ジャンプボーナス対象の構成一覧
-        public static IEnumerable<string> LastJumpElementPlaceableSetIds(Program program, ProgramComponent[] components, ElementPlaceableSet[] elementPlaceableSetAll)
+        public static IEnumerable<ProgramComponent> LastJumpProgramComponents(Program program, ProgramComponent[] components, ElementPlaceableSet[] elementPlaceableSetAll)
         {
             var jumps = components.Where(x => GetElementPlaceableSetById(elementPlaceableSetAll, x.elementPlaceableSetId).jump);
             return jumps
                 // 末尾から最終ジャンプ数だけデータを残す
                 .Select((x, i) => jumps.Count() - i <= program.lastJumpSpecialFactorCount ? x : null)
-                .Where(x => x != null)
-                // 構成要素項目IDのみを一覧として返す
-                .Select(x => x.elementPlaceableSetId);
+                .Where(x => x != null);
         }
     }
 }

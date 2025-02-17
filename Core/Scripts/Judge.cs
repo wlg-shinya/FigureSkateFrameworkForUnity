@@ -283,7 +283,7 @@ namespace Wlg.FigureSkate.Core
             // 実行済み要素。コンビネーションの場合は+でつなぎ合わせる
             tes.executedElement = markedIds.Aggregate("", (a, c) => Equals(a, "") ? c : $"{a}+{c}");
             // 最終ジャンプかどうか
-            tes.lastJump = ProgramUtility.IsLastJumpElementPlaceableSetId(_program, _programComponents, _elementPlaceableSetAll, component.elementPlaceableSetId);
+            tes.lastJump = ProgramUtility.IsLastJumpProgramComponent(_program, _programComponents, _elementPlaceableSetAll, component);
             // 基礎点。採点結果にはジャンプボーナス適用後を設定する
             // 違反による基礎点減少倍率はGOEにも影響するのでローカルbaseValueに適用する
             // ダウングレードの場合はダウングレード先の基礎点を参照する
