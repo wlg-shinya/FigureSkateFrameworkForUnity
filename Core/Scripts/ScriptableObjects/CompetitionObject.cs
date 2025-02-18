@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Wlg.FigureSkate.Core.Data;
 
