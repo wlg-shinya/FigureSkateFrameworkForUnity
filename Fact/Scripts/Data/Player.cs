@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Wlg.FigureSkate.Core.Data;
 
 namespace Wlg.FigureSkate.Fact.Data
@@ -21,7 +20,7 @@ namespace Wlg.FigureSkate.Fact.Data
         // 国籍
         public string nation;
         // 実行可能な構成要素
-        public List<string> elementIdList;
+        public string[] elementIdList;
         // プログラム構成
         [Serializable]
         public class ProgramComponents

@@ -48,13 +48,10 @@ namespace Wlg.FigureSkate.Tests.Fact
                     birthday = birthday,
                     sexId = sexId,
                     classId = classId,
-                    nation = nation,
-                    elementIdList = new()
+                    nation = nation
                 };
-                foreach (var elementObject in elementObjectAll)
-                {
-                    player.elementIdList.Add(elementObject.data.id);
-                }
+                // 全構成要素を習得済みとする
+                player.elementIdList = elementObjectAll.Select(x => x.data.id).ToArray();
                 return player;
             }
             Player player;
