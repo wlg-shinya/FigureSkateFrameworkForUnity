@@ -15,5 +15,5 @@ MonoBehaviour:
   data:
     id: NoviceB
     name: "\u30CE\u30FC\u30D3\u30B9B"
-    minAge: 9
+    minAge: 0
     maxAge: 10
