@@ -2555,11 +2555,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c2a9db46712c82b48a0ed692c07ca4da
-    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Class/None.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c2cad2e8b1496c245a516ee7b7142c68
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/3Lz.asset
     m_ReadOnly: 0
@@ -3311,7 +3306,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: f704bbf972370b644999ef8b0b5c9d31, type: 2}
+  m_Settings: {fileID: 11400000, guid: cc00755bb8ead3e469dc5d3c75f6c41f, type: 2}
   m_SchemaSet:
     m_Schemas:
     - {fileID: 11400000, guid: bfcc2fe163d48bd41b2749b58ad661a2, type: 2}
