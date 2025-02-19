@@ -28,7 +28,7 @@ namespace Wlg.FigureSkate.Core
             {
                 throw new ArgumentOutOfRangeException($"goe = {goe}");
             }
-            return components.Aggregate(0.0f, (a1, c1) =>
+            var result = components.Aggregate(0.0f, (a1, c1) =>
             {
                 var factor = IsLastJumpProgramComponent(program, components, elementPlaceableSetAll, c1) ? 1.1f : 1.0f;
                 return c1.elementIds.Aggregate(0.0f, (a2, c2) =>
@@ -58,6 +58,7 @@ namespace Wlg.FigureSkate.Core
                     }
                 }) + a1;
             });
+            return JudgeDetail.Round(result);
         }
 
         // 指定データはジャンプボーナス対象か
