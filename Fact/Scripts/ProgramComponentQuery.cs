@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Wlg.FigureSkate.Core.Data;
@@ -26,20 +27,20 @@ namespace Wlg.FigureSkate.Fact
             return programComponents;
         }
 
-        // 指定プログラムの構成として使えるか検証
+        // 指定プログラム構成が指定プログラム構成規則に則っているか
         public static bool Verify(ProgramComponent[] components, ProgramComponentRegulation programComponentRegulation)
         {
-            if (components == null || components.Length != programComponentRegulation.elementPlaceableSetIds.Length)
+            if (components == null) throw new ArgumentException("components is null");
+            if (components.Length != programComponentRegulation.elementPlaceableSetIds.Length)
             {
                 // 構成数が不一致
                 return false;
             }
             else
             {
-                var idsInRegulation = programComponentRegulation.elementPlaceableSetIds;
-                var idsInComponents = components.Select(x => x.elementPlaceableSetId);
-                var idsUnique = idsInRegulation.Concat(idsInComponents).Distinct();
-                if (idsInRegulation.Count() != idsUnique.Count())
+                var idsInRegulation = programComponentRegulation.elementPlaceableSetIds.OrderBy(x => x);
+                var idsInComponents = components.Select(x => x.elementPlaceableSetId).OrderBy(x => x);
+                if (!idsInRegulation.SequenceEqual(idsInComponents))
                 {
                     // 構成要素IDが不一致
                     return false;
