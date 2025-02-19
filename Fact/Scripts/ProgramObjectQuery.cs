@@ -76,10 +76,12 @@ namespace Wlg.FigureSkate.Fact
             foreach (var data in programObject.elementPlaceableSetConditionObjectDataList)
             {
                 var elementPlaceableSet = ElementPlaceableSetObjectQuery.ById(elementPlaceableSetObjects, data.id).data;
+                elementPlaceableSet.Conditions.Clear();
                 elementPlaceableSet.Conditions.Add(data.obj.Data());
             }
             // 構成全体に対する条件設定をプログラムにつなぎ合わせる
             var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjects, programObject.data.programComponentRegulationId).data;
+            regulation.Conditions.Clear();
             foreach (var obj in programObject.ProgramComponentConditionObjects)
             {
                 regulation.Conditions.Add(obj.Data());
