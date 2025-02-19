@@ -222,6 +222,6 @@ namespace Wlg.FigureSkate.Core.Data
         // 計算中は小数点をそのまま扱い最終的な表示時に小数点第二位で四捨五入としている模様
         // ref. https://www.isu.org/figure-skating/rules/fsk-regulations-rules/file
         // ref. https://results.isu.org/results/season2223/wtt2023/data0203.pdf
-        static private float Round(float value) => (float)Math.Round(value, 2, MidpointRounding.AwayFromZero);
+        static public float Round(float value) => (float)Math.Round(value, 2, MidpointRounding.AwayFromZero);
     }
 }
