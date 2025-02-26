@@ -30,7 +30,11 @@ namespace Wlg.FigureSkate.Fact
         // 指定プログラム構成が指定プログラム構成規則に則っているか
         public static bool Verify(ProgramComponent[] components, ProgramComponentRegulation programComponentRegulation)
         {
-            if (components == null) throw new ArgumentException("components is null");
+            if (components == null)
+            {
+                // データが存在していない
+                return false;
+            }
             if (components.Length != programComponentRegulation.elementPlaceableSetIds.Length)
             {
                 // 構成数が不一致
