@@ -15,6 +15,11 @@ namespace Wlg.FigureSkate.Fact.Editor
         {
             foreach (var path in importedAssets)
             {
+                // データの基になっているソースを記載。リンクは流動的なので名称のみ
+                // TODO:ソースデータをリポジトリに含めるかどうか検討
+
+                // 2023-24 -> ISU Communication No.2475
+                // 2024-25 -> ISU Communication No.2656
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "ElementBaseValue.csv",
@@ -29,6 +34,8 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (Element data) => { return $"{data.id}.asset"; },
                     (Element data, ElementObject obj) => { obj.data = data; }
                     );
+                // 2023-24 -> JSF 2023年 東京夏季フィギュアスケート競技大会 2023-2024年度早見表
+                // 2024-25 -> JSF 2024-25シーズン 参加資格(年齢・取得級)
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "Class.csv",
