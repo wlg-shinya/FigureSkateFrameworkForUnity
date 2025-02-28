@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1413e46aff23da4398755ebe04d6e58, type: 3}
+  m_Name: "\uFF26\uFF23\uFF35\uFF33\uFF50\uFF11\uFF36"
+  m_EditorClassIdentifier: 
+  data:
+    id: FCUSp1V
+    baseValueM5: -0.64
+    baseValueM4: -0.51
+    baseValueM3: -0.38
+    baseValueM2: -0.26
+    baseValueM1: -0.13
+    baseValue: 1.28
+    baseValueP1: 0.13
+    baseValueP2: 0.26
+    baseValueP3: 0.38
+    baseValueP4: 0.51
+    baseValueP5: 0.64
