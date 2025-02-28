@@ -9,7 +9,6 @@ using Wlg.FigureSkate.Core.ScriptableObjects;
 
 namespace Wlg.FigureSkate.Fact.Editor
 {
-    // TODO:Objects以下のファイルのAddressable設定をフレームワーク側で用意する
     public class ScriptableObjectFactory : AssetPostprocessor
     {
         static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
