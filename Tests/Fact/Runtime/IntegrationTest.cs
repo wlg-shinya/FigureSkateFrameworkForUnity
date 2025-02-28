@@ -12,7 +12,6 @@ using Assert = UnityEngine.Assertions.Assert;
 
 namespace Wlg.FigureSkate.Tests.Fact
 {
-    // TODO:シーズンをまたいだクラスの年齢制限チェック
     public class IntegrationTest
     {
         [TestCase("Senior", "Men")]
