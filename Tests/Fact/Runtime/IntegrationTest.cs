@@ -12,6 +12,7 @@ using Assert = UnityEngine.Assertions.Assert;
 
 namespace Wlg.FigureSkate.Tests.Fact
 {
+    // TODO:シーズンをまたいだクラスの年齢制限チェック
     public class IntegrationTest
     {
         [TestCase("Senior", "Men")]
@@ -25,7 +26,6 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("NoviceB", "Men")]
         [TestCase("NoviceB", "Women")]
         public async Task NationalNovice(string classId, string sexId) => await Competition("NationalNovice", new(2023, 10, 20), classId, sexId);
-
 
         private async Task Competition(string competitionName, YearMonthDay startDay, string classId, string sexId)
         {
