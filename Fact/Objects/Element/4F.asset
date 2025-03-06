@@ -16,5 +16,5 @@ MonoBehaviour:
     id: 4F
     name: "\u30AF\u30A2\u30C9\u30D5\u30EA\u30C3\u30D7"
     goeId: Jump
-    upgradeId: 
+    upgradeId: 5F
     downgradeId: 3F
