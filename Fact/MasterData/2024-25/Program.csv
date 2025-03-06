@@ -1,0 +1,13 @@
+id,name,shortName,lastJumpSpecialFactorCount,pcsFactor,programComponentRegulationId
+NoviceBMenFreeSkating,ノービスB男子フリースケーティング,フリースケーティング,0,3.33,NoviceBMenFreeSkating
+NoviceBWomenFreeSkating,ノービスB女子フリースケーティング,フリースケーティング,0,2.67,NoviceBWomenFreeSkating
+NoviceAMenFreeSkating,ノービスA男子フリースケーティング,フリースケーティング,2,3.33,NoviceAMenFreeSkating
+NoviceAWomenFreeSkating,ノービスA女子フリースケーティング,フリースケーティング,2,2.67,NoviceAWomenFreeSkating
+JuniorMenFreeSkating,ジュニア男子フリースケーティング,フリースケーティング,3,3.33,JuniorMenFreeSkating
+JuniorMenShortProgram,ジュニア男子ショートプログラム,ショートプログラム,1,1.67,JuniorMenShortProgram
+JuniorWomenFreeSkating,ジュニア女子フリースケーティング,フリースケーティング,3,2.67,JuniorWomenFreeSkating
+JuniorWomenShortProgram,ジュニア女子ショートプログラム,ショートプログラム,1,1.33,JuniorWomenShortProgram
+SeniorMenFreeSkating,シニア男子フリースケーティング,フリースケーティング,3,3.33,SeniorMenFreeSkating
+SeniorMenShortProgram,シニア男子ショートプログラム,ショートプログラム,1,1.67,SeniorMenShortProgram
+SeniorWomenFreeSkating,シニア女子フリースケーティング,フリースケーティング,3,2.67,SeniorWomenFreeSkating
+SeniorWomenShortProgram,シニア女子ショートプログラム,ショートプログラム,1,1.33,SeniorWomenShortProgram

@@ -18,8 +18,10 @@ namespace Wlg.FigureSkate.Fact.Editor
                 // データの基になっているソースを記載。リンクは流動的なので名称のみ
                 // TODO:ソースデータをリポジトリに含めるかどうか検討
 
-                // 2023-24 -> ISU Communication No.2475
-                // 2024-25 -> ISU Communication No.2656
+                // # 2023-24 
+                // - 2475_SP_SOV_2022-23.pdf
+                // # 2024-25 
+                // - 2656 ISU_SOV_SinglesPairs_2024-25_final.pdf
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "ElementBaseValue.csv",
@@ -34,8 +36,10 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (Element data) => { return $"{data.id}.asset"; },
                     (Element data, ElementObject obj) => { obj.data = data; }
                     );
-                // 2023-24 -> JSF 2023年 東京夏季フィギュアスケート競技大会 2023-2024年度早見表
-                // 2024-25 -> JSF 2024-25シーズン 参加資格(年齢・取得級)
+                // # 2023-24
+                // - 2023-2024年度クラス早見表.pdf
+                // # 2024-25
+                // - 2024-25シーズン 参加資格(年齢・取得級).pdf
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "Class.csv",
@@ -224,6 +228,17 @@ namespace Wlg.FigureSkate.Fact.Editor
                     (ProgramComponentRegulation data) => { return $"{data.id}.asset"; },
                     (ProgramComponentRegulation data, ProgramComponentRegulationObject obj) => { obj.data = data; }
                     );
+                // # 2022-23
+                // ## シニア/ジュニア
+                // - 2022 Special Regulation SP and Ice Dance and Technical Rules SP  and ID_Final.pdf
+                // ## ノービス
+                // - 2022-23ノービス課題.pdf
+                //   - PCS係数がここからシニア/ジュニアに準拠するようになり以降明記なし
+                //   - ジャンプボーナスに関する規則はここ以降か明記なし
+                // # 2023-24
+                // - 2022-23 と同様
+                // # 2024-25
+                // - 2024_Special_Regulation_SP_and_Ice_Dance_and_Technical_Rules_SP__and_ID_Final_rev.pdf
                 CreateOrUpdateScriptableObjectFromCsv(
                     path,
                     "Program.csv",
