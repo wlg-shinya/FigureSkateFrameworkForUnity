@@ -23,23 +23,9 @@ MonoBehaviour:
     - ChoreographicSequenceP6
     minusIds:
     - ChoreographicSequenceM1
-    plus:
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    minus: []
+    - ChoreographicSequenceM2
+    - ChoreographicSequenceM3
+    - ChoreographicSequenceM4
+    - ChoreographicSequenceM5
+    - ChoreographicSequenceM6
+    - ChoreographicSequenceM7

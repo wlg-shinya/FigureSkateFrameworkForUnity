@@ -28,23 +28,18 @@ MonoBehaviour:
     - JumpM4
     - JumpM5
     - JumpM6
-    plus:
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    minus: []
+    - JumpM7
+    - JumpM8
+    - JumpM9
+    - JumpM10
+    - JumpM11
+    - JumpM12
+    - JumpM13
+    - JumpM14
+    - JumpM15
+    - JumpM16
+    - JumpM17
+    - JumpM18
+    - JumpM19
+    - JumpM20
+    - JumpM21

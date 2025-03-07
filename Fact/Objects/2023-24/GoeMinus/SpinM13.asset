@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110d455651e56e246a13f70248441ecf, type: 3}
+  m_Name: SpinM13
+  m_EditorClassIdentifier: 
+  data:
+    id: SpinM13
+    description: "\u57FA\u672C\u59FF\u52E2\u3092\uFF12\u7A2E\u985E\u3057\u304B\u542B\u307E\u306A\u304B\u3063\u305F"
+    group: 
+    minValue: 0
+    maxValue: 0
+    mark: V
+    targetElementIds:
+    - FUSp
+    - FLSp
+    - FCSp
+    - FSSp
+    - CUSp
+    - FCUSp
+    - CLSp
+    - FCLSp
+    - CCSp
+    - FCCSp
+    - CSSp
+    - FCSSp
+    - CoSp
+    - FCoSp
+    - CCoSp
+    - FCCoSp

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: JumpM1
-    description: "\u30C0\u30A6\u30F3\u30B0\u30EC\u30FC\u30C9"
-    group: Rotate
-    minValue: -3
-    maxValue: -4
-    mark: <<
+    description: "\u8EE2\u5012"
+    group: 
+    minValue: -5
+    maxValue: -5
+    mark: 
     targetElementIds: []

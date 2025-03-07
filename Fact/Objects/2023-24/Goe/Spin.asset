@@ -24,23 +24,14 @@ MonoBehaviour:
     minusIds:
     - SpinM1
     - SpinM2
-    plus:
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    - id: 
-      description: 
-      important: 0
-    minus: []
+    - SpinM3
+    - SpinM4
+    - SpinM5
+    - SpinM6
+    - SpinM7
+    - SpinM8
+    - SpinM9
+    - SpinM10
+    - SpinM11
+    - SpinM12
+    - SpinM13

@@ -14,25 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: SpinM2
-    description: "\u57FA\u672C\u59FF\u52E2\u3092\uFF12\u7A2E\u985E\u3057\u304B\u542B\u307E\u306A\u304B\u3063\u305F"
+    description: "\u30D5\u30EA\u30FC\u30FB\u30D5\u30C3\u30C8\u307E\u305F\u306F\u7247\u624B\uFF0F\u4E21\u624B\u304C\u30BF\u30C3\u30C1\u30FB\u30C0\u30A6\u30F3"
     group: 
-    minValue: 0
-    maxValue: 0
-    mark: V
-    targetElementIds:
-    - FUSp
-    - FLSp
-    - FCSp
-    - FSSp
-    - CUSp
-    - FCUSp
-    - CLSp
-    - FCLSp
-    - CCSp
-    - FCCSp
-    - CSSp
-    - FCSSp
-    - CoSp
-    - FCoSp
-    - CCoSp
-    - FCCoSp
+    minValue: -1
+    maxValue: -3
+    mark: 
+    targetElementIds: []

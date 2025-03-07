@@ -98,7 +98,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                 // # 2022-23 TODO:データ化
                 // - 2474 SP 更新Levels of Difficulty and Guidelines for marking Grade of Execution and Program Components.pdf
                 // - 2474　価値尺度（SOV),難度レベル（ＬＯＤ），ＧＯＥ採点のガイドライン.pdf
-                // # 2023-24 TODO:不足分のデータ化
+                // # 2023-24
                 // - 2558 SP Levels and GOE Season 2023-2024_revJune 9.pdf
                 // - 2558（20230818改訂版）SP難度レベルLOD)、GOEおよびプログラムコンポーネンツ採点のガイドライン2023-24.pdf
                 // # 2024-25 TODO:データ化
@@ -134,6 +134,9 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (GoePlus data) => { return $"{data.id}.asset"; },
                         (GoePlus data, GoePlusObject obj) => { obj.data = data; }
                         );
+                    // TODO:転倒は現在プログラム的には決め打ち実装。データとどう連携するか検討
+                    // TODO:「ジャンプのコンボ／シークェンスで複数の“q”」の"複数の“q”"の判定方法の検討
+                    // TODO:ジャンプのコンボ／シークェンス中のみに発生するエラーの判定方法の検討
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "GoeMinus.csv",
