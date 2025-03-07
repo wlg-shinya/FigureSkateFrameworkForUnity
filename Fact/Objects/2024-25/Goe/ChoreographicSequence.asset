@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb59df4b2731764eb6c3c90110a3229, type: 3}
+  m_Name: ChoreographicSequence
+  m_EditorClassIdentifier: 
+  data:
+    id: ChoreographicSequence
+    plusIds:
+    - ChoreographicSequenceP1
+    - ChoreographicSequenceP2
+    - ChoreographicSequenceP3
+    - ChoreographicSequenceP4
+    - ChoreographicSequenceP5
+    - ChoreographicSequenceP6
+    minusIds:
+    - ChoreographicSequenceM1
+    - ChoreographicSequenceM2
+    - ChoreographicSequenceM3
+    - ChoreographicSequenceM4
+    - ChoreographicSequenceM5
+    - ChoreographicSequenceM6
+    - ChoreographicSequenceM7
+    - ChoreographicSequenceM8

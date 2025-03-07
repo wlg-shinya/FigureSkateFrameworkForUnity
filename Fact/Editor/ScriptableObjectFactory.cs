@@ -134,9 +134,12 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (GoePlus data) => { return $"{data.id}.asset"; },
                         (GoePlus data, GoePlusObject obj) => { obj.data = data; }
                         );
+                    // TODO:"SP:要件を満たさないジャンプ要素の最終GOEは必ず"をどう表現するか(現在はデータとして用意していない)
                     // TODO:転倒は現在プログラム的には決め打ち実装。データとどう連携するか検討
                     // TODO:「ジャンプのコンボ／シークェンスで複数の“q”」の"複数の“q”"の判定方法の検討
                     // TODO:ジャンプのコンボ／シークェンス中のみに発生するエラーの判定方法の検討
+                    // TODO:SP/FSどちらかでしか発生しないエラーの判定方法の検討
+                    // TODO:2024-25シーズンは、特定GOE減点項目(grey background)に引っかかった場合GOE+2を上限にする
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "GoeMinus.csv",
