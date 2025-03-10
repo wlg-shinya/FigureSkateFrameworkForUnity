@@ -171,21 +171,25 @@ namespace Wlg.FigureSkate.Fact.Editor
                         );
                 }
                 // # 2022-23 TODO:データ化
-                // ## シニア/ジュニア
                 // - 2022 Special Regulation SP and Ice Dance and Technical Rules SP  and ID_Final.pdf
                 // - 2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf
-                // ## ノービス
                 // - 2022-23ノービス課題.pdf
                 //   - PCS係数がここからシニア/ジュニアに準拠するようになり以降明記なし
-                //   - ジャンプボーナスに関する規則はここ以降か明記なし
+                //   - ジャンプボーナスに関する規則はここ以降明記なし
                 //
                 // # 2023-24
                 // - 2022 Special Regulation SP and Ice Dance and Technical Rules SP  and ID_Final.pdf
                 // - 2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf
                 //   - プログラム構成ルールは2023-24も上記に含まれている
+                // - 2023-24ノービス課題.pdf
                 //
-                // # 2024-25 TODO:データ化
+                // # 2024-25
                 // - 2024_Special_Regulation_SP_and_Ice_Dance_and_Technical_Rules_SP__and_ID_Final_rev.pdf
+                // - 2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf
+                //   - プログラム構成ルールは2024-25も上記に含まれている
+                // - 2024-25 JSF Nvルール.pdf TODO:データ化
+                //
+                // TODO:ジャンプシークエンス(+SEQおよびT/Lo縛りなし)対応
                 {
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
