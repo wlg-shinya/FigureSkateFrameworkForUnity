@@ -21,8 +21,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             await GoeObjectsTest(baseday);
             await GoePlusObjectsTest(baseday);
             await GoeMinusObjectsTest(baseday);
-            await ElementPlaceableObjectsTest(baseday);
-            await ElementPlaceableSetObjectsTest(baseday);
             await ProgramComponentRegulationObjectsTest(baseday);
         }
 
@@ -123,34 +121,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        private async Task ElementPlaceableObjectsTest(YearMonthDay baseday)
-        {
-            var allObjs = await ElementPlaceableObjectQuery.All(baseday);
-            ObjCountAreEqualCsvDataCountTest(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/{YearMonthDayUtility.GetSkateYearString(baseday)}/ElementPlaceable.csv");
-            foreach (var obj in allObjs)
-            {
-                Assert.IsNotNull(obj.data);
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsNotNull(obj.data.elementIds);
-                Assert.IsTrue(obj.data.elementIds.Length > 0);
-                // TODO:配列化した結果が同一なデータの検出テストの追加
-            }
-        }
-
-        private async Task ElementPlaceableSetObjectsTest(YearMonthDay baseday)
-        {
-            var allObjs = await ElementPlaceableSetObjectQuery.All(baseday);
-            ObjCountAreEqualCsvDataCountTest(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/{YearMonthDayUtility.GetSkateYearString(baseday)}/ElementPlaceableSet.csv");
-            foreach (var obj in allObjs)
-            {
-                Assert.IsNotNull(obj.data);
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
-                Assert.IsNotNull(obj.data.elementPlaceableIds);
-                Assert.IsTrue(obj.data.elementPlaceableIds.Length > 0);
-            }
-        }
-
         private async Task ProgramComponentRegulationObjectsTest(YearMonthDay baseday)
         {
             var allObjs = await ProgramComponentRegulationObjectQuery.All(baseday);
@@ -206,6 +176,36 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.sexId));
                 Assert.IsNotNull(obj.data.programIds);
                 Assert.IsTrue(obj.data.programIds.Length > 0);
+            }
+        }
+
+        [Test]
+        public async Task ElementPlaceableObjectsTest()
+        {
+            var allObjs = await ElementPlaceableObjectQuery.All();
+            ObjCountAreEqualCsvDataCountTest(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/ElementPlaceable.csv");
+            foreach (var obj in allObjs)
+            {
+                Assert.IsNotNull(obj.data);
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
+                Assert.IsNotNull(obj.data.elementIds);
+                Assert.IsTrue(obj.data.elementIds.Length > 0);
+                // TODO:配列化した結果が同一なデータの検出テストの追加
+            }
+        }
+
+        [Test]
+        public async Task ElementPlaceableSetObjectsTest()
+        {
+            var allObjs = await ElementPlaceableSetObjectQuery.All();
+            ObjCountAreEqualCsvDataCountTest(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/ElementPlaceableSet.csv");
+            foreach (var obj in allObjs)
+            {
+                Assert.IsNotNull(obj.data);
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+                Assert.IsNotNull(obj.data.elementPlaceableIds);
+                Assert.IsTrue(obj.data.elementPlaceableIds.Length > 0);
             }
         }
 

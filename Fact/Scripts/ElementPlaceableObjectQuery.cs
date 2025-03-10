@@ -10,10 +10,9 @@ namespace Wlg.FigureSkate.Fact
     public static class ElementPlaceableObjectQuery
     {
         // 全オブジェクトを読み込む
-        public static async Task<List<ElementPlaceableObject>> All(YearMonthDay baseday)
+        public static async Task<List<ElementPlaceableObject>> All()
         {
-            var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
-            return await LoaderUtility.LoadAssetsAsync<ElementPlaceableObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{skateYear}/ElementPlaceable");
+            return await LoaderUtility.LoadAssetsAsync<ElementPlaceableObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceable");
         }
 
         // 指定オブジェクト群から指定IDのオブジェクト単体を得る

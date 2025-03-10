@@ -99,8 +99,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             var eventObjectAll = await EventObjectQuery.All();
             var programObjectAll = await ProgramObjectQuery.All(startDay);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(startDay);
-            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(startDay);
-            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All(startDay);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
+            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
             var competitionObjectAll = await CompetitionObjectQuery.All(startDay);
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(startDay);
             var goeObjectAll = await GoeObjectQuery.All(startDay);

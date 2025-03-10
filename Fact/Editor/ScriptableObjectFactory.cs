@@ -189,50 +189,6 @@ namespace Wlg.FigureSkate.Fact.Editor
                 {
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
-                        "ElementPlaceable.csv",
-                        (List<string[]> rows) =>
-                        {
-                            // 配列(elementIds)を扱うため独自に値を設定する
-                            var result = new ElementPlaceable[rows.Count - 1];
-                            for (var i = 0; i < result.Length; ++i)
-                            {
-                                var rowsIndex = i + 1;
-                                result[i] = new ElementPlaceable
-                                {
-                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
-                                    elementIds = rows[rowsIndex][Array.IndexOf(rows[0], "elementIds")].Split('/'),
-                                };
-                            }
-                            return result;
-                        },
-                        (ElementPlaceable data) => { return $"{data.id}.asset"; },
-                        (ElementPlaceable data, ElementPlaceableObject obj) => { obj.data = data; }
-                        );
-                    CreateOrUpdateScriptableObjectFromCsv(
-                        path,
-                        "ElementPlaceableSet.csv",
-                        (List<string[]> rows) =>
-                        {
-                            // 配列(elementPlaceableIds)を扱うため独自に値を設定する
-                            var result = new ElementPlaceableSet[rows.Count - 1];
-                            for (var i = 0; i < result.Length; ++i)
-                            {
-                                var rowsIndex = i + 1;
-                                result[i] = new ElementPlaceableSet
-                                {
-                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
-                                    name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
-                                    jump = bool.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "jump")]),
-                                    elementPlaceableIds = rows[rowsIndex][Array.IndexOf(rows[0], "elementPlaceableIds")].Split('/'),
-                                };
-                            }
-                            return result;
-                        },
-                        (ElementPlaceableSet data) => { return $"{data.id}.asset"; },
-                        (ElementPlaceableSet data, ElementPlaceableSetObject obj) => { obj.data = data; }
-                        );
-                    CreateOrUpdateScriptableObjectFromCsv(
-                        path,
                         "ProgramComponentRegulation.csv",
                         (List<string[]> rows) =>
                         {
@@ -301,6 +257,50 @@ namespace Wlg.FigureSkate.Fact.Editor
                         },
                         (Core.Data.Event data) => { return $"{data.id}.asset"; },
                         (Core.Data.Event data, EventObject obj) => { obj.data = data; }
+                        );
+                    CreateOrUpdateScriptableObjectFromCsv(
+                        path,
+                        "ElementPlaceable.csv",
+                        (List<string[]> rows) =>
+                        {
+                            // 配列(elementIds)を扱うため独自に値を設定する
+                            var result = new ElementPlaceable[rows.Count - 1];
+                            for (var i = 0; i < result.Length; ++i)
+                            {
+                                var rowsIndex = i + 1;
+                                result[i] = new ElementPlaceable
+                                {
+                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                    elementIds = rows[rowsIndex][Array.IndexOf(rows[0], "elementIds")].Split('/'),
+                                };
+                            }
+                            return result;
+                        },
+                        (ElementPlaceable data) => { return $"{data.id}.asset"; },
+                        (ElementPlaceable data, ElementPlaceableObject obj) => { obj.data = data; }
+                        );
+                    CreateOrUpdateScriptableObjectFromCsv(
+                        path,
+                        "ElementPlaceableSet.csv",
+                        (List<string[]> rows) =>
+                        {
+                            // 配列(elementPlaceableIds)を扱うため独自に値を設定する
+                            var result = new ElementPlaceableSet[rows.Count - 1];
+                            for (var i = 0; i < result.Length; ++i)
+                            {
+                                var rowsIndex = i + 1;
+                                result[i] = new ElementPlaceableSet
+                                {
+                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                    name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
+                                    jump = bool.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "jump")]),
+                                    elementPlaceableIds = rows[rowsIndex][Array.IndexOf(rows[0], "elementPlaceableIds")].Split('/'),
+                                };
+                            }
+                            return result;
+                        },
+                        (ElementPlaceableSet data) => { return $"{data.id}.asset"; },
+                        (ElementPlaceableSet data, ElementPlaceableSetObject obj) => { obj.data = data; }
                         );
                 }
             }

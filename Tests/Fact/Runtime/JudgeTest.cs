@@ -30,7 +30,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
-            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -111,7 +111,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
-            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -222,7 +222,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
-            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -266,7 +266,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
-            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -332,7 +332,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
-            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -407,8 +407,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             var eventObjectAll = await EventObjectQuery.All();
             var programObjectAll = await ProgramObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
-            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All(baseday);
-            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All(baseday);
+            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
+            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
             CompetitionObject competitionObject = CompetitionObjectQuery.ById(competitionObjectAll, "KinoshitaGroupCupJapanOpen2023");
             ProgramComponentHanlder programComponentHanlderHanlder;
             {
