@@ -137,7 +137,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 };
                 if (Equals(programObject.name, "SeniorMenShortProgram"))
                 {
-                    var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                    var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram2023_24(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
                     programComponentHanlders.Add(programComponentHanlder);
 
                     // 合計基礎点テスト
@@ -155,7 +155,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 }
                 else if (Equals(programObject.name, "SeniorWomenShortProgram"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorWomenShortProgram2023_24(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "SeniorMenFreeSkating"))
                 {
@@ -167,11 +167,11 @@ namespace Wlg.FigureSkate.Tests.Fact
                 }
                 else if (Equals(programObject.name, "JuniorMenShortProgram"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorMenShortProgram2023_24(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorWomenShortProgram"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorWomenShortProgram2023_24(programObject.data, player.programComponentsList[i].components, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorMenFreeSkating"))
                 {

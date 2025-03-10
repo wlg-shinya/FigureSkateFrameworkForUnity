@@ -8,7 +8,7 @@ namespace Wlg.FigureSkate.Tests.Fact
     public static class ProgramComponentHanlderFactory
     {
         // ここで ProgramComponentHanlder クラス自体のテストも兼ねる
-        public static ProgramComponentHanlder SeniorMenShortProgram(
+        public static ProgramComponentHanlder SeniorMenShortProgram2023_24(
             Program program,
             ProgramComponent[] programComponents,
             ProgramComponentRegulation[] programComponentRegulationAll,
@@ -76,7 +76,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder SeniorWomenShortProgram(
+        public static ProgramComponentHanlder SeniorWomenShortProgram2023_24(
             Program program,
             ProgramComponent[] programComponents,
             ProgramComponentRegulation[] programComponentRegulationAll,
@@ -309,7 +309,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return SeniorMenFreeSkating(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
         }
 
-        public static ProgramComponentHanlder JuniorMenShortProgram(
+        public static ProgramComponentHanlder JuniorMenShortProgram2023_24(
             Program program,
             ProgramComponent[] programComponents,
             ProgramComponentRegulation[] programComponentRegulationAll,
@@ -359,7 +359,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder JuniorWomenShortProgram(
+        public static ProgramComponentHanlder JuniorWomenShortProgram2023_24(
             Program program,
             ProgramComponent[] programComponents,
             ProgramComponentRegulation[] programComponentRegulationAll,
