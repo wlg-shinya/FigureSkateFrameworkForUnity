@@ -17,6 +17,6 @@ MonoBehaviour:
     name: "3\u9023\u7D9A\u30B8\u30E3\u30F3\u30D7\u30B3\u30F3\u30D3\u30CD\u30FC\u30B7\u30E7\u30F3"
     jump: 1
     elementPlaceableIds:
-    - JumpAll
+    - Jump1234
     - JumpTLoEu
-    - JumpAll
+    - Jump1234
