@@ -20,7 +20,7 @@ MonoBehaviour:
     - Jump
     - Jump2Combination
     - Jump3Combination
-    - SpinOnepositionCamelSitLaybackNoflying
     - SpinOnepositionFlying
+    - SpinOnepositionCamelSitLaybackNoflying
     - SpinCombinationNoflying
     - ChoreographicSequence

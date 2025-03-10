@@ -21,7 +21,7 @@ MonoBehaviour:
     - Jump
     - Jump2Combination
     - Jump3Combination
-    - SpinCamelSitNoflying
     - SpinOnepositionFlying
+    - SpinCamelSitNoflying
     - SpinCombinationNoflying
     - StepSequence

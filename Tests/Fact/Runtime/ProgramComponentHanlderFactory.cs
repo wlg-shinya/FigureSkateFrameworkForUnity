@@ -163,8 +163,8 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
                     Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "2Lo"));
                     Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2T"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "SSp4"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(8, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(8, 0, "SSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(9, 0, "CoSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(10, 0, "StSqB"));
                     Assert.IsTrue(programComponentHanlder.TrySet(11, 0, "ChSq1"));
@@ -282,7 +282,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 
                 // "同じスピンを複数構成することはできません"
                 {
-                    programComponentHanlder.TrySet(8, 0, "FCoSp4");
+                    programComponentHanlder.TrySet(7, 0, "FCoSp4");
                     programComponentHanlder.TrySet(9, 0, "FCoSp4");
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                     SetupValidProgramComponent(programComponentHanlder);
@@ -435,8 +435,8 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
                     Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "2Lo"));
                     Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2T"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "SSp4"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(8, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(8, 0, "SSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(9, 0, "CoSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(10, 0, "ChSq1"));
                     // 正常に構成できているのでエラーは発生していないはず
@@ -553,7 +553,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 
                 // "同じスピンを複数構成することはできません"
                 {
-                    programComponentHanlder.TrySet(8, 0, "FCoSp4");
+                    programComponentHanlder.TrySet(7, 0, "FCoSp4");
                     programComponentHanlder.TrySet(9, 0, "FCoSp4");
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                     SetupValidProgramComponent(programComponentHanlder);
@@ -604,8 +604,8 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
                     Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "1Eu"));
                     Assert.IsTrue(programComponentHanlder.TrySet(5, 2, "2A"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "SSp4"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "SSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(8, 0, "CoSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(9, 0, "StSqB"));
                     // 正常に構成できているのでエラーは発生していないはず
@@ -734,11 +734,11 @@ namespace Wlg.FigureSkate.Tests.Fact
 
                 // "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください"
                 {
-                    programComponentHanlder.TrySet(6, 0, "SSp4");
-                    programComponentHanlder.TrySet(7, 0, "FSSp4");
+                    programComponentHanlder.TrySet(6, 0, "FSSp4");
+                    programComponentHanlder.TrySet(7, 0, "SSp4");
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                     // 異なる着氷姿勢に設定しなおしたのでエラーは解消しているはず
-                    programComponentHanlder.TrySet(7, 0, "FCSp4");
+                    programComponentHanlder.TrySet(6, 0, "FCSp4");
                     Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
                     SetupValidProgramComponent(programComponentHanlder);
                 }
@@ -777,8 +777,8 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
                     Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "1Eu"));
                     Assert.IsTrue(programComponentHanlder.TrySet(5, 2, "2A"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "SSp4"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "SSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(8, 0, "CoSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(9, 0, "StSqB"));
                     // 正常に構成できているのでエラーは発生していないはず
@@ -907,11 +907,11 @@ namespace Wlg.FigureSkate.Tests.Fact
 
                 // "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください"
                 {
-                    programComponentHanlder.TrySet(6, 0, "SSp4");
-                    programComponentHanlder.TrySet(7, 0, "FSSp4");
+                    programComponentHanlder.TrySet(6, 0, "FSSp4");
+                    programComponentHanlder.TrySet(7, 0, "SSp4");
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                     // 異なる着氷姿勢に設定しなおしたのでエラーは解消しているはず
-                    programComponentHanlder.TrySet(7, 0, "FCSp4");
+                    programComponentHanlder.TrySet(6, 0, "FCSp4");
                     Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
                     SetupValidProgramComponent(programComponentHanlder);
                 }
@@ -949,8 +949,8 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2S"));
                     Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2Lo"));
                     Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "2T"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "SSp4"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "SSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "CoSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(8, 0, "ChSq1"));
                     // 正常に構成できているのでエラーは発生していないはず
@@ -1081,11 +1081,11 @@ namespace Wlg.FigureSkate.Tests.Fact
 
                 // "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください"
                 {
-                    programComponentHanlder.TrySet(5, 0, "SSp4");
-                    programComponentHanlder.TrySet(6, 0, "FSSp4");
+                    programComponentHanlder.TrySet(5, 0, "FSSp4");
+                    programComponentHanlder.TrySet(6, 0, "SSp4");
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                     // 異なる着氷姿勢に設定しなおしたのでエラーは解消しているはず
-                    programComponentHanlder.TrySet(6, 0, "FCSp4");
+                    programComponentHanlder.TrySet(5, 0, "FCSp4");
                     Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
                     SetupValidProgramComponent(programComponentHanlder);
                 }
@@ -1123,8 +1123,8 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2S"));
                     Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2Lo"));
                     Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "2T"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "SSp4"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "SSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "CoSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(8, 0, "ChSq1"));
                     // 正常に構成できているのでエラーは発生していないはず
@@ -1255,11 +1255,11 @@ namespace Wlg.FigureSkate.Tests.Fact
 
                 // "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください"
                 {
-                    programComponentHanlder.TrySet(5, 0, "SSp4");
-                    programComponentHanlder.TrySet(6, 0, "FSSp4");
+                    programComponentHanlder.TrySet(5, 0, "FSSp4");
+                    programComponentHanlder.TrySet(6, 0, "SSp4");
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                     // 異なる着氷姿勢に設定しなおしたのでエラーは解消しているはず
-                    programComponentHanlder.TrySet(6, 0, "FCSp4");
+                    programComponentHanlder.TrySet(5, 0, "FCSp4");
                     Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
                     SetupValidProgramComponent(programComponentHanlder);
                 }
