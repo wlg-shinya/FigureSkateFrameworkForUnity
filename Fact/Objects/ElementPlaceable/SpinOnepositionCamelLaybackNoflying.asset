@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84b4f709ae3190a47b4ee8670c92b44e, type: 3}
-  m_Name: SpinCombinationChangefoot
+  m_Name: SpinOnepositionCamelLaybackNoflying
   m_EditorClassIdentifier: 
   data:
-    id: SpinCombinationChangefoot
+    id: SpinOnepositionCamelLaybackNoflying
     elementIds:
-    - CCoSpB
-    - CCoSp1
-    - CCoSp2
-    - CCoSp3
-    - CCoSp4
-    - FCCoSpB
-    - FCCoSp1
-    - FCCoSp2
-    - FCCoSp3
-    - FCCoSp4
+    - CSpB
+    - CSp1
+    - CSp2
+    - CSp3
+    - CSp4
+    - LSpB
+    - LSp1
+    - LSp2
+    - LSp3
+    - LSp4

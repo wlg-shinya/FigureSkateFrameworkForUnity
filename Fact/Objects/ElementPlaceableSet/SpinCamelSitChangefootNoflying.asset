@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47c632742a8b083438ef5285aac47e55, type: 3}
-  m_Name: SpinCamelSit
+  m_Name: SpinCamelSitChangefootNoflying
   m_EditorClassIdentifier: 
   data:
-    id: SpinCamelSit
-    name: "\u30AD\u30E3\u30E1\u30EB/\u30B7\u30C3\u30C8\u30B9\u30D4\u30F3"
+    id: SpinCamelSitChangefootNoflying
+    name: "\u30D5\u30E9\u30A4\u30F3\u30B0\u306A\u3057\u8DB3\u66FF\u3048\u30AD\u30E3\u30E1\u30EB/\u30B7\u30C3\u30C8\u30B9\u30D4\u30F3"
     jump: 0
     elementPlaceableIds:
-    - SpinCamelSit
+    - SpinCamelSitChangefootNoflying

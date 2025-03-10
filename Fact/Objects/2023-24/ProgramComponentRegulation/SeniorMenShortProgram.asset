@@ -18,8 +18,7 @@ MonoBehaviour:
     - Jump23A
     - Jump34
     - Jump23-33-42-43Combination
-    - SpinCamelSit
     - SpinOnepositionFlying
-    - SpinCombinationChangefoot
+    - SpinCamelSitChangefootNoflying
+    - SpinCombinationChangefootNoflying
     - StepSequence
-    elementPlaceableSets: []

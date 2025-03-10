@@ -27,4 +27,3 @@ MonoBehaviour:
     - SpinCombination
     - StepSequence
     - ChoreographicSequence
-    elementPlaceableSets: []

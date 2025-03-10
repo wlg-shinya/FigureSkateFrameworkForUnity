@@ -10,28 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84b4f709ae3190a47b4ee8670c92b44e, type: 3}
-  m_Name: SpinOnepositionCamelLayback
+  m_Name: SpinCamelChangefootNoflying
   m_EditorClassIdentifier: 
   data:
-    id: SpinOnepositionCamelLayback
+    id: SpinCamelChangefootNoflying
     elementIds:
-    - CSpB
-    - CSp1
-    - CSp2
-    - CSp3
-    - CSp4
-    - FCSpB
-    - FCSp1
-    - FCSp2
-    - FCSp3
-    - FCSp4
-    - LSpB
-    - LSp1
-    - LSp2
-    - LSp3
-    - LSp4
-    - FLSpB
-    - FLSp1
-    - FLSp2
-    - FLSp3
-    - FLSp4
+    - CCSpB
+    - CCSp1
+    - CCSp2
+    - CCSp3
+    - CCSp4

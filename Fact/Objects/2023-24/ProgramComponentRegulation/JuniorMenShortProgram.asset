@@ -15,11 +15,10 @@ MonoBehaviour:
   data:
     id: JuniorMenShortProgram
     elementPlaceableSetIds:
-    - Jump2A
+    - Jump23A
     - Jump23Lz
     - Jump23-33Combination
-    - SpinCamel
     - SpinSitFlying
-    - SpinCombinationChangefoot
+    - SpinCamelChangefootNoflying
+    - SpinCombinationChangefootNoflying
     - StepSequence
-    elementPlaceableSets: []
