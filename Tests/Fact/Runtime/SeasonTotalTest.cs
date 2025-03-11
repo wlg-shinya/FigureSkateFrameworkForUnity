@@ -9,9 +9,9 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public class SeasonTotalTest
     {
-        // private readonly YearMonthDay BASEDAY_2022_23 = new(2023, 1, 1);
-        private readonly YearMonthDay BASEDAY_2023_24 = new(2024, 1, 1);
-        private readonly YearMonthDay BASEDAY_2024_25 = new(2025, 1, 1);
+        // private readonly YearMonthDay BASEDAY_2022_23 = new(2022, 7, 1);
+        private readonly YearMonthDay BASEDAY_2023_24 = new(2023, 7, 1);
+        private readonly YearMonthDay BASEDAY_2024_25 = new(2024, 7, 1);
 
         [Test]
         public async Task ClassTest()
