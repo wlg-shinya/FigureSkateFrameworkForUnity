@@ -19,5 +19,10 @@ MonoBehaviour:
     lastJumpSpecialFactorCount: 1
     pcsFactor: 1.67
     programComponentRegulationId: SeniorMenShortProgram
-  elementPlaceableSetConditionObjectDataList: []
-  ProgramComponentConditionObjects: []
+  elementPlaceableSetConditionObjectDataList:
+  - id: Jump23-33-42-43Combination
+    obj: {fileID: 11400000, guid: 6348cdb9823942a4c8be7aca09952214, type: 2}
+  ProgramComponentConditionObjects:
+  - {fileID: 11400000, guid: 0e474f596fc93e241b4253eea5c7d860, type: 2}
+  - {fileID: 11400000, guid: ebc2f41faf97f7a4188c342089b3ee12, type: 2}
+  - {fileID: 11400000, guid: df10750cbbcbf5f47a8a7f4ad469d7c5, type: 2}

@@ -11,7 +11,8 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public class ProgramComponentHanlderTest
     {
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task SeniorMenShortProgramTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -37,6 +38,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             switch (skateYear)
             {
                 case "2023-24":
+                case "2024-25":
                     // "3回転+2回転は構成できません"
                     {
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -80,7 +82,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task SeniorWomenShortProgramTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -100,6 +103,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             switch (skateYear)
             {
                 case "2023-24":
+                case "2024-25":
                     // "同じジャンプを複数構成することはできません"
                     {
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -274,7 +278,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task SeniorMenFreeSkatingTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -294,7 +299,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             SeniorFreeSkatingTest(() => ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task SeniorWomenFreeSkatingTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -314,7 +320,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             SeniorFreeSkatingTest(() => ProgramComponentHanlderFactory.SeniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task JuniorMenShortProgramTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -331,27 +338,56 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            // "同じジャンプを複数構成することはできません"
+            switch (skateYear)
             {
-                var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                programComponentHanlder.TrySet(1, 0, "3Lz");
-                programComponentHanlder.TrySet(2, 0, "3Lz");
-                Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
-                // 同じ要素でもジャンプコンビネーションならエラーにはならない
-                programComponentHanlder.TrySet(2, 0, "3Lo");
-                programComponentHanlder.TrySet(2, 1, "3Lo");
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-            }
+                case "2023-24":
+                    // "同じジャンプを複数構成することはできません"
+                    {
+                        var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.TrySet(1, 0, "3Lz");
+                        programComponentHanlder.TrySet(2, 0, "3Lz");
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                        // 同じ要素でもジャンプコンビネーションならエラーにはならない
+                        programComponentHanlder.TrySet(2, 0, "3Lo");
+                        programComponentHanlder.TrySet(2, 1, "3Lo");
+                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    }
 
-            // "構成要素はすべて設定してください"
-            {
-                var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                programComponentHanlder.Unset(6, 0);
-                Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                    // "構成要素はすべて設定してください"
+                    {
+                        var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.Unset(6, 0);
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+                    break;
+                case "2024-25":
+                    // "同じジャンプを複数構成することはできません"
+                    {
+                        var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.TrySet(1, 0, "3F");
+                        programComponentHanlder.TrySet(2, 0, "3F");
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                        // 同じ要素でもジャンプコンビネーションならエラーにはならない
+                        programComponentHanlder.TrySet(2, 0, "3Lo");
+                        programComponentHanlder.TrySet(2, 1, "3Lo");
+                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+
+                    // "構成要素はすべて設定してください"
+                    {
+                        var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.Unset(6, 0);
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+                    break;
+                default:
+                    Assert.IsTrue(false);
+                    break;
             }
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task JuniorWomenShortProgramTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -368,23 +404,51 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            // "同じジャンプを複数構成することはできません"
+            switch (skateYear)
             {
-                var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                programComponentHanlder.TrySet(1, 0, "3Lz");
-                programComponentHanlder.TrySet(2, 0, "3Lz");
-                Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
-                // 同じ要素でもジャンプコンビネーションならエラーにはならない
-                programComponentHanlder.TrySet(2, 0, "3Lo");
-                programComponentHanlder.TrySet(2, 1, "3Lo");
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-            }
+                case "2023-24":
+                    // "同じジャンプを複数構成することはできません"
+                    {
+                        var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.TrySet(1, 0, "3Lz");
+                        programComponentHanlder.TrySet(2, 0, "3Lz");
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                        // 同じ要素でもジャンプコンビネーションならエラーにはならない
+                        programComponentHanlder.TrySet(2, 0, "3Lo");
+                        programComponentHanlder.TrySet(2, 1, "3Lo");
+                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    }
 
-            // "構成要素はすべて設定してください"
-            {
-                var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                programComponentHanlder.Unset(6, 0);
-                Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                    // "構成要素はすべて設定してください"
+                    {
+                        var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.Unset(6, 0);
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+                    break;
+                case "2024-25":
+                    // "同じジャンプを複数構成することはできません"
+                    {
+                        var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.TrySet(1, 0, "3F");
+                        programComponentHanlder.TrySet(2, 0, "3F");
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                        // 同じ要素でもジャンプコンビネーションならエラーにはならない
+                        programComponentHanlder.TrySet(2, 0, "3Lo");
+                        programComponentHanlder.TrySet(2, 1, "3Lo");
+                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+
+                    // "構成要素はすべて設定してください"
+                    {
+                        var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.Unset(6, 0);
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+                    break;
+                default:
+                    Assert.IsTrue(false);
+                    break;
             }
         }
 
@@ -526,7 +590,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task JuniorMenFreeSkatingTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -546,7 +611,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             JuniorFreeSkatingTest(() => ProgramComponentHanlderFactory.JuniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task JuniorWomenFreeSkatingTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -566,7 +632,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             JuniorFreeSkatingTest(() => ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task NoviceAMenFreeSkatingTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -735,7 +802,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task NoviceAWomenFreeSkatingTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -903,7 +971,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task NoviceBMenFreeSkatingTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -1072,7 +1141,8 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task NoviceBWomenFreeSkatingTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);

@@ -19,5 +19,14 @@ MonoBehaviour:
     lastJumpSpecialFactorCount: 0
     pcsFactor: 2.67
     programComponentRegulationId: NoviceBWomenFreeSkating
-  elementPlaceableSetConditionObjectDataList: []
-  ProgramComponentConditionObjects: []
+  elementPlaceableSetConditionObjectDataList:
+  - id: Jump3Combination
+    obj: {fileID: 11400000, guid: 00b43e3020799e64aafc6ec410b97b3e, type: 2}
+  ProgramComponentConditionObjects:
+  - {fileID: 11400000, guid: 2ce97c299ed198a47914810d9ec447d8, type: 2}
+  - {fileID: 11400000, guid: 8adbf9aa6ed44cb45ad6a81454c7b415, type: 2}
+  - {fileID: 11400000, guid: 103cda1f4fc94e240bad36cacf596c4f, type: 2}
+  - {fileID: 11400000, guid: 125342824037dce4e98883a543ed7e3a, type: 2}
+  - {fileID: 11400000, guid: ea963736d6346ff4bb8a8be1f6853c9c, type: 2}
+  - {fileID: 11400000, guid: ebc2f41faf97f7a4188c342089b3ee12, type: 2}
+  - {fileID: 11400000, guid: df10750cbbcbf5f47a8a7f4ad469d7c5, type: 2}

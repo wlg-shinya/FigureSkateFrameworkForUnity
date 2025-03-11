@@ -17,8 +17,9 @@ MonoBehaviour:
     elementPlaceableSetIds:
     - Jump2A
     - Jump23Lz
-    - Jump23-33Combination
+    - Jump23F
     - Jump23A
-    - Jump34
-    - Jump23-33-42-43Combination
     - Jump3
+    - Jump34
+    - Jump23-33Combination
+    - Jump23-33-42-43Combination
