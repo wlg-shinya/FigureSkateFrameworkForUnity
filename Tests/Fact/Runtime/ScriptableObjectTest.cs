@@ -11,7 +11,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public class ScriptableObjectTest
     {
-        [TestCase("2024/1/1")]
+        [TestCase("2023/7/1")]
         public async Task SeasonDataTest(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);

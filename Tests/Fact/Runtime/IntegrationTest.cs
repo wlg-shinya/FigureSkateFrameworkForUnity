@@ -14,20 +14,17 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public class IntegrationTest
     {
-        [TestCase("Senior", "Men")]
-        [TestCase("Senior", "Women")]
-        public async Task KinoshitaGroupCupJapanOpen2023(string classId, string sexId) => await Competition("KinoshitaGroupCupJapanOpen2023", new(2023, 10, 7), classId, sexId);
-        [TestCase("Junior", "Men")]
-        [TestCase("Junior", "Women")]
-        public async Task ISUWorldJuniorChampionships2024(string classId, string sexId) => await Competition("ISUWorldJuniorChampionships2024", new(2024, 2, 26), classId, sexId);
-        [TestCase("NoviceA", "Men")]
-        [TestCase("NoviceA", "Women")]
-        [TestCase("NoviceB", "Men")]
-        [TestCase("NoviceB", "Women")]
-        public async Task NationalNovice(string classId, string sexId) => await Competition("NationalNovice", new(2023, 10, 20), classId, sexId);
-
-        private async Task Competition(string competitionName, YearMonthDay startDay, string classId, string sexId)
+        [TestCase("KinoshitaGroupCupJapanOpen2023", "2023/10/7", "Senior", "Men")]
+        [TestCase("KinoshitaGroupCupJapanOpen2023", "2023/10/7", "Senior", "Women")]
+        [TestCase("ISUWorldJuniorChampionships2024", "2024/2/26", "Junior", "Men")]
+        [TestCase("ISUWorldJuniorChampionships2024", "2024/2/26", "Junior", "Women")]
+        [TestCase("NationalNovice", "2023/10/20", "NoviceA", "Men")]
+        [TestCase("NationalNovice", "2023/10/20", "NoviceA", "Women")]
+        [TestCase("NationalNovice", "2023/10/20", "NoviceB", "Men")]
+        [TestCase("NationalNovice", "2023/10/20", "NoviceB", "Women")]
+        public async Task CompetitionHeldTest(string competitionName, string startDayString, string classId, string sexId)
         {
+            var startDay = new YearMonthDay(startDayString);
             var skateYear = YearMonthDayUtility.GetSkateYearString(startDay);
             var elementObjectAll = await ElementObjectQuery.All();
 
