@@ -15,14 +15,11 @@ namespace Wlg.FigureSkate.Tests.Fact
     public class JudgeTest
     {
         [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task CheckTesGoePlusValue(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
-            ProgramComponentHanlder programComponentHanlder = null;
-            {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
-                Assert.IsNotNull(programComponentHanlder);
-            }
+            var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
             var goeObjectAll = await GoeObjectQuery.All(baseday);
@@ -30,6 +27,15 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
             var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
+            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
+            var programObjectAll = await ProgramObjectQuery.All(baseday);
+            var programObject = programObjectAll.Find(x => x.data.id.Equals("SeniorMenShortProgram"));
+            var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjectAll, programObject.data.programComponentRegulationId);
+            var programComponents = ProgramComponentQuery.Create(regulation.data, elementPlaceableSetObjectAll);
+            var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -97,14 +103,11 @@ namespace Wlg.FigureSkate.Tests.Fact
         }
 
         [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task CheckTesGoeMinusValue(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
-            ProgramComponentHanlder programComponentHanlder = null;
-            {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
-                Assert.IsNotNull(programComponentHanlder);
-            }
+            var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
             var goeObjectAll = await GoeObjectQuery.All(baseday);
@@ -112,6 +115,15 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
             var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
+            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
+            var programObjectAll = await ProgramObjectQuery.All(baseday);
+            var programObject = programObjectAll.Find(x => x.data.id.Equals("SeniorMenShortProgram"));
+            var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjectAll, programObject.data.programComponentRegulationId);
+            var programComponents = ProgramComponentQuery.Create(regulation.data, elementPlaceableSetObjectAll);
+            var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -209,14 +221,11 @@ namespace Wlg.FigureSkate.Tests.Fact
         }
 
         [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task CheckTesJump(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
-            ProgramComponentHanlder programComponentHanlder = null;
-            {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
-                Assert.IsNotNull(programComponentHanlder);
-            }
+            var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
             var goeObjectAll = await GoeObjectQuery.All(baseday);
@@ -224,6 +233,15 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
             var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
+            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
+            var programObjectAll = await ProgramObjectQuery.All(baseday);
+            var programObject = programObjectAll.Find(x => x.data.id.Equals("SeniorMenShortProgram"));
+            var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjectAll, programObject.data.programComponentRegulationId);
+            var programComponents = ProgramComponentQuery.Create(regulation.data, elementPlaceableSetObjectAll);
+            var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -254,14 +272,11 @@ namespace Wlg.FigureSkate.Tests.Fact
         }
 
         [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task RecordTes(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
-            ProgramComponentHanlder programComponentHanlder = null;
-            {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
-                Assert.IsNotNull(programComponentHanlder);
-            }
+            var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
             var goeObjectAll = await GoeObjectQuery.All(baseday);
@@ -269,6 +284,15 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
             var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
+            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
+            var programObjectAll = await ProgramObjectQuery.All(baseday);
+            var programObject = programObjectAll.Find(x => x.data.id.Equals("SeniorMenShortProgram"));
+            var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjectAll, programObject.data.programComponentRegulationId);
+            var programComponents = ProgramComponentQuery.Create(regulation.data, elementPlaceableSetObjectAll);
+            var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -321,14 +345,11 @@ namespace Wlg.FigureSkate.Tests.Fact
         }
 
         [TestCase("2023/7/1")]
+        [TestCase("2024/7/1")]
         public async Task CheckPcs(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
-            ProgramComponentHanlder programComponentHanlder = null;
-            {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
-                Assert.IsNotNull(programComponentHanlder);
-            }
+            var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
             var goeObjectAll = await GoeObjectQuery.All(baseday);
@@ -336,6 +357,15 @@ namespace Wlg.FigureSkate.Tests.Fact
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
             var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
+            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
+            var programObjectAll = await ProgramObjectQuery.All(baseday);
+            var programObject = programObjectAll.Find(x => x.data.id.Equals("SeniorMenShortProgram"));
+            var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjectAll, programObject.data.programComponentRegulationId);
+            var programComponents = ProgramComponentQuery.Create(regulation.data, elementPlaceableSetObjectAll);
+            var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
+            var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -402,43 +432,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 }
                 catch { }
             }
-        }
-
-        private async Task<ProgramComponentHanlder> CreateProgramComponentHanlderAsync(YearMonthDay baseday)
-        {
-            var competitionObjectAll = await CompetitionObjectQuery.All(baseday);
-            var eventObjectAll = await EventObjectQuery.All();
-            var programObjectAll = await ProgramObjectQuery.All(baseday);
-            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
-            var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
-            var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
-            CompetitionObject competitionObject = CompetitionObjectQuery.ById(competitionObjectAll, "KinoshitaGroupCupJapanOpen2023");
-            ProgramComponentHanlder programComponentHanlderHanlder;
-            {
-                var programObject = ProgramObjectQuery.ById(
-                    programObjectAll,
-                    competitionObject.data.eventIds
-                        .Select(x => EventObjectQuery.ById(eventObjectAll, x))
-                        .Select(eventObject => eventObject.data.programIds.Where(programId => Equals(programId, "SeniorMenShortProgram")).First())
-                        .First()
-                    );
-                programObject = ProgramObjectQuery.SetupConditions(programObject, programComponentRegulationObjectAll, elementPlaceableSetObjectAll);
-                var regulation = ProgramComponentRegulationObjectQuery.ById(programComponentRegulationObjectAll, programObject.data.programComponentRegulationId);
-                var programComponents = ProgramComponentQuery.Create(regulation.data, elementPlaceableSetObjectAll);
-                programComponentHanlderHanlder = new ProgramComponentHanlder(
-                    programObject.data,
-                    programComponents,
-                    programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
-                    elementPlaceableSetObjectAll.Select(x => x.data).ToArray(),
-                    elementPlaceableObjectAll.Select(x => x.data).ToArray()
-                    );
-                Assert.IsNotNull(programComponentHanlderHanlder);
-            }
-            programComponentHanlderHanlder.TrySet(0, 0, "3A");
-            programComponentHanlderHanlder.TrySet(1, 0, "4Lz");
-            programComponentHanlderHanlder.TrySet(2, 0, "2A");
-            programComponentHanlderHanlder.TrySet(2, 1, "3Lo");
-            return programComponentHanlderHanlder;
         }
     }
 }
