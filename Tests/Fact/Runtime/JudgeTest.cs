@@ -14,14 +14,13 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public class JudgeTest
     {
-        private readonly YearMonthDay baseday = new(2024, 1, 1);
-
-        [Test]
-        public async Task CheckTesGoePlusValue()
+        [TestCase("2023/7/1")]
+        public async Task CheckTesGoePlusValue(string basedayString)
         {
+            var baseday = new YearMonthDay(basedayString);
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
                 Assert.IsNotNull(programComponentHanlder);
             }
             var elementObjectAll = await ElementObjectQuery.All();
@@ -97,12 +96,13 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [Test]
-        public async Task CheckTesGoeMinusValue()
+        [TestCase("2023/7/1")]
+        public async Task CheckTesGoeMinusValue(string basedayString)
         {
+            var baseday = new YearMonthDay(basedayString);
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
                 Assert.IsNotNull(programComponentHanlder);
             }
             var elementObjectAll = await ElementObjectQuery.All();
@@ -208,12 +208,13 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [Test]
-        public async Task CheckTesJump()
+        [TestCase("2023/7/1")]
+        public async Task CheckTesJump(string basedayString)
         {
+            var baseday = new YearMonthDay(basedayString);
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
                 Assert.IsNotNull(programComponentHanlder);
             }
             var elementObjectAll = await ElementObjectQuery.All();
@@ -252,12 +253,13 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [Test]
-        public async Task RecordTes()
+        [TestCase("2023/7/1")]
+        public async Task RecordTes(string basedayString)
         {
+            var baseday = new YearMonthDay(basedayString);
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
                 Assert.IsNotNull(programComponentHanlder);
             }
             var elementObjectAll = await ElementObjectQuery.All();
@@ -318,12 +320,13 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        [Test]
-        public async Task CheckPcs()
+        [TestCase("2023/7/1")]
+        public async Task CheckPcs(string basedayString)
         {
+            var baseday = new YearMonthDay(basedayString);
             ProgramComponentHanlder programComponentHanlder = null;
             {
-                programComponentHanlder = await CreateProgramComponentHanlderAsync();
+                programComponentHanlder = await CreateProgramComponentHanlderAsync(baseday);
                 Assert.IsNotNull(programComponentHanlder);
             }
             var elementObjectAll = await ElementObjectQuery.All();
@@ -401,7 +404,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        private async Task<ProgramComponentHanlder> CreateProgramComponentHanlderAsync()
+        private async Task<ProgramComponentHanlder> CreateProgramComponentHanlderAsync(YearMonthDay baseday)
         {
             var competitionObjectAll = await CompetitionObjectQuery.All(baseday);
             var eventObjectAll = await EventObjectQuery.All();
