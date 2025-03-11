@@ -18,17 +18,17 @@ id,name,goeId,upgradeId,downgradeId
 3F,トリプルフリップ,Jump,4F,2F
 3Lz,トリプルルッツ,Jump,4Lz,2Lz
 3A,トリプルアクセル,Jump,4A,2A
-4T,クアドトウループ,Jump,5T,3T
-4S,クアドサルコウ,Jump,5S,3S
-4Lo,クアドループ,Jump,5F,3Lo
-4F,クアドフリップ,Jump,5F,3F
-4Lz,クアドルッツ,Jump,5Lz,3Lz
-4A,クアドアクセル,Jump,,3A
-5T,キントトウループ,Jump,,4T
-5S,キントサルコウ,Jump,,4S
-5Lo,キントループ,Jump,,4Lo
-5F,キントフリップ,Jump,,4F
-5Lz,キントルッツ,Jump,,4Lz
+4T,クワドラプルトウループ,Jump,5T,3T
+4S,クワドラプルサルコウ,Jump,5S,3S
+4Lo,クワドラプルループ,Jump,5F,3Lo
+4F,クワドラプルフリップ,Jump,5F,3F
+4Lz,クワドラプルルッツ,Jump,5Lz,3Lz
+4A,クワドラプルアクセル,Jump,,3A
+5T,クイントトウループ,Jump,,4T
+5S,クイントサルコウ,Jump,,4S
+5Lo,クイントループ,Jump,,4Lo
+5F,クイントフリップ,Jump,,4F
+5Lz,クイントルッツ,Jump,,4Lz
 USpB,アップライトスピン ベース,Spin,USp1,
 USp1,アップライトスピン Lv.1,Spin,USp2,USpB
 USp2,アップライトスピン Lv.2,Spin,USp3,USp1

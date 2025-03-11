@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: 4Lz
-    name: "\u30AF\u30A2\u30C9\u30EB\u30C3\u30C4"
+    name: "\u30AF\u30EF\u30C9\u30E9\u30D7\u30EB\u30EB\u30C3\u30C4"
     goeId: Jump
     upgradeId: 5Lz
     downgradeId: 3Lz
