@@ -270,6 +270,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 095c3ab6188507949b0aee5c68e11634
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/KantoRegional.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 097a2ea9a9ff84d4c98972379f5dd47a
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF22.asset"
     m_ReadOnly: 0
@@ -512,6 +517,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1493728c495b19543bedcbc6b7881595
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF35\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14aa197674b5ef84fa7384f6b46695d4
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/Nationals.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1120,6 +1130,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b0ad39790119bf4e84f57fff2ee8795
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/EasternSection.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2b2da8baf9aa1884c85ac7a50668ed68
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF12\uFF36.asset"
     m_ReadOnly: 0
@@ -1167,6 +1182,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2d74fed49e3f0dd4cae0751cc24990f3
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/JuniorWomenSingle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d965ca668ebf5341813ef1966cafeaf
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUJGPCzechSkate2024.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1560,6 +1580,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d731de41b4ad1745b14df2d001bc185
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/NationalJunior.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3dbcdf15e7445a14daaa88c74ae7cfd4
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/GoePlus/StepSequenceP6.asset
     m_ReadOnly: 0
@@ -1730,6 +1755,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43e7f5e7fbb79ca4facc32f5175694bc
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ChubuRegional.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 440633cfb06f62d409fdec9a8dfb9d5b
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCoSpB.asset
     m_ReadOnly: 0
@@ -1842,6 +1872,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 48c3d8adf6e2a9344834fe0c00759b9a
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48c7d30122469694abb84d52795e0586
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUGPGrandPrixdeFrance2024.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -2160,6 +2195,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5379cb9c8b8f79e4381da6242219c00d
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUJGPBangkok2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 53be294ef48869f4d96c20482fbb4c9b
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF13\uFF36.asset"
     m_ReadOnly: 0
@@ -2380,6 +2420,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5dd60bd830e945b40ae3e40c6883ca8e
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUGPFinlandiaTrophy2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5e0d4ab334537f64d8d52d808e9e88df
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP5.asset
     m_ReadOnly: 0
@@ -2555,6 +2600,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65d4a71037ddb6c41bc307ebd425d477
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUFourContinentsFigureSkatingChampionships2025.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 666061622824a354495a2be7ac357895
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF11\uFF36.asset"
     m_ReadOnly: 0
@@ -2637,6 +2687,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 694b1a09b57c53d40be456e8e637a999
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF26\uFF2C\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6986063b4ecf32f47a4d1424f2c31086
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/TokyoRegional.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -2795,6 +2850,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fd4fd9e560022442a4ee543743296d4
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/WesternSection.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6fdd20612d1f74043a547aceb782d2b4
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF14\uFF34.asset"
     m_ReadOnly: 0
@@ -2940,6 +3000,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 762c5f3d330362f4f9b42ad51212585f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUJGPSolidarityCup2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 762e852f48157c94db9fc3f94cee023d
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/4S.asset
     m_ReadOnly: 0
@@ -3032,6 +3097,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 79bf3bdb35f938a45958410c56e417f5
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF2C\uFF33\uFF50\uFF11.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79d10f9a2c0e4834890f60e16b2c741b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/Tohoku-HokkaidoRegional.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -3535,6 +3605,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d90538cccee4ac4684554bc082ef3b7
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUGPCupofChina2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8dae38351e6cf574392d62ff50eeea07
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Class/Junior.asset
     m_ReadOnly: 0
@@ -3655,6 +3730,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92d8cfb26e6afd1479a94292ac503eac
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/Chu-Shikoku-KyushuRegional.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 933deef5c43f9c240bfc6ae610bd9f49
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/1F.asset
     m_ReadOnly: 0
@@ -3707,6 +3787,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 976f3df8d1ecd1640a06677d9510c23f
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9770ad9ae88496640badb9e5a0494934
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUJGPRigaCup2024.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -3837,6 +3922,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9c54ee9536f0b654e92b5515a8254746
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF23\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c667f2e990f27c47a8e5aa4f9ef8813
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUWorldFigureSkatingChampionships2025.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -3980,6 +4070,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a35fc01a62984be46a628dbd520cf2ac
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUJGPLjubljanaCup2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a36f3534557a7564b98bd1f480038ae9
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF26\uFF35\uFF33\uFF50\uFF22.asset"
     m_ReadOnly: 0
@@ -4047,6 +4142,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a5be9c1a3c84d9e43a84bd16d19e2c54
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF11\uFF26\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6610b0f83d73644f9068367ba6e6fa9
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUGPNHKTrophy2024.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -4257,6 +4357,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af29794eb710a884f8302051afc131d7
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/GoePlus/ChoreographicSequenceP1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af68c6da22827f04685174aa80c9c910
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUWorldJuniorFigureSkatingChampionships2025.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -4740,6 +4845,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3061d292d85a0d43b8bc72df6d26cd9
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUGPSkateCanada2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c381c96471c703c419607a20d445c1b9
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF14.asset"
     m_ReadOnly: 0
@@ -4777,6 +4887,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c52c13d3ef49f524fb3c3c0e5b939896
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c537bdfcc3e04d84fb7ea6c446eb843f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUEuropeanFigureSkatingChampionships2025.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -5170,6 +5285,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5f6c55d447940c458304f3884e9e495
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUJGPIstanbul2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d5fad9efae73e854095ac1bef092be00
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/CCoSp3.asset
     m_ReadOnly: 0
@@ -5197,6 +5317,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d735c57f230828b4eb0a58473bc40349
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF33\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7606f77ce74a7c46b21b3d78030030f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUGrandPrixFinal2024-25.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -5237,6 +5362,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d9973f80c9231af438be781510a9e127
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FUSp3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9aaec5dda095f249a91f47569342856
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUGPSkateAmerica2024.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -5317,6 +5447,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dd21bd45796986a48907e18d15edd1f1
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ProgramComponentRegulation/SeniorWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd4ddb9daac723f4bb9a779ee928fb64
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/ISUJGPWuxi2024.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd8e015d9a973f048822baae51bf7d15
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/KinkiRegional.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -5462,6 +5602,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e3ef7f0acd8d8aa41b52677e8baf9364
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF35\uFF33\uFF50\uFF14.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3f31cbd8f2fe054a89c68fc2fc399f6
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/Competition/NationalNovice.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

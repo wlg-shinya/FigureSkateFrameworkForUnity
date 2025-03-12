@@ -1,0 +1,30 @@
+id,regionId,countryId,name,isInternational,startDay,endDay,eventIds
+ISUJGPRigaCup2024,Riga,LAT,ジュニアグランプリ ラトビア,true,2024/8/28,2024/8/31,JuniorMenSingle/JuniorWomenSingle
+ISUJGPCzechSkate2024,Ostrava,CZE,ジュニアグランプリ チェコ,true,2024/9/4,2024/9/7,JuniorMenSingle/JuniorWomenSingle
+ISUJGPBangkok2024,Bangkok,THA,ジュニアグランプリ タイ,true,2024/9/11,2024/9/14,JuniorMenSingle/JuniorWomenSingle
+ISUJGPIstanbul2024,Ankara,TUR,ジュニアグランプリ トルコ,true,2024/9/18,2024/9/21,JuniorMenSingle/JuniorWomenSingle
+ISUJGPSolidarityCup2024,Gdansk,POL,ジュニアグランプリ ポーランド,true,2024/9/25,2024/9/28,JuniorMenSingle/JuniorWomenSingle
+ISUJGPLjubljanaCup2024,Ljubljana,SLO,ジュニアグランプリ スロベニア,true,2024/10/2,2024/10/5,JuniorMenSingle/JuniorWomenSingle
+ISUJGPWuxi2024,Wuxi,CHN,ジュニアグランプリ 中国,true,2024/10/9,2024/10/12,JuniorMenSingle/JuniorWomenSingle
+ISUGPSkateAmerica2024,Allen,USA,シニアグランプリ アメリカ,true,2024/10/18,2024/10/20,SeniorMenSingle/SeniorWomenSingle
+ISUGPSkateCanada2024,Halifax,CAN,シニアグランプリ カナダ,true,2024/10/25,2024/10/27,SeniorMenSingle/SeniorWomenSingle
+ISUGPGrandPrixdeFrance2024,Angers,FRA,シニアグランプリ フランス,true,2024/11/1,2024/11/3,SeniorMenSingle/SeniorWomenSingle
+ISUGPNHKTrophy2024,Tokyo,JPN,NHK杯,true,2024/11/8,2024/11/10,SeniorMenSingle/SeniorWomenSingle
+ISUGPFinlandiaTrophy2024,Helsinki,FIN,シニアグランプリ フィンランド,true,2024/11/15,2024/11/17,SeniorMenSingle/SeniorWomenSingle
+ISUGPCupofChina2024,Chongqing,CHN,シニアグランプリ 中国,true,2024/11/22,2024/11/24,SeniorMenSingle/SeniorWomenSingle
+ISUGrandPrixFinal2024-25,Grenoble,FRA,グランプリファイナル,true,2024/12/5,2024/12/8,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
+ISUEuropeanFigureSkatingChampionships2025,Tallinn,EST,欧州フィギュアスケート選手権,true,2025/1/28,2025/2/2,SeniorMenSingle/SeniorWomenSingle
+ISUFourContinentsFigureSkatingChampionships2025,Seoul,KOR,四大陸フィギュアスケート選手権,true,2025/2/19,2025/2/23,SeniorMenSingle/SeniorWomenSingle
+ISUWorldJuniorFigureSkatingChampionships2025,Debrecen,HUN,世界ジュニアフィギュアスケート選手権,true,2025/2/25,2025/3/2,JuniorMenSingle/JuniorWomenSingle
+ISUWorldFigureSkatingChampionships2025,Boston,USA,世界フィギュアスケート選手権,true,2025/3/25,2025/3/30,SeniorMenSingle/SeniorWomenSingle
+Tohoku-HokkaidoRegional,Hokkaido,JPN,東北・北海道選手権大会,false,2024/10/04,2024/10/06,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+KantoRegional,Tochigi,JPN,関東選手権大会,false,2024/09/26,2024/09/29,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+TokyoRegional,Chiba,JPN,東京選手権大会,false,2024/09/20,2024/09/23,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+ChubuRegional,Aichi,JPN,中部選手権大会,false,2024/09/21,2024/09/23,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+KinkiRegional,Osaka,JPN,近畿選手権大会,false,2024/09/26,2024/09/29,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+Chu-Shikoku-KyushuRegional,Okayama,JPN,中四国九州選手権大会,false,2024/10/03,2024/10/06,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+NationalNovice,Hyogo,JPN,全日本ノービス選手権大会,false,2024/10/18,2024/10/20,NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+EasternSection,Aomori,JPN,東日本選手権大会,false,2024/10/11,2024/10/13,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
+WesternSection,Aichi,JPN,西日本選手権大会,false,2024/10/18,2024/10/20,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
+NationalJunior,Hiroshima,JPN,全日本ジュニア選手権大会,false,2024/11/15,2024/11/17,JuniorMenSingle/JuniorWomenSingle
+Nationals,Osaka,JPN,全日本選手権大会,false,2024/12/19,2024/12/22,SeniorMenSingle/SeniorWomenSingle

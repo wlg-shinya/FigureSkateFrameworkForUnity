@@ -18,7 +18,8 @@ namespace Wlg.FigureSkate.Fact.Editor
                 // データの基になっているソースを記載
                 // TODO:pdfをリポジトリに含めるかどうか検討
 
-                // # 2022-23 TODO:データ化
+                // TODO:2022-23のデータ化
+                // # 2022-23
                 // - 2475_SP_SOV_2022-23.pdf
                 // # 2023-24 
                 // - 2022-23 と同様
@@ -33,7 +34,8 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (ElementBaseValue data, ElementBaseValueObject obj) => { obj.data = data; }
                         );
                 }
-                // # 2022-23 TODO:データ化
+                // TODO:2022-23のデータ化
+                // # 2022-23
                 // - 2022-2023度クラス早見表.pdf
                 // # 2023-24
                 // - 2023-2024年度クラス早見表.pdf
@@ -48,23 +50,18 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (Class data, ClassObject obj) => { obj.data = data; }
                         );
                 }
+                // TODO:2022-23のデータ化
+                // TODO:2022-23のソースのファイル保存
+                // TODO:2023-24のソースのファイル保存
+                // TODO:2024-25のソースのファイル保存
                 // # 国際大会 
                 // - https://current.isu.org/figure-skating/entries-results/fsk-results
-                // TODO: 2022-23のデータ化
-                // TODO: 2022-23のソースのファイル保存
-                // TODO: 2024-25のデータ化
-                // TODO: 2024-25のソースのファイル保存
                 // # 国内大会
                 // ## 2022-23 
-                // TODO:データ化
-                // TODO:ソースのファイル保存
                 // - https://www.jsfresults.com/National/2022-2023/fs_j/index.htm
                 // ## 2023-24
-                // TODO:ソースのファイル保存
                 // - https://www.jsfresults.com/National/2023-2024/fs_j/index.htm
                 // ## 2024-25
-                // TODO:データ化
-                // TODO:ソースのファイル保存
                 // - https://www.jsfresults.com/National/2024-2025/fs_j/index.htm
                 {
                     CreateOrUpdateScriptableObjectFromCsv(
@@ -95,13 +92,14 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (Competition data, CompetitionObject obj) => { obj.data = data; }
                         );
                 }
-                // # 2022-23 TODO:データ化
+                // TODO:2022-23のデータ化
+                // # 2022-23
                 // - 2474 SP 更新Levels of Difficulty and Guidelines for marking Grade of Execution and Program Components.pdf
                 // - 2474　価値尺度（SOV),難度レベル（ＬＯＤ），ＧＯＥ採点のガイドライン.pdf
                 // # 2023-24
                 // - 2558 SP Levels and GOE Season 2023-2024_revJune 9.pdf
                 // - 2558（20230818改訂版）SP難度レベルLOD)、GOEおよびプログラムコンポーネンツ採点のガイドライン2023-24.pdf
-                // # 2024-25 TODO:データ化
+                // # 2024-25
                 // - 2623 SP Levels and GOE Season 2024-2025_revJune 24 post congress.pdf
                 // - Comm. 2623 Rev.2(和訳）_240918.pdf
                 {
@@ -170,7 +168,9 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (GoeMinus data, GoeMinusObject obj) => { obj.data = data; }
                         );
                 }
-                // # 2022-23 TODO:データ化
+                // TODO:2022-23のデータ化
+                // TODO:ジャンプシークエンス(+SEQおよびT/Lo縛りなし)対応
+                // # 2022-23
                 // - 2022 Special Regulation SP and Ice Dance and Technical Rules SP  and ID_Final.pdf
                 // - 2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf
                 // - 2022-23ノービス課題.pdf
@@ -187,9 +187,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                 // - 2024_Special_Regulation_SP_and_Ice_Dance_and_Technical_Rules_SP__and_ID_Final_rev.pdf
                 // - 2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf
                 //   - プログラム構成ルールは2024-25も上記に含まれている
-                // - 2024-25 JSF Nvルール.pdf TODO:データ化
-                //
-                // TODO:ジャンプシークエンス(+SEQおよびT/Lo縛りなし)対応
+                // - 2024-25 JSF Nvルール.pdf
                 {
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
