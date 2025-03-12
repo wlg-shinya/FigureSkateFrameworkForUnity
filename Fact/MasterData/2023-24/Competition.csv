@@ -1,11 +1,11 @@
 id,regionId,countryId,name,isInternational,startDay,endDay,eventIds
-ISUJGPBangkok2023,Bangkok,THA,ジュニアグランプリ バンコク,true,2023/8/23,2023/8/26,JuniorMenSingle/JuniorWomenSingle
-ISUJGPLinz2023,Linz,AUT,ジュニアグランプリ リンツ,true,2023/8/30,2023/9/2,JuniorMenSingle/JuniorWomenSingle
-ISUJGPIstanbul2023,Istanbul,TUR,ジュニアグランプリ イスタンブール,true,2023/9/6,2023/9/9,JuniorMenSingle/JuniorWomenSingle
-ISUJGPOsaka2023,Osaka,JPN,ジュニアグランプリ 大阪,true,2023/9/13,2023/9/16,JuniorMenSingle/JuniorWomenSingle
-ISUJGPBudapest2023,Budapest,HUN,ジュニアグランプリ ブタペスト,true,2023/9/20,2023/9/23,JuniorMenSingle/JuniorWomenSingle
-ISUJGPPGESolidarityCup2023,Gdansk,POL,ジュニアグランプリ グダニスク,true,2023/9/27,2023/9/30,JuniorMenSingle/JuniorWomenSingle
-ISUJGPYerevan2023,Yerevan,ARM,ジュニアグランプリ エレバン,true,2023/10/4,2023/10/7,JuniorMenSingle/JuniorWomenSingle
+ISUJGPBangkok2023,Bangkok,THA,ジュニアグランプリ タイ,true,2023/8/23,2023/8/26,JuniorMenSingle/JuniorWomenSingle
+ISUJGPLinz2023,Linz,AUT,ジュニアグランプリ オーストリア,true,2023/8/30,2023/9/2,JuniorMenSingle/JuniorWomenSingle
+ISUJGPIstanbul2023,Istanbul,TUR,ジュニアグランプリ トルコ,true,2023/9/6,2023/9/9,JuniorMenSingle/JuniorWomenSingle
+ISUJGPOsaka2023,Osaka,JPN,ジュニアグランプリ 日本,true,2023/9/13,2023/9/16,JuniorMenSingle/JuniorWomenSingle
+ISUJGPBudapest2023,Budapest,HUN,ジュニアグランプリ ハンガリー,true,2023/9/20,2023/9/23,JuniorMenSingle/JuniorWomenSingle
+ISUJGPPGESolidarityCup2023,Gdansk,POL,ジュニアグランプリ ポーランド,true,2023/9/27,2023/9/30,JuniorMenSingle/JuniorWomenSingle
+ISUJGPYerevan2023,Yerevan,ARM,ジュニアグランプリ アルメニア,true,2023/10/4,2023/10/7,JuniorMenSingle/JuniorWomenSingle
 ISUGPSkateAmerica2023,Allen,USA,シニアグランプリ アメリカ,true,2023/10/20,2023/10/22,SeniorMenSingle/SeniorWomenSingle
 ISUGPSkateCanadaInternational2023,Vancouver,CAN,シニアグランプリ カナダ,true,2023/10/27,2023/10/29,SeniorMenSingle/SeniorWomenSingle
 ISUGPGrandPrixdeFrance2023,Angers,FRA,シニアグランプリ フランス,true,2023/11/3,2023/11/5,SeniorMenSingle/SeniorWomenSingle

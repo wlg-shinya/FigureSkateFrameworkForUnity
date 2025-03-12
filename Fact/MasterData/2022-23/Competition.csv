@@ -1,0 +1,31 @@
+id,regionId,countryId,name,isInternational,startDay,endDay,eventIds
+ISUJGPCourchevel2022,Courchevel,FRA,ジュニアグランプリ フランス,true,2022/8/24,2022/8/27,JuniorMenSingle/JuniorWomenSingle
+ISUJGPCzechSkate2022,Ostrava,CZE,ジュニアグランプリ チェコ,true,2022/8/31,2022/9/3,JuniorMenSingle/JuniorWomenSingle
+ISUJGPRigaCup2022,Riga,LAT,ジュニアグランプリ ラトビア,true,2022/9/7,2022/9/10,JuniorMenSingle/JuniorWomenSingle
+ISUJGPArmenianCup2022,Yerevan,ARM,ジュニアグランプリ アルメニア,true,2022/9/21,2022/9/24,JuniorMenSingle/JuniorWomenSingle
+ISUJGPGdansk2022,Gdansk,POL,ジュニアグランプリ ポーランド,true,2022/9/28,2022/10/1,JuniorMenSingle/JuniorWomenSingle
+ISUJGPBalticCup2022,Gdansk,POL,ジュニアグランプリ バルト三国,true,2022/10/5,2022/10/8,JuniorMenSingle/JuniorWomenSingle
+ISUJGPEgnaNeumarkt2022,Egna,ITA,ジュニアグランプリ イタリア,true,2022/10/12,2022/10/15,JuniorMenSingle/JuniorWomenSingle
+ISUGPSkateAmerica2022,Norwood,USA,シニアグランプリ アメリカ,true,2022/10/21,2022/10/23,SeniorMenSingle/SeniorWomenSingle
+ISUGPSkateCanadaInternational2022,Mississauga,CAN,シニアグランプリ カナダ,true,2022/10/28,2022/10/30,SeniorMenSingle/SeniorWomenSingle
+ISUGPGrandPrixdeFrancedePatinage2022,Angers,FRA,シニアグランプリ フランス,true,2022/11/4,2022/11/6,SeniorMenSingle/SeniorWomenSingle
+ISUGPMKJohnWilsonTrophy2022,Sheffield,GBR,シニアグランプリ イギリス,true,2022/11/11,2022/11/13,SeniorMenSingle/SeniorWomenSingle
+ISUGPNHKTrophy2022,Sapporo,JPN,NHK杯,true,2022/11/18,2022/11/20,SeniorMenSingle/SeniorWomenSingle
+ISUGPGrandPrixEspoo2022,Espoo,FIN,シニアグランプリ フィンランド,true,2022/11/25,2022/11/27,SeniorMenSingle/SeniorWomenSingle
+ISUGrandPrixAndJuniorGrandPrixFinal2022-23,Torino,ITA,シニアグランプリ イタリア,true,2022/12/8,2022/12/11,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
+ISUEuropeanChampionships2023,Espoo,FIN,欧州フィギュアスケート選手権,true,2023/1/23,2023/1/29,SeniorMenSingle/SeniorWomenSingle
+ISUFourContinentsChampionships2023,ColoradoSprings,USA,四大陸フィギュアスケート選手権,true,2023/2/7,2023/2/12,SeniorMenSingle/SeniorWomenSingle
+ISUWorldJuniorChampionships2023,Calgary,CAN,世界ジュニアフィギュアスケート選手権,true,2023/2/27,2023/3/5,JuniorMenSingle/JuniorWomenSingle
+ISUWorldChampionships2023,Saitama,JPN,世界フィギュアスケート選手権,true,2023/3/20,2023/3/26,SeniorMenSingle/SeniorWomenSingle
+KinoshitaGroupCupJapanOpen2022,Saitama,JPN,ジャパンオープン,true,2022/10/8,2022/10/8,SeniorMenSingle/SeniorWomenSingle
+Tohoku-HokkaidoRegional,Aomori,JPN,東北・北海道選手権大会,false,2022/10/7,2022/10/9,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+KantoRegional,Tochigi,JPN,関東選手権大会,false,2022/9/22,2022/9/25,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+TokyoRegional,Tokyo,JPN,東京選手権大会,false,2022/9/29,2022/10/2,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+ChubuRegional,Aichi,JPN,中部選手権大会,false,2022/9/23,2022/9/25,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+KinkiRegional,Hyogo,JPN,近畿選手権大会,false,2022/10/7,2022/10/10,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+Chu-Shikoku-KyushuRegional,Okayama,JPN,中四国九州選手権大会,false,2022/9/29,2022/10/2,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+NationalNovice,Hokkaido,JPN,全日本ノービス選手権大会,false,2022/10/21,2022/10/23,NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+EasternSection,Gunma,JPN,東日本選手権大会,false,2022/10/14,2022/10/16,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
+WesternSection,Kyoto,JPN,西日本選手権大会,false,2022/10/21,2022/10/23,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
+NationalJunior,Ibaraki,JPN,全日本ジュニア選手権大会,false,2022/11/25,2022/11/27,JuniorMenSingle/JuniorWomenSingle
+Nationals,Osaka,JPN,全日本選手権大会,false,2022/12/21,2022/12/25,SeniorMenSingle/SeniorWomenSingle

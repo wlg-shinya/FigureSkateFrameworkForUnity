@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335ea63d814f30a408c17197361357b8, type: 3}
+  m_Name: ISUEuropeanChampionships2023
+  m_EditorClassIdentifier: 
+  data:
+    id: ISUEuropeanChampionships2023
+    regionId: Espoo
+    countryId: FIN
+    name: "\u6B27\u5DDE\u30D5\u30A3\u30AE\u30E5\u30A2\u30B9\u30B1\u30FC\u30C8\u9078\u624B\u6A29"
+    isInternational: 1
+    startDay:
+      year: 2023
+      month: 1
+      day: 23
+    endDay:
+      year: 2023
+      month: 1
+      day: 29
+    eventIds:
+    - SeniorMenSingle
+    - SeniorWomenSingle
