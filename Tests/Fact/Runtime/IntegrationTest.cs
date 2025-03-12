@@ -14,18 +14,28 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public class IntegrationTest
     {
+        // 2023-24シーズン大会のテスト
         [TestCase("KinoshitaGroupCupJapanOpen2023", "2023/10/7", "Senior", "Men")]
         [TestCase("KinoshitaGroupCupJapanOpen2023", "2023/10/7", "Senior", "Women")]
         [TestCase("ISUWorldJuniorChampionships2024", "2024/2/26", "Junior", "Men")]
-        [TestCase("ISUWorldJuniorChampionships2024", "2024/2/26", "Junior", "Women")]
+        [TestCase("ISUWorldJuniorChampionships2024", "2024/3/3", "Junior", "Women")]
         [TestCase("NationalNovice", "2023/10/20", "NoviceA", "Men")]
-        [TestCase("NationalNovice", "2023/10/20", "NoviceA", "Women")]
-        [TestCase("NationalNovice", "2023/10/20", "NoviceB", "Men")]
-        [TestCase("NationalNovice", "2023/10/20", "NoviceB", "Women")]
-        public async Task Competition(string competitionName, string startDayString, string classId, string sexId)
+        [TestCase("NationalNovice", "2023/10/21", "NoviceA", "Women")]
+        [TestCase("NationalNovice", "2023/10/22", "NoviceB", "Men")]
+        [TestCase("NationalNovice", "2023/10/22", "NoviceB", "Women")]
+        // 2024-25シーズン大会のテスト
+        [TestCase("ISUGPNHKTrophy2024", "2024/11/8", "Senior", "Men")]
+        [TestCase("ISUGPNHKTrophy2024", "2024/11/10", "Senior", "Women")]
+        [TestCase("ISUWorldJuniorFigureSkatingChampionships2025", "2025/2/25", "Junior", "Men")]
+        [TestCase("ISUWorldJuniorFigureSkatingChampionships2025", "2025/3/2", "Junior", "Women")]
+        [TestCase("NationalNovice", "2024/10/18", "NoviceA", "Men")]
+        [TestCase("NationalNovice", "2024/10/19", "NoviceA", "Women")]
+        [TestCase("NationalNovice", "2024/10/20", "NoviceB", "Men")]
+        [TestCase("NationalNovice", "2024/10/20", "NoviceB", "Women")]
+        public async Task Competition(string competitionName, string basedayString, string classId, string sexId)
         {
-            var startDay = new YearMonthDay(startDayString);
-            var skateYear = YearMonthDayUtility.GetSkateYearString(startDay);
+            var baseday = new YearMonthDay(basedayString);
+            var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
 
             // プレイヤー
@@ -92,28 +102,29 @@ namespace Wlg.FigureSkate.Tests.Fact
                 else throw new ArgumentException($"classId = {classId}");
             }
             else throw new ArgumentException($"sexId = {sexId}");
-            var classObjectAll = await ClassObjectQuery.All(startDay);
+            var classObjectAll = await ClassObjectQuery.All(baseday);
             var eventObjectAll = await EventObjectQuery.All();
-            var programObjectAll = await ProgramObjectQuery.All(startDay);
-            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(startDay);
+            var programObjectAll = await ProgramObjectQuery.All(baseday);
+            var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
             var elementPlaceableSetObjectAll = await ElementPlaceableSetObjectQuery.All();
             var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
-            var competitionObjectAll = await CompetitionObjectQuery.All(startDay);
-            var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(startDay);
-            var goeObjectAll = await GoeObjectQuery.All(startDay);
-            var goePlusObjectAll = await GoePlusObjectQuery.All(startDay);
-            var goeMinusObjectAll = await GoeMinusObjectQuery.All(startDay);
+            var competitionObjectAll = await CompetitionObjectQuery.All(baseday);
+            var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
+            var goeObjectAll = await GoeObjectQuery.All(baseday);
+            var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
+            var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var sexObjectAll = await SexObjectQuery.All();
             var className = ClassObjectQuery.ById(classObjectAll, player.classId).data.name;
             var sexName = SexObjectQuery.ById(sexObjectAll, player.sexId).data.name;
-            Debug.Log($"{player.name}({YearMonthDayUtility.GetAge(startDay, player.birthday)}) / {className} / {sexName}");
+            Debug.Log($"{player.name}({YearMonthDayUtility.GetAge(baseday, player.birthday)}) / {className} / {sexName}");
 
             // 大会
             var competitionObjects = CompetitionObjectQuery.ByClassAndSex(competitionObjectAll, eventObjectAll, player.classId, player.sexId);
             var competitionObject = competitionObjects.Find(x => Equals(x.name, competitionName));
             Assert.IsNotNull(competitionObject);
             Debug.Log(competitionObject.data.name);
-            Assert.AreEqual(competitionObject.data.startDay, startDay);
+            var isCompetitionPeriod = competitionObject.data.startDay <= baseday && baseday <= competitionObject.data.endDay;
+            Assert.IsTrue(isCompetitionPeriod);
 
             // 大会中のイベントに合わせてプログラム構成を構築
             var programObjects = ProgramObjectQuery.ByPlayerWithSetupConditions(competitionObject, eventObjectAll, programObjectAll, programComponentRegulationObjectAll, elementPlaceableSetObjectAll, player);
