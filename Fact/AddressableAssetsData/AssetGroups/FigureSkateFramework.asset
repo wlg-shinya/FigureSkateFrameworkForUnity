@@ -465,6 +465,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11d43faf5bf17934a9bc6024563a8a7f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Class/NoviceB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 11da13289a63a394cb79c79aa02863b9
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP4.asset
     m_ReadOnly: 0
@@ -2137,6 +2142,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 50f318df04d01474499fadc53aff3daf
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF23\uFF2C\uFF33\uFF50\uFF11\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 510311e5c3c51a94592cbfd256acf6af
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Class/Junior.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -4500,6 +4510,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b52092b543414b241ba0dea255f36f90
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Class/NoviceA.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b582501fee0e3e84987481d3de706187
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/Program/SeniorMenShortProgram.asset
     m_ReadOnly: 0
@@ -6117,6 +6132,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f93a9ba14e1b77945bef0533835deae4
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF23\uFF23\uFF33\uFF50\uFF22\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f993ed8ed62c92d4da9b2b33e2bd333a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Class/Senior.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
