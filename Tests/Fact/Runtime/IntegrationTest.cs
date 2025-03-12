@@ -22,7 +22,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("NationalNovice", "2023/10/20", "NoviceA", "Women")]
         [TestCase("NationalNovice", "2023/10/20", "NoviceB", "Men")]
         [TestCase("NationalNovice", "2023/10/20", "NoviceB", "Women")]
-        public async Task CompetitionHeldTest(string competitionName, string startDayString, string classId, string sexId)
+        public async Task Competition(string competitionName, string startDayString, string classId, string sexId)
         {
             var startDay = new YearMonthDay(startDayString);
             var skateYear = YearMonthDayUtility.GetSkateYearString(startDay);

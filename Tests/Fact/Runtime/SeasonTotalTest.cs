@@ -14,7 +14,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         private readonly YearMonthDay BASEDAY_2024_25 = new(2024, 7, 1);
 
         [Test]
-        public async Task ClassTest()
+        public async Task Class()
         {
             // var classObject2022_23 = await ClassObjectQuery.All(BASEDAY_2022_23);
             var classObject2023_24 = await ClassObjectQuery.All(BASEDAY_2023_24);

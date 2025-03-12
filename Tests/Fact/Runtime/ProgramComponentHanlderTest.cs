@@ -13,7 +13,7 @@ namespace Wlg.FigureSkate.Tests.Fact
     {
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task SeniorMenShortProgramTest(string basedayString)
+        public async Task SeniorMenShortProgram(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -84,7 +84,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task SeniorWomenShortProgramTest(string basedayString)
+        public async Task SeniorWomenShortProgram(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -140,7 +140,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        private void SeniorFreeSkatingTest(Func<ProgramComponentHanlder> CreateProgramComponentHanlder)
+        private void SeniorFreeSkating(Func<ProgramComponentHanlder> CreateProgramComponentHanlder)
         {
             // "3連続ジャンプコンビネーションは2番目にオイラーを構成しないと3番目のジャンプはトウループかループしか構成できません"
             {
@@ -280,7 +280,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task SeniorMenFreeSkatingTest(string basedayString)
+        public async Task SeniorMenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -296,12 +296,12 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            SeniorFreeSkatingTest(() => ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            SeniorFreeSkating(() => ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task SeniorWomenFreeSkatingTest(string basedayString)
+        public async Task SeniorWomenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -317,12 +317,12 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            SeniorFreeSkatingTest(() => ProgramComponentHanlderFactory.SeniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            SeniorFreeSkating(() => ProgramComponentHanlderFactory.SeniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task JuniorMenShortProgramTest(string basedayString)
+        public async Task JuniorMenShortProgram(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -388,7 +388,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task JuniorWomenShortProgramTest(string basedayString)
+        public async Task JuniorWomenShortProgram(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -452,7 +452,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        private void JuniorFreeSkatingTest(Func<ProgramComponentHanlder> CreateProgramComponentHanlder)
+        private void JuniorFreeSkating(Func<ProgramComponentHanlder> CreateProgramComponentHanlder)
         {
 
             // "3連続ジャンプコンビネーションは2番目にオイラーを構成しないと3番目のジャンプはトウループかループしか構成できません"
@@ -592,7 +592,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task JuniorMenFreeSkatingTest(string basedayString)
+        public async Task JuniorMenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -608,12 +608,12 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            JuniorFreeSkatingTest(() => ProgramComponentHanlderFactory.JuniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            JuniorFreeSkating(() => ProgramComponentHanlderFactory.JuniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task JuniorWomenFreeSkatingTest(string basedayString)
+        public async Task JuniorWomenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -629,12 +629,12 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            JuniorFreeSkatingTest(() => ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            JuniorFreeSkating(() => ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task NoviceAMenFreeSkatingTest(string basedayString)
+        public async Task NoviceAMenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -804,7 +804,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task NoviceAWomenFreeSkatingTest(string basedayString)
+        public async Task NoviceAWomenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -973,7 +973,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task NoviceBMenFreeSkatingTest(string basedayString)
+        public async Task NoviceBMenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
@@ -1143,7 +1143,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
-        public async Task NoviceBWomenFreeSkatingTest(string basedayString)
+        public async Task NoviceBWomenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
             var programObjectAll = await ProgramObjectQuery.All(baseday);
