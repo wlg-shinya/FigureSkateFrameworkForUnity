@@ -33,7 +33,6 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (Class data, ClassObject obj) => { obj.data = data; }
                         );
                 }
-                // TODO:2022-23のデータ化
                 // TODO:2022-23のソースのファイル保存
                 // TODO:2023-24のソースのファイル保存
                 // TODO:2024-25のソースのファイル保存
