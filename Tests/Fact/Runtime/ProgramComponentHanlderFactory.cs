@@ -19,6 +19,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
                 case "2023-24":
                 case "2024-25":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3A"));
@@ -52,6 +53,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
                 case "2023-24":
                 case "2024-25":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3A"));
@@ -85,6 +87,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
                 case "2023-24":
                 case "2024-25":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "4Lz"));
@@ -138,11 +141,23 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "2A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "CSSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "CCoSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "StSqB"));
+                    // 正常に構成できているのでエラーは発生していないはず
+                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    break;
                 case "2023-24":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "2A"));
                     Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lz"));
                     Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3F"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3T"));
                     Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FSSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "CCSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "CCoSp4"));
@@ -154,7 +169,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "2A"));
                     Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3F"));
                     Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lz"));
-                    Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3T"));
                     Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FCSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "CSSp4"));
                     Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "CCoSp4"));
@@ -182,6 +197,18 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "2A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FCSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "SSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "CCoSp4"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "StSqB"));
+                    // 正常に構成できているのでエラーは発生していないはず
+                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    break;
                 case "2023-24":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "2A"));
                     Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lz"));
@@ -226,6 +253,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
                 case "2023-24":
                 case "2024-25":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "4Lz"));
@@ -278,6 +306,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
                 case "2023-24":
                 case "2024-25":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
@@ -316,6 +345,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
                 case "2023-24":
                 case "2024-25":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
@@ -354,6 +384,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
                 case "2023-24":
                 case "2024-25":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
@@ -391,6 +422,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
+                case "2022-23":
                 case "2023-24":
                 case "2024-25":
                     Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));

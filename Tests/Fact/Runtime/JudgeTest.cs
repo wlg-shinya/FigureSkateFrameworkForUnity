@@ -14,6 +14,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public class JudgeTest
     {
+        [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
         public async Task CheckTesGoePlusValue(string basedayString)
@@ -100,6 +101,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
+        [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
         public async Task CheckTesGoeMinusValue(string basedayString)
@@ -217,6 +219,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
+        [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
         public async Task CheckTesJump(string basedayString)
@@ -266,6 +269,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
+        [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
         public async Task RecordTes(string basedayString)
@@ -338,6 +342,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
+        [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
         public async Task CheckPcs(string basedayString)

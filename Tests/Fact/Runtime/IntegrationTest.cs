@@ -14,6 +14,15 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public class IntegrationTest
     {
+        // 2022-23シーズン大会のテスト
+        [TestCase("ISUWorldChampionships2023", "2023/3/20", "Senior", "Men")]
+        [TestCase("ISUWorldChampionships2023", "2023/3/26", "Senior", "Women")]
+        [TestCase("ISUWorldJuniorChampionships2023", "2023/2/27", "Junior", "Men")]
+        [TestCase("ISUWorldJuniorChampionships2023", "2023/3/5", "Junior", "Women")]
+        [TestCase("NationalNovice", "2022/10/21", "NoviceA", "Men")]
+        [TestCase("NationalNovice", "2022/10/22", "NoviceA", "Women")]
+        [TestCase("NationalNovice", "2022/10/23", "NoviceB", "Men")]
+        [TestCase("NationalNovice", "2022/10/23", "NoviceB", "Women")]
         // 2023-24シーズン大会のテスト
         [TestCase("KinoshitaGroupCupJapanOpen2023", "2023/10/7", "Senior", "Men")]
         [TestCase("KinoshitaGroupCupJapanOpen2023", "2023/10/7", "Senior", "Women")]
