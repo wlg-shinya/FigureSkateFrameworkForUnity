@@ -18,23 +18,6 @@ namespace Wlg.FigureSkate.Fact.Editor
                 // データの基になっているソースを記載
                 // TODO:pdfをリポジトリに含めるかどうか検討
 
-                // TODO:2022-23のデータ化
-                // # 2022-23
-                // - 2475_SP_SOV_2022-23.pdf
-                // # 2023-24 
-                // - 2022-23 と同様
-                // # 2024-25 
-                // - 2656 ISU_SOV_SinglesPairs_2024-25_final.pdf
-                {
-                    CreateOrUpdateScriptableObjectFromCsv(
-                        path,
-                        "ElementBaseValue.csv",
-                        (List<string[]> rows) => { return CSVSerializer.Deserialize<ElementBaseValue>(rows); },
-                        (ElementBaseValue data) => { return $"{StringWidthConverter.ConvertToFullWidth(data.id)}.asset"; },
-                        (ElementBaseValue data, ElementBaseValueObject obj) => { obj.data = data; }
-                        );
-                }
-                // TODO:2022-23のデータ化
                 // # 2022-23
                 // - 2022-2023度クラス早見表.pdf
                 // # 2023-24
@@ -92,6 +75,21 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (Competition data, CompetitionObject obj) => { obj.data = data; }
                         );
                 }
+                // # 2022-23
+                // - 2475_SP_SOV_2022-23.pdf
+                // # 2023-24 
+                // - 2022-23 と同様
+                // # 2024-25 
+                // - 2656 ISU_SOV_SinglesPairs_2024-25_final.pdf
+                {
+                    CreateOrUpdateScriptableObjectFromCsv(
+                        path,
+                        "ElementBaseValue.csv",
+                        (List<string[]> rows) => { return CSVSerializer.Deserialize<ElementBaseValue>(rows); },
+                        (ElementBaseValue data) => { return $"{StringWidthConverter.ConvertToFullWidth(data.id)}.asset"; },
+                        (ElementBaseValue data, ElementBaseValueObject obj) => { obj.data = data; }
+                        );
+                }
                 // TODO:2022-23のデータ化
                 // # 2022-23
                 // - 2474 SP 更新Levels of Difficulty and Guidelines for marking Grade of Execution and Program Components.pdf
@@ -138,6 +136,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                     // TODO:ジャンプのコンボ／シークェンス中のみに発生するエラーの判定方法の検討
                     // TODO:SP/FSどちらかでしか発生しないエラーの判定方法の検討
                     // TODO:2024-25シーズンは、特定GOE減点項目(grey background)に引っかかった場合GOE+2を上限にする
+                    // TODO:2024-25シーズンにおける"*が付与されたジャンプ"の扱いについて検討
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "GoeMinus.csv",
