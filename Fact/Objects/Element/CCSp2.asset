@@ -15,6 +15,6 @@ MonoBehaviour:
   data:
     id: CCSp2
     name: "\u8DB3\u63DB\u3048\u30AD\u30E3\u30E1\u30EB\u30B9\u30D4\u30F3 Lv.2"
-    goeId: Spin
+    goeCategory: Spin
     upgradeId: CCSp3
     downgradeId: CCSp1

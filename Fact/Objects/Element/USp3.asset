@@ -15,6 +15,6 @@ MonoBehaviour:
   data:
     id: USp3
     name: "\u30A2\u30C3\u30D7\u30E9\u30A4\u30C8\u30B9\u30D4\u30F3 Lv.3"
-    goeId: Spin
+    goeCategory: Spin
     upgradeId: USp4
     downgradeId: USp2

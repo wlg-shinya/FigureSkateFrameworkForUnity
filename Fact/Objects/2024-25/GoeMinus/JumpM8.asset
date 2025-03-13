@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: JumpM8
+    category: Jump
     description: "\u30B8\u30E3\u30F3\u30D7\u30FB\u30B3\u30F3\u30DC\uFF0F\u30B7\u30FC\u30AF\u30A7\u30F3\u30B9\u3067\u8907\u6570\u306E
       q "
     group: Rotate

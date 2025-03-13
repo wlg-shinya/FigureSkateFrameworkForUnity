@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: SpinM16
+    category: Spin
     description: "\u57FA\u672C\u59FF\u52E2\u3092\uFF12\u7A2E\u985E\u3057\u304B\u542B\u307E\u306A\u304B\u3063\u305F"
     group: 
     minValue: 0

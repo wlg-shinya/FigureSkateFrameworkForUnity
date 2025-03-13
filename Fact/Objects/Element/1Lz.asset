@@ -15,6 +15,6 @@ MonoBehaviour:
   data:
     id: 1Lz
     name: "\u30EB\u30C3\u30C4"
-    goeId: Jump
+    goeCategory: Jump
     upgradeId: 2Lz
     downgradeId: 

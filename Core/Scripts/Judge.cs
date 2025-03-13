@@ -17,7 +17,6 @@ namespace Wlg.FigureSkate.Core
             ProgramComponent[] programComponents,
             Element[] elementAll,
             ElementBaseValue[] elementBaseValueAll,
-            Goe[] goeAll,
             GoePlus[] goePlusAll,
             GoeMinus[] goeMinusAll,
             ProgramComponentRegulation[] programComponentRegulationAll,
@@ -28,7 +27,6 @@ namespace Wlg.FigureSkate.Core
             _programComponents = programComponents;
             _elementAll = elementAll;
             _elementBaseValueAll = elementBaseValueAll;
-            _goeAll = goeAll;
             _goePlusAll = goePlusAll;
             _goeMinusAll = goeMinusAll;
             _programComponentRegulationAll = programComponentRegulationAll;
@@ -148,8 +146,7 @@ namespace Wlg.FigureSkate.Core
         // GOE加点値の判定
         private int CheckTesGoePlusValue(Element element, SuccessGoePlus successGoePlus)
         {
-            var goe = Array.Find(_goeAll, x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found goe '{element.goeId}'");
-            var goePlusObjs = goe.plusIds.Select(id => Array.Find(_goePlusAll, obj => obj.id.Equals(id)) ?? throw new Exception($"Not found goePlus '{id}'")).ToList();
+            var goePlusObjs = _goePlusAll.Where(x => x.category.Equals(element.goeCategory)).ToList();
 
             // 成否判定
             var result = goePlusObjs.Select(x => successGoePlus(x, element));
@@ -167,8 +164,7 @@ namespace Wlg.FigureSkate.Core
         // 減点項目(GoeMinus)の生成も行う
         private int CheckTesGoeMinusValue(Element element, List<GoeMinus> goeMinus, SuccessGoeMinus successGoeMinus, CheckGoeMinusValue checkGoeMinusValue)
         {
-            var goe = Array.Find(_goeAll, x => Equals(x.id, element.goeId)) ?? throw new Exception($"Not found goe '{element.goeId}'");
-            var goeMinusObjs = goe.minusIds.Select(id => Array.Find(_goeMinusAll, obj => obj.id.Equals(id)) ?? throw new Exception($"Not found goeMinus '{id}'")).ToList();
+            var goeMinusObjs = _goeMinusAll.Where(x => x.category.Equals(element.goeCategory));
 
             // 成否判定を行いチェックに引っかかった減点項目の一覧を得る
             var minusFails = goeMinusObjs
@@ -361,8 +357,6 @@ namespace Wlg.FigureSkate.Core
         private readonly Element[] _elementAll;
         // 採点対象の全構成要素の基礎点
         private readonly ElementBaseValue[] _elementBaseValueAll;
-        // 全GOE
-        private readonly Goe[] _goeAll;
         // 全GOE加点項目
         private readonly GoePlus[] _goePlusAll;
         // 全GOE減点項目

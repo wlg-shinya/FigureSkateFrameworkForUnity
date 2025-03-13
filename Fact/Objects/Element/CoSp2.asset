@@ -15,6 +15,6 @@ MonoBehaviour:
   data:
     id: CoSp2
     name: "\u30B3\u30F3\u30D3\u30CD\u30FC\u30B7\u30E7\u30F3\u30B9\u30D4\u30F3 Lv.2"
-    goeId: Spin
+    goeCategory: Spin
     upgradeId: CoSp3
     downgradeId: CoSp1

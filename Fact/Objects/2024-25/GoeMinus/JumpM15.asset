@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: JumpM15
+    category: Jump
     description: "\u30B8\u30E3\u30F3\u30D7\u30FB\u30B3\u30F3\u30DC/\u30B7\u30FC\u30AF\u30A7\u30F3\u30B9\u306E\u9593\u306B\u30A8\u30C3\u30B8\u304C\u5909\u308F\u3063\u305F"
     group: 
     minValue: -1

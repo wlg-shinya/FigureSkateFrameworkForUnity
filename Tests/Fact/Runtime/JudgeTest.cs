@@ -22,7 +22,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
-            var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
@@ -41,7 +40,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 programComponentHanlder.ProgramComponents,
                 elementObjectAll.Select(x => x.data).ToArray(),
                 elementBaseValueObjectAll.Select(x => x.data).ToArray(),
-                goeObjectAll.Select(x => x.data).ToArray(),
                 goePlusObjectAll.Select(x => x.data).ToArray(),
                 goeMinusObjectAll.Select(x => x.data).ToArray(),
                 programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
@@ -110,7 +108,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
-            var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
@@ -129,7 +126,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 programComponentHanlder.ProgramComponents,
                 elementObjectAll.Select(x => x.data).ToArray(),
                 elementBaseValueObjectAll.Select(x => x.data).ToArray(),
-                goeObjectAll.Select(x => x.data).ToArray(),
                 goePlusObjectAll.Select(x => x.data).ToArray(),
                 goeMinusObjectAll.Select(x => x.data).ToArray(),
                 programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
@@ -173,8 +169,9 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.AreEqual(returnValue, Math.Max(goeMinusValueTotal, Constant.GOE_MIN_VALUE));
 
                 // 減点の仕組み上の項目最大数 ( ref. Judge.CheckTesGoeMinusValue ) との比較
-                var goeObject = GoeObjectQuery.ById(goeObjectAll, elementObject.data.goeId);
-                var goeMinusList = goeObject.data.minusIds.Select(id => GoeMinusObjectQuery.ById(goeMinusObjectAll, id).data);
+                var goeMinusList = goeMinusObjectAll
+                    .Where(x => x.data.category.Equals(elementObject.data.goeCategory))
+                    .Select(x => x.data);
                 var geoMinusMaxCount = goeMinusList
                     .Where((x) => x.targetElementIds.Length <= 0 || x.targetElementIds.Any(x => Equals(x, elementObject.data.id)))
                     .GroupBy((x) => x.group)
@@ -228,7 +225,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
-            var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
@@ -247,7 +243,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 programComponentHanlder.ProgramComponents,
                 elementObjectAll.Select(x => x.data).ToArray(),
                 elementBaseValueObjectAll.Select(x => x.data).ToArray(),
-                goeObjectAll.Select(x => x.data).ToArray(),
                 goePlusObjectAll.Select(x => x.data).ToArray(),
                 goeMinusObjectAll.Select(x => x.data).ToArray(),
                 programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
@@ -279,7 +274,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
-            var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
@@ -298,7 +292,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 programComponentHanlder.ProgramComponents,
                 elementObjectAll.Select(x => x.data).ToArray(),
                 elementBaseValueObjectAll.Select(x => x.data).ToArray(),
-                goeObjectAll.Select(x => x.data).ToArray(),
                 goePlusObjectAll.Select(x => x.data).ToArray(),
                 goeMinusObjectAll.Select(x => x.data).ToArray(),
                 programComponentRegulationObjectAll.Select(x => x.data).ToArray(),
@@ -328,8 +321,9 @@ namespace Wlg.FigureSkate.Tests.Fact
                         {
                             var elementId = component.elementIds[elementIndex];
                             var elementObject = ElementObjectQuery.ById(elementObjectAll, elementId);
-                            var goeObject = GoeObjectQuery.ById(goeObjectAll, elementObject.data.goeId);
-                            var goeMinusList = goeObject.data.minusIds.Select(id => GoeMinusObjectQuery.ById(goeMinusObjectAll, id).data);
+                            var goeMinusList = goeMinusObjectAll
+                                .Where(x => x.data.category.Equals(elementObject.data.goeCategory))
+                                .Select(x => x.data);
                             goeMinus[refereeIndex][elementIndex].Add(goeMinusList.ToList().Find(x => x.mark.Equals("<<")));
                         }
                     }
@@ -352,7 +346,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             var skateYear = YearMonthDayUtility.GetSkateYearString(baseday);
             var elementObjectAll = await ElementObjectQuery.All();
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
-            var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var programComponentRegulationObjectAll = await ProgramComponentRegulationObjectQuery.All(baseday);
@@ -371,7 +364,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 programComponentHanlder.ProgramComponents,
                 elementObjectAll.Select(x => x.data).ToArray(),
                 elementBaseValueObjectAll.Select(x => x.data).ToArray(),
-                goeObjectAll.Select(x => x.data).ToArray(),
                 goePlusObjectAll.Select(x => x.data).ToArray(),
                 goeMinusObjectAll.Select(x => x.data).ToArray(),
                 programComponentRegulationObjectAll.Select(x => x.data).ToArray(),

@@ -15,6 +15,6 @@ MonoBehaviour:
   data:
     id: 1F
     name: "\u30D5\u30EA\u30C3\u30D7"
-    goeId: Jump
+    goeCategory: Jump
     upgradeId: 2F
     downgradeId: 

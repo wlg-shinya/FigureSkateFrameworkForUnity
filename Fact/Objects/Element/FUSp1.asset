@@ -16,6 +16,6 @@ MonoBehaviour:
     id: FUSp1
     name: "\u30D5\u30E9\u30A4\u30F3\u30B0\u30A2\u30C3\u30D7\u30E9\u30A4\u30C8\u30B9\u30D4\u30F3
       Lv.1"
-    goeId: Spin
+    goeCategory: Spin
     upgradeId: FUSp2
     downgradeId: FUSpB

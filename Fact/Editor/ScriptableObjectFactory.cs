@@ -90,7 +90,6 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (ElementBaseValue data, ElementBaseValueObject obj) => { obj.data = data; }
                         );
                 }
-                // TODO:2022-23のデータ化
                 // # 2022-23
                 // - 2474 SP 更新Levels of Difficulty and Guidelines for marking Grade of Execution and Program Components.pdf
                 // - 2474　価値尺度（SOV),難度レベル（ＬＯＤ），ＧＯＥ採点のガイドライン.pdf
@@ -101,28 +100,6 @@ namespace Wlg.FigureSkate.Fact.Editor
                 // - 2623 SP Levels and GOE Season 2024-2025_revJune 24 post congress.pdf
                 // - Comm. 2623 Rev.2(和訳）_240918.pdf
                 {
-                    CreateOrUpdateScriptableObjectFromCsv(
-                        path,
-                        "Goe.csv",
-                        (List<string[]> rows) =>
-                        {
-                            // 配列(plusIds,minusIds)を扱うため独自に値を設定する
-                            var result = new Goe[rows.Count - 1];
-                            for (var i = 0; i < result.Length; ++i)
-                            {
-                                var rowsIndex = i + 1;
-                                result[i] = new Goe
-                                {
-                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
-                                    plusIds = rows[rowsIndex][Array.IndexOf(rows[0], "plusIds")].Split('/'),
-                                    minusIds = rows[rowsIndex][Array.IndexOf(rows[0], "minusIds")].Split('/'),
-                                };
-                            }
-                            return result;
-                        },
-                        (Goe data) => { return $"{data.id}.asset"; },
-                        (Goe data, GoeObject obj) => { obj.data = data; }
-                        );
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "GoePlus.csv",
@@ -150,6 +127,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                 result[i] = new GoeMinus
                                 {
                                     id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                    category = rows[rowsIndex][Array.IndexOf(rows[0], "category")],
                                     description = rows[rowsIndex][Array.IndexOf(rows[0], "description")],
                                     group = rows[rowsIndex][Array.IndexOf(rows[0], "group")],
                                     minValue = int.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "minValue")]),
@@ -190,6 +168,13 @@ namespace Wlg.FigureSkate.Fact.Editor
                 {
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
+                        "Program.csv",
+                        (List<string[]> rows) => { return CSVSerializer.Deserialize<Program>(rows); },
+                        (Program data) => { return $"{data.id}.asset"; },
+                        (Program data, ProgramObject obj) => { obj.data = data; }
+                        );
+                    CreateOrUpdateScriptableObjectFromCsv(
+                        path,
                         "ProgramComponentRegulation.csv",
                         (List<string[]> rows) =>
                         {
@@ -208,14 +193,6 @@ namespace Wlg.FigureSkate.Fact.Editor
                         },
                         (ProgramComponentRegulation data) => { return $"{data.id}.asset"; },
                         (ProgramComponentRegulation data, ProgramComponentRegulationObject obj) => { obj.data = data; }
-                        );
-
-                    CreateOrUpdateScriptableObjectFromCsv(
-                        path,
-                        "Program.csv",
-                        (List<string[]> rows) => { return CSVSerializer.Deserialize<Program>(rows); },
-                        (Program data) => { return $"{data.id}.asset"; },
-                        (Program data, ProgramObject obj) => { obj.data = data; }
                         );
                 }
                 // シーズンに属さないデータ

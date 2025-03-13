@@ -16,6 +16,6 @@ MonoBehaviour:
     id: FCCoSp3
     name: "\u30D5\u30E9\u30A4\u30F3\u30B0\u8DB3\u63DB\u3048\u30B3\u30F3\u30D3\u30CD\u30FC\u30B7\u30E7\u30F3\u30B9\u30D4\u30F3
       Lv.3"
-    goeId: Spin
+    goeCategory: Spin
     upgradeId: FCCoSp4
     downgradeId: FCCoSp2

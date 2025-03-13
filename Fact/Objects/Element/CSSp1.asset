@@ -15,6 +15,6 @@ MonoBehaviour:
   data:
     id: CSSp1
     name: "\u8DB3\u63DB\u3048\u30B7\u30C3\u30C8\u30B9\u30D4\u30F3 Lv.1"
-    goeId: Spin
+    goeCategory: Spin
     upgradeId: CSSp2
     downgradeId: CSSpB

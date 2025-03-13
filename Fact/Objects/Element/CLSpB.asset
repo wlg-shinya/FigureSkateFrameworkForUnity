@@ -15,6 +15,6 @@ MonoBehaviour:
   data:
     id: CLSpB
     name: "\u8DB3\u63DB\u3048\u30EC\u30A4\u30D0\u30C3\u30AF\u30B9\u30D4\u30F3 \u30D9\u30FC\u30B9"
-    goeId: Spin
+    goeCategory: Spin
     upgradeId: CLSp1
     downgradeId: 

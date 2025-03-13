@@ -15,6 +15,6 @@ MonoBehaviour:
   data:
     id: CSp4
     name: "\u30AD\u30E3\u30E1\u30EB\u30B9\u30D4\u30F3 Lv.4"
-    goeId: Spin
+    goeCategory: Spin
     upgradeId: 
     downgradeId: CSp3

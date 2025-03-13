@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: ChoreographicSequenceP5
+    category: ChoreographicSequence
     description: "\u5341\u5206\u306B\u660E\u78BA\u3067\u6B63\u78BA"
     important: 0

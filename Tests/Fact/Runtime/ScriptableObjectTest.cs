@@ -19,7 +19,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             await ClassObjects(baseday);
             await CompetitionObjects(baseday);
             await ElementBaseValueObjects(baseday);
-            await GoeObjects(baseday);
             await GoePlusObjects(baseday);
             await GoeMinusObjects(baseday);
             await ProgramComponentRegulationObjects(baseday);
@@ -79,21 +78,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        private async Task GoeObjects(YearMonthDay baseday)
-        {
-            var allObjs = await GoeObjectQuery.All(baseday);
-            ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/{YearMonthDayUtility.GetSkateYearString(baseday)}/Goe.csv");
-            foreach (var obj in allObjs)
-            {
-                Assert.IsNotNull(obj.data);
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsNotNull(obj.data.plusIds);
-                Assert.IsTrue(obj.data.plusIds.Length > 0);
-                Assert.IsNotNull(obj.data.minusIds);
-                Assert.IsTrue(obj.data.minusIds.Length > 0);
-            }
-        }
-
         private async Task GoePlusObjects(YearMonthDay baseday)
         {
             var allObjs = await GoePlusObjectQuery.All(baseday);
@@ -114,6 +98,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             {
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.category));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.description));
                 Assert.IsTrue(obj.data.minValue <= 0);
                 Assert.IsTrue(obj.data.maxValue <= 0);
@@ -145,7 +130,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.goeId));
+                Assert.IsFalse(string.IsNullOrEmpty(obj.data.goeCategory));
                 // upgradeId, downgradeId はデータなしを許容
             }
         }

@@ -8,6 +8,8 @@ namespace Wlg.FigureSkate.Core.Data
     {
         // 一意の記号
         public string id;
+        // カテゴリ
+        public string category;
         // チェックの説明
         public string description;
         // グループ名

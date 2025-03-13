@@ -110,7 +110,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableObjectAll = await ElementPlaceableObjectQuery.All();
             var competitionObjectAll = await CompetitionObjectQuery.All(baseday);
             var elementBaseValueObjectAll = await ElementBaseValueObjectQuery.All(baseday);
-            var goeObjectAll = await GoeObjectQuery.All(baseday);
             var goePlusObjectAll = await GoePlusObjectQuery.All(baseday);
             var goeMinusObjectAll = await GoeMinusObjectQuery.All(baseday);
             var sexObjectAll = await SexObjectQuery.All();
@@ -217,7 +216,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     programComponentHanlder.ProgramComponents,
                     elementObjectAll.Select(x => x.data).ToArray(),
                     elementBaseValueAll,
-                    goeObjectAll.Select(x => x.data).ToArray(),
                     goePlusObjectAll.Select(x => x.data).ToArray(),
                     goeMinusObjectAll.Select(x => x.data).ToArray(),
                     programComponentRegulationAll,
@@ -231,7 +229,6 @@ namespace Wlg.FigureSkate.Tests.Fact
             ProgramComponent[] programComponents,
             Element[] elementAll,
             ElementBaseValue[] elementBaseValueAll,
-            Goe[] goeAll,
             GoePlus[] goePlusAll,
             GoeMinus[] goeMinusAll,
             ProgramComponentRegulation[] programComponentRegulationAll,
@@ -241,7 +238,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             UnityEngine.Random.InitState(DateTime.Now.Millisecond);
             int Random0To99() => UnityEngine.Random.Range(0, 100);
 
-            var judge = new Judge(program, programComponents, elementAll, elementBaseValueAll, goeAll, goePlusAll, goeMinusAll, programComponentRegulationAll, elementPlaceableSetAll);
+            var judge = new Judge(program, programComponents, elementAll, elementBaseValueAll, goePlusAll, goeMinusAll, programComponentRegulationAll, elementPlaceableSetAll);
             judge.Execute(
                 // GOE加点項目のチェックを通ったらtrueを返す
                 (GoePlus goePlus, Element element) =>

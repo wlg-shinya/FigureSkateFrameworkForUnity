@@ -12,7 +12,7 @@ namespace Wlg.FigureSkate.Core.Data
         // 正式名称
         public string name;
         // 対象GOEのID
-        public string goeId;
+        public string goeCategory;
         // 一つ上のグレードの構成要素ID。nullか空文字なら最高グレード
         public string upgradeId;
         // 一つ下のグレードの構成要素ID。nullか空文字なら最低グレード

@@ -1,5 +1,0 @@
-id,plusIds,minusIds
-Jump,JumpP1/JumpP2/JumpP3/JumpP4/JumpP5/JumpP6,JumpM1/JumpM2/JumpM3/JumpM4/JumpM5/JumpM6/JumpM7/JumpM8/JumpM9/JumpM10/JumpM11/JumpM12/JumpM13/JumpM14/JumpM15/JumpM16/JumpM17/JumpM18/JumpM19/JumpM20/JumpM21
-Spin,SpinP1/SpinP2/SpinP3/SpinP4/SpinP5/SpinP6,SpinM1/SpinM2/SpinM3/SpinM4/SpinM5/SpinM6/SpinM7/SpinM8/SpinM9/SpinM10/SpinM11/SpinM12/SpinM13
-StepSequence,StepSequenceP1/StepSequenceP2/StepSequenceP3/StepSequenceP4/StepSequenceP5/StepSequenceP6,StepSequenceM1/StepSequenceM2/StepSequenceM3/StepSequenceM4/StepSequenceM5/StepSequenceM6/StepSequenceM7/StepSequenceM8
-ChoreographicSequence,ChoreographicSequenceP1/ChoreographicSequenceP2/ChoreographicSequenceP3/ChoreographicSequenceP4/ChoreographicSequenceP5/ChoreographicSequenceP6,ChoreographicSequenceM1/ChoreographicSequenceM2/ChoreographicSequenceM3/ChoreographicSequenceM4/ChoreographicSequenceM5/ChoreographicSequenceM6/ChoreographicSequenceM7

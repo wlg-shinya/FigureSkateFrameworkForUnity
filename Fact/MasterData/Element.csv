@@ -1,4 +1,4 @@
-id,name,goeId,upgradeId,downgradeId
+id,name,goeCategory,upgradeId,downgradeId
 1T,トウループ,Jump,2T,
 1S,サルコウ,Jump,2S,
 1Lo,ループ,Jump,2Lo,

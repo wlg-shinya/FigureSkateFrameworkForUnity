@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: SpinP6
+    category: Spin
     description: "\u8981\u7D20\u304C\u97F3\u697D\u306B\u5408\u3063\u3066\u3044\u308B"
     important: 0
