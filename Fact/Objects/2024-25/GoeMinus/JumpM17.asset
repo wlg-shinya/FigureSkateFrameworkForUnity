@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: JumpM17
-    description: "1\u30B8\u30E3\u30F3\u30D7\u3067\u4E21\u624B\u304C\u30BF\u30C3\u30C1\u30FB\u30C0\u30A6\u30F3"
+    description: "\u30B9\u30D4\u30FC\u30C9\uFF0C\u9AD8\u3055\uFF0C\u8DDD\u96E2\uFF0C\u7A7A\u4E2D\u59FF\u52E2\u304C\u62D9\u52A3"
     group: 
-    minValue: -2
+    minValue: -1
     maxValue: -3
     mark: 
     targetElementIds: []

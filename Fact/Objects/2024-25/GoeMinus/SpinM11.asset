@@ -14,59 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: SpinM11
-    description: "\u8DB3\u66FF\u3048\u30B9\u30D4\u30F3\u3067\u56DE\u8EE2\u6570\u306E\u30D0\u30E9\u30F3\u30B9\u304C\u60AA\u3044"
+    description: "\u30D5\u30EA\u30FC\u30FB\u30D5\u30C3\u30C8\u307E\u305F\u306F\u7247\u624B\uFF0F\u4E21\u624B\u304C\u30BF\u30C3\u30C1\u30FB\u30C0\u30A6\u30F3"
     group: 
     minValue: -1
-    maxValue: -1
+    maxValue: -3
     mark: 
-    targetElementIds:
-    - CUSpB
-    - CUSp1
-    - CUSp2
-    - CUSp3
-    - CUSp4
-    - FCUSpB
-    - FCUSp1
-    - FCUSp2
-    - FCUSp3
-    - FCUSp4
-    - CLSpB
-    - CLSp1
-    - CLSp2
-    - CLSp3
-    - CLSp4
-    - FCLSpB
-    - FCLSp1
-    - FCLSp2
-    - FCLSp3
-    - FCLSp4
-    - CCSpB
-    - CCSp1
-    - CCSp2
-    - CCSp3
-    - CCSp4
-    - FCCSpB
-    - FCCSp1
-    - FCCSp2
-    - FCCSp3
-    - FCCSp4
-    - CSSpB
-    - CSSp1
-    - CSSp2
-    - CSSp3
-    - CSSp4
-    - FCSSpB
-    - FCSSp1
-    - FCSSp2
-    - FCSSp3
-    - FCSSp4
-    - CCoSpB
-    - CCoSp1
-    - CCoSp2
-    - CCoSp3
-    - CCoSp4
-    - FCCoSpB
-    - FCCoSp1
-    - FCCoSp2
-    - FCCoSp3
-    - FCCoSp4
+    targetElementIds: []

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 110d455651e56e246a13f70248441ecf, type: 3}
-  m_Name: ChoreographicSequenceM7
+  m_Name: JumpM23
   m_EditorClassIdentifier: 
   data:
-    id: ChoreographicSequenceM7
-    description: "\u52D5\u4F5C\uFF0F\u59FF\u52E2\u304C\u62D9\u52A3"
+    id: JumpM23
+    description: "FS:\u30B8\u30E3\u30F3\u30D7\u30FB\u30B3\u30F3\u30DC\uFF0F\u30B7\u30FC\u30AF\u30A7\u30F3\u30B9\u3067\u7121\u4FA1\u5024\u306E\u30B8\u30E3\u30F3\u30D7(*\u304C\u4ED8\u4E0E\u3055\u308C\u305F\u5834\u5408\u3092\u9664\u304F)"
     group: 
-    minValue: -1
-    maxValue: -3
+    minValue: -3
+    maxValue: -4
     mark: 
     targetElementIds: []

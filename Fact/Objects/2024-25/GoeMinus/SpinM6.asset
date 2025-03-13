@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: SpinM6
-    description: "\u8EF8\u306E\u6D41\u308C"
+    description: "\u51FA\u304C\u62D9\u52A3"
     group: 
     minValue: -1
     maxValue: -3

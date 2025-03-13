@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: StepSequenceM3
-    description: "\u3064\u307E\u305A\u304D"
+    description: "\u97F3\u697D\u306B\u5408\u3063\u3066\u3044\u306A\u3044"
     group: 
-    minValue: -1
-    maxValue: -3
+    minValue: -2
+    maxValue: -4
     mark: 
     targetElementIds: []

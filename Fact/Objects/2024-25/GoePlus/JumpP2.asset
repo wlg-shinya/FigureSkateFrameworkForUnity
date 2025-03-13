@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: JumpP2
-    description: "\u8E0F\u5207\u304A\u3088\u3073\u7740\u6C37\u304C\u826F\u3044"
+    description: "\u8E0F\u5207\u304A\u3088\u3073\u7740\u6C37\u304C\u3088\u3044"
     important: 1

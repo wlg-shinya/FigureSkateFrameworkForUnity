@@ -17,8 +17,8 @@ MonoBehaviour:
     description: "F/Lz\u306E\u8E0F\u307F\u5207\u308A\u30A8\u30C3\u30B8\u304C\u4E0D\u660E\u78BA"
     group: Edge
     minValue: -1
-    maxValue: -1
-    mark: 
+    maxValue: -2
+    mark: '!'
     targetElementIds:
     - F
     - 2F

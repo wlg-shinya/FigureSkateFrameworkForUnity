@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: StepSequenceP6
-    description: "\u30B7\u30FC\u30AF\u30A8\u30F3\u30B9\u4E2D\u306E\u52A0\u901F\u304A\u3088\u3073\u6E1B\u901F\u304C\u5341\u5206"
+    description: "\u30B7\u30FC\u30AF\u30A7\u30F3\u30B9\u4E2D\u306E\u52A0\u6E1B\u901F\u304C\u5341\u5206"
     important: 0

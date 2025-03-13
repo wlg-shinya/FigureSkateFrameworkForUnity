@@ -14,17 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: JumpM6
-    description: "F/Lz\u306E\u8E0F\u307F\u5207\u308A\u30A8\u30C3\u30B8\u304C\u9055\u3046"
-    group: Edge
+    description: "\u56DE\u8EE2\u4E0D\u8DB3\u5224\u5B9A"
+    group: Rotate
     minValue: -2
-    maxValue: -4
-    mark: e
+    maxValue: -3
+    mark: <
     targetElementIds:
-    - F
+    - 1T
+    - 1S
+    - 1Lo
+    - 1F
+    - 1Lz
+    - 1A
+    - 2T
+    - 2S
+    - 2Lo
     - 2F
-    - 3F
-    - 4F
-    - Lz
     - 2Lz
+    - 2A
+    - 3T
+    - 3S
+    - 3Lo
+    - 3F
     - 3Lz
+    - 3A
+    - 4T
+    - 4S
+    - 4Lo
+    - 4F
     - 4Lz
+    - 4A

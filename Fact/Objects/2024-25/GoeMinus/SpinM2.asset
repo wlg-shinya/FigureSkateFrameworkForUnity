@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: SpinM2
-    description: "\u30D5\u30EA\u30FC\u30FB\u30D5\u30C3\u30C8\u307E\u305F\u306F\u7247\u624B\uFF0F\u4E21\u624B\u304C\u30BF\u30C3\u30C1\u30FB\u30C0\u30A6\u30F3"
+    description: "\u5FC5\u9808\u56DE\u8EE2\u6570\u306B1\u56DE\u8EE2\u307E\u305F\u306F2\u56DE\u8EE2\u6E80\u305F\u306A\u3044"
     group: 
     minValue: -1
-    maxValue: -3
+    maxValue: -2
     mark: 
     targetElementIds: []
