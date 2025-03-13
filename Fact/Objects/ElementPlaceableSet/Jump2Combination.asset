@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: Jump2Combination
-    name: "2\u9023\u7D9A\u30B8\u30E3\u30F3\u30D7\u30B3\u30F3\u30D3\u30CD\u30FC\u30B7\u30E7\u30F3"
+    name: "2\u9023\u7D9A\u30B8\u30E3\u30F3\u30D7\u30B3\u30F3\u30D3\u30CD\u30FC\u30B7\u30E7\u30F3/\u30B8\u30E3\u30F3\u30D7\u30B7\u30FC\u30AF\u30A7\u30F3\u30B9"
     jump: 1
     elementPlaceableIds:
     - Jump1234
-    - JumpTLo
+    - JumpTLoA

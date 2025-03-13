@@ -305,7 +305,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var methodInfo = judge.GetType().GetMethod("RecordTes", BindingFlags.NonPublic | BindingFlags.Instance);
             Assert.IsNotNull(methodInfo);
 
-            // コンビネーションジャンプテスト
+            // ジャンプ・コンビネーションテスト
             {
                 // 後半ジャンプボーナスがかからないように入れ替え
                 programComponentHanlder.Swap(2, 1);
@@ -340,6 +340,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.AreEqual(tes.baseValue, element0BaseValueObject.data.baseValue + element1BaseValueObject.data.baseValue);
                 }
             }
+            // TODO:ジャンプ・シークェンステスト
         }
 
         [TestCase("2022/7/1")]

@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84b4f709ae3190a47b4ee8670c92b44e, type: 3}
-  m_Name: JumpTLo
+  m_Name: JumpTLoA
   m_EditorClassIdentifier: 
   data:
-    id: JumpTLo
+    id: JumpTLoA
     elementIds:
     - 1T
     - 1Lo
+    - 1A
     - 2T
     - 2Lo
+    - 2A
     - 3T
     - 3Lo
+    - 3A
     - 4T
     - 4Lo
+    - 4A

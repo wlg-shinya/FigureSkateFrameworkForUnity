@@ -148,7 +148,6 @@ namespace Wlg.FigureSkate.Tests.Fact
         {
             // "3連続ジャンプコンビネーションは2番目にオイラーを構成しないと3番目のジャンプはトウループかループしか構成できません"
             {
-                // var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
                 var programComponentHanlder = CreateProgramComponentHanlder();
                 programComponentHanlder.TrySet(6, 0, "3S");
                 programComponentHanlder.TrySet(6, 1, "2Lo");
@@ -264,6 +263,38 @@ namespace Wlg.FigureSkate.Tests.Fact
                 programComponentHanlder.TrySet(0, 0, "4T");
                 programComponentHanlder.TrySet(2, 0, "4T");
                 Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+            }
+
+            // ""
+            {
+                // 3連続ジャンプシークェンス中に同じジャンプはOK
+                {
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    programComponentHanlder.TrySet(6, 1, "2A");
+                    programComponentHanlder.TrySet(6, 2, "2A");
+                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                }
+                // ジャンプシークェンスは2回以上構成してはいけない
+                {
+                    {
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        programComponentHanlder.TrySet(4, 1, "2A");
+                        programComponentHanlder.TrySet(5, 1, "2A");
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+                    {
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        programComponentHanlder.TrySet(4, 1, "2A");
+                        programComponentHanlder.TrySet(6, 1, "2A");
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+                    {
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        programComponentHanlder.TrySet(5, 1, "2A");
+                        programComponentHanlder.TrySet(6, 2, "2A");
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+                }
             }
 
             // "同じスピンを複数構成することはできません"

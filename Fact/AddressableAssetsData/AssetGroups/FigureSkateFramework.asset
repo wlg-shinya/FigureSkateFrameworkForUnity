@@ -1625,6 +1625,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2cfd0c065d77d3544bed38d1ce21f469
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceable/JumpTLoA.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2cffef03fecc42243bb620b6a4bfa95a
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF11\uFF33.asset"
     m_ReadOnly: 0
@@ -3977,11 +3982,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6cd6eb83298a2804c9cfbeeb93780b13
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/GoeMinus/JumpM19.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6cde094eb0089e64891af96ab9e3c106
-    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceable/JumpTLoEu.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -7700,6 +7700,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e026e6e746644b74484936b1e1fc5e10
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceable/JumpTLoAEu.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e038b46a488c65840b23eba6cad5a858
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ElementBaseValue/\uFF26\uFF23\uFF23\uFF33\uFF50\uFF14.asset"
     m_ReadOnly: 0
@@ -8327,11 +8332,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f32f487fdf1c5bf4cb7e9b4be24cab7a
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF13\uFF36.asset"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f36b5c7b108401b48a36a4aef98d2f83
-    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceable/JumpTLo.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
