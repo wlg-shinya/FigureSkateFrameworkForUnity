@@ -3,6 +3,7 @@ Jump,ジャンプ,true,JumpAll
 Jump2Combination,2連続ジャンプコンビネーション,true,Jump1234/JumpTLo
 Jump3Combination,3連続ジャンプコンビネーション,true,Jump1234/JumpTLoEu/Jump1234
 Jump2A,単独ダブルアクセルジャンプ,true,Jump2A
+Jump23Lo,単独ループジャンプ,true,Jump23Lo
 Jump23Lz,単独ルッツジャンプ,true,Jump23Lz
 Jump23F,単独フリップジャンプ,true,Jump23F
 Jump23A,単独アクセルジャンプ,true,Jump23A

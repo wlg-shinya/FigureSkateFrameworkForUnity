@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: ChoreographicSequenceM7
+    category: ChoreographicSequence
     description: "\u5275\u9020\u6027\uFF0F\u30AA\u30EA\u30B8\u30CA\u30EA\u30C6\u30A3\u306B\u6B20\u3051\u308B"
     group: 
     minValue: -1

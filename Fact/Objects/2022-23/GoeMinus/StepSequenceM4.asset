@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: StepSequenceM4
+    category: StepSequence
     description: "\u3064\u307E\u305A\u304D"
     group: 
     minValue: -1

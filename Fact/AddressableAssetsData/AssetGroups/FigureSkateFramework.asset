@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: FigureSkateFramework
   m_GUID: 1cc483a07f39b3d41bfbb3446a22376e
   m_SerializeEntries:
+  - m_GUID: 001de4d2fa2e6cd4c84686fd04deb0ca
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/JuniorWomenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0061c47ae815e2c4cb06b2a9ea46adea
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP4.asset
     m_ReadOnly: 0
@@ -92,6 +97,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0257b201bbbb98c4e8d2ee8d37dd0be1
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF12\uFF33\uFF51.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 025df5f386441fe41917f1c5a17896cd
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/SeniorWomenShortProgram.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -445,6 +455,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b70185550c5f6c42af7a928a700753b
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/JuniorWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0b7aeb2911548b04fab88fb9b64c81a2
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ElementBaseValue/\uFF14\uFF26\uFF01\uFF1C.asset"
     m_ReadOnly: 0
@@ -537,6 +552,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0db285c54c3228c45b543d6574391c90
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoePlus/JumpP6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0dcbc2336e1eec14d834022c293a92f8
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/JuniorMenFreeSkating.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -940,6 +960,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a4e934989a3da444b66e018f90817d3
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/JuniorMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1a7b7ab73127c13469769c91c3a5df2d
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ElementBaseValue/\uFF26\uFF23\uFF2C\uFF33\uFF50\uFF12.asset"
     m_ReadOnly: 0
@@ -1015,6 +1040,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c83b0001410bee4d9e1aa2776a43021
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/NoviceAWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1c94fef8ad7d7774688f1379321b1709
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCCoSp3.asset
     m_ReadOnly: 0
@@ -1062,6 +1092,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1d770275b4d4ccc4894f2e629856561e
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ElementBaseValue/\uFF14\uFF26\uFF01.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1dc0630c06fd1584f81602a15d697600
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceable/Jump23Lo.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1940,6 +1975,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 36c063bf2e198b843a4807b84509d841
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/SeniorMenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3702edbb76409c742adc4bd2543aa806
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Competition/ISUGPMKJohnWilsonTrophy2022.asset
     m_ReadOnly: 0
@@ -2225,6 +2265,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e92fd0c528d207478d06cdc4c454c26
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/SeniorMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3ed4807ef7295c94ea0dd790908b810c
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/2T.asset
     m_ReadOnly: 0
@@ -2242,6 +2287,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3fc738e7a79317e44a0fbc6be31e5d83
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF26\uFF23\uFF33\uFF50\uFF22.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ff1e5e71414bf74ba1aa516c65accc2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/JuniorMenShortProgram.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -3255,6 +3305,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a65b7b32c2443f438d34ca8460f4145
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/NoviceBMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5a867de60ce167047bfd335e7b0cbab0
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element/FCSSp3.asset
     m_ReadOnly: 0
@@ -3520,6 +3575,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61f7216916ce0f14da1d75c75219add0
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/NoviceBWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6232d01e58ac8af40b3410df1c80dace
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/JuniorWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 626fbdd5de6f6a24db4b522dbf196acc
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF26\uFF23\uFF33\uFF33\uFF50\uFF13\uFF36.asset"
     m_ReadOnly: 0
@@ -3592,6 +3657,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6497ad5105d99b948a15e8ffca0863a4
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ElementBaseValue/\uFF11\uFF26\uFF45\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64a3701bc0e5b0d4a90a7899d1bffeb5
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/NoviceAMenFreeSkating.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -4100,6 +4170,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 735ffece43fc5f946bd40be8d60804c0
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/SeniorMenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 73930dac2c569fc4ca4eb61344ff2b63
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF13\uFF33\uFF1C\uFF1C.asset"
     m_ReadOnly: 0
@@ -4277,6 +4352,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 788edf0b4e1fecc408082a4a8873fd0b
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF2C\uFF5A\uFF01\uFF51\uFF42.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78ad817030837264ba858fc3e61fc7f1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceableSet/Jump23Lo.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -5565,6 +5645,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a20c12e141870a8488948f5e27f9f6c2
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/SeniorMenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a20f9feb962bf40419efafcf789bccc0
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ElementBaseValue/\uFF23\uFF4F\uFF33\uFF50\uFF14.asset"
     m_ReadOnly: 0
@@ -5762,6 +5847,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a79d671fd076c7746acb08c4f7c219a8
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF26\uFF23\uFF23\uFF4F\uFF33\uFF50\uFF13\uFF36.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a825faee13b3c1a4a9a43f29ba02bb25
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/NoviceBMenFreeSkating.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -5987,6 +6077,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ae1521715d674794984ebce2a7431dd3
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/GoeMinus/JumpM3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae24246af1978fe4dbd29a75548d03a1
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/JuniorMenShortProgram.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -6417,6 +6512,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bb258124b20ab344886e4c43d81daa5e
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/SpinM4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb323ada6a7b6df4f9a74add64b697cd
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/NoviceAMenFreeSkating.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -7580,6 +7680,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfafe68ff110d7047838841616c3620a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/SeniorWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dfc02167e67b9554f8463c32262b6c07
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF14\uFF2C\uFF5A\uFF45\uFF1C\uFF1C.asset"
     m_ReadOnly: 0
@@ -7732,6 +7837,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e4689fb796b0bc74695a8d2a1ce1ea53
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/ElementBaseValue/\uFF13\uFF26\uFF01\uFF1C\uFF1C.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4b824de9e9f0c94d9e6101f1449fb1f
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/SeniorWomenShortProgram.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -7900,6 +8010,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e906d513a31fe6f44afe4a07aebe6018
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/JuniorWomenShortProgram.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e90f29e0360cd734d85f7f61fc57dd43
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/ChoreographicSequenceM3.asset
     m_ReadOnly: 0
@@ -8027,6 +8142,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: edc629c125a9fc84983529adf607a516
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF26\uFF23\uFF4F\uFF33\uFF50\uFF13.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: edd0272602a7c6a47b222c2d2ffd7f9a
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/NoviceAWomenFreeSkating.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -8410,6 +8530,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa38b76440efb8b4c85add8425ef9e9c
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/SeniorWomenFreeSkating.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa3c778c0a4488c4191e81411dcaabfb
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF13\uFF34.asset"
     m_ReadOnly: 0
@@ -8427,6 +8552,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa7a9e564cf2ace47b47a40df7272229
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM7.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa9cf89a8b0b1c94f8022e92133ae5b4
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/ProgramComponentRegulation/NoviceBWomenFreeSkating.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
