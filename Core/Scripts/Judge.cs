@@ -11,6 +11,7 @@ namespace Wlg.FigureSkate.Core
     // - Fall判定はジャンプ単位ではなく構成単位で行っている。そのためジャンプコンビネーションは全部実行される
     // TODO:b(ボーナス)対応
     // TODO:ジャンプシークェンスの結果に+SEQ付与対応
+    // TODO:ジャンプの*付与
 
     public class Judge
     {
