@@ -5,7 +5,7 @@ namespace Wlg.FigureSkate.Core.Data
 {
     // 指定した構成グループ間で同じ要素を設定していないか判断する。ただし同構成中の同じ要素は許容
     [Serializable]
-    public class ProgramComponentConditionDifferentByComponent : ProgramComponentCondition
+    public class ProgramComponentConditionDifferentBetweenComponent : ProgramComponentCondition
     {
         // 対象の構成要素ID群
         public string[] elementPlaceableSetIds;
