@@ -71,7 +71,6 @@ namespace Wlg.FigureSkate.Core.Data
 
             // 審判のGOEの平均値
             // 全審判の出した値のうち最大値と最低値を除いた平均値とする
-            // ref. https://www.jsports.co.jp/skate/about/game/
             public float RefereeGoeAverage()
             {
                 var max = refereeGoe.Max();
@@ -104,8 +103,8 @@ namespace Wlg.FigureSkate.Core.Data
                 return newTes;
             }
 
-            // 記号群を文字列化
-            // 順序は国際基準( https://current.isu.org/figure-skating/rules/fsk-communications )に準拠
+            // 記号群を文字列化。順序は国際基準に準拠
+            // TODO:この処理のFactへの引っ越し
             static private string InfoMarkListToString(List<string> marks)
             {
                 string resultMarks = "";
@@ -131,7 +130,6 @@ namespace Wlg.FigureSkate.Core.Data
 
             // 審判のスコアの平均値
             // 全審判の出した値のうち最大値と最低値を除いた平均値とする
-            // ref. https://www.jsports.co.jp/skate/about/game/
             public float RefereeScoreAverage()
             {
                 var max = refereeScore.Max();
@@ -220,8 +218,6 @@ namespace Wlg.FigureSkate.Core.Data
 
         // 丸め。スコアの最終表示に対して実行するべき処理
         // 計算中は小数点をそのまま扱い最終的な表示時に小数点第二位で四捨五入としている模様
-        // ref. https://www.isu.org/figure-skating/rules/fsk-regulations-rules/file
-        // ref. https://results.isu.org/results/season2223/wtt2023/data0203.pdf
         static public float Round(float value) => (float)Math.Round(value, 2, MidpointRounding.AwayFromZero);
     }
 }

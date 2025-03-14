@@ -10,7 +10,6 @@ namespace Wlg.FigureSkate.Core
     // - +REPは非対応（プログラム構成条件で設定できないようにする想定）
     // - Fall判定はジャンプ単位ではなく構成単位で行っている。そのためジャンプコンビネーションは全部実行される
     // TODO:b(ボーナス)対応
-    // TODO:ジャンプシークェンスの結果に+SEQ付与対応
     // TODO:ジャンプの*付与
 
     public class Judge
