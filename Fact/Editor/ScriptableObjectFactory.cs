@@ -144,8 +144,6 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (GoeMinus data, GoeMinusObject obj) => { obj.data = data; }
                         );
                 }
-                // TODO:ジャンプシークエンスのシニア・ジュニアのルール対応（フリースケーティングで1回だけ実行可能である条件の追加）
-                // TODO:ジャンプシークエンスノービスのルール対応
                 // TODO:ジャンプシークエンスの結果に+SEQ付与対応
                 // # 2022-23
                 // - 2022 Special Regulation SP and Ice Dance and Technical Rules SP  and ID_Final.pdf
