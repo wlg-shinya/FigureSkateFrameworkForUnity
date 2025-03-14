@@ -17,7 +17,7 @@ MonoBehaviour:
     elementPlaceableSetIds:
     - Jump2A
     - Jump23Lo
-    - Jump23-33Combination
+    - Jump22-23-33Combination
     - SpinCamelFlying
     - SpinOnepositionSitLaybackNoflying
     - SpinCombinationChangefootNoflying

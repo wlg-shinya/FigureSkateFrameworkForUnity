@@ -19,7 +19,9 @@ MonoBehaviour:
     lastJumpSpecialFactorCount: 1
     pcsFactor: 1.33
     programComponentRegulationId: JuniorWomenShortProgram
-  elementPlaceableSetConditionObjectDataList: []
+  elementPlaceableSetConditionObjectDataList:
+  - id: Jump22-23-33Combination
+    obj: {fileID: 11400000, guid: 6348cdb9823942a4c8be7aca09952214, type: 2}
   ProgramComponentConditionObjects:
   - {fileID: 11400000, guid: 0e474f596fc93e241b4253eea5c7d860, type: 2}
   - {fileID: 11400000, guid: df10750cbbcbf5f47a8a7f4ad469d7c5, type: 2}

@@ -4695,6 +4695,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8235af418a1e8c04f9c97fd0072d6527
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceableSet/Jump22-23-33Combination.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 823c90fceedfe3941bd8b28e538de8de
     m_Address: "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ElementBaseValue/\uFF15\uFF34\uFF1C\uFF1C.asset"
     m_ReadOnly: 0

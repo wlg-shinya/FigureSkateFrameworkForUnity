@@ -47,7 +47,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                         Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3A"));
                         Assert.IsFalse(programComponentHanlder.TrySet(2, 1, "2Lo"));
                     }
-
                     // "同じジャンプを複数構成することはできません"
                     {
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -59,7 +58,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                         Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3Lo"));
                         Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
                     }
-
                     // "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください"
                     {
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -70,7 +68,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                         Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FCSp4"));
                         Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
                     }
-
                     // "構成要素はすべて設定してください"
                     {
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -119,7 +116,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                         Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3Lo"));
                         Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
                     }
-
                     // "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください"
                     {
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -130,7 +126,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                         Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FCSp4"));
                         Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
                     }
-
                     // "構成要素はすべて設定してください"
                     {
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -158,7 +153,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 // もともと構成できない要素は当然構成できない
                 Assert.IsFalse(programComponentHanlder.TrySet(6, 2, "ChSq1"));
             }
-
             // "アクセルジャンプを少なくともひとつ構成する必要があります"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -170,7 +164,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
                 Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "同じジャンプは3回以上構成できません"
             {
                 // どのような回転数でもダメ
@@ -256,7 +249,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                 }
             }
-
             // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -264,7 +256,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "4T"));
                 Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "ジャンプシークェンス(2/3番目にアクセルを含む構成)は最大ひとつまでしか構成できません"
             {
                 // 3連続ジャンプシークェンス中に同じジャンプはOK
@@ -317,7 +308,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     }
                 }
             }
-
             // "同じスピンを複数構成することはできません"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -325,7 +315,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(9, 0, "FCoSp4"));
                 Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "構成要素はすべて設定してください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -506,6 +495,12 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3T"));
                 Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
             }
+            // "3回転+2回転は構成できません"
+            {
+                var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3F"));
+                Assert.IsFalse(programComponentHanlder.TrySet(2, 1, "2Lo"));
+            }
             // "構成要素はすべて設定してください"
             {
                 var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -516,7 +511,6 @@ namespace Wlg.FigureSkate.Tests.Fact
 
         private void JuniorFreeSkating(Func<ProgramComponentHanlder> CreateProgramComponentHanlder)
         {
-
             // "3連続ジャンプコンビネーションは2番目にオイラーを構成しないと3番目のジャンプはトウループかループしか構成できません"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -529,7 +523,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 // もともと構成できない要素は当然構成できない
                 Assert.IsFalse(programComponentHanlder.TrySet(6, 2, "ChSq1"));
             }
-
             // "アクセルジャンプを少なくともひとつ構成する必要があります"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -541,7 +534,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
                 Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "同じジャンプは3回以上構成できません"
             {
                 // どのような回転数でもダメ
@@ -583,7 +575,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                 }
             }
-
             // "すべての3回転および4回転ジャンプの中から2種類のみ2回繰り返すことができます。2種類の繰り返しのうち4回転は1種類のみ認められます"
             {
                 // 3回転は3種類以上2回繰り返すことはできない
@@ -627,7 +618,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                 }
             }
-
             // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -635,7 +625,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "4T"));
                 Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "ジャンプシークェンス(2/3番目にアクセルを含む構成)は最大ひとつまでしか構成できません"
             {
                 // 3連続ジャンプシークェンス中に同じジャンプはOK
@@ -688,7 +677,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     }
                 }
             }
-
             // "同じスピンを複数構成することはできません"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -696,7 +684,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(9, 0, "FCoSp4"));
                 Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "構成要素はすべて設定してください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -764,7 +751,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 // もともと構成できない要素は当然構成できない
                 Assert.IsFalse(programComponentHanlder.TrySet(5, 2, "ChSq1"));
             }
-
             // "アクセルジャンプを少なくともひとつ構成する必要があります"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -776,7 +762,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(5, 2, "2A"));
                 Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "同じジャンプは3回以上構成できません"
             {
                 // どのような回転数でもダメ
@@ -819,7 +804,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                 }
             }
-
             // "すべての3回転および4回転ジャンプの中から2種類のみ2回繰り返すことができます。2種類の繰り返しのうち4回転は1種類のみ認められます"
             {
                 // 3回転は2種類までなら2回繰り返すことができる
@@ -858,7 +842,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                 }
             }
-
             // "第1ジャンプにループ、ルッツ、フリップの3種類を含めてください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -875,7 +858,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lo"));
                 Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -883,7 +865,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3T"));
                 Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "ジャンプシークェンス(2/3番目にアクセルを含む構成)は最大ひとつまでしか構成できません"
             {
                 // 3連続ジャンプシークェンス中に同じジャンプはOK
@@ -924,7 +905,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     }
                 }
             }
-
             // "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -935,7 +915,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "FCSp4"));
                 Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "構成要素はすべて設定してください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -1003,7 +982,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 // もともと構成できない要素は当然構成できない
                 Assert.IsFalse(programComponentHanlder.TrySet(4, 2, "ChSq1"));
             }
-
             // "アクセルジャンプを少なくともひとつ構成する必要があります"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -1015,7 +993,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "2A"));
                 Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "同じジャンプは3回以上構成できません"
             {
                 // どのような回転数でもダメ
@@ -1057,7 +1034,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                 }
             }
-
             // "すべての3回転および4回転ジャンプの中から2種類のみ2回繰り返すことができます。2種類の繰り返しのうち4回転は1種類のみ認められます"
             {
                 {
@@ -1096,7 +1072,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
                 }
             }
-
             // "第1ジャンプにルッツ、フリップの2種類を含めてください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -1113,7 +1088,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "2F"));
                 Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -1122,7 +1096,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3F"));
                 Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "ジャンプシークェンス(2/3番目にアクセルを含む構成)は最大ひとつまでしか構成できません"
             {
                 // 3連続ジャンプシークェンス中に同じジャンプはOK
@@ -1163,7 +1136,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                     }
                 }
             }
-
             // "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();
@@ -1174,7 +1146,6 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "FCSp4"));
                 Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
             }
-
             // "構成要素はすべて設定してください"
             {
                 var programComponentHanlder = CreateProgramComponentHanlder();

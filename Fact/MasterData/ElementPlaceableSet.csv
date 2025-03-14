@@ -9,6 +9,7 @@ Jump23F,単独フリップジャンプ,true,Jump23F
 Jump23A,単独アクセルジャンプ,true,Jump23A
 Jump34,単独3/4回転ジャンプ,true,Jump34
 Jump3,単独3回転ジャンプ,true,Jump3
+Jump22-23-33Combination,2+2/2+3/3+3回転ジャンプコンビネーション,true,Jump23/Jump23TLo
 Jump23-33Combination,2+3/3+3回転ジャンプコンビネーション,true,Jump23/Jump3TLo
 Jump23-33-42-43Combination,2+3/3+3/4+2/4+3回転ジャンプコンビネーション,true,Jump234/Jump23TLo
 SpinOneposition,単一姿勢スピン,false,SpinOneposition
