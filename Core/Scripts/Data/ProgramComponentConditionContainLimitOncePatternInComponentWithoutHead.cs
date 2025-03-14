@@ -25,6 +25,8 @@ namespace Wlg.FigureSkate.Core.Data
                     .Where(x => x.elementIds.Count() >= 2)
                     // 先頭要素以外の構成に指定パターンが含んでいるものだけ抽出
                     .Where(x => x.elementIds
+                        // 未設定の構成要素は無視
+                        .Where(x => !string.IsNullOrEmpty(x))
                         // 先頭要素を除外した構成要素IDに絞る
                         .Where((x, i) => i > 0)
                         // 構成要素IDの中に指定パターンが含んでいるものがあるかどうか判断
