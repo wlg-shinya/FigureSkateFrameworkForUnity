@@ -144,7 +144,6 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (GoeMinus data, GoeMinusObject obj) => { obj.data = data; }
                         );
                 }
-                // TODO:ジャンプシークエンスの結果に+SEQ付与対応
                 // # 2022-23
                 // - 2022 Special Regulation SP and Ice Dance and Technical Rules SP  and ID_Final.pdf
                 // - 2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf

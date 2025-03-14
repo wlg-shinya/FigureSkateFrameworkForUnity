@@ -10,6 +10,8 @@ namespace Wlg.FigureSkate.Core
     // - +REPは非対応（プログラム構成条件で設定できないようにする想定）
     // - Fall判定はジャンプ単位ではなく構成単位で行っている。そのためジャンプコンビネーションは全部実行される
     // TODO:b(ボーナス)対応
+    // TODO:ジャンプシークェンスの結果に+SEQ付与対応
+
     public class Judge
     {
         public Judge(
@@ -153,7 +155,6 @@ namespace Wlg.FigureSkate.Core
 
             // GOEの重要項目数と実際に成功した重要項目数が一致していたら、全体の達成項目数かGOE最大値の低いほうをGOE加点として採用
             // そうでなければ全体の達成項目数かGOEの重要項目数の低いほうをGOE加点として採用
-            // ref. https://www.jsports.co.jp/skate/about/game/
             var requiredCount = goePlusObjs.Count((x) => x.important == true);
             var requiredSuccessCount = result.Where((x, i) => x && goePlusObjs[i].important).Count();
             var successCount = result.Count((x) => x == true);
@@ -283,7 +284,6 @@ namespace Wlg.FigureSkate.Core
             // 基礎点。採点結果にはジャンプボーナス適用後を設定する
             // 違反による基礎点減少倍率はGOEにも影響するのでローカルbaseValueに適用する
             // ダウングレードの場合はダウングレード先の基礎点を参照する
-            // ref. https://results.isu.org/results/season2223/wtt2023/data0203.pdf
 
             var lastJumpFactor = tes.lastJump ? 1.1f : 1.0f;
             var baseValue = markedIds
@@ -295,7 +295,6 @@ namespace Wlg.FigureSkate.Core
             tes.baseValue = baseValue * lastJumpFactor;
             // 全審判の出したGOE平均値から算出される係数と基礎点を掛け合わせてGOEスコアを出す
             // このスコアはジャンプボーナス適用前の基礎点で算出するルール
-            // ref. https://www.jsports.co.jp/skate/about/game/
             tes.goeScore = baseValue * (tes.RefereeGoeAverage() * Constant.GOE_SCORE_MAGNIFICATION);
         }
 
@@ -326,7 +325,6 @@ namespace Wlg.FigureSkate.Core
                     }
 
                     // 出来栄えから最大値10.0fで0.25刻みのスコアに変換する
-                    // ref. https://www.jsports.co.jp/skate/about/game/
                     var rawScore = checkResult * 10.0f;
                     var integerPart = (float)Math.Truncate(rawScore);
                     var decimalPart = rawScore % 1;
