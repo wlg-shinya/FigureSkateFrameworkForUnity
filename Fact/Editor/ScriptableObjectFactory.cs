@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using Wlg.FigureSkate.Core.Data;
 using Wlg.FigureSkate.Core.ScriptableObjects;
+using Wlg.FigureSkate.Fact.External;
 
 namespace Wlg.FigureSkate.Fact.Editor
 {

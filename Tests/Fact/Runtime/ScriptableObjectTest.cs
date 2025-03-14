@@ -4,7 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEditor;
 using Wlg.FigureSkate.Core.Data;
-using Wlg.FigureSkate.Fact;
+using Wlg.FigureSkate.Fact.External;
 using Wlg.FigureSkate.Fact.Query;
 using Wlg.FigureSkate.Fact.Utility;
 using Assert = UnityEngine.Assertions.Assert;
