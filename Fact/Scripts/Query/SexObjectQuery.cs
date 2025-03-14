@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Wlg.FigureSkate.Core.ScriptableObjects;
+using Wlg.FigureSkate.Fact.Utility;
 
-namespace Wlg.FigureSkate.Fact
+namespace Wlg.FigureSkate.Fact.Query
 {
     // 性別オブジェクトを得るための問い合わせ
     public static class SexObjectQuery

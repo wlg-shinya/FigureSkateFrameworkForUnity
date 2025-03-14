@@ -4,7 +4,7 @@ using System.Linq;
 using Wlg.FigureSkate.Core.Data;
 using Wlg.FigureSkate.Core.ScriptableObjects;
 
-namespace Wlg.FigureSkate.Fact
+namespace Wlg.FigureSkate.Fact.Query
 {
     // プログラム構成データを得るための問い合わせ
     public static class ProgramComponentQuery

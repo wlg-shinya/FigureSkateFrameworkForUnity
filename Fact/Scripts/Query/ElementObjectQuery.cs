@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Wlg.FigureSkate.Core.ScriptableObjects;
+using Wlg.FigureSkate.Fact.Utility;
 
-namespace Wlg.FigureSkate.Fact
+namespace Wlg.FigureSkate.Fact.Query
 {
     // 構成要素オブジェクトを得るための問い合わせ
     public static class ElementObjectQuery

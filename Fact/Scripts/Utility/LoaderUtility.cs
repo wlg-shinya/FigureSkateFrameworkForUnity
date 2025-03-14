@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
-namespace Wlg.FigureSkate.Fact
+namespace Wlg.FigureSkate.Fact.Utility
 {
     public static class LoaderUtility
     {

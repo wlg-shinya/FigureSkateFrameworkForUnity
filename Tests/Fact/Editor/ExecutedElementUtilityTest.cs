@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using Wlg.FigureSkate.Fact;
+using Wlg.FigureSkate.Fact.Utility;
 using Assert = UnityEngine.Assertions.Assert;
 
 namespace Wlg.FigureSkate.Tests.Editor.Fact

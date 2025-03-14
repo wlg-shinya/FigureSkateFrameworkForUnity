@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace Wlg.FigureSkate.Fact
+namespace Wlg.FigureSkate.Fact.Utility
 {
     public static class ExecutedElementUtility
     {

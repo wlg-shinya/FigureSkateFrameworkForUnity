@@ -1,7 +1,6 @@
-using UnityEngine.UIElements;
 using Wlg.FigureSkate.Core.Data;
 
-namespace Wlg.FigureSkate.Fact
+namespace Wlg.FigureSkate.Fact.Utility
 {
     public static class YearMonthDayUtility
     {
