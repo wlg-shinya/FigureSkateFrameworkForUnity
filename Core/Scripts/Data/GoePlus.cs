@@ -1,6 +1,6 @@
 using System;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // Grade Of Execution の加点項目のいち要素
     [Serializable]

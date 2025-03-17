@@ -7,7 +7,7 @@ using System.Reflection;
 using UnityEditor;
 #endif
 
-namespace Wlg.FigureSkate.Fact.External
+namespace Wlg.FigureSkate.Fact
 {
     // https://assetstore.unity.com/packages/tools/integration/csv-serialize-135763
     public class CSVSerializer

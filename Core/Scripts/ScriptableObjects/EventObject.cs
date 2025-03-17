@@ -1,10 +1,10 @@
 using UnityEngine;
 
-namespace Wlg.FigureSkate.Core.ScriptableObjects
+namespace Wlg.FigureSkate.Core
 {
     [CreateAssetMenu(fileName = "Event", menuName = "ScriptableObjects/FigureSkateFramework/Event")]
     public class EventObject : ScriptableObject
     {
-        public Data.Event data;
+        public Event data;
     }
 }

@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UIElements;
-using Wlg.FigureSkate.Core.Data;
+using Wlg.FigureSkate.Core;
 
-namespace Wlg.FigureSkate.Fact.UI
+namespace Wlg.FigureSkate.Fact
 {
     public class JudgesScoreUI
     {
@@ -12,7 +12,7 @@ namespace Wlg.FigureSkate.Fact.UI
 
         // 初期化
         // UIにデータを設定するため初期化タイミングで1回呼び出す必要があります
-        public void Initialize(VisualTreeAsset judgesScoreUxml, VisualTreeAsset judgesScoreExecutedElementItemUxml, Data.JudgesScore data)
+        public void Initialize(VisualTreeAsset judgesScoreUxml, VisualTreeAsset judgesScoreExecutedElementItemUxml, JudgesScore data)
         {
             // 渡されたベースUIのセットアップ
             {

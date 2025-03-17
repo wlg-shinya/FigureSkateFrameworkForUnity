@@ -1,6 +1,6 @@
-using Wlg.FigureSkate.Core.Data;
+using Wlg.FigureSkate.Core;
 
-namespace Wlg.FigureSkate.Fact.Utility
+namespace Wlg.FigureSkate.Fact
 {
     public static class YearMonthDayUtility
     {

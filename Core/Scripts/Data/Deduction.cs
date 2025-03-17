@@ -1,6 +1,6 @@
 using System;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 減点項目
     [Serializable]

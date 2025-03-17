@@ -1,5 +1,4 @@
 using Wlg.FigureSkate.Core;
-using Wlg.FigureSkate.Core.Data;
 using Assert = UnityEngine.Assertions.Assert;
 
 namespace Wlg.FigureSkate.Tests.Fact

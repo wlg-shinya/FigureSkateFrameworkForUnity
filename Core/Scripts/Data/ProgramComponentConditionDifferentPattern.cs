@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 指定した構成グループ間で同じパターンの要素を設定していないか判断する
     [Serializable]

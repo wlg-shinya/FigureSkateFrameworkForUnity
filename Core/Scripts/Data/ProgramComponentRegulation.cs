@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // プログラム構成要素の規則
     [Serializable]

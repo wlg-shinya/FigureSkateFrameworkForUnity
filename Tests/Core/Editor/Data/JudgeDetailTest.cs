@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using NUnit.Framework;
-using Wlg.FigureSkate.Core.Data;
+using Wlg.FigureSkate.Core;
 using Assert = UnityEngine.Assertions.Assert;
 
 namespace Wlg.FigureSkate.Tests.Editor.Core.Data

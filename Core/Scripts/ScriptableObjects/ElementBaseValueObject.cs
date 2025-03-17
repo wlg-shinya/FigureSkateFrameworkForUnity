@@ -1,7 +1,6 @@
 using UnityEngine;
-using Wlg.FigureSkate.Core.Data;
 
-namespace Wlg.FigureSkate.Core.ScriptableObjects
+namespace Wlg.FigureSkate.Core
 {
     [CreateAssetMenu(fileName = "ElementBaseValue", menuName = "ScriptableObjects/FigureSkateFramework/ElementBaseValue")]
     public class ElementBaseValueObject : ScriptableObject

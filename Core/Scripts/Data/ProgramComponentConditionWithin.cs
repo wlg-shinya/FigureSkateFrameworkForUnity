@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 指定した構成グループ間で同じ要素を指定数以内の構成で抑えているか判断する
     [Serializable]

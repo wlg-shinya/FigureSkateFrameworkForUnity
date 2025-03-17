@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Wlg.FigureSkate.Core.ScriptableObjects;
-using Wlg.FigureSkate.Fact.Utility;
+using Wlg.FigureSkate.Core;
 
-namespace Wlg.FigureSkate.Fact.Query
+namespace Wlg.FigureSkate.Fact
 {
     // プログラム構成に設定可能な構成要素ひとつを表現したデータのオブジェクトを得るための問い合わせ
     public static class ElementPlaceableObjectQuery

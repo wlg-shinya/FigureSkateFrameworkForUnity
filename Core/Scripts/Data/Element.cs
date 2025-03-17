@@ -1,6 +1,6 @@
 using System;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 構成要素の基礎点以外の要素
     // 基礎点は ElementBaseValue で扱う

@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 指定パターン構成要素の中で同じ要素を指定数以内の構成で抑えているかを複数の条件の重ね合わせで判断する
     [Serializable]

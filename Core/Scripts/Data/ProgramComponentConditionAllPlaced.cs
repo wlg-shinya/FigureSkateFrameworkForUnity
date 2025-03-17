@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // すべて設定済みか判断する
     [Serializable]

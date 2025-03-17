@@ -1,7 +1,6 @@
 using UnityEngine;
-using Wlg.FigureSkate.Core.Data;
 
-namespace Wlg.FigureSkate.Core.ScriptableObjects
+namespace Wlg.FigureSkate.Core
 {
     [CreateAssetMenu(fileName = "Deduction", menuName = "ScriptableObjects/FigureSkateFramework/Deduction")]
     public class DeductionObject : ScriptableObject

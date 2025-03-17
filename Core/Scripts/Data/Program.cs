@@ -1,6 +1,6 @@
 using System;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // プログラム（シニア男子ショートプログラム、ジュニア女子フリースケーティングなど）
     [Serializable]

@@ -1,6 +1,6 @@
 using System;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 構成要素の基礎点
     // 2A はダブルアクセルと表記することやGOE判定はジャンプに準ずることは Element で扱う

@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-using Wlg.FigureSkate.Core.Data;
-using Wlg.FigureSkate.Core.ScriptableObjects;
-using Wlg.FigureSkate.Fact.External;
+using Wlg.FigureSkate.Core;
 
 namespace Wlg.FigureSkate.Fact.Editor
 {
@@ -216,11 +214,11 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (List<string[]> rows) =>
                         {
                             // 配列(programIds)を扱うため独自に値を設定する
-                            var result = new Core.Data.Event[rows.Count - 1];
+                            var result = new Core.Event[rows.Count - 1];
                             for (var i = 0; i < result.Length; ++i)
                             {
                                 var rowsIndex = i + 1;
-                                result[i] = new Core.Data.Event
+                                result[i] = new Core.Event
                                 {
                                     id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
                                     name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
@@ -231,8 +229,8 @@ namespace Wlg.FigureSkate.Fact.Editor
                             }
                             return result;
                         },
-                        (Core.Data.Event data) => { return $"{data.id}.asset"; },
-                        (Core.Data.Event data, EventObject obj) => { obj.data = data; }
+                        (Core.Event data) => { return $"{data.id}.asset"; },
+                        (Core.Event data, EventObject obj) => { obj.data = data; }
                         );
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,

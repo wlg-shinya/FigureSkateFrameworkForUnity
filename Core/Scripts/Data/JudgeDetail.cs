@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 判定の詳細データ
     // ユーザがデータを用意するのではなく、Judge クラスがデータを用意します

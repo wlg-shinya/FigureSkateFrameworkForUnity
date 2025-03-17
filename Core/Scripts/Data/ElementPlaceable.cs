@@ -1,6 +1,6 @@
 using System;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // プログラム構成に設定可能な構成要素ひとつを表現したデータ
     [Serializable]

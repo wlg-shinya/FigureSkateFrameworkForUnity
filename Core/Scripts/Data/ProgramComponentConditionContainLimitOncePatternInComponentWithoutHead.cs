@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 指定した構成グループ間にて指定したパターンを先頭以外に含む構成が上限ひとつまでか判断する
     [Serializable]

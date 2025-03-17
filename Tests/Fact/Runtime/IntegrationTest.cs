@@ -5,10 +5,7 @@ using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
 using Wlg.FigureSkate.Core;
-using Wlg.FigureSkate.Core.Data;
-using Wlg.FigureSkate.Fact.Data;
-using Wlg.FigureSkate.Fact.Query;
-using Wlg.FigureSkate.Fact.Utility;
+using Wlg.FigureSkate.Fact;
 using Assert = UnityEngine.Assertions.Assert;
 
 namespace Wlg.FigureSkate.Tests.Fact

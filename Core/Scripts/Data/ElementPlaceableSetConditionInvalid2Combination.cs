@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 2連続コンビネーションの配置済み構成要素が不正な組み合わせでないか判断する
     [Serializable]

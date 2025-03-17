@@ -1,7 +1,6 @@
 using UnityEngine;
-using Wlg.FigureSkate.Core.Data;
 
-namespace Wlg.FigureSkate.Core.ScriptableObjects
+namespace Wlg.FigureSkate.Core
 {
     [CreateAssetMenu(fileName = "ElementPlaceableSetConditionLimit3CombinationThird", menuName = "ScriptableObjects/FigureSkateFramework/ProgramComponentCondition/ElementPlaceableSetConditionLimit3CombinationThird")]
     public class ElementPlaceableSetConditionLimit3CombinationThirdObject : ElementPlaceableSetConditionObject

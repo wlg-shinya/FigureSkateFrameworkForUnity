@@ -1,7 +1,7 @@
 using System;
-using Wlg.FigureSkate.Core.Data;
+using Wlg.FigureSkate.Core;
 
-namespace Wlg.FigureSkate.Fact.Data
+namespace Wlg.FigureSkate.Fact
 {
     // 選手
     [Serializable]

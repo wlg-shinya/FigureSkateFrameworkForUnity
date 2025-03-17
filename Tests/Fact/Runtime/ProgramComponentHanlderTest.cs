@@ -3,9 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using Wlg.FigureSkate.Core;
-using Wlg.FigureSkate.Core.Data;
-using Wlg.FigureSkate.Fact.Query;
-using Wlg.FigureSkate.Fact.Utility;
+using Wlg.FigureSkate.Fact;
 using Assert = UnityEngine.Assertions.Assert;
 
 namespace Wlg.FigureSkate.Tests.Fact

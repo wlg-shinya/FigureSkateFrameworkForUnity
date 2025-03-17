@@ -1,4 +1,4 @@
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     public static class Constant
     {

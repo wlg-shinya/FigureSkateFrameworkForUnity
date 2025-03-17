@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Wlg.FigureSkate.Core.Data;
-using Wlg.FigureSkate.Core.ScriptableObjects;
-using Wlg.FigureSkate.Fact.Utility;
+using Wlg.FigureSkate.Core;
 
-namespace Wlg.FigureSkate.Fact.Query
+namespace Wlg.FigureSkate.Fact
 {
     // GOE加点項目オブジェクトを得るための問い合わせ
     public static class GoePlusObjectQuery

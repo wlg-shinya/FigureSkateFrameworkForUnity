@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using Wlg.FigureSkate.Core.Data;
 
 namespace Wlg.FigureSkate.Core
 {

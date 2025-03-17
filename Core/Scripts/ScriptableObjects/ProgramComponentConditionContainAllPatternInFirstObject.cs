@@ -1,7 +1,6 @@
 using UnityEngine;
-using Wlg.FigureSkate.Core.Data;
 
-namespace Wlg.FigureSkate.Core.ScriptableObjects
+namespace Wlg.FigureSkate.Core
 {
     [CreateAssetMenu(fileName = "ProgramComponentConditionContainAllPatternInFirst", menuName = "ScriptableObjects/FigureSkateFramework/ProgramComponentCondition/ProgramComponentConditionContainAllPatternInFirst")]
     public class ProgramComponentConditionContainAllPatternInFirstObject : ProgramComponentConditionObject

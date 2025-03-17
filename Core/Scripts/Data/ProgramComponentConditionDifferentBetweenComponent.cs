@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 指定した構成グループ間で同じ要素を設定していないか判断する。ただし同構成中の同じ要素は許容
     [Serializable]

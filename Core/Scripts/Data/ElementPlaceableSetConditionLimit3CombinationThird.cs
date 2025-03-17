@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 3連続コンビネーションの3番目の要素の制限に引っかかっていないか判断する
     // ただし2番目の構成次第では3番目の制限は解除される

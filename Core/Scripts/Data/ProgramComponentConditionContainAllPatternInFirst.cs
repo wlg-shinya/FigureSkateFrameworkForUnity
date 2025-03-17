@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 指定した構成グループの第1構成要素で指定パターンの要素をすべて設定しているか判断する
     [Serializable]

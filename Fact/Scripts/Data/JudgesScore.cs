@@ -1,7 +1,7 @@
 using System;
-using Wlg.FigureSkate.Core.Data;
+using Wlg.FigureSkate.Core;
 
-namespace Wlg.FigureSkate.Fact.Data
+namespace Wlg.FigureSkate.Fact
 {
     // いち選手がプログラムで判定されたスコアデータ
     // これを UI.JudgesScore に渡すことで内容を表示してくれる

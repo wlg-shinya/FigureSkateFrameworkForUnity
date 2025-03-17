@@ -1,6 +1,6 @@
 using System;
 
-namespace Wlg.FigureSkate.Core.Data
+namespace Wlg.FigureSkate.Core
 {
     // 年月日。値の扱いはDateTimeと同じ https://learn.microsoft.com/ja-jp/dotnet/api/system.DateTime?view=net-8.0
     [Serializable]

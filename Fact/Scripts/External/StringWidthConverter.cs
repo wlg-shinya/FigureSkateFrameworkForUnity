@@ -1,4 +1,4 @@
-namespace Wlg.FigureSkate.Fact.External
+namespace Wlg.FigureSkate.Fact
 {
     // https://koma2961.hatenablog.com/entry/2016/02/24/051156
     public class StringWidthConverter
