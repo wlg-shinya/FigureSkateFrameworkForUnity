@@ -1,0 +1,12 @@
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/JuniorMenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/JuniorMenShortProgram.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/JuniorWomenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/JuniorWomenShortProgram.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/NoviceAMenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/NoviceAWomenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/NoviceBMenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/NoviceBWomenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/SeniorMenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/SeniorMenShortProgram.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/SeniorWomenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/Program/SeniorWomenShortProgram.asset

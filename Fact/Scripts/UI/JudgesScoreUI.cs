@@ -46,7 +46,7 @@ namespace Wlg.FigureSkate.Fact
                         item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].baseValue.ToString("N2");
                         item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].lastJump ? "X" : "";
                         item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].goeScore.ToString("N2");
-                        for (var i = 0; i < Constant.REFEREE_COUNT; i++)
+                        for (var i = 0; i < Core.Constant.REFEREE_COUNT; i++)
                         {
                             item.Q<Label>(_executedElementItemLabels[labelIndex++]).text = data.judgeDetail.tes[index].refereeGoe[i].ToString();
                         }
@@ -74,7 +74,7 @@ namespace Wlg.FigureSkate.Fact
                     {
                         var item = ProgramComponentBody().Q<VisualElement>(_pcsLabels[index]);
                         item.Q<Label>(_pcsContentLabels[3]).text = data.judgeDetail.pcs[index].factor.ToString("N2");
-                        for (var i = 0; i < Constant.REFEREE_COUNT; i++)
+                        for (var i = 0; i < Core.Constant.REFEREE_COUNT; i++)
                         {
                             item.Q<Label>(_pcsContentLabels[4 + i]).text = data.judgeDetail.pcs[index].refereeScore[i].ToString("N2");
                         }
@@ -153,7 +153,7 @@ namespace Wlg.FigureSkate.Fact
                     SetStyleWidth(e.Q<VisualElement>(_pcsContentLabels[labelIndex++]), GetExecutedElementHeaderWidth(_executedElementItemLabels[1]));
                     SetStyleWidth(e.Q<VisualElement>(_pcsContentLabels[labelIndex++]), GetExecutedElementHeaderWidth(new ArraySegment<string>(_executedElementItemLabels, 2, 3).ToArray()));
                     SetStyleWidth(e.Q<VisualElement>(_pcsContentLabels[labelIndex++]), GetExecutedElementHeaderWidth(_executedElementItemLabels[5]));
-                    for (var j = 0; j < Constant.REFEREE_COUNT; j++)
+                    for (var j = 0; j < Core.Constant.REFEREE_COUNT; j++)
                     {
                         SetStyleWidth(e.Q<VisualElement>(_pcsContentLabels[labelIndex++]), GetExecutedElementHeaderWidth(_executedElementItemLabels[6 + j]));
                     }

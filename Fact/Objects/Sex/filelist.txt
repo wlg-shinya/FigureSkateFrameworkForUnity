@@ -1,0 +1,2 @@
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Sex/Men.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Sex/Women.asset

@@ -1,0 +1,8 @@
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/JuniorMenSingle.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/JuniorWomenSingle.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/NoviceAMenSingle.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/NoviceAWomenSingle.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/NoviceBMenSingle.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/NoviceBWomenSingle.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/SeniorMenSingle.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event/SeniorWomenSingle.asset

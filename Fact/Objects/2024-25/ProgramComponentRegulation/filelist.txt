@@ -1,0 +1,12 @@
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/JuniorMenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/JuniorMenShortProgram.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/JuniorWomenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/JuniorWomenShortProgram.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/NoviceAMenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/NoviceAWomenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/NoviceBMenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/NoviceBWomenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/SeniorMenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/SeniorMenShortProgram.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/SeniorWomenFreeSkating.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/ProgramComponentRegulation/SeniorWomenShortProgram.asset

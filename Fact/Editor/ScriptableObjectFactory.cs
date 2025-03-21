@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 using Wlg.FigureSkate.Core;
@@ -12,6 +14,7 @@ namespace Wlg.FigureSkate.Fact.Editor
     {
         static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
         {
+            // マスターデータ(csv)から ScriptableObject の作成
             foreach (var path in importedAssets)
             {
                 // データの基になっているソースを記載
@@ -296,7 +299,8 @@ namespace Wlg.FigureSkate.Fact.Editor
                 // 保存先ディレクトリはcsvデータ置き場の構造を参考にする
                 var outputDir = Path.Combine(
                     Path.GetDirectoryName(importedAssetPath).Replace("MasterData", "Objects"),
-                    Path.GetFileNameWithoutExtension(importedAssetPath));
+                    Path.GetFileNameWithoutExtension(importedAssetPath)
+                    );
                 // csvからデータ読み込み
                 var csvTextAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(importedAssetPath);
                 var dataArray = csvParseToDeserialize(CSVSerializer.ParseCSV(csvTextAsset.text));
@@ -316,6 +320,61 @@ namespace Wlg.FigureSkate.Fact.Editor
                     // 変更した結果をファイル保存
                     EditorUtility.SetDirty(obj);
                     AssetDatabase.SaveAssets();
+                }
+            }
+        }
+
+        [InitializeOnLoadMethod]
+        static void OnProjectLoadedInEditor()
+        {
+            // ScriptableObject があるディレクトリ以下を一括で読み込むためのファイルリストの作成
+            {
+                var dirList = new List<string>()
+                {
+                    "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element",
+                    "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceable",
+                    "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceableSet",
+                    "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event",
+                    "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Sex",
+                };
+                foreach (var season in Constant.SEASONS)
+                {
+                    dirList.Add($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/Class");
+                    dirList.Add($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/Competition");
+                    dirList.Add($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/ElementBaseValue");
+                    dirList.Add($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/GoeMinus");
+                    dirList.Add($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/GoePlus");
+                    dirList.Add($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/Program");
+                    dirList.Add($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/ProgramComponentRegulation");
+                }
+                foreach (var dir in dirList)
+                {
+                    // 対象ディレクトリが存在しない場合はスキップ
+                    if (!Directory.Exists(dir)) continue;
+
+                    // ディレクトリ以下にある.assetファイルを列挙
+                    var filepathArray = Directory.GetFiles(dir);
+                    var assetsArray = filepathArray
+                        // .assetファイルのみに絞る
+                        .Where(x => Path.GetExtension(x).Equals(".asset"))
+                        // Addressablesのキーは'/'しか有効じゃないので'/'に統一
+                        .Select(x => x.Replace(@"\", "/"));
+
+                    // テキストファイルにassetパスを書き出す
+                    {
+                        var outputFilePath = Path.Combine(dir, "filelist.txt");
+                        var fileContents = string.Join("\n", assetsArray);
+                        var textObj = AssetDatabase.LoadAssetAtPath<TextAsset>(outputFilePath);
+                        // 対象ファイルがなければ新規作成
+                        if (textObj == null) textObj = new TextAsset();
+                        // 以前の内容と違うなら新しい内容で書き込み
+                        if (!textObj.text.Equals(fileContents))
+                        {
+                            File.WriteAllText(outputFilePath, fileContents);
+                            EditorUtility.SetDirty(textObj);
+                            AssetDatabase.SaveAssets();
+                        }
+                    }
                 }
             }
         }
