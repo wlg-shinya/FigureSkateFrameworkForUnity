@@ -19,7 +19,8 @@
 2. 解凍したフォルダ名を **com.welovegamesinc.figureskate-framework** に書き換えてプロジェクト直下の Packages 以下に配置します
     - これを省くと、UI Builder利用時などの一部状況で不都合が出ることを確認しています
 3. Unity の Package Manager を開いてパッケージを追加します
-4. Unity エディタのメニューから Window > Asset Management > Addressables > Groups を選択して、表示されたウィンドウに Packages/com.welovegamesinc.figureskate-framework/Fact/AddressableAssetsData/AssetGroups/FigureSkateFramework.asset を登録します
+4. Unity エディタのメニューから Window > Asset Management > Addressables > Groups を選択して、表示されたウィンドウに Packages/com.welovegamesinc.figureskate-framework/Fact/AddressableAssetsData/AssetGroups/FigureSkateFramework.asset を登録して、設定をプロジェクトの都合に合わせて更新します
+    - とりあえず動かすだけなら Build & Load Paths を Local に設定すると正常に Build And Run できるようになります
 
 ## 特徴
 
