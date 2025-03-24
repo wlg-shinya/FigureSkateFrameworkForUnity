@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using UnityEditor;
 using UnityEngine;
 using Wlg.FigureSkate.Core;
@@ -361,20 +360,9 @@ namespace Wlg.FigureSkate.Fact.Editor
                         .Select(x => x.Replace(@"\", "/"));
 
                     // テキストファイルにassetパスを書き出す
-                    {
-                        var outputFilePath = Path.Combine(dir, "filelist.txt");
-                        var fileContents = string.Join("\n", assetsArray);
-                        var textObj = AssetDatabase.LoadAssetAtPath<TextAsset>(outputFilePath);
-                        // 対象ファイルがなければ新規作成
-                        if (textObj == null) textObj = new TextAsset();
-                        // 以前の内容と違うなら新しい内容で書き込み
-                        if (!textObj.text.Equals(fileContents))
-                        {
-                            File.WriteAllText(outputFilePath, fileContents);
-                            EditorUtility.SetDirty(textObj);
-                            AssetDatabase.SaveAssets();
-                        }
-                    }
+                    var outputFilePath = Path.Combine(dir, "filelist.txt");
+                    var fileContents = string.Join("\n", assetsArray);
+                    File.WriteAllText(outputFilePath, fileContents);
                 }
             }
         }
