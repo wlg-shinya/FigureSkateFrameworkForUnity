@@ -16,11 +16,10 @@ namespace Wlg.FigureSkate.Fact
             // MEMO:ここはファイルパスではなくAddressablesのキーを指すのでPath.Combineは使わない
             var filelistKey = path + "/filelist.txt";
 
-            // ファイル一覧情報がなければ何も読み込めないまま終了
-            if (!File.Exists(filelistKey)) return null;
-
             // ファイル一覧情報からアセットのパスを取得
+            // なければ何も読み込めないまま終了
             var filelistObj = await Addressables.LoadAssetAsync<TextAsset>(filelistKey).Task;
+            if (filelistObj == null) return null;
             var assets = filelistObj.text.Split("\n");
 
             // パス情報からアセット読み込み
