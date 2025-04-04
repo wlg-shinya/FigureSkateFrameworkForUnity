@@ -62,7 +62,8 @@ namespace Wlg.FigureSkate.Fact
                         .Distinct();
                     var idsInComponents = components
                         .SelectMany(x => x.elementIds)
-                        .Distinct();
+                        .Distinct()
+                        .Where(x => !string.IsNullOrEmpty(x));
                     if (!idsInComponents.All(x => idsInRegulation.Any(y => y.Equals(x))))
                     {
                         // 現在構成されている要素が規則上許可されていない要素
