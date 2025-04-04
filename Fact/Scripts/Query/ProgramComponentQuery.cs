@@ -27,28 +27,48 @@ namespace Wlg.FigureSkate.Fact
         }
 
         // 指定プログラム構成が指定プログラム構成規則に則っているか
-        public static bool Verify(ProgramComponent[] components, ProgramComponentRegulation programComponentRegulation)
+        public static bool Verify(
+            ProgramComponent[] components,
+            ProgramComponentRegulation programComponentRegulation,
+            List<ElementPlaceableSetObject> elementPlaceableSetObjectAll
+            )
         {
             if (components == null)
             {
                 // データが存在していない
                 return false;
             }
-            if (components.Length != programComponentRegulation.elementPlaceableSetIds.Length)
+            else if (components.Length != programComponentRegulation.elementPlaceableSetIds.Length)
             {
                 // 構成数が不一致
                 return false;
             }
             else
             {
-                var idsInRegulation = programComponentRegulation.elementPlaceableSetIds.OrderBy(x => x);
-                var idsInComponents = components.Select(x => x.elementPlaceableSetId).OrderBy(x => x);
-                if (!idsInRegulation.SequenceEqual(idsInComponents))
                 {
-                    // 構成要素IDが不一致
-                    return false;
+                    var idsInRegulation = programComponentRegulation.elementPlaceableSetIds.OrderBy(x => x);
+                    var idsInComponents = components.Select(x => x.elementPlaceableSetId).OrderBy(x => x);
+                    if (!idsInRegulation.SequenceEqual(idsInComponents))
+                    {
+                        // 現在の構成と規則上の構成の項目内容が不一致
+                        return false;
+                    }
                 }
-                // MEMO:同じ elementPlaceableSetId 同士の構成要素数が一致しているかまでチェックすると検証はより厳密になる。そこまで必要じゃないので未実装
+                {
+                    var idsInRegulation = programComponentRegulation.elementPlaceableSetIds
+                        .Select(id => elementPlaceableSetObjectAll.Find(x => x.data.id.Equals(id)))
+                        .Where(x => x != null)
+                        .SelectMany(obj => obj.data.elementPlaceableIds)
+                        .Distinct();
+                    var idsInComponents = components
+                        .SelectMany(x => x.elementIds)
+                        .Distinct();
+                    if (!idsInComponents.All(x => idsInRegulation.Any(y => y.Equals(x))))
+                    {
+                        // 現在構成されている要素が規則上許可されていない要素
+                        return false;
+                    }
+                }
             }
 
             // すべての検証を通過
