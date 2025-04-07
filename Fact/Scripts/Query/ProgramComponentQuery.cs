@@ -30,7 +30,8 @@ namespace Wlg.FigureSkate.Fact
         public static bool Verify(
             ProgramComponent[] components,
             ProgramComponentRegulation programComponentRegulation,
-            List<ElementPlaceableSetObject> elementPlaceableSetObjectAll
+            List<ElementPlaceableSetObject> elementPlaceableSetObjectAll,
+            List<ElementPlaceableObject> elementPlaceableObjectAll
             )
         {
             if (components == null)
@@ -46,6 +47,7 @@ namespace Wlg.FigureSkate.Fact
             else
             {
                 {
+                    // ここでの ids は elementPlaceableSetId 群を扱う
                     var idsInRegulation = programComponentRegulation.elementPlaceableSetIds.OrderBy(x => x);
                     var idsInComponents = components.Select(x => x.elementPlaceableSetId).OrderBy(x => x);
                     if (!idsInRegulation.SequenceEqual(idsInComponents))
@@ -55,10 +57,13 @@ namespace Wlg.FigureSkate.Fact
                     }
                 }
                 {
+                    // ここでの ids は elementId 群を扱う
                     var idsInRegulation = programComponentRegulation.elementPlaceableSetIds
-                        .Select(id => elementPlaceableSetObjectAll.Find(x => x.data.id.Equals(id)))
-                        .Where(x => x != null)
+                        .Select(elementPlaceableSetId => ElementPlaceableSetObjectQuery.ById(elementPlaceableSetObjectAll, elementPlaceableSetId))
                         .SelectMany(obj => obj.data.elementPlaceableIds)
+                        .Distinct()
+                        .Select(elementPlaceableId => ElementPlaceableObjectQuery.ById(elementPlaceableObjectAll, elementPlaceableId))
+                        .SelectMany(obj => obj.data.elementIds)
                         .Distinct();
                     var idsInComponents = components
                         .SelectMany(x => x.elementIds)
@@ -66,6 +71,8 @@ namespace Wlg.FigureSkate.Fact
                         .Where(x => !string.IsNullOrEmpty(x));
                     if (!idsInComponents.All(x => idsInRegulation.Any(y => y.Equals(x))))
                     {
+                        var first = idsInComponents.First();
+                        var count = idsInComponents.Count();
                         // 現在構成されている要素が規則上許可されていない要素
                         return false;
                     }
