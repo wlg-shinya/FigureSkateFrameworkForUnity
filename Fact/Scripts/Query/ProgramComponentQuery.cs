@@ -31,7 +31,8 @@ namespace Wlg.FigureSkate.Fact
             ProgramComponent[] components,
             ProgramComponentRegulation programComponentRegulation,
             List<ElementPlaceableSetObject> elementPlaceableSetObjectAll,
-            List<ElementPlaceableObject> elementPlaceableObjectAll
+            List<ElementPlaceableObject> elementPlaceableObjectAll,
+            List<ElementBaseValueObject> elementBaseValueObjectAll
             )
         {
             if (components == null)
@@ -64,7 +65,8 @@ namespace Wlg.FigureSkate.Fact
                         .Distinct()
                         .Select(elementPlaceableId => ElementPlaceableObjectQuery.ById(elementPlaceableObjectAll, elementPlaceableId))
                         .SelectMany(obj => obj.data.elementIds)
-                        .Distinct();
+                        .Distinct()
+                        .Where(elementId => elementBaseValueObjectAll.Any(x => x.data.id.Equals(elementId))); // 基礎点が存在する構成要素IDのみを対象にする
                     var idsInComponents = components
                         .SelectMany(x => x.elementIds)
                         .Distinct()
