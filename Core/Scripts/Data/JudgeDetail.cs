@@ -40,7 +40,7 @@ namespace Wlg.FigureSkate.Core
             // GOEスコア
             public float goeScore;
             // 審判ごとのGOE
-            public int[] refereeGoe = new int[Constant.REFEREE_COUNT];
+            public int[] refereeGoe = new int[CoreConstant.REFEREE_COUNT];
 
             // 要素ごとの情報記号
             [Serializable]
@@ -126,7 +126,7 @@ namespace Wlg.FigureSkate.Core
             // 倍率
             public float factor;
             // 審判ごとのスコア
-            public float[] refereeScore = new float[Constant.REFEREE_COUNT];
+            public float[] refereeScore = new float[CoreConstant.REFEREE_COUNT];
 
             // 審判のスコアの平均値
             // 全審判の出した値のうち最大値と最低値を除いた平均値とする
@@ -154,7 +154,7 @@ namespace Wlg.FigureSkate.Core
             }
         }
         public Tes[] tes;
-        public Pcs[] pcs = new Pcs[Constant.PCS_COUNT];
+        public Pcs[] pcs = new Pcs[CoreConstant.PCS_COUNT];
 
         public float TotalBaseValue() => Round(tes.Sum(x => x.baseValue));
         public float TotalElementScore() => Round(tes.Sum(x => x.Score()));

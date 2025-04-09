@@ -166,7 +166,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     return goeMinus.maxValue;
                 };
                 var returnValue = (int)methodInfo.Invoke(judge, new object[] { elementObject.data, goeMinus, successGoeMinus, checkGoeMinusValue });
-                Assert.AreEqual(returnValue, Math.Max(goeMinusValueTotal, Core.Constant.GOE_MIN_VALUE));
+                Assert.AreEqual(returnValue, Math.Max(goeMinusValueTotal, CoreConstant.GOE_MIN_VALUE));
 
                 // 減点の仕組み上の項目最大数 ( ref. Judge.CheckTesGoeMinusValue ) との比較
                 var goeMinusList = goeMinusObjectAll
@@ -263,7 +263,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     return false;
                 };
                 methodInfo.Invoke(judge, new object[] { tes, successJump });
-                Assert.IsTrue(tes.refereeGoe.All(x => x == Core.Constant.GOE_MIN_VALUE));
+                Assert.IsTrue(tes.refereeGoe.All(x => x == CoreConstant.GOE_MIN_VALUE));
             }
         }
 
@@ -311,8 +311,8 @@ namespace Wlg.FigureSkate.Tests.Fact
                 var componentIndex = 1;
                 var tes = judge.Detail.tes[componentIndex];
                 var component = programComponentHanlder.ProgramComponents[componentIndex];
-                var goeMinus = new List<GoeMinus>[Core.Constant.REFEREE_COUNT][];
-                for (var refereeIndex = 0; refereeIndex < Core.Constant.REFEREE_COUNT; refereeIndex++)
+                var goeMinus = new List<GoeMinus>[CoreConstant.REFEREE_COUNT][];
+                for (var refereeIndex = 0; refereeIndex < CoreConstant.REFEREE_COUNT; refereeIndex++)
                 {
                     goeMinus[refereeIndex] = new List<GoeMinus>[component.elementIds.Length];
                     for (var elementIndex = 0; elementIndex < component.elementIds.Length; elementIndex++)

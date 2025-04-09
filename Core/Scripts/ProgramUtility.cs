@@ -23,7 +23,7 @@ namespace Wlg.FigureSkate.Core
         // 正式な値は Judge をする必要がある。これで得られるものはあくまでも机上の値
         public static float EstimateTotalBaseValue(Program program, ProgramComponent[] components, ElementPlaceableSet[] elementPlaceableSetAll, ElementBaseValue[] elementBaseValueAll, int goe)
         {
-            if (Constant.GOE_MIN_VALUE > goe || goe > Constant.GOE_MAX_VALUE)
+            if (CoreConstant.GOE_MIN_VALUE > goe || goe > CoreConstant.GOE_MAX_VALUE)
             {
                 throw new ArgumentOutOfRangeException($"goe = {goe}");
             }

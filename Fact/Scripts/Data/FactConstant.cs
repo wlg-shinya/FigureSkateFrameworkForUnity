@@ -1,6 +1,6 @@
 namespace Wlg.FigureSkate.Fact
 {
-    public static class Constant
+    public static class FactConstant
     {
         // このフレームワークが対応しているシーズン
         public static string[] SEASONS = new[]

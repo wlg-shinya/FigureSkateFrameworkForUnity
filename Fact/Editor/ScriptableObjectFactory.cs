@@ -336,7 +336,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                     "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event",
                     "Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Sex",
                 };
-                foreach (var season in Constant.SEASONS)
+                foreach (var season in FactConstant.SEASONS)
                 {
                     dirList.Add($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/Class");
                     dirList.Add($"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/Competition");

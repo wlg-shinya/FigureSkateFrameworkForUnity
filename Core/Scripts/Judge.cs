@@ -42,8 +42,8 @@ namespace Wlg.FigureSkate.Core
             for (var ProgramComponentIndex = 0; ProgramComponentIndex < componentLength; ProgramComponentIndex++)
             {
                 var component = _programComponents[ProgramComponentIndex];
-                _goeMinus[ProgramComponentIndex] = new List<GoeMinus>[Constant.REFEREE_COUNT][];
-                for (var refereeIndex = 0; refereeIndex < Constant.REFEREE_COUNT; refereeIndex++)
+                _goeMinus[ProgramComponentIndex] = new List<GoeMinus>[CoreConstant.REFEREE_COUNT][];
+                for (var refereeIndex = 0; refereeIndex < CoreConstant.REFEREE_COUNT; refereeIndex++)
                 {
                     _goeMinus[ProgramComponentIndex][refereeIndex] = new List<GoeMinus>[component.elementIds.Length];
                     for (var elementIndex = 0; elementIndex < component.elementIds.Length; elementIndex++)
@@ -127,7 +127,7 @@ namespace Wlg.FigureSkate.Core
             SuccessGoeMinus successGoeMinus,
             CheckGoeMinusValue checkGoeMinusValue)
         {
-            for (var refereeIndex = 0; refereeIndex < Constant.REFEREE_COUNT; refereeIndex++)
+            for (var refereeIndex = 0; refereeIndex < CoreConstant.REFEREE_COUNT; refereeIndex++)
             {
                 tes.refereeGoe[refereeIndex] = component.elementIds
                     .Select((elementId, index) => (elementId, index))
@@ -139,7 +139,7 @@ namespace Wlg.FigureSkate.Core
                         var goePlusValue = CheckTesGoePlusValue(element, successGoePlus);
                         var goeMinusValue = CheckTesGoeMinusValue(element, goeMinus[refereeIndex][data.index], successGoeMinus, checkGoeMinusValue);
                         // すべての判定が終わったらこれまでのGOEの加減点を合算する
-                        return Math.Clamp(goePlusValue + goeMinusValue, Constant.GOE_MIN_VALUE, Constant.GOE_MAX_VALUE);
+                        return Math.Clamp(goePlusValue + goeMinusValue, CoreConstant.GOE_MIN_VALUE, CoreConstant.GOE_MAX_VALUE);
                     });
             }
         }
@@ -157,7 +157,7 @@ namespace Wlg.FigureSkate.Core
             var requiredCount = goePlusObjs.Count((x) => x.important == true);
             var requiredSuccessCount = result.Where((x, i) => x && goePlusObjs[i].important).Count();
             var successCount = result.Count((x) => x == true);
-            return requiredCount == requiredSuccessCount ? Math.Min(successCount, Constant.GOE_MAX_VALUE) : Math.Min(successCount, requiredCount);
+            return requiredCount == requiredSuccessCount ? Math.Min(successCount, CoreConstant.GOE_MAX_VALUE) : Math.Min(successCount, requiredCount);
         }
 
         // GEO減点値の判定
@@ -210,7 +210,7 @@ namespace Wlg.FigureSkate.Core
                 }
 
                 // GOE減点、合算値か最低値の大きいほうを採用
-                return Math.Max(total, Constant.GOE_MIN_VALUE);
+                return Math.Max(total, CoreConstant.GOE_MIN_VALUE);
             }
             else
             {
@@ -228,9 +228,9 @@ namespace Wlg.FigureSkate.Core
                 tes.fall = true;
 
                 // 失敗時はこれまで全審判のGOEを最低点に上書き
-                for (var i = 0; i < Constant.REFEREE_COUNT; i++)
+                for (var i = 0; i < CoreConstant.REFEREE_COUNT; i++)
                 {
-                    tes.refereeGoe[i] = Constant.GOE_MIN_VALUE;
+                    tes.refereeGoe[i] = CoreConstant.GOE_MIN_VALUE;
                 }
             }
         }
@@ -294,7 +294,7 @@ namespace Wlg.FigureSkate.Core
             tes.baseValue = baseValue * lastJumpFactor;
             // 全審判の出したGOE平均値から算出される係数と基礎点を掛け合わせてGOEスコアを出す
             // このスコアはジャンプボーナス適用前の基礎点で算出するルール
-            tes.goeScore = baseValue * (tes.RefereeGoeAverage() * Constant.GOE_SCORE_MAGNIFICATION);
+            tes.goeScore = baseValue * (tes.RefereeGoeAverage() * CoreConstant.GOE_SCORE_MAGNIFICATION);
         }
 
         // 演技構成点の判定
@@ -303,12 +303,12 @@ namespace Wlg.FigureSkate.Core
             CheckPresentation checkPresentation,
             CheckSkatingSkills checkSkatingSkills)
         {
-            for (var pcsIndex = 0; pcsIndex < Constant.PCS_COUNT; pcsIndex++)
+            for (var pcsIndex = 0; pcsIndex < CoreConstant.PCS_COUNT; pcsIndex++)
             {
                 var pcs = Detail.pcs[pcsIndex];
 
                 // 審判ごとにスコアを判定
-                for (var refereeIndex = 0; refereeIndex < Constant.REFEREE_COUNT; refereeIndex++)
+                for (var refereeIndex = 0; refereeIndex < CoreConstant.REFEREE_COUNT; refereeIndex++)
                 {
                     // 出来栄え(0-1)を得る
                     var checkResult = pcsIndex switch

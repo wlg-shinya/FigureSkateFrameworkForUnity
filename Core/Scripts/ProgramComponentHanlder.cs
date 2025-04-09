@@ -118,6 +118,6 @@ namespace Wlg.FigureSkate.Core
         private readonly ElementPlaceable[] _elementPlaceableAll;
 
         // 内部で使う一時変数の事前確保。要素数は最大コンビネーション数と同値
-        private readonly string[] _placedElementIdsBuffer = new string[Constant.ELEMENT_IN_COMBINATION_MAX_COUNT];
+        private readonly string[] _placedElementIdsBuffer = new string[CoreConstant.ELEMENT_IN_COMBINATION_MAX_COUNT];
     }
 }

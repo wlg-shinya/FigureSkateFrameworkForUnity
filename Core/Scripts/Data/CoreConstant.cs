@@ -1,6 +1,6 @@
 namespace Wlg.FigureSkate.Core
 {
-    public static class Constant
+    public static class CoreConstant
     {
         // GOE加点要素数
         public static readonly int GOE_PLUS_LENGTH = 6;
