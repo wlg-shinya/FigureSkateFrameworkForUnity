@@ -45,7 +45,7 @@ namespace Wlg.FigureSkate.Core
                 }
                 else
                 {
-                    if (groups[0].elementIds.Any(x => Equals(x, "")))
+                    if (groups[0].elementIds.Any(x => string.IsNullOrEmpty(x)))
                     {
                         // まだ設定が不完全の構成なのでエラーとしない
                         return true;
