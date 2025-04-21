@@ -84,7 +84,7 @@ namespace Wlg.FigureSkate.Core
                 .Select(component => (component, elementPlaceableSet: Array.Find(_elementPlaceableSetAll, x => x.id.Equals(component.elementPlaceableSetId))))
                 .Where(x => x.elementPlaceableSet.Conditions.Count > 0)
                 .Select(x => x.elementPlaceableSet.Conditions.Find(condition => !condition.Condition(x.component.elementIds.Where(id => id != null).ToArray())))
-                .First();
+                .FirstOrDefault();
             if (programComponentSetCondition != null)
             {
                 ErrorMessage = programComponentSetCondition.falseMessage;
