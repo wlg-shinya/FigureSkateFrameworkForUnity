@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b87a9894ae10ba4ca0acc18e80db7f2, type: 3}
-  m_Name: ElementPlaceableSetConditionLimit3CombinationThirdTLo
+  m_Name: ElementPlaceableSetConditionLimit3CombinationThirdTLoA
   m_EditorClassIdentifier: 
   data:
     falseMessage: "3\u9023\u7D9A\u30B8\u30E3\u30F3\u30D7\u306F2\u756A\u76EE\u306B\u30AA\u30A4\u30E9\u30FC\u3092\u69CB\u6210\u3057\u306A\u3044\u30683\u756A\u76EE\u306E\u30B8\u30E3\u30F3\u30D7\u306F\u30C8\u30A6\u30EB\u30FC\u30D7\u304B\u30EB\u30FC\u30D7\u304B\u30A2\u30AF\u30BB\u30EB\u3057\u304B\u69CB\u6210\u3067\u304D\u307E\u305B\u3093"

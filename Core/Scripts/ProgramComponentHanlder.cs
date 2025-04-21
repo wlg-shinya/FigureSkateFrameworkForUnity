@@ -47,18 +47,6 @@ namespace Wlg.FigureSkate.Core
             var elementPlaceableSet = Array.Find(_elementPlaceableSetAll, x => x.id.Equals(ProgramComponents[componentIndex].elementPlaceableSetId)) ?? throw new Exception($"Not found '{ProgramComponents[componentIndex].elementPlaceableSetId}'");
             var elementPlaceable = Array.Find(_elementPlaceableAll, x => x.id.Equals(elementPlaceableSet.elementPlaceableIds[elementIndex])) ?? throw new Exception($"Not found '{elementPlaceableSet.elementPlaceableIds[elementIndex]}'");
 
-            // 今回の要素を追加したうえで一つでも設定可能条件を満たしていない場合は追加不可
-            var elementIds = ProgramComponents[componentIndex].elementIds;
-            for (var i = 0; i < _placedElementIdsBuffer.Length; i++) _placedElementIdsBuffer[i] = null;
-            for (var i = 0; i < elementIds.Length; i++)
-            {
-                _placedElementIdsBuffer[i] = i == elementIndex ? elementId : elementIds[i];
-            }
-            if (elementPlaceableSet.Conditions.Count() > 0 && elementPlaceableSet.Conditions.Any(x => !x.Condition(_placedElementIdsBuffer.Where(x => x != null).ToArray())))
-            {
-                return false;
-            }
-
             // 指定された構成要素が設定可能一覧に含まれている場合は追加可。そうでなければ追加不可
             return elementPlaceable.elementIds.Any(id => id == elementId);
         }
@@ -91,12 +79,30 @@ namespace Wlg.FigureSkate.Core
         // 現在の構成に不正があったらその原因となるエラーメッセージが、正常なら空文字が入る
         public void UpdateErrorMessage()
         {
-            // 構成全体をみて配置可能な要素としての条件を満たしていないものを探し出す
-            var regulation = ProgramUtility.GetProgramComponentRegulationById(_programComponentRegulationAll, Program.programComponentRegulationId);
-            var condition = regulation.Conditions.Find(condition => !condition.Condition(ProgramComponents));
-
-            // エラーメッセージの更新
-            ErrorMessage = condition != null ? condition.falseMessage : "";
+            // 構成ごとの配置可能条件を満たしていないものがあればそのエラーメッセージを設定
+            var programComponentSetCondition = ProgramComponents
+                .Select(component => (component, elementPlaceableSet: Array.Find(_elementPlaceableSetAll, x => x.id.Equals(component.elementPlaceableSetId))))
+                .Where(x => x.elementPlaceableSet.Conditions.Count > 0)
+                .Select(x => x.elementPlaceableSet.Conditions.Find(condition => !condition.Condition(x.component.elementIds.Where(id => id != null).ToArray())))
+                .First();
+            if (programComponentSetCondition != null)
+            {
+                ErrorMessage = programComponentSetCondition.falseMessage;
+                return;
+            }
+            // 上記が見つからなければ構成全体をみて配置可能条件を満たしていないものがあればそのエラーメッセージを設定
+            else
+            {
+                var regulation = ProgramUtility.GetProgramComponentRegulationById(_programComponentRegulationAll, Program.programComponentRegulationId);
+                var programComponentCondition = regulation.Conditions.Find(condition => !condition.Condition(ProgramComponents));
+                if (programComponentCondition != null)
+                {
+                    ErrorMessage = programComponentCondition.falseMessage;
+                    return;
+                }
+            }
+            // エラーが見つからなかったのでエラーメッセージなし
+            ErrorMessage = "";
         }
 
         private void CheckIndexOutOfRange(int componentIndex, int elementIndex)
@@ -118,6 +124,6 @@ namespace Wlg.FigureSkate.Core
         private readonly ElementPlaceable[] _elementPlaceableAll;
 
         // 内部で使う一時変数の事前確保。要素数は最大コンビネーション数と同値
-        private readonly string[] _placedElementIdsBuffer = new string[CoreConstant.ELEMENT_IN_COMBINATION_MAX_COUNT];
+        // private readonly string[] _placedElementIdsBuffer = new string[CoreConstant.ELEMENT_IN_COMBINATION_MAX_COUNT];
     }
 }
