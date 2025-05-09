@@ -323,6 +323,7 @@ namespace Wlg.FigureSkate.Fact.Editor
             }
         }
 
+#if UNITY_EDITOR_WIN
         [InitializeOnLoadMethod]
         static void OnProjectLoadedInEditor()
         {
@@ -366,6 +367,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                 }
             }
         }
+#endif
     }
 }
 #endif
