@@ -4,6 +4,11 @@
 
 ![](https://github.com/user-attachments/assets/9ac07e5c-74f3-43b8-9633-12786301212d)
 
+## これを使って作られた製品
+- スケット - フィギュアスケートプログラム構成管理アプリ
+   - iOS:https://apps.apple.com/jp/app/%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88/id6746294806
+   - Android:https://play.google.com/store/apps/details?id=com.welovegamesinc.sketto
+
 ## はじめに
 
 こちらを利用してアプリを作成したいけど機能が足りない！ という方は製作者にEメールにてご連絡ください。2025/3/17の時点、減点項目(Deduction)や2024-25シーズンのGOE上限ルールなど明確に対応できていない要素がありますので、どう利用したいかをすり合わせさせてください
