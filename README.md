@@ -15,8 +15,8 @@
 
 ## 動作環境
 
-- Unity 6 (6000.0.33f1で動作確認してます)
-- [Unity Addressables](https://docs.unity3d.com/Packages/com.unity.addressables@2.2/manual/index.html) (2.2.2 で動作確認してます)
+- Unity 6 (6000.0.45f1で動作確認してます)
+- [Unity Addressables](https://docs.unity3d.com/Packages/com.unity.addressables@2.2/manual/index.html) (2.4.1 で動作確認してます)
 
 ## インストール方法
 
