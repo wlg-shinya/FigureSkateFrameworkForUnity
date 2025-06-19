@@ -4,7 +4,7 @@ namespace Wlg.FigureSkate.Core
 {
     // 年月日。値の扱いはDateTimeと同じ https://learn.microsoft.com/ja-jp/dotnet/api/system.DateTime?view=net-8.0
     [Serializable]
-    public class YearMonthDay
+    public class YearMonthDay : IComparable
     {
         // 西暦年(0-*)。2024 = 2024年   
         public int year;
@@ -92,6 +92,16 @@ namespace Wlg.FigureSkate.Core
             year = newDatetime.Year;
             month = newDatetime.Month;
             day = newDatetime.Day;
+        }
+
+        // IComparable
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+            var other = obj as YearMonthDay;
+            if (this == other) return 0;
+            else if (this > other) return 1;
+            return -1;
         }
     }
 }
