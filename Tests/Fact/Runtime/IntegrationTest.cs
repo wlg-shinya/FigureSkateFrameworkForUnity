@@ -64,7 +64,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                     nation = nation
                 };
                 // 全構成要素を習得済みとする
-                player.elementIdList = elementObjectAll.Select(x => x.data.id).ToArray();
+                player.executableElementIds = elementObjectAll.Select(x => x.data.id).ToArray();
                 return player;
             }
             Player player;
