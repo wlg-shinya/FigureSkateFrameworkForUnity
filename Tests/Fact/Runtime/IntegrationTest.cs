@@ -39,6 +39,8 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("NationalNovice", "2024/10/19", "NoviceA", "Women")]
         [TestCase("NationalNovice", "2024/10/20", "NoviceB", "Men")]
         [TestCase("NationalNovice", "2024/10/20", "NoviceB", "Women")]
+        // 2025-26シーズン大会テスト
+        // TODO:大会データの用意
         public async Task Competition(string competitionName, string basedayString, string classId, string sexId)
         {
             var baseday = new YearMonthDay(basedayString);

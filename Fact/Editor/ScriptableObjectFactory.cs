@@ -19,12 +19,15 @@ namespace Wlg.FigureSkate.Fact.Editor
                 // データの基になっているソースを記載
                 // TODO:pdfをリポジトリに含めるかどうか検討
 
+                // クラス
                 // # 2022-23
-                // - 2022-2023度クラス早見表.pdf
+                // - JSF-Data/日本国内クラスの年齢・取得級/2022-2023度クラス早見表.pdf
                 // # 2023-24
-                // - 2023-2024年度クラス早見表.pdf
+                // - JSF-Data/日本国内クラスの年齢・取得級/2023-2024年度クラス早見表.pdf
                 // # 2024-25
-                // - 2024-25シーズン 参加資格(年齢・取得級).pdf
+                // - JSF-Data/日本国内クラスの年齢・取得級/2024-25シーズン 参加資格(年齢・取得級).pdf
+                // # 2025-26
+                // - JSF-Data/日本国内クラスの年齢・取得級/2025-26シーズン 参加資格(年齢・取得級).pdf
                 {
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
@@ -34,6 +37,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (Class data, ClassObject obj) => { obj.data = data; }
                         );
                 }
+                // 大会
                 // TODO:2022-23のソースのファイル保存
                 // TODO:2023-24のソースのファイル保存
                 // TODO:2024-25のソースのファイル保存
@@ -75,12 +79,15 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (Competition data, CompetitionObject obj) => { obj.data = data; }
                         );
                 }
+                // 構成要素基礎点
                 // # 2022-23
-                // - 2475_SP_SOV_2022-23.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/01 シングル・ペア/2022-2023シーズン/2475_SP_SOV_2022-23.pdf
                 // # 2023-24 
                 // - 2022-23 と同様
                 // # 2024-25 
-                // - 2656 ISU_SOV_SinglesPairs_2024-25_final.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/01 シングル・ペア/2024-2025シーズン/2656 ISU_SOV_SinglesPairs_2024-25_final.pdf
+                // # 2025-26
+                // - 2025-26 と同様
                 {
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
@@ -90,15 +97,18 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (ElementBaseValue data, ElementBaseValueObject obj) => { obj.data = data; }
                         );
                 }
+                // GOE加点・減点項目
                 // # 2022-23
-                // - 2474 SP 更新Levels of Difficulty and Guidelines for marking Grade of Execution and Program Components.pdf
-                // - 2474　価値尺度（SOV),難度レベル（ＬＯＤ），ＧＯＥ採点のガイドライン.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/01 シングル・ペア/2022-2023シーズン/2474 SP 更新Levels of Difficulty and Guidelines for marking Grade of Execution and Program Components.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/01 シングル・ペア/2022-2023シーズン/2474　価値尺度（SOV),難度レベル（ＬＯＤ），ＧＯＥ採点のガイドライン.pdf
                 // # 2023-24
-                // - 2558 SP Levels and GOE Season 2023-2024_revJune 9.pdf
-                // - 2558（20230818改訂版）SP難度レベルLOD)、GOEおよびプログラムコンポーネンツ採点のガイドライン2023-24.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/01 シングル・ペア/2023-2024シーズン/2558 SP Levels and GOE Season 2023-2024_revJune 9.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/01 シングル・ペア/2023-2024シーズン/2558（20230818改訂版）SP難度レベルLOD)、GOEおよびプログラムコンポーネンツ採点のガイドライン2023-24.pdf
                 // # 2024-25
-                // - 2623 SP Levels and GOE Season 2024-2025_revJune 24 post congress.pdf
-                // - Comm. 2623 Rev.2(和訳）_240918.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/01 シングル・ペア/2024-2025シーズン/2623 SP Levels and GOE Season 2024-2025_revJune 24 post congress.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/01 シングル・ペア/2024-2025シーズン/Comm. 2623 Rev.2(和訳）_240918.pdf
+                // # 2025-26
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/01 シングル・ペア/2025-2026シーズン/Comm. 2701(和訳) SP Levels and GOE Season 2025-26 (202506).pdf
                 {
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
@@ -112,8 +122,8 @@ namespace Wlg.FigureSkate.Fact.Editor
                     // TODO:「ジャンプのコンボ／シークェンスで複数の“q”」の"複数の“q”"の判定方法の検討
                     // TODO:ジャンプのコンボ／シークェンス中のみに発生するエラーの判定方法の検討
                     // TODO:SP/FSどちらかでしか発生しないエラーの判定方法の検討
-                    // TODO:2024-25シーズンは、特定GOE減点項目(grey background)に引っかかった場合GOE+2を上限にする
-                    // TODO:2024-25シーズンにおける"*が付与されたジャンプ"の扱いについて検討
+                    // TODO:2024-25シーズン以降は、特定GOE減点項目(grey background)に引っかかった場合GOE+2を上限にする
+                    // TODO:2024-25シーズン以降の"*が付与されたジャンプ"の扱いについて検討
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "GoeMinus.csv",
@@ -145,24 +155,26 @@ namespace Wlg.FigureSkate.Fact.Editor
                         (GoeMinus data, GoeMinusObject obj) => { obj.data = data; }
                         );
                 }
+                // プログラム、プログラム構成規則
                 // # 2022-23
-                // - 2022 Special Regulation SP and Ice Dance and Technical Rules SP  and ID_Final.pdf
-                // - 2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf
-                // - 2022-23ノービス課題.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/特別規定、技術規定/2022 Special Regulation SP and Ice Dance and Technical Rules SP  and ID_Final.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/特別規定、技術規定/2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf
+                // - JSF-Data/11 JSF 国内規程/ノービス国内規程（シングル）/過去のデータ/2022-23ノービス課題.pdf
                 //   - PCS係数がここからシニア/ジュニアに準拠するようになり以降明記なし
                 //   - ジャンプボーナスに関する規則はここ以降明記なし
                 //
                 // # 2023-24
-                // - 2022 Special Regulation SP and Ice Dance and Technical Rules SP  and ID_Final.pdf
-                // - 2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf
-                //   - プログラム構成ルールは2023-24も上記に含まれている
-                // - 2023-24ノービス課題.pdf
+                // - ノービス以外は 2022-23 のソース内にこのシーズン分も記載あり
+                // - JSF-Data/11 JSF 国内規程/ノービス国内規程（シングル）/過去のデータ/2023-24ノービス課題.pdf
                 //
                 // # 2024-25
-                // - 2024_Special_Regulation_SP_and_Ice_Dance_and_Technical_Rules_SP__and_ID_Final_rev.pdf
-                // - 2022 特別規定.技術規定　シングル&ペア_アイスダンス.pdf
-                //   - プログラム構成ルールは2024-25も上記に含まれている
-                // - 2024-25 JSF Nvルール.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/特別規定、技術規定/2024_Special_Regulation_SP_and_Ice_Dance_and_Technical_Rules_SP__and_ID_Final_rev.pdf
+                // - JSF-Data/01 ISU特別規定、技術規定、コミュニケーション/特別規定、技術規定/2024 特別規程、技術規程 シングル＆ペアおよびアイスダンス.pdf
+                // - JSF-Data/11 JSF 国内規程/ノービス国内規程（シングル）/2024-25 JSF Nvルール.pdf
+                //
+                // # 2025-26
+                // - ノービス以外は 2024-25 のソース内にこのシーズン分も記載あり
+                // - TODO:ノービスの国内ルールが2025/7/1時点で非公開なので公開次第の対応
                 {
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,

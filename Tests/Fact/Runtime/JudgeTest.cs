@@ -15,6 +15,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task CheckTesGoePlusValue(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -102,6 +103,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task CheckTesGoeMinusValue(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -220,6 +222,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task CheckTesJump(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -270,6 +273,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task RecordTes(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -344,6 +348,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task CheckPcs(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);

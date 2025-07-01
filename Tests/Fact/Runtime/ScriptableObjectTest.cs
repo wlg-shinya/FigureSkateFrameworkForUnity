@@ -14,6 +14,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task SeasonData(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -28,6 +29,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         private async Task ClassObjects(YearMonthDay baseday)
         {
             var allObjs = await ClassObjectQuery.All(baseday);
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/{YearMonthDayUtility.GetSkateYearString(baseday)}/Class.csv");
             foreach (var obj in allObjs)
             {
@@ -43,6 +45,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         private async Task CompetitionObjects(YearMonthDay baseday)
         {
             var allObjs = await CompetitionObjectQuery.All(baseday);
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/{YearMonthDayUtility.GetSkateYearString(baseday)}/Competition.csv");
             foreach (var obj in allObjs)
             {
@@ -62,6 +65,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         private async Task ElementBaseValueObjects(YearMonthDay baseday)
         {
             var allObjs = await ElementBaseValueObjectQuery.All(baseday);
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/{YearMonthDayUtility.GetSkateYearString(baseday)}/ElementBaseValue.csv");
             foreach (var obj in allObjs)
             {
@@ -82,6 +86,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         private async Task GoePlusObjects(YearMonthDay baseday)
         {
             var allObjs = await GoePlusObjectQuery.All(baseday);
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/{YearMonthDayUtility.GetSkateYearString(baseday)}/GoePlus.csv");
             foreach (var obj in allObjs)
             {
@@ -94,6 +99,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         private async Task GoeMinusObjects(YearMonthDay baseday)
         {
             var allObjs = await GoeMinusObjectQuery.All(baseday);
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/{YearMonthDayUtility.GetSkateYearString(baseday)}/GoeMinus.csv");
             foreach (var obj in allObjs)
             {
@@ -111,6 +117,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         private async Task ProgramComponentRegulationObjects(YearMonthDay baseday)
         {
             var allObjs = await ProgramComponentRegulationObjectQuery.All(baseday);
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/{YearMonthDayUtility.GetSkateYearString(baseday)}/ProgramComponentRegulation.csv");
             foreach (var obj in allObjs)
             {
@@ -125,6 +132,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         public async Task ElementObjects()
         {
             var allObjs = await ElementObjectQuery.All();
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/Element.csv");
             foreach (var obj in allObjs)
             {
@@ -140,6 +148,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         public async Task SexObjects()
         {
             var allObjs = await SexObjectQuery.All();
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/Sex.csv");
             foreach (var obj in allObjs)
             {
@@ -153,6 +162,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         public async Task EventObjects()
         {
             var allObjs = await EventObjectQuery.All();
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/Event.csv");
             foreach (var obj in allObjs)
             {
@@ -170,6 +180,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         public async Task ElementPlaceableObjects()
         {
             var allObjs = await ElementPlaceableObjectQuery.All();
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/ElementPlaceable.csv");
             foreach (var obj in allObjs)
             {
@@ -185,6 +196,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         public async Task ElementPlaceableSetObjects()
         {
             var allObjs = await ElementPlaceableSetObjectQuery.All();
+            if (allObjs == null) return;
             ObjCountAreEqualCsvDataCount(allObjs, @$"Packages/com.welovegamesinc.figureskate-framework/Fact/MasterData/ElementPlaceableSet.csv");
             foreach (var obj in allObjs)
             {

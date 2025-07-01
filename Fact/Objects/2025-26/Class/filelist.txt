@@ -1,0 +1,4 @@
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/Class/Junior.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/Class/NoviceA.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/Class/NoviceB.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/Class/Senior.asset

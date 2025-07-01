@@ -13,6 +13,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task SeniorMenShortProgram(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -40,6 +41,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 case "2022-23":
                 case "2023-24":
                 case "2024-25":
+                case "2025-26":
                     {
                         var errorMessage = "3回転+2回転は構成できません";
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -84,6 +86,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task SeniorWomenShortProgram(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -105,6 +108,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 case "2022-23":
                 case "2023-24":
                 case "2024-25":
+                case "2025-26":
                     {
                         var errorMessage = "同じジャンプを複数構成することはできません";
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
@@ -328,6 +332,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task SeniorMenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -350,6 +355,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task SeniorWomenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -372,6 +378,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task JuniorMenShortProgram(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -393,6 +400,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 switch (skateYear)
                 {
                     case "2022-23":
+                    case "2025-26":
                         {
                             var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
                             Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lo"));
@@ -439,6 +447,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task JuniorWomenShortProgram(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -460,6 +469,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 switch (skateYear)
                 {
                     case "2022-23":
+                    case "2025-26":
                         {
                             var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
                             Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lo"));
@@ -701,6 +711,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task JuniorMenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -723,6 +734,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task JuniorWomenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -935,6 +947,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task NoviceAMenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -957,6 +970,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task NoviceAWomenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -1169,6 +1183,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task NoviceBMenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);
@@ -1191,6 +1206,7 @@ namespace Wlg.FigureSkate.Tests.Fact
         [TestCase("2022/7/1")]
         [TestCase("2023/7/1")]
         [TestCase("2024/7/1")]
+        [TestCase("2025/7/1")]
         public async Task NoviceBWomenFreeSkating(string basedayString)
         {
             var baseday = new YearMonthDay(basedayString);

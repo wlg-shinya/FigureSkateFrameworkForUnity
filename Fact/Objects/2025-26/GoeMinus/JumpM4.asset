@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110d455651e56e246a13f70248441ecf, type: 3}
+  m_Name: JumpM4
+  m_EditorClassIdentifier: 
+  data:
+    id: JumpM4
+    category: Jump
+    description: "\uFF11\u30B8\u30E3\u30F3\u30D7\u306E\u7740\u6C37\u3067\u30B9\u30C6\u30C3\u30D7\u30FB\u30A2\u30A6\u30C8"
+    group: 
+    minValue: -3
+    maxValue: -4
+    mark: 
+    targetElementIds: []
