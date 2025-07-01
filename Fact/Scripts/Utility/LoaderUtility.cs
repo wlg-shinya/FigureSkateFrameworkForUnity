@@ -20,7 +20,10 @@ namespace Wlg.FigureSkate.Fact
             // なければ何も読み込めないまま終了
             var filelistObj = await Addressables.LoadAssetAsync<TextAsset>(filelistKey).Task;
             if (filelistObj == null) return null;
-            var assets = filelistObj.text.Split("\n");
+            var assets = filelistObj.text
+                .Split("\n") // 一行単位でリスト化
+                .Where(x => !string.IsNullOrEmpty(x)); // 空白行を無視
+            if (assets.Count() == 0) return null;
 
             // パス情報からアセット読み込み
             var taskList = new List<Task<T>>(assets.Count());
