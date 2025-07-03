@@ -76,6 +76,16 @@ namespace Wlg.FigureSkate.Fact
                         SetValue(v, tmp, cols[idx]);
                 }
             }
+            PropertyInfo[] propertyInfo = type.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            foreach (PropertyInfo tmp in propertyInfo)
+            {
+                if (table.ContainsKey(tmp.Name))
+                {
+                    int idx = table[tmp.Name];
+                    if (idx < cols.Length)
+                        SetValue(v, tmp, cols[idx]);
+                }
+            }
             return v;
         }
 
@@ -119,6 +129,46 @@ namespace Wlg.FigureSkate.Fact
                 fieldinfo.SetValue(v, Convert.ChangeType(value, fieldinfo.FieldType));
         }
 
+        static void SetValue(object v, PropertyInfo propertyInfo, string value)
+        {
+            if (value == null || value == "")
+                return;
+
+            if (propertyInfo.PropertyType.IsArray)
+            {
+                Type elementType = propertyInfo.PropertyType.GetElementType();
+                string[] elem = value.Split(',');
+                Array array_value = Array.CreateInstance(elementType, elem.Length);
+                for (int i = 0; i < elem.Length; i++)
+                {
+                    if (elementType == typeof(string))
+                        array_value.SetValue(elem[i], i);
+                    else
+                        array_value.SetValue(Convert.ChangeType(elem[i], elementType), i);
+                }
+                propertyInfo.SetValue(v, array_value);
+            }
+            else if (propertyInfo.PropertyType.IsEnum)
+                propertyInfo.SetValue(v, Enum.Parse(propertyInfo.PropertyType, value.ToString()));
+            else if (value.IndexOf('.') != -1 &&
+                (propertyInfo.PropertyType == typeof(Int32) || propertyInfo.PropertyType == typeof(Int64) || propertyInfo.PropertyType == typeof(Int16)))
+            {
+                float f = (float)Convert.ChangeType(value, typeof(float));
+                propertyInfo.SetValue(v, Convert.ChangeType(f, propertyInfo.PropertyType));
+            }
+#if UNITY_EDITOR
+            else if (propertyInfo.PropertyType == typeof(UnityEngine.Sprite))
+            {
+                Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(value.ToString());
+                propertyInfo.SetValue(v, sprite);
+            }
+#endif
+            else if (propertyInfo.PropertyType == typeof(string))
+                propertyInfo.SetValue(v, value);
+            else
+                propertyInfo.SetValue(v, Convert.ChangeType(value, propertyInfo.PropertyType));
+        }
+
         static object CreateIdValue(Type type, List<string[]> rows, int id_col = 0, int val_col = 1)
         {
             object v = Activator.CreateInstance(type);
@@ -133,6 +183,20 @@ namespace Wlg.FigureSkate.Fact
 
             FieldInfo[] fieldinfo = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
             foreach (FieldInfo tmp in fieldinfo)
+            {
+                if (table.ContainsKey(tmp.Name))
+                {
+                    int idx = table[tmp.Name];
+                    if (rows[idx].Length > val_col)
+                        SetValue(v, tmp, rows[idx][val_col]);
+                }
+                else
+                {
+                    Debug.Log("Miss " + tmp.Name);
+                }
+            }
+            PropertyInfo[] propertyInfo = type.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            foreach (PropertyInfo tmp in propertyInfo)
             {
                 if (table.ContainsKey(tmp.Name))
                 {
