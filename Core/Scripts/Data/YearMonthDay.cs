@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -15,9 +16,7 @@ namespace Wlg.FigureSkate.Core
 
         public YearMonthDay()
         {
-            year = 0;
-            month = 1;
-            day = 1;
+            Clear();
         }
         public YearMonthDay(YearMonthDay yearMonthDay)
         {
@@ -44,20 +43,7 @@ namespace Wlg.FigureSkate.Core
             day = int.Parse(s[2]);
         }
 
-        public override bool Equals(object obj)
-        {
-            if (GetType() != obj.GetType()) return false;
-            var a = (YearMonthDay)obj;
-            return year == a.year && month == a.month && day == a.day;
-        }
-        public override int GetHashCode() => (year, month, day).GetHashCode();
-
-        public override string ToString()
-        {
-            // TODO:ローカライズ対応
-            return $"{year}/{month}/{day}";
-        }
-
+        #region // 演算子オーバーロード
         public static bool operator ==(YearMonthDay a, YearMonthDay b) => a.Equals(b);
         public static bool operator !=(YearMonthDay a, YearMonthDay b) => !(a == b);
         public static bool operator <(YearMonthDay a, YearMonthDay b)
@@ -75,6 +61,33 @@ namespace Wlg.FigureSkate.Core
             else return false;
         }
         public static bool operator >=(YearMonthDay a, YearMonthDay b) => b <= a;
+        #endregion
+
+        #region // Objectオーバーライド
+        public override bool Equals(object obj)
+        {
+            if (GetType() != obj.GetType()) return false;
+            var a = (YearMonthDay)obj;
+            return year == a.year && month == a.month && day == a.day;
+        }
+        public override int GetHashCode() => (year, month, day).GetHashCode();
+        public override string ToString()
+        {
+            // TODO:ローカライズ対応
+            return $"{year}/{month}/{day}";
+        }
+        #endregion
+
+        #region // IComparable実装
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+            var other = obj as YearMonthDay;
+            if (this == other) return 0;
+            else if (this > other) return 1;
+            return -1;
+        }
+        #endregion
 
         // 年月日情報のコピー
         public void Copied(YearMonthDay src)
@@ -94,14 +107,12 @@ namespace Wlg.FigureSkate.Core
             day = newDatetime.Day;
         }
 
-        // IComparable
-        public int CompareTo(object obj)
+        // メンバ変数初期化
+        public void Clear()
         {
-            if (obj == null) return 1;
-            var other = obj as YearMonthDay;
-            if (this == other) return 0;
-            else if (this > other) return 1;
-            return -1;
+            year = 0;
+            month = 1;
+            day = 1;
         }
     }
 }
