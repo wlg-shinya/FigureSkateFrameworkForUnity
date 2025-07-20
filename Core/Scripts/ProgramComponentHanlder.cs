@@ -44,10 +44,12 @@ namespace Wlg.FigureSkate.Core
             // インデックス範囲チェック
             CheckIndexOutOfRange(componentIndex, elementIndex);
 
-            var elementPlaceableSet = Array.Find(_elementPlaceableSetAll, x => x.id.Equals(ProgramComponents[componentIndex].elementPlaceableSetId)) ?? throw new Exception($"Not found '{ProgramComponents[componentIndex].elementPlaceableSetId}'");
-            var elementPlaceable = Array.Find(_elementPlaceableAll, x => x.id.Equals(elementPlaceableSet.elementPlaceableIds[elementIndex])) ?? throw new Exception($"Not found '{elementPlaceableSet.elementPlaceableIds[elementIndex]}'");
+            // 空文字かNULLは設定クリアとして受け付ける
+            if (string.IsNullOrEmpty(elementId)) return true;
 
             // 指定された構成要素が設定可能一覧に含まれている場合は追加可。そうでなければ追加不可
+            var elementPlaceableSet = Array.Find(_elementPlaceableSetAll, x => x.id.Equals(ProgramComponents[componentIndex].elementPlaceableSetId)) ?? throw new Exception($"Not found '{ProgramComponents[componentIndex].elementPlaceableSetId}'");
+            var elementPlaceable = Array.Find(_elementPlaceableAll, x => x.id.Equals(elementPlaceableSet.elementPlaceableIds[elementIndex])) ?? throw new Exception($"Not found '{elementPlaceableSet.elementPlaceableIds[elementIndex]}'");
             return elementPlaceable.elementIds.Any(id => id == elementId);
         }
 

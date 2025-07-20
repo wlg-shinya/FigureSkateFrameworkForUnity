@@ -43,6 +43,15 @@ namespace Wlg.FigureSkate.Tests.Fact
                 case "2024-25":
                 case "2025-26":
                     {
+                        // 空文字は設定可能
+                        var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        Assert.IsTrue(programComponentHanlder.TrySet(0, 0, ""));
+                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                        Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3A"));
+                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    }
+                    {
                         var errorMessage = "3回転+2回転は構成できません";
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
                         Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3A"));
