@@ -152,7 +152,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        private void SeniorFreeSkating(Func<ProgramComponentHanlder> CreateProgramComponentHanlder)
+        private void SeniorFreeSkating(Func<ProgramComponentHandler> CreateProgramComponentHanlder)
         {
             {
                 var errorMessage = "3連続ジャンプは2番目にオイラーを構成しないと3番目のジャンプはトウループかループかアクセルしか構成できません";
@@ -531,7 +531,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        private void JuniorFreeSkating(Func<ProgramComponentHanlder> CreateProgramComponentHanlder)
+        private void JuniorFreeSkating(Func<ProgramComponentHandler> CreateProgramComponentHanlder)
         {
             {
                 var errorMessage = "3連続ジャンプは2番目にオイラーを構成しないと3番目のジャンプはトウループかループかアクセルしか構成できません";
@@ -763,7 +763,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             JuniorFreeSkating(() => ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
-        private void NoviceAFreeSkating(Func<ProgramComponentHanlder> CreateProgramComponentHanlder)
+        private void NoviceAFreeSkating(Func<ProgramComponentHandler> CreateProgramComponentHanlder)
         {
             {
                 var errorMessage = "3連続ジャンプは2番目にオイラーを構成しないと3番目のジャンプはトウループかループかアクセルしか構成できません";
@@ -999,7 +999,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             NoviceAFreeSkating(() => ProgramComponentHanlderFactory.NoviceAWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
-        private void NoviceBFreeSkating(Func<ProgramComponentHanlder> CreateProgramComponentHanlder)
+        private void NoviceBFreeSkating(Func<ProgramComponentHandler> CreateProgramComponentHanlder)
         {
             {
                 var errorMessage = "3連続ジャンプは2番目にオイラーを構成しないと3番目のジャンプはトウループかループかアクセルしか構成できません";

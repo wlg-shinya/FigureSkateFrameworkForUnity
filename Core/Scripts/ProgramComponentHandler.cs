@@ -4,13 +4,13 @@ using System.Linq;
 namespace Wlg.FigureSkate.Core
 {
     // プログラム構成操作クラス
-    public class ProgramComponentHanlder
+    public class ProgramComponentHandler
     {
         public Program Program { get; private set; }
         public ProgramComponent[] ProgramComponents { get; private set; }
         public string ErrorMessage { get; private set; } = "";
 
-        public ProgramComponentHanlder(
+        public ProgramComponentHandler(
             Program program,
             ProgramComponent[] programComponent,
             ProgramComponentRegulation[] programComponentRegulationAll,

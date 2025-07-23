@@ -5,7 +5,7 @@ namespace Wlg.FigureSkate.Tests.Fact
 {
     public static class ProgramComponentHanlderFactory
     {
-        public static ProgramComponentHanlder SeniorMenShortProgram(
+        public static ProgramComponentHandler SeniorMenShortProgram(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -14,7 +14,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             ElementPlaceable[] elementPlaceableAll
             )
         {
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = new ProgramComponentHandler(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
@@ -40,7 +40,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder SeniorWomenShortProgram(
+        public static ProgramComponentHandler SeniorWomenShortProgram(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -49,7 +49,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             ElementPlaceable[] elementPlaceableAll
             )
         {
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = new ProgramComponentHandler(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
@@ -75,7 +75,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder SeniorMenFreeSkating(
+        public static ProgramComponentHandler SeniorMenFreeSkating(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -84,7 +84,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             ElementPlaceable[] elementPlaceableAll
             )
         {
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = new ProgramComponentHandler(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
@@ -118,7 +118,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder SeniorWomenFreeSkating(
+        public static ProgramComponentHandler SeniorWomenFreeSkating(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -130,7 +130,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return SeniorMenFreeSkating(program, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
         }
 
-        public static ProgramComponentHanlder JuniorMenShortProgram(
+        public static ProgramComponentHandler JuniorMenShortProgram(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -139,7 +139,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             ElementPlaceable[] elementPlaceableAll
             )
         {
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = new ProgramComponentHandler(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
@@ -198,7 +198,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder JuniorWomenShortProgram(
+        public static ProgramComponentHandler JuniorWomenShortProgram(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -207,7 +207,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             ElementPlaceable[] elementPlaceableAll
             )
         {
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = new ProgramComponentHandler(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
@@ -266,7 +266,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder JuniorMenFreeSkating(
+        public static ProgramComponentHandler JuniorMenFreeSkating(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -275,7 +275,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             ElementPlaceable[] elementPlaceableAll
             )
         {
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = new ProgramComponentHandler(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
@@ -308,7 +308,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder JuniorWomenFreeSkating(
+        public static ProgramComponentHandler JuniorWomenFreeSkating(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -320,7 +320,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return JuniorMenFreeSkating(program, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
         }
 
-        public static ProgramComponentHanlder NoviceAMenFreeSkating(
+        public static ProgramComponentHandler NoviceAMenFreeSkating(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -329,7 +329,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             ElementPlaceable[] elementPlaceableAll
             )
         {
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = new ProgramComponentHandler(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
@@ -360,7 +360,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder NoviceAWomenFreeSkating(
+        public static ProgramComponentHandler NoviceAWomenFreeSkating(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -372,7 +372,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return NoviceAMenFreeSkating(program, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
         }
 
-        public static ProgramComponentHanlder NoviceBMenFreeSkating(
+        public static ProgramComponentHandler NoviceBMenFreeSkating(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,
@@ -381,7 +381,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             ElementPlaceable[] elementPlaceableAll
             )
         {
-            var programComponentHanlder = new ProgramComponentHanlder(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = new ProgramComponentHandler(program, programComponents, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             programComponentHanlder.UnsetAll();
             switch (skateYear)
             {
@@ -411,7 +411,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             return programComponentHanlder;
         }
 
-        public static ProgramComponentHanlder NoviceBWomenFreeSkating(
+        public static ProgramComponentHandler NoviceBWomenFreeSkating(
             Program program,
             ProgramComponent[] programComponents,
             string skateYear,

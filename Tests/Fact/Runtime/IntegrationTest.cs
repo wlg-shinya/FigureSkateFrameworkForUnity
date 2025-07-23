@@ -137,7 +137,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             // 大会中のイベントに合わせてプログラム構成を構築
             var programObjects = ProgramObjectQuery.ByPlayerWithSetupConditions(competitionObject, eventObjectAll, programObjectAll, programComponentRegulationObjectAll, elementPlaceableSetObjectAll, player);
             player.programComponentsList = new Player.ProgramComponents[programObjects.Count()];
-            var programComponentHanlders = new List<ProgramComponentHanlder>();
+            var programComponentHanlders = new List<ProgramComponentHandler>();
 
             var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
