@@ -88,6 +88,19 @@ namespace Wlg.FigureSkate.Core
         }
         #endregion
 
+        // 整合性を確認する
+        public bool Validate()
+        {
+            // 年はマイナス禁止。上限なし
+            if (year < 0) return false;
+            // 月は1-12の範囲内
+            if (!(1 <= month && month <= 12)) return false;
+            // 日は1-31の範囲内
+            if (!(1 <= day && day <= 31)) return false;
+            // すべてのチェックに通過したので正しいデータ
+            return true;
+        }
+
         // 年月日情報のコピー
         public void Copied(YearMonthDay src)
         {
