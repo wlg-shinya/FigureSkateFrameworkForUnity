@@ -6,6 +6,7 @@ namespace Wlg.FigureSkate.Core
 {
     // 判定の詳細データ
     // ユーザがデータを用意するのではなく、Judge クラスがデータを用意します
+    // TODO:スコア算出処理を外部から呼び出せるように抽出
     [Serializable]
     public class JudgeDetail
     {
@@ -77,7 +78,7 @@ namespace Wlg.FigureSkate.Core
                 var min = refereeGoe.Min();
                 var maxRefereeIndex = refereeGoe.ToList().FindIndex(x => x == max);
                 var minRefereeIndex = refereeGoe.ToList().FindIndex(x => x == min);
-                var result = (float)refereeGoe
+                var result = (float) refereeGoe
                     .Where((x, i) => i != maxRefereeIndex && i != minRefereeIndex)
                     .Average();
                 return Round(result);
@@ -218,6 +219,6 @@ namespace Wlg.FigureSkate.Core
 
         // 丸め。スコアの最終表示に対して実行するべき処理
         // 計算中は小数点をそのまま扱い最終的な表示時に小数点第二位で四捨五入としている模様
-        static public float Round(float value) => (float)Math.Round(value, 2, MidpointRounding.AwayFromZero);
+        static public float Round(float value) => (float) Math.Round(value, 2, MidpointRounding.AwayFromZero);
     }
 }
