@@ -24,8 +24,13 @@ namespace Wlg.FigureSkate.Fact
             // ルートUIの生成
             Root = InstantiateVisualTree(judgesScoreUxml);
 
-            // 実行済み構成要素を表示するUIアセットを押さえる
-            _itemAsset = judgesScoreExecutedElementItemUxml;
+            // 実行済み構成要素表示UIを最大数生成して非表示にしておく
+            for (var i = 0; i < CoreConstant.TES_MAX_COUNT; i++)
+            {
+                var item = InstantiateVisualTree(judgesScoreExecutedElementItemUxml);
+                item.style.display = DisplayStyle.None;
+                _items.Add(item);
+            }
         }
 
         /// <summary>
@@ -56,7 +61,7 @@ namespace Wlg.FigureSkate.Fact
                         var body = ExecutedElementBody();
                         void setupValues(int index)
                         {
-                            var item = InstantiateVisualTree(_itemAsset);
+                            var item = _items[index];
                             var labelIndex = 0;
                             item.Q<Label>(EXECUTED_ELEMENT_ITEM_LABELS[labelIndex++]).text = $"{index + 1}";
                             item.Q<Label>(EXECUTED_ELEMENT_ITEM_LABELS[labelIndex++]).text = judgesScore.judgeDetail.tes[index].executedElement;
@@ -70,16 +75,24 @@ namespace Wlg.FigureSkate.Fact
                             }
                             labelIndex++; // Refはスキップ
                             item.Q<Label>(EXECUTED_ELEMENT_ITEM_LABELS[labelIndex++]).text = judgesScore.judgeDetail.tes[index].Score().ToString("N2");
+                            // 表示ONにして親に登録
+                            item.style.display = DisplayStyle.Flex;
                             body.Add(item);
-                            _items.Add(item);
                         }
                         // 以前の情報はクリア
                         body.Clear();
-                        _items.Clear();
                         // 値のセットアップ
-                        for (var i = 0; i < judgesScore.judgeDetail.tes.Length; i++)
+                        for (var i = 0; i < CoreConstant.TES_MAX_COUNT; i++)
                         {
-                            setupValues(i);
+                            if (i < judgesScore.judgeDetail.tes.Length)
+                            {
+                                setupValues(i);
+                            }
+                            else
+                            {
+                                // 未使用のアイテムは非表示に
+                                _items[i].style.display = DisplayStyle.None;
+                            }
                         }
                         // 末尾要素の値の設定
                         var footer = ExecutedElementFooter();
@@ -198,7 +211,6 @@ namespace Wlg.FigureSkate.Fact
             element.style.width = new StyleLength(new Length(width, LengthUnit.Pixel));
         }
 
-        private readonly VisualTreeAsset _itemAsset;
         private readonly List<TemplateContainer> _items = new();
 
         private VisualElement Header() => Root.Q<VisualElement>("Header");
