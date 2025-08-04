@@ -15,5 +15,16 @@ MonoBehaviour:
   data:
     id: SpinP2
     category: Spin
-    description: "\u3088\u304F\u30B3\u30F3\u30C8\u30ED\u30FC\u30EB\u3055\u308C\u305F\uFF0C\u660E\u78BA\u306A\u59FF\u52E2"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-plus-spin-p2
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     important: 1
+  references:
+    version: 2
+    RefIds: []

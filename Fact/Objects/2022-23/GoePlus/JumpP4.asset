@@ -15,5 +15,16 @@ MonoBehaviour:
   data:
     id: JumpP4
     category: Jump
-    description: "\u30B8\u30E3\u30F3\u30D7\u306E\u524D\u306B\u30B9\u30C6\u30C3\u30D7\uFF0C\u4E88\u60F3\u5916\u307E\u305F\u306F\u5275\u9020\u7684\u306A\u5165\u308A\u65B9"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-plus-jump-p4
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     important: 0
+  references:
+    version: 2
+    RefIds: []

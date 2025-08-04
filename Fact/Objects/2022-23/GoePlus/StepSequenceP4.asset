@@ -15,5 +15,16 @@ MonoBehaviour:
   data:
     id: StepSequenceP4
     category: StepSequence
-    description: "\u5275\u9020\u7684\u304A\u3088\u3073\uFF0F\u307E\u305F\u306F\u30AA\u30EA\u30B8\u30CA\u30EA\u30C6\u30A3\u304C\u3042\u308B"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-plus-step-sequence-p4
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     important: 0
+  references:
+    version: 2
+    RefIds: []

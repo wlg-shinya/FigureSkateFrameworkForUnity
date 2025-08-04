@@ -1014,6 +1014,114 @@ MonoBehaviour:
     m_Localized: Women
     m_Metadata:
       m_Items: []
+  - m_Id: 39020791656471
+    m_Localized: ChoreographicSequenceP6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656470
+    m_Localized: ChoreographicSequenceP5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656469
+    m_Localized: ChoreographicSequenceP4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656468
+    m_Localized: ChoreographicSequenceP3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656467
+    m_Localized: ChoreographicSequenceP2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656466
+    m_Localized: ChoreographicSequenceP1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656465
+    m_Localized: StepSequenceP6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656464
+    m_Localized: StepSequenceP5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656463
+    m_Localized: StepSequenceP4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656462
+    m_Localized: StepSequenceP3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656461
+    m_Localized: StepSequenceP2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656460
+    m_Localized: StepSequenceP1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656459
+    m_Localized: SpinP6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656458
+    m_Localized: SpinP5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656457
+    m_Localized: SpinP4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656456
+    m_Localized: SpinP3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656455
+    m_Localized: SpinP2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656454
+    m_Localized: SpinP1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656453
+    m_Localized: JumpP6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656452
+    m_Localized: JumpP5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656451
+    m_Localized: JumpP4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656450
+    m_Localized: JumpP3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656449
+    m_Localized: JumpP2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656448
+    m_Localized: JumpP1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39230439747584
+    m_Localized: SpinP7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39230439747585
+    m_Localized: ChoreographicSequenceP7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39387885531136
+    m_Localized: ChoreographicSequenceP8
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

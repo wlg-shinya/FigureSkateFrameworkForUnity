@@ -15,5 +15,16 @@ MonoBehaviour:
   data:
     id: SpinP5
     category: Spin
-    description: "\u5275\u9020\u7684"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: "\u5275\u9020\u7684"
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     important: 0
+  references:
+    version: 2
+    RefIds: []

@@ -15,5 +15,16 @@ MonoBehaviour:
   data:
     id: JumpP2
     category: Jump
-    description: "\u8E0F\u5207\u304A\u3088\u3073\u7740\u6C37\u304C\u3088\u3044"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-plus-jump-p2
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     important: 1
+  references:
+    version: 2
+    RefIds: []

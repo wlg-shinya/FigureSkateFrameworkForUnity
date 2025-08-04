@@ -15,6 +15,114 @@ MonoBehaviour:
   m_TableCollectionName: FigureSkateFrameworkFact
   m_TableCollectionNameGuidString: 2f310b5a87b5494439685382e4bc2641
   m_Entries:
+  - m_Id: 39020791656448
+    m_Key: goe-plus-jump-p1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656449
+    m_Key: goe-plus-jump-p2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656450
+    m_Key: goe-plus-jump-p3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656451
+    m_Key: goe-plus-jump-p4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656452
+    m_Key: goe-plus-jump-p5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656453
+    m_Key: goe-plus-jump-p6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656454
+    m_Key: goe-plus-spin-p1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656455
+    m_Key: goe-plus-spin-p2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656456
+    m_Key: goe-plus-spin-p3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656457
+    m_Key: goe-plus-spin-p4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39230439747584
+    m_Key: goe-plus-spin-p7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656459
+    m_Key: goe-plus-spin-p6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656460
+    m_Key: goe-plus-step-sequence-p1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656461
+    m_Key: goe-plus-step-sequence-p2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656462
+    m_Key: goe-plus-step-sequence-p3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656463
+    m_Key: goe-plus-step-sequence-p4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656464
+    m_Key: goe-plus-step-sequence-p5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656465
+    m_Key: goe-plus-step-sequence-p6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656467
+    m_Key: goe-plus-choreographic-sequence-p2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39230439747585
+    m_Key: goe-plus-choreographic-sequence-p7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656468
+    m_Key: goe-plus-choreographic-sequence-p3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39387885531136
+    m_Key: goe-plus-choreographic-sequence-p8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656470
+    m_Key: goe-plus-choreographic-sequence-p5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656471
+    m_Key: goe-plus-choreographic-sequence-p6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656469
+    m_Key: goe-plus-choreographic-sequence-p4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656458
+    m_Key: goe-plus-spin-p5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020791656466
+    m_Key: goe-plus-choreographic-sequence-p1
+    m_Metadata:
+      m_Items: []
   - m_Id: 34568487628800
     m_Key: sex-men
     m_Metadata:

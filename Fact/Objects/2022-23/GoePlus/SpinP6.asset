@@ -15,5 +15,16 @@ MonoBehaviour:
   data:
     id: SpinP6
     category: Spin
-    description: "\u8981\u7D20\u304C\u97F3\u697D\u306B\u5408\u3063\u3066\u3044\u308B"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-plus-spin-p6
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     important: 0
+  references:
+    version: 2
+    RefIds: []
