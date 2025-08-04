@@ -14,8 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: NoviceAWomenFreeSkating
-    name: "\u30CE\u30FC\u30D3\u30B9A\u5973\u5B50\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
-    shortName: "\u30D5\u30EA\u30FC\u30B9\u30B1\u30FC\u30C6\u30A3\u30F3\u30B0"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: program-novice-a-women-free-skating
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    shortName:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: program-novice-a-women-free-skating-short
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     lastJumpSpecialFactorCount: 2
     pcsFactor: 2.67
     programComponentRegulationId: NoviceAWomenFreeSkating
@@ -31,3 +47,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f0b50e9e4400ee4a98ee569b4ea1864, type: 2}
   - {fileID: 11400000, guid: ebc2f41faf97f7a4188c342089b3ee12, type: 2}
   - {fileID: 11400000, guid: df10750cbbcbf5f47a8a7f4ad469d7c5, type: 2}
+  references:
+    version: 2
+    RefIds: []

@@ -1386,6 +1386,102 @@ MonoBehaviour:
     m_Localized: ChoreographicSequenceM13
     m_Metadata:
       m_Items: []
+  - m_Id: 52884337913856
+    m_Localized: NoviceBMenFreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913857
+    m_Localized: FreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913858
+    m_Localized: NoviceBWomenFreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913859
+    m_Localized: FreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913860
+    m_Localized: NoviceAMenFreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913861
+    m_Localized: FreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913862
+    m_Localized: NoviceAWomenFreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913863
+    m_Localized: FreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913864
+    m_Localized: JuniorMenFreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913865
+    m_Localized: FreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913866
+    m_Localized: JuniorMenShortProgram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913867
+    m_Localized: ShortProgram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913868
+    m_Localized: JuniorWomenFreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913869
+    m_Localized: FreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913870
+    m_Localized: JuniorWomenShortProgram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913871
+    m_Localized: ShortProgram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913872
+    m_Localized: SeniorMenFreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913873
+    m_Localized: FreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913874
+    m_Localized: SeniorMenShortProgram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913875
+    m_Localized: ShortProgram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913876
+    m_Localized: SeniorWomenFreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913877
+    m_Localized: FreeSkating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913878
+    m_Localized: SeniorWomenShortProgram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913879
+    m_Localized: ShortProgram
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

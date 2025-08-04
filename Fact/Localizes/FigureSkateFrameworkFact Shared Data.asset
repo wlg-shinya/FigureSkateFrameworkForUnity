@@ -15,6 +15,102 @@ MonoBehaviour:
   m_TableCollectionName: FigureSkateFrameworkFact
   m_TableCollectionNameGuidString: 2f310b5a87b5494439685382e4bc2641
   m_Entries:
+  - m_Id: 52884337913856
+    m_Key: program-novice-b-men-free-skating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913857
+    m_Key: program-novice-b-men-free-skating-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913858
+    m_Key: program-novice-b-women-free-skating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913859
+    m_Key: program-novice-b-women-free-skating-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913860
+    m_Key: program-novice-a-men-free-skating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913861
+    m_Key: program-novice-a-men-free-skating-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913862
+    m_Key: program-novice-a-women-free-skating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913863
+    m_Key: program-novice-a-women-free-skating-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913864
+    m_Key: program-junior-men-free-skating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913865
+    m_Key: program-junior-men-free-skating-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913866
+    m_Key: program-junior-men-short-program
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913867
+    m_Key: program-junior-men-short-program-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913868
+    m_Key: program-junior-women-free-skating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913869
+    m_Key: program-junior-women-free-skating-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913870
+    m_Key: program-junior-women-short-program
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913871
+    m_Key: program-junior-women-short-program-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913872
+    m_Key: program-senior-men-free-skating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913873
+    m_Key: program-senior-men-free-skating-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913874
+    m_Key: program-senior-men-short-program
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913875
+    m_Key: program-senior-men-short-program-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913876
+    m_Key: program-senior-women-free-skating
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913877
+    m_Key: program-senior-women-free-skating-short
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913878
+    m_Key: program-senior-women-short-program
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52884337913879
+    m_Key: program-senior-women-short-program-short
+    m_Metadata:
+      m_Items: []
   - m_Id: 49764253888512
     m_Key: goe-minus-jump-m23
     m_Metadata:

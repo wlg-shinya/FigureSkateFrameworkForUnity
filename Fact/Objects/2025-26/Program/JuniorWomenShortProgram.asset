@@ -14,8 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: JuniorWomenShortProgram
-    name: "\u30B8\u30E5\u30CB\u30A2\u5973\u5B50\u30B7\u30E7\u30FC\u30C8\u30D7\u30ED\u30B0\u30E9\u30E0"
-    shortName: "\u30B7\u30E7\u30FC\u30C8\u30D7\u30ED\u30B0\u30E9\u30E0"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: program-junior-women-short-program
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    shortName:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: program-junior-women-short-program-short
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     lastJumpSpecialFactorCount: 1
     pcsFactor: 1.33
     programComponentRegulationId: JuniorWomenShortProgram
@@ -25,3 +41,6 @@ MonoBehaviour:
   ProgramComponentConditionObjects:
   - {fileID: 11400000, guid: 0e474f596fc93e241b4253eea5c7d860, type: 2}
   - {fileID: 11400000, guid: df10750cbbcbf5f47a8a7f4ad469d7c5, type: 2}
+  references:
+    version: 2
+    RefIds: []
