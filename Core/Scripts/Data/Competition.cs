@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Localization;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -13,7 +14,7 @@ namespace Wlg.FigureSkate.Core
         // 開催国コード
         public string countryId;
         // 名称
-        public string name;
+        public LocalizedString name;
         // 国際大会か
         public bool isInternational;
         // 開催開始日

@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Localization;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -11,7 +12,7 @@ namespace Wlg.FigureSkate.Core
         // カテゴリ
         public string category;
         // チェックの説明
-        public string description;
+        public LocalizedString description;
         // 重要項目か（この要素はGOE加点に制約を発生させるか）
         public bool important;
     }

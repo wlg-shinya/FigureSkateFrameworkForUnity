@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine.Localization;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -10,7 +11,7 @@ namespace Wlg.FigureSkate.Core
         // 一意の記号
         public string id;
         // 名称
-        public string name;
+        public LocalizedString name;
         // ジャンプに関する規則か
         public bool jump;
         // プログラム構成に設定可能な構成要素ID群。コンビネーションジャンプの場合は配列要素数が増加する

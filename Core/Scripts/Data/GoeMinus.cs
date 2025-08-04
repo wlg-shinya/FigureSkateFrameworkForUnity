@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Localization;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -11,7 +12,7 @@ namespace Wlg.FigureSkate.Core
         // カテゴリ
         public string category;
         // チェックの説明
-        public string description;
+        public LocalizedString description;
         // グループ名
         // 同名の項目が減点対象となったときそのうちの一つしか適用されなくなります
         // 空白だと未グループとしてこのルールは適用されません

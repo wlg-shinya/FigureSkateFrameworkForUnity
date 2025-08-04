@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Localization;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -10,7 +11,7 @@ namespace Wlg.FigureSkate.Core
         // 一意の記号
         public string id;
         // 正式名称
-        public string name;
+        public LocalizedString name;
         // 対象GOEのID
         public string goeCategory;
         // 一つ上のグレードの構成要素ID。nullか空文字なら最高グレード

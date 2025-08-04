@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Localization;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -9,6 +10,6 @@ namespace Wlg.FigureSkate.Core
         // 一意の記号
         public string id;
         // 名称
-        public string name;
+        public LocalizedString name;
     }
 }

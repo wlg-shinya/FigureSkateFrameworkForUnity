@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Localization;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -9,9 +10,9 @@ namespace Wlg.FigureSkate.Core
         // 一意の記号
         public string id;
         // 正式名称
-        public string name;
+        public LocalizedString name;
         // 性別とクラスを省いた名称
-        public string shortName;
+        public LocalizedString shortName;
         // 後半ジャンプボーナス数
         public int lastJumpSpecialFactorCount;
         // 演技構成点倍率

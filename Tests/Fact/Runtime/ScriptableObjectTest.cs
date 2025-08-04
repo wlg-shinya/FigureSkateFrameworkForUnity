@@ -53,7 +53,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.regionId));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.countryId));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+                Assert.IsFalse(string.IsNullOrEmpty(await obj.data.name.GetLocalizedStringAsync().Task));
                 Assert.IsNotNull(obj.data.startDay);
                 Assert.IsNotNull(obj.data.endDay);
                 Assert.IsTrue(obj.data.startDay <= obj.data.endDay);
@@ -92,7 +92,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             {
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.description));
+                Assert.IsFalse(string.IsNullOrEmpty(await obj.data.description.GetLocalizedStringAsync().Task));
             }
         }
 
@@ -106,7 +106,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.category));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.description));
+                Assert.IsFalse(string.IsNullOrEmpty(await obj.data.description.GetLocalizedStringAsync().Task));
                 Assert.IsTrue(obj.data.minValue <= 0);
                 Assert.IsTrue(obj.data.maxValue <= 0);
                 Assert.IsTrue(obj.data.maxValue <= obj.data.minValue);
@@ -138,7 +138,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             {
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+                Assert.IsFalse(string.IsNullOrEmpty(await obj.data.name.GetLocalizedStringAsync().Task));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.goeCategory));
                 // upgradeId, downgradeId はデータなしを許容
             }
@@ -154,7 +154,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             {
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+                Assert.IsFalse(string.IsNullOrEmpty(await obj.data.name.GetLocalizedStringAsync().Task));
             }
         }
 
@@ -168,7 +168,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             {
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+                Assert.IsFalse(string.IsNullOrEmpty(await obj.data.name.GetLocalizedStringAsync().Task));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.classId));
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.sexId));
                 Assert.IsNotNull(obj.data.programIds);
@@ -202,7 +202,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             {
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+                Assert.IsFalse(string.IsNullOrEmpty(await obj.data.name.GetLocalizedStringAsync().Task));
                 Assert.IsNotNull(obj.data.elementPlaceableIds);
                 Assert.IsTrue(obj.data.elementPlaceableIds.Length > 0);
             }

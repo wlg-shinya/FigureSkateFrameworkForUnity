@@ -73,7 +73,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                         "Competition.csv",
                         (List<string[]> rows) =>
                         {
-                            // ユーザー型(YearMonthDay)と配列(eventIds)を扱うため独自に値を設定する
+                            // ユーザー型(YearMonthDay)と配列(eventIds)とローカライズを扱うため独自に値を設定する
                             var result = new Competition[rows.Count - 1];
                             for (var i = 0; i < result.Length; ++i)
                             {
@@ -83,7 +83,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                     id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
                                     regionId = rows[rowsIndex][Array.IndexOf(rows[0], "regionId")],
                                     countryId = rows[rowsIndex][Array.IndexOf(rows[0], "countryId")],
-                                    name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
+                                    name = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "name")] },
                                     isInternational = bool.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "isInternational")]),
                                     startDay = new YearMonthDay(rows[rowsIndex][Array.IndexOf(rows[0], "startDay")]),
                                     endDay = new YearMonthDay(rows[rowsIndex][Array.IndexOf(rows[0], "endDay")]),
@@ -130,7 +130,23 @@ namespace Wlg.FigureSkate.Fact.Editor
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "GoePlus.csv",
-                        (List<string[]> rows) => { return CSVSerializer.Deserialize<GoePlus>(rows); },
+                        (List<string[]> rows) =>
+                        {
+                            // ローカライズ対応のために独自に値を設定する
+                            var result = new GoePlus[rows.Count - 1];
+                            for (var i = 0; i < result.Length; ++i)
+                            {
+                                var rowsIndex = i + 1;
+                                result[i] = new GoePlus
+                                {
+                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                    category = rows[rowsIndex][Array.IndexOf(rows[0], "category")],
+                                    description = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "description")] },
+                                    important = bool.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "important")]),
+                                };
+                            }
+                            return result;
+                        },
                         (GoePlus data) => { return $"{data.id}.asset"; },
                         (GoePlus data, GoePlusObject obj) => { obj.data = data; }
                         );
@@ -146,7 +162,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                         "GoeMinus.csv",
                         (List<string[]> rows) =>
                         {
-                            // 配列(targetElementIds)を扱うため独自に値を設定する
+                            // 配列(targetElementIds)とローカライズを扱うため独自に値を設定する
                             var result = new GoeMinus[rows.Count - 1];
                             for (var i = 0; i < result.Length; ++i)
                             {
@@ -155,7 +171,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                 {
                                     id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
                                     category = rows[rowsIndex][Array.IndexOf(rows[0], "category")],
-                                    description = rows[rowsIndex][Array.IndexOf(rows[0], "description")],
+                                    description = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "description")] },
                                     group = rows[rowsIndex][Array.IndexOf(rows[0], "group")],
                                     minValue = int.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "minValue")]),
                                     maxValue = int.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "maxValue")]),
@@ -196,7 +212,25 @@ namespace Wlg.FigureSkate.Fact.Editor
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "Program.csv",
-                        (List<string[]> rows) => { return CSVSerializer.Deserialize<Program>(rows); },
+                        (List<string[]> rows) =>
+                        {
+                            // ローカライズ対応のために独自に値を設定する
+                            var result = new Program[rows.Count - 1];
+                            for (var i = 0; i < result.Length; ++i)
+                            {
+                                var rowsIndex = i + 1;
+                                result[i] = new Program
+                                {
+                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                    name = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "name")] },
+                                    shortName = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "shortName")] },
+                                    lastJumpSpecialFactorCount = int.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "lastJumpSpecialFactorCount")]),
+                                    pcsFactor = float.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "pcsFactor")]),
+                                    programComponentRegulationId = rows[rowsIndex][Array.IndexOf(rows[0], "programComponentRegulationId")],
+                                };
+                            }
+                            return result;
+                        },
                         (Program data) => { return $"{data.id}.asset"; },
                         (Program data, ProgramObject obj) => { obj.data = data; }
                         );
@@ -228,14 +262,45 @@ namespace Wlg.FigureSkate.Fact.Editor
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "Element.csv",
-                        (List<string[]> rows) => { return CSVSerializer.Deserialize<Element>(rows); },
+                        (List<string[]> rows) =>
+                        {
+                            // ローカライズ対応のために独自に値を設定する
+                            var result = new Element[rows.Count - 1];
+                            for (var i = 0; i < result.Length; ++i)
+                            {
+                                var rowsIndex = i + 1;
+                                result[i] = new Element
+                                {
+                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                    name = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "name")] },
+                                    goeCategory = rows[rowsIndex][Array.IndexOf(rows[0], "goeCategory")],
+                                    upgradeId = rows[rowsIndex][Array.IndexOf(rows[0], "upgradeId")],
+                                    downgradeId = rows[rowsIndex][Array.IndexOf(rows[0], "downgradeId")],
+                                };
+                            }
+                            return result;
+                        },
                         (Element data) => { return $"{data.id}.asset"; },
                         (Element data, ElementObject obj) => { obj.data = data; }
                         );
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "Sex.csv",
-                        (List<string[]> rows) => { return CSVSerializer.Deserialize<Sex>(rows); },
+                        (List<string[]> rows) =>
+                        {
+                            // ローカライズ対応のために独自に値を設定する
+                            var result = new Sex[rows.Count - 1];
+                            for (var i = 0; i < result.Length; ++i)
+                            {
+                                var rowsIndex = i + 1;
+                                result[i] = new Sex
+                                {
+                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                    name = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "name")] },
+                                };
+                            }
+                            return result;
+                        },
                         (Sex data) => { return $"{data.id}.asset"; },
                         (Sex data, SexObject obj) => { obj.data = data; }
                         );
@@ -244,7 +309,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                         "Event.csv",
                         (List<string[]> rows) =>
                         {
-                            // 配列(programIds)を扱うため独自に値を設定する
+                            // 配列(programIds)とローカライズを扱うため独自に値を設定する
                             var result = new Core.Event[rows.Count - 1];
                             for (var i = 0; i < result.Length; ++i)
                             {
@@ -252,7 +317,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                 result[i] = new Core.Event
                                 {
                                     id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
-                                    name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
+                                    name = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "name")] },
                                     classId = rows[rowsIndex][Array.IndexOf(rows[0], "classId")],
                                     sexId = rows[rowsIndex][Array.IndexOf(rows[0], "sexId")],
                                     programIds = rows[rowsIndex][Array.IndexOf(rows[0], "programIds")].Split('/'),
@@ -289,7 +354,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                         "ElementPlaceableSet.csv",
                         (List<string[]> rows) =>
                         {
-                            // 配列(elementPlaceableIds)を扱うため独自に値を設定する
+                            // 配列(elementPlaceableIds)とローカライズを扱うため独自に値を設定する
                             var result = new ElementPlaceableSet[rows.Count - 1];
                             for (var i = 0; i < result.Length; ++i)
                             {
@@ -297,7 +362,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                 result[i] = new ElementPlaceableSet
                                 {
                                     id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
-                                    name = rows[rowsIndex][Array.IndexOf(rows[0], "name")],
+                                    name = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "name")] },
                                     jump = bool.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "jump")]),
                                     elementPlaceableIds = rows[rowsIndex][Array.IndexOf(rows[0], "elementPlaceableIds")].Split('/'),
                                 };
