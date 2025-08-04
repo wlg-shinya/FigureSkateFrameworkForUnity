@@ -274,9 +274,17 @@ namespace Wlg.FigureSkate.Fact.Editor
                                     id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
                                     name = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "name")] },
                                     goeCategory = rows[rowsIndex][Array.IndexOf(rows[0], "goeCategory")],
-                                    upgradeId = rows[rowsIndex][Array.IndexOf(rows[0], "upgradeId")],
-                                    downgradeId = rows[rowsIndex][Array.IndexOf(rows[0], "downgradeId")],
                                 };
+                                // upgradeId/downgradeIdは未入力OKなせいで、データ数がまちまちになってしまう仕様
+                                // データ数に合わせて値を設定するようにして配列範囲外アクセスを回避する
+                                if (rows[rowsIndex].Count() >= 4)
+                                {
+                                    result[i].upgradeId = rows[rowsIndex][Array.IndexOf(rows[0], "upgradeId")];
+                                    if (rows[rowsIndex].Count() == 5)
+                                    {
+                                        result[i].downgradeId = rows[rowsIndex][Array.IndexOf(rows[0], "downgradeId")];
+                                    }
+                                }
                             }
                             return result;
                         },
