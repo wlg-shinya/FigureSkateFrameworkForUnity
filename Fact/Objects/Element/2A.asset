@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: 2A
-    name: "\u30C0\u30D6\u30EB\u30A2\u30AF\u30BB\u30EB"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: element-2a
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     goeCategory: Jump
     upgradeId: "3\u0410"
     downgradeId: 1A
+  references:
+    version: 2
+    RefIds: []

@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: ChSq1
-    name: "\u30B3\u30EC\u30AA\u30B0\u30E9\u30D5\u30A3\u30C3\u30AF\u30FB\u30B7\u30FC\u30AF\u30A7\u30F3\u30B9"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: element-chsq1
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     goeCategory: ChoreographicSequence
     upgradeId: 
     downgradeId: 
+  references:
+    version: 2
+    RefIds: []

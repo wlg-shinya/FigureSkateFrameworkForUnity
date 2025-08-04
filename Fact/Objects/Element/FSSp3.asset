@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: FSSp3
-    name: "\u30D5\u30E9\u30A4\u30F3\u30B0\u30B7\u30C3\u30C8\u30B9\u30D4\u30F3 Lv.3"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: element-fssp3
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     goeCategory: Spin
     upgradeId: FSSp4
     downgradeId: FSSp2
+  references:
+    version: 2
+    RefIds: []

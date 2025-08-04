@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: CCSpB
-    name: "\u8DB3\u63DB\u3048\u30AD\u30E3\u30E1\u30EB\u30B9\u30D4\u30F3 \u30D9\u30FC\u30B9"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: element-ccspb
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     goeCategory: Spin
     upgradeId: CCSp1
     downgradeId: 
+  references:
+    version: 2
+    RefIds: []

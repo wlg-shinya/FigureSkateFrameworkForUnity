@@ -1,10 +1,10 @@
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM1.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM2.asset
-Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM3.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM4.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM5.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM6.asset
-Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM7.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM8.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/ChoreographicSequenceM9.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/JumpM1.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/JumpM10.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoeMinus/JumpM11.asset

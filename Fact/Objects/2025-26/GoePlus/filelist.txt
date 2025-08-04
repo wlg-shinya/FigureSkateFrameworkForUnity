@@ -1,9 +1,9 @@
-Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/ChoreographicSequenceP1.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/ChoreographicSequenceP2.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/ChoreographicSequenceP3.asset
-Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/ChoreographicSequenceP4.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/ChoreographicSequenceP5.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/ChoreographicSequenceP6.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/ChoreographicSequenceP7.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/ChoreographicSequenceP8.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/JumpP1.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/JumpP2.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/JumpP3.asset
@@ -14,8 +14,8 @@ Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/S
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/SpinP2.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/SpinP3.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/SpinP4.asset
-Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/SpinP5.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/SpinP6.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/SpinP7.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/StepSequenceP1.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/StepSequenceP2.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2025-26/GoePlus/StepSequenceP3.asset

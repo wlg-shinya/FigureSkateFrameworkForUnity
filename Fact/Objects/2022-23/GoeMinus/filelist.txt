@@ -15,10 +15,10 @@ Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM16.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM17.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM18.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM19.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM2.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM20.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM21.asset
-Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM29.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM3.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM4.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2022-23/GoeMinus/JumpM5.asset

@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: StSq2
-    name: "\u30B9\u30C6\u30C3\u30D7\u30FB\u30B7\u30FC\u30AF\u30A7\u30F3\u30B9 Lv.2"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: element-stsq2
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     goeCategory: StepSequence
     upgradeId: StSq3
     downgradeId: StSq1
+  references:
+    version: 2
+    RefIds: []

@@ -1,9 +1,9 @@
-Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP1.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP2.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP3.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP4.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP5.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP6.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/ChoreographicSequenceP7.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP1.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP2.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP3.asset
@@ -14,8 +14,8 @@ Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/S
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP2.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP3.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP4.asset
-Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP5.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP6.asset
+Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/SpinP7.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP1.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP2.asset
 Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/StepSequenceP3.asset

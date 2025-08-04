@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: SSpB
-    name: "\u30B7\u30C3\u30C8\u30B9\u30D4\u30F3 \u30D9\u30FC\u30B9"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: element-sspb
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     goeCategory: Spin
     upgradeId: SSp1
     downgradeId: 
+  references:
+    version: 2
+    RefIds: []
