@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using UnityEngine.Localization;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -72,8 +74,12 @@ namespace Wlg.FigureSkate.Core
         public override int GetHashCode() => (year, month, day).GetHashCode();
         public override string ToString()
         {
-            // TODO:ローカライズ対応
-            return $"{year}/{month}/{day}";
+            return _format.GetLocalizedString(new Dictionary<string, object>
+            {
+                { "year", year },
+                { "month", month },
+                { "day", day }
+            });
         }
         #endregion
 
@@ -126,5 +132,7 @@ namespace Wlg.FigureSkate.Core
             month = 1;
             day = 1;
         }
+
+        private readonly LocalizedString _format = new() { TableReference = "FigureSkateFrameworkCore", TableEntryReference = "yearmonthday-format" };
     }
 }

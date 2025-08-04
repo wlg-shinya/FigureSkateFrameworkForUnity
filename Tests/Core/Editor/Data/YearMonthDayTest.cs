@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using Wlg.FigureSkate.Core;
 using Assert = UnityEngine.Assertions.Assert;
 
@@ -88,7 +90,7 @@ namespace Wlg.FigureSkate.Tests.Editor.Core.Data
             }
             try
             {
-                // 意図しないの指定- /がたりない
+                // 意図しないの指定 - /がたりない
                 var ymd = new YearMonthDay("2025/127");
                 Assert.IsTrue(false); // ここには到達しないはず
             }
@@ -97,13 +99,27 @@ namespace Wlg.FigureSkate.Tests.Editor.Core.Data
             }
             try
             {
-                // 意図しないの指定- /が多い
+                // 意図しないの指定 - /が多い
                 var ymd = new YearMonthDay("2025/1/2/7");
                 Assert.IsTrue(false); // ここには到達しないはず
             }
             catch
             {
             }
+        }
+
+        [Test]
+        public void Localize()
+        {
+            var ymd = new YearMonthDay("2025/1/23");
+
+            // jaは年/月/日
+            LocalizationSettings.SelectedLocale = Locale.CreateLocale("ja");
+            Assert.AreEqual(ymd.ToString(), "2025/1/23");
+
+            // enは月/日/年
+            LocalizationSettings.SelectedLocale = Locale.CreateLocale("en");
+            Assert.AreEqual(ymd.ToString(), "1/23/2025");
         }
     }
 }

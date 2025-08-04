@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: FigureSkateFrameworkCore
   m_TableCollectionNameGuidString: e8c6529d518272446a5b6dfc22e448d4
-  m_Entries: []
+  m_Entries:
+  - m_Id: 923253141504
+    m_Key: yearmonthday-format
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

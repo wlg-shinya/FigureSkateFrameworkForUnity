@@ -4,6 +4,7 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
+        "Unity.Localization",
         "Wlg.FigureSkate.Core"
     ],
     "includePlatforms": [
