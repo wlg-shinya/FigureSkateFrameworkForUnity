@@ -15,7 +15,15 @@ MonoBehaviour:
   data:
     id: SpinM4
     category: Spin
-    description: "\u30D5\u30E9\u30A4\u30F3\u30B0\u30FB\u30B9\u30D4\u30F3\u306E\u8E0F\u307F\u5207\u308A\u3084\u7740\u6C37\u304C\u6B63\u3057\u304F\u306A\u3044"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-minus-spin-m4
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     group: 
     minValue: -1
     maxValue: -2
@@ -73,3 +81,6 @@ MonoBehaviour:
     - FCCoSp2
     - FCCoSp3
     - FCCoSp4
+  references:
+    version: 2
+    RefIds: []

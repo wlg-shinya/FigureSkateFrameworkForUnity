@@ -15,9 +15,20 @@ MonoBehaviour:
   data:
     id: JumpM11
     category: Jump
-    description: "\u30C0\u30A6\u30F3\u30B0\u30EC\u30FC\u30C9\u5224\u5B9A"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-minus-jump-m11
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     group: Rotate
     minValue: -3
     maxValue: -4
     mark: <<
     targetElementIds: []
+  references:
+    version: 2
+    RefIds: []

@@ -15,9 +15,70 @@ MonoBehaviour:
   data:
     id: SpinM9
     category: Spin
-    description: "\u62D9\u52A3\u306A\uFF0F\u304E\u3053\u3061\u306A\u3044\uFF0C\u7F8E\u3057\u3055\u3092\u640D\u306D\u308B\u59FF\u52E2"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-minus-spin-m9
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     group: 
-    minValue: -1
+    minValue: -2
     maxValue: -3
     mark: 
-    targetElementIds: []
+    targetElementIds:
+    - CUSpB
+    - CUSp1
+    - CUSp2
+    - CUSp3
+    - CUSp4
+    - FCUSpB
+    - FCUSp1
+    - FCUSp2
+    - FCUSp3
+    - FCUSp4
+    - CLSpB
+    - CLSp1
+    - CLSp2
+    - CLSp3
+    - CLSp4
+    - FCLSpB
+    - FCLSp1
+    - FCLSp2
+    - FCLSp3
+    - FCLSp4
+    - CCSpB
+    - CCSp1
+    - CCSp2
+    - CCSp3
+    - CCSp4
+    - FCCSpB
+    - FCCSp1
+    - FCCSp2
+    - FCCSp3
+    - FCCSp4
+    - CSSpB
+    - CSSp1
+    - CSSp2
+    - CSSp3
+    - CSSp4
+    - FCSSpB
+    - FCSSp1
+    - FCSSp2
+    - FCSSp3
+    - FCSSp4
+    - CCoSpB
+    - CCoSp1
+    - CCoSp2
+    - CCoSp3
+    - CCoSp4
+    - FCCoSpB
+    - FCCoSp1
+    - FCCoSp2
+    - FCCoSp3
+    - FCCoSp4
+  references:
+    version: 2
+    RefIds: []

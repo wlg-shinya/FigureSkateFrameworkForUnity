@@ -15,6 +15,274 @@ MonoBehaviour:
   m_TableCollectionName: FigureSkateFrameworkFact
   m_TableCollectionNameGuidString: 2f310b5a87b5494439685382e4bc2641
   m_Entries:
+  - m_Id: 49764253888512
+    m_Key: goe-minus-jump-m23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134401
+    m_Key: goe-minus-jump-m2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134402
+    m_Key: goe-minus-jump-m3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134403
+    m_Key: goe-minus-jump-m4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134410
+    m_Key: goe-minus-jump-m11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134411
+    m_Key: goe-minus-jump-m12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134412
+    m_Key: goe-minus-jump-m13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49643864780800
+    m_Key: goe-minus-jump-m22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134413
+    m_Key: goe-minus-jump-m14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134406
+    m_Key: goe-minus-jump-m7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134407
+    m_Key: goe-minus-jump-m8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134408
+    m_Key: goe-minus-jump-m9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134409
+    m_Key: goe-minus-jump-m10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134414
+    m_Key: goe-minus-jump-m15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888513
+    m_Key: goe-minus-jump-m24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888514
+    m_Key: goe-minus-jump-m25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134415
+    m_Key: goe-minus-jump-m16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134416
+    m_Key: goe-minus-jump-m17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134417
+    m_Key: goe-minus-jump-m18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134418
+    m_Key: goe-minus-jump-m19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134419
+    m_Key: goe-minus-jump-m20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134420
+    m_Key: goe-minus-jump-m21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888515
+    m_Key: goe-minus-jump-m26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134421
+    m_Key: goe-minus-spin-m1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888516
+    m_Key: goe-minus-spin-m14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134423
+    m_Key: goe-minus-spin-m3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134429
+    m_Key: goe-minus-spin-m9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888517
+    m_Key: goe-minus-spin-m15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49643864780801
+    m_Key: goe-minus-spin-m13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134425
+    m_Key: goe-minus-spin-m5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134428
+    m_Key: goe-minus-spin-m8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399680
+    m_Key: goe-minus-spin-m17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134428
+    m_Key: goe-minus-spin-m8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134422
+    m_Key: goe-minus-spin-m2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134426
+    m_Key: goe-minus-spin-m6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399681
+    m_Key: goe-minus-spin-m18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134424
+    m_Key: goe-minus-spin-m4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134431
+    m_Key: goe-minus-spin-m11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134432
+    m_Key: goe-minus-spin-m12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134433
+    m_Key: goe-minus-step-sequence-m1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134434
+    m_Key: goe-minus-step-sequence-m2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399682
+    m_Key: goe-minus-step-sequence-m9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134436
+    m_Key: goe-minus-step-sequence-m4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134437
+    m_Key: goe-minus-step-sequence-m5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134438
+    m_Key: goe-minus-step-sequence-m6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134439
+    m_Key: goe-minus-step-sequence-m7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134440
+    m_Key: goe-minus-step-sequence-m8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134441
+    m_Key: goe-minus-choreographic-sequence-m1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399683
+    m_Key: goe-minus-choreographic-sequence-m12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134443
+    m_Key: goe-minus-choreographic-sequence-m3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134444
+    m_Key: goe-minus-choreographic-sequence-m4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134445
+    m_Key: goe-minus-choreographic-sequence-m5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134446
+    m_Key: goe-minus-choreographic-sequence-m6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134447
+    m_Key: goe-minus-choreographic-sequence-m7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399684
+    m_Key: goe-minus-choreographic-sequence-m13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134427
+    m_Key: goe-minus-spin-m7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888518
+    m_Key: goe-minus-spin-m16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134435
+    m_Key: goe-minus-step-sequence-m3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134442
+    m_Key: goe-minus-choreographic-sequence-m2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49643864780802
+    m_Key: goe-minus-choreographic-sequence-m8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888519
+    m_Key: goe-minus-choreographic-sequence-m10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888520
+    m_Key: goe-minus-choreographic-sequence-m11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49643864780803
+    m_Key: goe-minus-choreographic-sequence-m9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134400
+    m_Key: goe-minus-jump-m1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134404
+    m_Key: goe-minus-jump-m5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134405
+    m_Key: goe-minus-jump-m6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134430
+    m_Key: goe-minus-spin-m10
+    m_Metadata:
+      m_Items: []
   - m_Id: 39020791656448
     m_Key: goe-plus-jump-p1
     m_Metadata:

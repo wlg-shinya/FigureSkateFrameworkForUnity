@@ -15,9 +15,20 @@ MonoBehaviour:
   data:
     id: StepSequenceM1
     category: StepSequence
-    description: "SP\uFF1A1\u56DE\u8EE2\u3092\u8D85\u3048\u308B\u8868\u5185\u30B8\u30E3\u30F3\u30D7\u304C\u542B\u307E\u308C\u3066\u3044\u308B"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-minus-step-sequence-m1
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     group: 
     minValue: -1
     maxValue: -1
     mark: 
     targetElementIds: []
+  references:
+    version: 2
+    RefIds: []

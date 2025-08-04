@@ -15,9 +15,20 @@ MonoBehaviour:
   data:
     id: SpinM7
     category: Spin
-    description: "\u62D9\u52A3\u306A\uFF0F\u304E\u3053\u3061\u306A\u3044\uFF0C\u7F8E\u3057\u3055\u3092\u640D\u306D\u308B\u59FF\u52E2"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-minus-spin-m7
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     group: 
     minValue: -1
     maxValue: -3
     mark: 
     targetElementIds: []
+  references:
+    version: 2
+    RefIds: []

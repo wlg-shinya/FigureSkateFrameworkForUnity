@@ -15,9 +15,20 @@ MonoBehaviour:
   data:
     id: ChoreographicSequenceM3
     category: ChoreographicSequence
-    description: "\u30B3\u30EC\u30AA\u30B0\u30E9\u30D5\u30A3\u30C3\u30AF\u30E0\u30FC\u30D6\u30E1\u30F3\u30C8\u306E\u3064\u306A\u304C\u308A\u304C\u60AA\u3044"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-minus-choreographic-sequence-m3
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     group: 
     minValue: -2
     maxValue: -3
     mark: 
     targetElementIds: []
+  references:
+    version: 2
+    RefIds: []

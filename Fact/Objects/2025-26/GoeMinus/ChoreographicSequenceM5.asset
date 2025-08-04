@@ -15,9 +15,20 @@ MonoBehaviour:
   data:
     id: ChoreographicSequenceM5
     category: ChoreographicSequence
-    description: "\u3064\u307E\u305A\u304D"
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-minus-choreographic-sequence-m5
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     group: 
     minValue: -1
     maxValue: -3
     mark: 
     targetElementIds: []
+  references:
+    version: 2
+    RefIds: []

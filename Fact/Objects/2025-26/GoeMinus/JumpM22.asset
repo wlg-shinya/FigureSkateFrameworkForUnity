@@ -15,9 +15,20 @@ MonoBehaviour:
   data:
     id: JumpM22
     category: Jump
-    description: "\u9577\u3044\u69CB\u3048"
-    group: 
-    minValue: -1
-    maxValue: -3
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-minus-jump-m22
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    group: Rotate
+    minValue: -3
+    maxValue: -4
     mark: 
     targetElementIds: []
+  references:
+    version: 2
+    RefIds: []

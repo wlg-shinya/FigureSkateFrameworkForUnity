@@ -1122,6 +1122,270 @@ MonoBehaviour:
     m_Localized: ChoreographicSequenceP8
     m_Metadata:
       m_Items: []
+  - m_Id: 47988268134400
+    m_Localized: JumpM1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134401
+    m_Localized: JumpM2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134402
+    m_Localized: JumpM3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134403
+    m_Localized: JumpM4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134404
+    m_Localized: JumpM5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134405
+    m_Localized: JumpM6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134406
+    m_Localized: JumpM7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134407
+    m_Localized: JumpM8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134408
+    m_Localized: JumpM9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134409
+    m_Localized: JumpM10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134410
+    m_Localized: JumpM11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134411
+    m_Localized: JumpM12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134412
+    m_Localized: JumpM13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134413
+    m_Localized: JumpM14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134414
+    m_Localized: JumpM15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134415
+    m_Localized: JumpM16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134416
+    m_Localized: JumpM17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134417
+    m_Localized: JumpM18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134418
+    m_Localized: JumpM19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134419
+    m_Localized: JumpM20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134420
+    m_Localized: JumpM21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134421
+    m_Localized: SpinM1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134422
+    m_Localized: SpinM2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134423
+    m_Localized: SpinM3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134424
+    m_Localized: SpinM4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134425
+    m_Localized: SpinM5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134426
+    m_Localized: SpinM6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134427
+    m_Localized: SpinM7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134428
+    m_Localized: SpinM8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134429
+    m_Localized: SpinM9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134430
+    m_Localized: SpinM10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134431
+    m_Localized: SpinM11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134432
+    m_Localized: SpinM12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134433
+    m_Localized: StepSequenceM1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134434
+    m_Localized: StepSequenceM2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134435
+    m_Localized: StepSequenceM3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134436
+    m_Localized: StepSequenceM4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134437
+    m_Localized: StepSequenceM5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134438
+    m_Localized: StepSequenceM6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134439
+    m_Localized: StepSequenceM7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134440
+    m_Localized: StepSequenceM8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134441
+    m_Localized: ChoreographicSequenceM1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134442
+    m_Localized: ChoreographicSequenceM2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134443
+    m_Localized: ChoreographicSequenceM3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134444
+    m_Localized: ChoreographicSequenceM4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134445
+    m_Localized: ChoreographicSequenceM5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134446
+    m_Localized: ChoreographicSequenceM6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47988268134447
+    m_Localized: ChoreographicSequenceM7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49643864780800
+    m_Localized: JumpM22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49643864780801
+    m_Localized: SpinM13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49643864780802
+    m_Localized: ChoreographicSequenceM8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49643864780803
+    m_Localized: ChoreographicSequenceM9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888512
+    m_Localized: JumpM23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888513
+    m_Localized: JumpM24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888514
+    m_Localized: JumpM25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888515
+    m_Localized: JumpM26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888516
+    m_Localized: SpinM14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888517
+    m_Localized: SpinM15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888518
+    m_Localized: SpinM16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888519
+    m_Localized: ChoreographicSequenceM10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49764253888520
+    m_Localized: ChoreographicSequenceM11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399680
+    m_Localized: SpinM17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399681
+    m_Localized: SpinM18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399682
+    m_Localized: StepSequenceM9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399683
+    m_Localized: ChoreographicSequenceM12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49877571399684
+    m_Localized: ChoreographicSequenceM13
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

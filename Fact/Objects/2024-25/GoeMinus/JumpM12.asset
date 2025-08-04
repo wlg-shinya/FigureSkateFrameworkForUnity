@@ -15,17 +15,44 @@ MonoBehaviour:
   data:
     id: JumpM12
     category: Jump
-    description: "F/Lz\u306E\u8E0F\u307F\u5207\u308A\u30A8\u30C3\u30B8\u304C\u4E0D\u660E\u78BA"
-    group: Edge
-    minValue: -1
-    maxValue: -1
-    mark: 
+    description:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: goe-minus-jump-m12
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    group: Rotate
+    minValue: -2
+    maxValue: -3
+    mark: <
     targetElementIds:
-    - F
+    - 1T
+    - 1S
+    - 1Lo
+    - 1F
+    - 1Lz
+    - 1A
+    - 2T
+    - 2S
+    - 2Lo
     - 2F
-    - 3F
-    - 4F
-    - Lz
     - 2Lz
+    - 2A
+    - 3T
+    - 3S
+    - 3Lo
+    - 3F
     - 3Lz
+    - 3A
+    - 4T
+    - 4S
+    - 4Lo
+    - 4F
     - 4Lz
+    - 4A
+  references:
+    version: 2
+    RefIds: []
