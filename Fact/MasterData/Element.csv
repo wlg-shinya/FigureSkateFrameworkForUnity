@@ -1,137 +1,137 @@
 id,name,goeCategory,upgradeId,downgradeId
-1T,トウループ,Jump,2T,
-1S,サルコウ,Jump,2S,
-1Lo,ループ,Jump,2Lo,
-1Eu,オイラー,Jump,,
-1F,フリップ,Jump,2F,
-1Lz,ルッツ,Jump,2Lz,
-1A,アクセル,Jump,2A,
-2T,ダブルトウループ,Jump,3T,1T
-2S,ダブルサルコウ,Jump,3S,1S
-2Lo,ダブルループ,Jump,3Lo,1Lo
-2F,ダブルフリップ,Jump,3F,1F
-2Lz,ダブルルッツ,Jump,3Lz,1Lz
-2A,ダブルアクセル,Jump,3А,1A
-3T,トリプルトウループ,Jump,4T,2T
-3S,トリプルサルコウ,Jump,4S,2S
-3Lo,トリプルループ,Jump,4Lo,2Lo
-3F,トリプルフリップ,Jump,4F,2F
-3Lz,トリプルルッツ,Jump,4Lz,2Lz
-3A,トリプルアクセル,Jump,4A,2A
-4T,クワドラプルトウループ,Jump,5T,3T
-4S,クワドラプルサルコウ,Jump,5S,3S
-4Lo,クワドラプルループ,Jump,5F,3Lo
-4F,クワドラプルフリップ,Jump,5F,3F
-4Lz,クワドラプルルッツ,Jump,5Lz,3Lz
-4A,クワドラプルアクセル,Jump,,3A
-5T,クイントトウループ,Jump,,4T
-5S,クイントサルコウ,Jump,,4S
-5Lo,クイントループ,Jump,,4Lo
-5F,クイントフリップ,Jump,,4F
-5Lz,クイントルッツ,Jump,,4Lz
-USpB,アップライトスピン ベース,Spin,USp1,
-USp1,アップライトスピン Lv.1,Spin,USp2,USpB
-USp2,アップライトスピン Lv.2,Spin,USp3,USp1
-USp3,アップライトスピン Lv.3,Spin,USp4,USp2
-USp4,アップライトスピン Lv.4,Spin,,USp3
-LSpB,レイバックスピン ベース,Spin,LSp1,
-LSp1,レイバックスピン Lv.1,Spin,LSp2,LSpB
-LSp2,レイバックスピン Lv.2,Spin,LSp3,LSp1
-LSp3,レイバックスピン Lv.3,Spin,LSp4,LSp2
-LSp4,レイバックスピン Lv.4,Spin,,LSp3
-CSpB,キャメルスピン ベース,Spin,CSp1,
-CSp1,キャメルスピン Lv.1,Spin,CSp2,CSpB
-CSp2,キャメルスピン Lv.2,Spin,CSp3,CSp1
-CSp3,キャメルスピン Lv.3,Spin,CSp4,CSp2
-CSp4,キャメルスピン Lv.4,Spin,,CSp3
-SSpB,シットスピン ベース,Spin,SSp1,
-SSp1,シットスピン Lv.1,Spin,SSp2,SSpB
-SSp2,シットスピン Lv.2,Spin,SSp3,SSp1
-SSp3,シットスピン Lv.3,Spin,SSp4,SSp2
-SSp4,シットスピン Lv.4,Spin,,SSp3
-FUSpB,フライングアップライトスピン ベース,Spin,FUSp1,
-FUSp1,フライングアップライトスピン Lv.1,Spin,FUSp2,FUSpB
-FUSp2,フライングアップライトスピン Lv.2,Spin,FUSp3,FUSp1
-FUSp3,フライングアップライトスピン Lv.3,Spin,FUSp4,FUSp2
-FUSp4,フライングアップライトスピン Lv.4,Spin,,FUSp3
-FLSpB,フライングレイバックスピン ベース,Spin,FLSp1,
-FLSp1,フライングレイバックスピン Lv.1,Spin,FLSp2,FLSpB
-FLSp2,フライングレイバックスピン Lv.2,Spin,FLSp3,FLSp1
-FLSp3,フライングレイバックスピン Lv.3,Spin,FLSp4,FLSp2
-FLSp4,フライングレイバックスピン Lv.4,Spin,,FLSp3
-FCSpB,フライングキャメルスピン ベース,Spin,FCSp1,
-FCSp1,フライングキャメルスピン Lv.1,Spin,FCSp2,FCSpB
-FCSp2,フライングキャメルスピン Lv.2,Spin,FCSp3,FCSp1
-FCSp3,フライングキャメルスピン Lv.3,Spin,FCSp4,FCSp2
-FCSp4,フライングキャメルスピン Lv.4,Spin,,FCSp3
-FSSpB,フライングシットスピン ベース,Spin,FSSp1,
-FSSp1,フライングシットスピン Lv.1,Spin,FSSp2,FSSpB
-FSSp2,フライングシットスピン Lv.2,Spin,FSSp3,FSSp1
-FSSp3,フライングシットスピン Lv.3,Spin,FSSp4,FSSp2
-FSSp4,フライングシットスピン Lv.4,Spin,,FSSp3
-CUSpB,足換えアップライトスピン ベース,Spin,CUSp1,
-CUSp1,足換えアップライトスピン Lv.1,Spin,CUSp2,CUSpB
-CUSp2,足換えアップライトスピン Lv.2,Spin,CUSp3,CUSp1
-CUSp3,足換えアップライトスピン Lv.3,Spin,CUSp4,CUSp2
-CUSp4,足換えアップライトスピン Lv.4,Spin,,CUSp3
-FCUSpB,フライング足換えアップライトスピン ベース,Spin,FCUSp1,
-FCUSp1,フライング足換えアップライトスピン Lv.1,Spin,FCUSp2,FCUSpB
-FCUSp2,フライング足換えアップライトスピン Lv.2,Spin,FCUSp3,FCUSp1
-FCUSp3,フライング足換えアップライトスピン Lv.3,Spin,FCUSp4,FCUSp2
-FCUSp4,フライング足換えアップライトスピン Lv.4,Spin,,FCUSp3
-CLSpB,足換えレイバックスピン ベース,Spin,CLSp1,
-CLSp1,足換えレイバックスピン Lv.1,Spin,CLSp2,CLSpB
-CLSp2,足換えレイバックスピン Lv.2,Spin,CLSp3,CLSp1
-CLSp3,足換えレイバックスピン Lv.3,Spin,CLSp4,CLSp2
-CLSp4,足換えレイバックスピン Lv.4,Spin,,CLSp3
-FCLSpB,フライング足換えレイバックスピン ベース,Spin,FCLSp1,
-FCLSp1,フライング足換えレイバックスピン Lv.1,Spin,FCLSp2,FCLSpB
-FCLSp2,フライング足換えレイバックスピン Lv.2,Spin,FCLSp3,FCLSp1
-FCLSp3,フライング足換えレイバックスピン Lv.3,Spin,FCLSp4,FCLSp2
-FCLSp4,フライング足換えレイバックスピン Lv.4,Spin,,FCLSp3
-CCSpB,足換えキャメルスピン ベース,Spin,CCSp1,
-CCSp1,足換えキャメルスピン Lv.1,Spin,CCSp2,CCSpB
-CCSp2,足換えキャメルスピン Lv.2,Spin,CCSp3,CCSp1
-CCSp3,足換えキャメルスピン Lv.3,Spin,CCSp4,CCSp2
-CCSp4,足換えキャメルスピン Lv.4,Spin,,CCSp3
-FCCSpB,フライング足換えキャメルスピン ベース,Spin,FCCSp1,
-FCCSp1,フライング足換えキャメルスピン Lv.1,Spin,FCCSp2,FCCSpB
-FCCSp2,フライング足換えキャメルスピン Lv.2,Spin,FCCSp3,FCCSp1
-FCCSp3,フライング足換えキャメルスピン Lv.3,Spin,FCCSp4,FCCSp2
-FCCSp4,フライング足換えキャメルスピン Lv.4,Spin,,FCCSp3
-CSSpB,足換えシットスピン ベース,Spin,CSSp1,
-CSSp1,足換えシットスピン Lv.1,Spin,CSSp2,CSSpB
-CSSp2,足換えシットスピン Lv.2,Spin,CSSp3,CSSp1
-CSSp3,足換えシットスピン Lv.3,Spin,CSSp4,CSSp2
-CSSp4,足換えシットスピン Lv.4,Spin,,CSSp3
-FCSSpB,フライング足換えシットスピン ベース,Spin,FCSSp1,
-FCSSp1,フライング足換えシットスピン Lv.1,Spin,FCSSp2,FCSSpB
-FCSSp2,フライング足換えシットスピン Lv.2,Spin,FCSSp3,FCSSp1
-FCSSp3,フライング足換えシットスピン Lv.3,Spin,FCSSp4,FCSSp2
-FCSSp4,フライング足換えシットスピン Lv.4,Spin,,FCSSp3
-CoSpB,コンビネーションスピン ベース,Spin,CoSp1,
-CoSp1,コンビネーションスピン Lv.1,Spin,CoSp2,CoSpB
-CoSp2,コンビネーションスピン Lv.2,Spin,CoSp3,CoSp1
-CoSp3,コンビネーションスピン Lv.3,Spin,CoSp4,CoSp2
-CoSp4,コンビネーションスピン Lv.4,Spin,,CoSp3
-FCoSpB,フライングコンビネーションスピン ベース,Spin,FCoSp1,
-FCoSp1,フライングコンビネーションスピン Lv.1,Spin,FCoSp2,FCoSpB
-FCoSp2,フライングコンビネーションスピン Lv.2,Spin,FCoSp3,FCoSp1
-FCoSp3,フライングコンビネーションスピン Lv.3,Spin,FCoSp4,FCoSp2
-FCoSp4,フライングコンビネーションスピン Lv.4,Spin,,FCoSp3
-CCoSpB,足換えコンビネーションスピン ベース,Spin,CCoSp1,
-CCoSp1,足換えコンビネーションスピン Lv.1,Spin,CCoSp2,CCoSpB
-CCoSp2,足換えコンビネーションスピン Lv.2,Spin,CCoSp3,CCoSp1
-CCoSp3,足換えコンビネーションスピン Lv.3,Spin,CCoSp4,CCoSp2
-CCoSp4,足換えコンビネーションスピン Lv.4,Spin,,CCoSp3
-FCCoSpB,フライング足換えコンビネーションスピン ベース,Spin,FCCoSp1,
-FCCoSp1,フライング足換えコンビネーションスピン Lv.1,Spin,FCCoSp2,FCCoSpB
-FCCoSp2,フライング足換えコンビネーションスピン Lv.2,Spin,FCCoSp3,FCCoSp1
-FCCoSp3,フライング足換えコンビネーションスピン Lv.3,Spin,FCCoSp4,FCCoSp2
-FCCoSp4,フライング足換えコンビネーションスピン Lv.4,Spin,,FCCoSp3
-StSqB,ステップ・シークェンス ベース,StepSequence,StSq1,
-StSq1,ステップ・シークェンス Lv.1,StepSequence,StSq2,StSqB
-StSq2,ステップ・シークェンス Lv.2,StepSequence,StSq3,StSq1
-StSq3,ステップ・シークェンス Lv.3,StepSequence,StSq4,StSq2
-StSq4,ステップ・シークェンス Lv.4,StepSequence,,StSq3
-ChSq1,コレオグラフィック・シークェンス,ChoreographicSequence,,
+1T,element-1t,Jump,2T,
+1S,element-1s,Jump,2S,
+1Lo,element-1lo,Jump,2Lo,
+1Eu,element-1eu,Jump,,
+1F,element-1f,Jump,2F,
+1Lz,element-1lz,Jump,2Lz,
+1A,element-1a,Jump,2A,
+2T,element-2t,Jump,3T,1T
+2S,element-2s,Jump,3S,1S
+2Lo,element-2lo,Jump,3Lo,1Lo
+2F,element-2f,Jump,3F,1F
+2Lz,element-2lz,Jump,3Lz,1Lz
+2A,element-2a,Jump,3А,1A
+3T,element-3t,Jump,4T,2T
+3S,element-3s,Jump,4S,2S
+3Lo,element-3lo,Jump,4Lo,2Lo
+3F,element-3f,Jump,4F,2F
+3Lz,element-3lz,Jump,4Lz,2Lz
+3A,element-3a,Jump,4A,2A
+4T,element-4t,Jump,5T,3T
+4S,element-4s,Jump,5S,3S
+4Lo,element-4lo,Jump,5F,3Lo
+4F,element-4f,Jump,5F,3F
+4Lz,element-4lz,Jump,5Lz,3Lz
+4A,element-4a,Jump,,3A
+5T,element-5t,Jump,,4T
+5S,element-5s,Jump,,4S
+5Lo,element-5lo,Jump,,4Lo
+5F,element-5f,Jump,,4F
+5Lz,element-5lz,Jump,,4Lz
+USpB,element-uspb,Spin,USp1,
+USp1,element-usp1,Spin,USp2,USpB
+USp2,element-usp2,Spin,USp3,USp1
+USp3,element-usp3,Spin,USp4,USp2
+USp4,element-usp4,Spin,,USp3
+LSpB,element-lspb,Spin,LSp1,
+LSp1,element-lsp1,Spin,LSp2,LSpB
+LSp2,element-lsp2,Spin,LSp3,LSp1
+LSp3,element-lsp3,Spin,LSp4,LSp2
+LSp4,element-lsp4,Spin,,LSp3
+CSpB,element-cspb,Spin,CSp1,
+CSp1,element-csp1,Spin,CSp2,CSpB
+CSp2,element-csp2,Spin,CSp3,CSp1
+CSp3,element-csp3,Spin,CSp4,CSp2
+CSp4,element-csp4,Spin,,CSp3
+SSpB,element-sspb,Spin,SSp1,
+SSp1,element-ssp1,Spin,SSp2,SSpB
+SSp2,element-ssp2,Spin,SSp3,SSp1
+SSp3,element-ssp3,Spin,SSp4,SSp2
+SSp4,element-ssp4,Spin,,SSp3
+FUSpB,element-fuspb,Spin,FUSp1,
+FUSp1,element-fusp1,Spin,FUSp2,FUSpB
+FUSp2,element-fusp2,Spin,FUSp3,FUSp1
+FUSp3,element-fusp3,Spin,FUSp4,FUSp2
+FUSp4,element-fusp4,Spin,,FUSp3
+FLSpB,element-flspb,Spin,FLSp1,
+FLSp1,element-flsp1,Spin,FLSp2,FLSpB
+FLSp2,element-flsp2,Spin,FLSp3,FLSp1
+FLSp3,element-flsp3,Spin,FLSp4,FLSp2
+FLSp4,element-flsp4,Spin,,FLSp3
+FCSpB,element-fcspb,Spin,FCSp1,
+FCSp1,element-fcsp1,Spin,FCSp2,FCSpB
+FCSp2,element-fcsp2,Spin,FCSp3,FCSp1
+FCSp3,element-fcsp3,Spin,FCSp4,FCSp2
+FCSp4,element-fcsp4,Spin,,FCSp3
+FSSpB,element-fsspb,Spin,FSSp1,
+FSSp1,element-fssp1,Spin,FSSp2,FSSpB
+FSSp2,element-fssp2,Spin,FSSp3,FSSp1
+FSSp3,element-fssp3,Spin,FSSp4,FSSp2
+FSSp4,element-fssp4,Spin,,FSSp3
+CUSpB,element-cuspb,Spin,CUSp1,
+CUSp1,element-cusp1,Spin,CUSp2,CUSpB
+CUSp2,element-cusp2,Spin,CUSp3,CUSp1
+CUSp3,element-cusp3,Spin,CUSp4,CUSp2
+CUSp4,element-cusp4,Spin,,CUSp3
+FCUSpB,element-fcuspb,Spin,FCUSp1,
+FCUSp1,element-fcusp1,Spin,FCUSp2,FCUSpB
+FCUSp2,element-fcusp2,Spin,FCUSp3,FCUSp1
+FCUSp3,element-fcusp3,Spin,FCUSp4,FCUSp2
+FCUSp4,element-fcusp4,Spin,,FCUSp3
+CLSpB,element-clspb,Spin,CLSp1,
+CLSp1,element-clsp1,Spin,CLSp2,CLSpB
+CLSp2,element-clsp2,Spin,CLSp3,CLSp1
+CLSp3,element-clsp3,Spin,CLSp4,CLSp2
+CLSp4,element-clsp4,Spin,,CLSp3
+FCLSpB,element-fclspb,Spin,FCLSp1,
+FCLSp1,element-fclsp1,Spin,FCLSp2,FCLSpB
+FCLSp2,element-fclsp2,Spin,FCLSp3,FCLSp1
+FCLSp3,element-fclsp3,Spin,FCLSp4,FCLSp2
+FCLSp4,element-fclsp4,Spin,,FCLSp3
+CCSpB,element-ccspb,Spin,CCSp1,
+CCSp1,element-ccsp1,Spin,CCSp2,CCSpB
+CCSp2,element-ccsp2,Spin,CCSp3,CCSp1
+CCSp3,element-ccsp3,Spin,CCSp4,CCSp2
+CCSp4,element-ccsp4,Spin,,CCSp3
+FCCSpB,element-fccspb,Spin,FCCSp1,
+FCCSp1,element-fccsp1,Spin,FCCSp2,FCCSpB
+FCCSp2,element-fccsp2,Spin,FCCSp3,FCCSp1
+FCCSp3,element-fccsp3,Spin,FCCSp4,FCCSp2
+FCCSp4,element-fccsp4,Spin,,FCCSp3
+CSSpB,element-csspb,Spin,CSSp1,
+CSSp1,element-cssp1,Spin,CSSp2,CSSpB
+CSSp2,element-cssp2,Spin,CSSp3,CSSp1
+CSSp3,element-cssp3,Spin,CSSp4,CSSp2
+CSSp4,element-cssp4,Spin,,CSSp3
+FCSSpB,element-fcsspb,Spin,FCSSp1,
+FCSSp1,element-fcssp1,Spin,FCSSp2,FCSSpB
+FCSSp2,element-fcssp2,Spin,FCSSp3,FCSSp1
+FCSSp3,element-fcssp3,Spin,FCSSp4,FCSSp2
+FCSSp4,element-fcssp4,Spin,,FCSSp3
+CoSpB,element-cospb,Spin,CoSp1,
+CoSp1,element-cosp1,Spin,CoSp2,CoSpB
+CoSp2,element-cosp2,Spin,CoSp3,CoSp1
+CoSp3,element-cosp3,Spin,CoSp4,CoSp2
+CoSp4,element-cosp4,Spin,,CoSp3
+FCoSpB,element-fcospb,Spin,FCoSp1,
+FCoSp1,element-fcosp1,Spin,FCoSp2,FCoSpB
+FCoSp2,element-fcosp2,Spin,FCoSp3,FCoSp1
+FCoSp3,element-fcosp3,Spin,FCoSp4,FCoSp2
+FCoSp4,element-fcosp4,Spin,,FCoSp3
+CCoSpB,element-ccospb,Spin,CCoSp1,
+CCoSp1,element-ccosp1,Spin,CCoSp2,CCoSpB
+CCoSp2,element-ccosp2,Spin,CCoSp3,CCoSp1
+CCoSp3,element-ccosp3,Spin,CCoSp4,CCoSp2
+CCoSp4,element-ccosp4,Spin,,CCoSp3
+FCCoSpB,element-fccospb,Spin,FCCoSp1,
+FCCoSp1,element-fccosp1,Spin,FCCoSp2,FCCoSpB
+FCCoSp2,element-fccosp2,Spin,FCCoSp3,FCCoSp1
+FCCoSp3,element-fccosp3,Spin,FCCoSp4,FCCoSp2
+FCCoSp4,element-fccosp4,Spin,,FCCoSp3
+StSqB,element-stsqb,StepSequence,StSq1,
+StSq1,element-stsq1,StepSequence,StSq2,StSqB
+StSq2,element-stsq2,StepSequence,StSq3,StSq1
+StSq3,element-stsq3,StepSequence,StSq4,StSq2
+StSq4,element-stsq4,StepSequence,,StSq3
+ChSq1,element-chsq1,ChoreographicSequence,,

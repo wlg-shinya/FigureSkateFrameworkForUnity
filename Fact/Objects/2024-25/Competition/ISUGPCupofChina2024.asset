@@ -16,7 +16,15 @@ MonoBehaviour:
     id: ISUGPCupofChina2024
     regionId: Chongqing
     countryId: CHN
-    name: "\u30B7\u30CB\u30A2\u30B0\u30E9\u30F3\u30D7\u30EA \u4E2D\u56FD"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-isugp-cupof-china2024
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 1
     startDay:
       year: 2024
@@ -29,3 +37,6 @@ MonoBehaviour:
     eventIds:
     - SeniorMenSingle
     - SeniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

@@ -16,7 +16,15 @@ MonoBehaviour:
     id: ISUJGPIstanbul2024
     regionId: Ankara
     countryId: TUR
-    name: "\u30B8\u30E5\u30CB\u30A2\u30B0\u30E9\u30F3\u30D7\u30EA \u30C8\u30EB\u30B3"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-isujgp-istanbul2024
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 1
     startDay:
       year: 2024
@@ -29,3 +37,6 @@ MonoBehaviour:
     eventIds:
     - JuniorMenSingle
     - JuniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

@@ -16,7 +16,15 @@ MonoBehaviour:
     id: YouthOlympicGames2024
     regionId: Gangwon
     countryId: KOR
-    name: "\u30E6\u30FC\u30B9\u30AA\u30EA\u30F3\u30D4\u30C3\u30AF"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-youth-olympic-games2024
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 1
     startDay:
       year: 2024
@@ -29,3 +37,6 @@ MonoBehaviour:
     eventIds:
     - JuniorMenSingle
     - JuniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

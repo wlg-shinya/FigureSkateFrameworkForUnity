@@ -16,7 +16,15 @@ MonoBehaviour:
     id: NationalJunior
     regionId: Shiga
     countryId: JPN
-    name: "\u5168\u65E5\u672C\u30B8\u30E5\u30CB\u30A2\u9078\u624B\u6A29\u5927\u4F1A"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-national-junior
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 0
     startDay:
       year: 2023
@@ -29,3 +37,6 @@ MonoBehaviour:
     eventIds:
     - JuniorMenSingle
     - JuniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

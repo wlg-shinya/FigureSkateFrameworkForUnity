@@ -16,7 +16,15 @@ MonoBehaviour:
     id: TokyoRegional
     regionId: Tokyo
     countryId: JPN
-    name: "\u6771\u4EAC\u9078\u624B\u6A29\u5927\u4F1A"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-tokyo-regional
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 0
     startDay:
       year: 2022
@@ -35,3 +43,6 @@ MonoBehaviour:
     - NoviceAWomenSingle
     - NoviceBMenSingle
     - NoviceBWomenSingle
+  references:
+    version: 2
+    RefIds: []

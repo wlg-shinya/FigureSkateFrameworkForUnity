@@ -16,7 +16,15 @@ MonoBehaviour:
     id: ISUGrandPrixAndJuniorGrandPrixFinal2022-23
     regionId: Torino
     countryId: ITA
-    name: "\u30B7\u30CB\u30A2\u30B0\u30E9\u30F3\u30D7\u30EA \u30A4\u30BF\u30EA\u30A2"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-isu-grand-prix-and-junior-grand-prix-final2022-23
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 1
     startDay:
       year: 2022
@@ -31,3 +39,6 @@ MonoBehaviour:
     - SeniorWomenSingle
     - JuniorMenSingle
     - JuniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

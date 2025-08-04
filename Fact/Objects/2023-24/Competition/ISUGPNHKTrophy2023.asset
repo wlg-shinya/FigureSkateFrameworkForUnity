@@ -16,7 +16,15 @@ MonoBehaviour:
     id: ISUGPNHKTrophy2023
     regionId: Osaka
     countryId: JPN
-    name: "NHK\u676F"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-isugpnhk-trophy2023
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 1
     startDay:
       year: 2023
@@ -29,3 +37,6 @@ MonoBehaviour:
     eventIds:
     - SeniorMenSingle
     - SeniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

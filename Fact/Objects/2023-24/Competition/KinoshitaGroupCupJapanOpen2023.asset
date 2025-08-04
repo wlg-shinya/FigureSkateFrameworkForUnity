@@ -16,7 +16,15 @@ MonoBehaviour:
     id: KinoshitaGroupCupJapanOpen2023
     regionId: Saitama
     countryId: JPN
-    name: "\u30B8\u30E3\u30D1\u30F3\u30AA\u30FC\u30D7\u30F3"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-kinoshita-group-cup-japan-open2023
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 1
     startDay:
       year: 2023
@@ -29,3 +37,6 @@ MonoBehaviour:
     eventIds:
     - SeniorMenSingle
     - SeniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

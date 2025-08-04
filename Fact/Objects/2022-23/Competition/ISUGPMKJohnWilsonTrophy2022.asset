@@ -16,7 +16,15 @@ MonoBehaviour:
     id: ISUGPMKJohnWilsonTrophy2022
     regionId: Sheffield
     countryId: GBR
-    name: "\u30B7\u30CB\u30A2\u30B0\u30E9\u30F3\u30D7\u30EA \u30A4\u30AE\u30EA\u30B9"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-isugpmk-john-wilson-trophy2022
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 1
     startDay:
       year: 2022
@@ -29,3 +37,6 @@ MonoBehaviour:
     eventIds:
     - SeniorMenSingle
     - SeniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

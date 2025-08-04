@@ -16,7 +16,15 @@ MonoBehaviour:
     id: ISUJGPOsaka2023
     regionId: Osaka
     countryId: JPN
-    name: "\u30B8\u30E5\u30CB\u30A2\u30B0\u30E9\u30F3\u30D7\u30EA \u5927\u962A"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-isujgp-osaka2023
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 1
     startDay:
       year: 2023
@@ -29,3 +37,6 @@ MonoBehaviour:
     eventIds:
     - JuniorMenSingle
     - JuniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

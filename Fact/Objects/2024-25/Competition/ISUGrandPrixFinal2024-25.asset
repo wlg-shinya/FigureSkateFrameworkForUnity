@@ -16,7 +16,15 @@ MonoBehaviour:
     id: ISUGrandPrixFinal2024-25
     regionId: Grenoble
     countryId: FRA
-    name: "\u30B0\u30E9\u30F3\u30D7\u30EA\u30D5\u30A1\u30A4\u30CA\u30EB"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-isu-grand-prix-final2024-25
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 1
     startDay:
       year: 2024
@@ -31,3 +39,6 @@ MonoBehaviour:
     - SeniorWomenSingle
     - JuniorMenSingle
     - JuniorWomenSingle
+  references:
+    version: 2
+    RefIds: []

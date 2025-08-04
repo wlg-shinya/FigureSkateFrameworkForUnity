@@ -1,32 +1,32 @@
 id,regionId,countryId,name,isInternational,startDay,endDay,eventIds
-ISUJGPBangkok2023,Bangkok,THA,ジュニアグランプリ タイ,true,2023/8/23,2023/8/26,JuniorMenSingle/JuniorWomenSingle
-ISUJGPLinz2023,Linz,AUT,ジュニアグランプリ オーストリア,true,2023/8/30,2023/9/2,JuniorMenSingle/JuniorWomenSingle
-ISUJGPIstanbul2023,Istanbul,TUR,ジュニアグランプリ トルコ,true,2023/9/6,2023/9/9,JuniorMenSingle/JuniorWomenSingle
-ISUJGPOsaka2023,Osaka,JPN,ジュニアグランプリ 日本,true,2023/9/13,2023/9/16,JuniorMenSingle/JuniorWomenSingle
-ISUJGPBudapest2023,Budapest,HUN,ジュニアグランプリ ハンガリー,true,2023/9/20,2023/9/23,JuniorMenSingle/JuniorWomenSingle
-ISUJGPPGESolidarityCup2023,Gdansk,POL,ジュニアグランプリ ポーランド,true,2023/9/27,2023/9/30,JuniorMenSingle/JuniorWomenSingle
-ISUJGPYerevan2023,Yerevan,ARM,ジュニアグランプリ アルメニア,true,2023/10/4,2023/10/7,JuniorMenSingle/JuniorWomenSingle
-ISUGPSkateAmerica2023,Allen,USA,シニアグランプリ アメリカ,true,2023/10/20,2023/10/22,SeniorMenSingle/SeniorWomenSingle
-ISUGPSkateCanadaInternational2023,Vancouver,CAN,シニアグランプリ カナダ,true,2023/10/27,2023/10/29,SeniorMenSingle/SeniorWomenSingle
-ISUGPGrandPrixdeFrance2023,Angers,FRA,シニアグランプリ フランス,true,2023/11/3,2023/11/5,SeniorMenSingle/SeniorWomenSingle
-ISUGPCupofChina2023,Chongqing,CHN,シニアグランプリ 中国,true,2023/11/10,2023/11/12,SeniorMenSingle/SeniorWomenSingle
-ISUGPGrandPrixEspoo2023,Espoo,FIN,シニアグランプリ フィンランド,true,2023/11/17,2023/11/19,SeniorMenSingle/SeniorWomenSingle
-ISUGPNHKTrophy2023,Osaka,JPN,NHK杯,true,2023/11/24,2023/11/26,SeniorMenSingle/SeniorWomenSingle
-ISUGrandPrixAndJuniorGrandPrixFinal2023-24,Beijing,CHN,グランプリファイナル,true,2023/12/7,2023/12/10,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
-ISUEuropeanChampionships2024,Kaunas,LTU,欧州フィギュアスケート選手権,true,2024/1/8,2024/1/14,SeniorMenSingle/SeniorWomenSingle
-YouthOlympicGames2024,Gangwon,KOR,ユースオリンピック,true,2024/1/19,2024/2/1,JuniorMenSingle/JuniorWomenSingle
-ISUFourContinentsChampionships2024,Shanghai,CHN,四大陸フィギュアスケート選手権,true,2024/1/29,2024/2/4,SeniorMenSingle/SeniorWomenSingle
-ISUWorldJuniorChampionships2024,TaipeiCity,TPE,世界ジュニアフィギュアスケート選手権,true,2024/2/26,2024/3/3,JuniorMenSingle/JuniorWomenSingle
-ISUWorldChampionships2024,Montreal,CAN,世界フィギュアスケート選手権,true,2024/3/18,2024/3/24,SeniorMenSingle/SeniorWomenSingle
-KinoshitaGroupCupJapanOpen2023,Saitama,JPN,ジャパンオープン,true,2023/10/7,2023/10/7,SeniorMenSingle/SeniorWomenSingle
-Tohoku-HokkaidoRegional,Niigata,JPN,東北・北海道選手権大会,false,2023/9/29,2023/10/1,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
-KantoRegional,Kanagawa,JPN,関東選手権大会,false,2023/10/6,2023/10/9,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
-TokyoRegional,Tokyo,JPN,東京選手権大会,false,2023/9/21,2023/9/24,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
-ChubuRegional,Aichi,JPN,中部選手権大会,false,2023/9/22,2023/9/24,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
-KinkiRegional,Shiga,JPN,近畿選手権大会,false,2023/9/28,2023/10/1,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
-Chu-Shikoku-KyushuRegional,Fukuoka,JPN,中四国九州選手権大会,false,2023/10/6,2023/10/9,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
-NationalNovice,Tokyo,JPN,全日本ノービス選手権大会,false,2023/10/20,2023/10/22,NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
-EasternSection,Aomori,JPN,東日本選手権大会,false,2023/11/2,2023/11/5,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
-WesternSection,Hiroshima,JPN,西日本選手権大会,false,2023/10/26,2023/10/29,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
-NationalJunior,Shiga,JPN,全日本ジュニア選手権大会,false,2023/11/17,2023/11/19,JuniorMenSingle/JuniorWomenSingle
-Nationals,Nagano,JPN,全日本選手権大会,false,2023/12/20,2023/12/24,SeniorMenSingle/SeniorWomenSingle
+ISUJGPBangkok2023,Bangkok,THA,competition-isujgp-bangkok2023,true,2023/8/23,2023/8/26,JuniorMenSingle/JuniorWomenSingle
+ISUJGPLinz2023,Linz,AUT,competition-isujgp-linz2023,true,2023/8/30,2023/9/2,JuniorMenSingle/JuniorWomenSingle
+ISUJGPIstanbul2023,Istanbul,TUR,competition-isujgp-istanbul2023,true,2023/9/6,2023/9/9,JuniorMenSingle/JuniorWomenSingle
+ISUJGPOsaka2023,Osaka,JPN,competition-isujgp-osaka2023,true,2023/9/13,2023/9/16,JuniorMenSingle/JuniorWomenSingle
+ISUJGPBudapest2023,Budapest,HUN,competition-isujgp-budapest2023,true,2023/9/20,2023/9/23,JuniorMenSingle/JuniorWomenSingle
+ISUJGPPGESolidarityCup2023,Gdansk,POL,competition-isujgppge-solidarity-cup2023,true,2023/9/27,2023/9/30,JuniorMenSingle/JuniorWomenSingle
+ISUJGPYerevan2023,Yerevan,ARM,competition-isujgp-yerevan2023,true,2023/10/4,2023/10/7,JuniorMenSingle/JuniorWomenSingle
+ISUGPSkateAmerica2023,Allen,USA,competition-isugp-skate-america2023,true,2023/10/20,2023/10/22,SeniorMenSingle/SeniorWomenSingle
+ISUGPSkateCanadaInternational2023,Vancouver,CAN,competition-isugp-skate-canada-international2023,true,2023/10/27,2023/10/29,SeniorMenSingle/SeniorWomenSingle
+ISUGPGrandPrixdeFrance2023,Angers,FRA,competition-isugp-grand-prixde-france2023,true,2023/11/3,2023/11/5,SeniorMenSingle/SeniorWomenSingle
+ISUGPCupofChina2023,Chongqing,CHN,competition-isugp-cupof-china2023,true,2023/11/10,2023/11/12,SeniorMenSingle/SeniorWomenSingle
+ISUGPGrandPrixEspoo2023,Espoo,FIN,competition-isugp-grand-prix-espoo2023,true,2023/11/17,2023/11/19,SeniorMenSingle/SeniorWomenSingle
+ISUGPNHKTrophy2023,Osaka,JPN,competition-isugpnhk-trophy2023,true,2023/11/24,2023/11/26,SeniorMenSingle/SeniorWomenSingle
+ISUGrandPrixAndJuniorGrandPrixFinal2023-24,Beijing,CHN,competition-isu-grand-prix-and-junior-grand-prix-final2023-24,true,2023/12/7,2023/12/10,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
+ISUEuropeanChampionships2024,Kaunas,LTU,competition-isu-european-championships2024,true,2024/1/8,2024/1/14,SeniorMenSingle/SeniorWomenSingle
+YouthOlympicGames2024,Gangwon,KOR,competition-youth-olympic-games2024,true,2024/1/19,2024/2/1,JuniorMenSingle/JuniorWomenSingle
+ISUFourContinentsChampionships2024,Shanghai,CHN,competition-isu-four-continents-championships2024,true,2024/1/29,2024/2/4,SeniorMenSingle/SeniorWomenSingle
+ISUWorldJuniorChampionships2024,TaipeiCity,TPE,competition-isu-world-junior-championships2024,true,2024/2/26,2024/3/3,JuniorMenSingle/JuniorWomenSingle
+ISUWorldChampionships2024,Montreal,CAN,competition-isu-world-championships2024,true,2024/3/18,2024/3/24,SeniorMenSingle/SeniorWomenSingle
+KinoshitaGroupCupJapanOpen2023,Saitama,JPN,competition-kinoshita-group-cup-japan-open2023,true,2023/10/7,2023/10/7,SeniorMenSingle/SeniorWomenSingle
+Tohoku-HokkaidoRegional,Niigata,JPN,competition-tohoku-hokkaido-regional,false,2023/9/29,2023/10/1,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+KantoRegional,Kanagawa,JPN,competition-kanto-regional,false,2023/10/6,2023/10/9,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+TokyoRegional,Tokyo,JPN,competition-tokyo-regional,false,2023/9/21,2023/9/24,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+ChubuRegional,Aichi,JPN,competition-chubu-regional,false,2023/9/22,2023/9/24,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+KinkiRegional,Shiga,JPN,competition-kinki-regional,false,2023/9/28,2023/10/1,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+Chu-Shikoku-KyushuRegional,Fukuoka,JPN,competition-chu-shikoku-kyushu-regional,false,2023/10/6,2023/10/9,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle/NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+NationalNovice,Tokyo,JPN,competition-national-novice,false,2023/10/20,2023/10/22,NoviceAMenSingle/NoviceAWomenSingle/NoviceBMenSingle/NoviceBWomenSingle
+EasternSection,Aomori,JPN,competition-eastern-section,false,2023/11/2,2023/11/5,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
+WesternSection,Hiroshima,JPN,competition-western-section,false,2023/10/26,2023/10/29,SeniorMenSingle/SeniorWomenSingle/JuniorMenSingle/JuniorWomenSingle
+NationalJunior,Shiga,JPN,competition-national-junior,false,2023/11/17,2023/11/19,JuniorMenSingle/JuniorWomenSingle
+Nationals,Nagano,JPN,competition-nationals,false,2023/12/20,2023/12/24,SeniorMenSingle/SeniorWomenSingle

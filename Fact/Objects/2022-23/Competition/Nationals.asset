@@ -16,7 +16,15 @@ MonoBehaviour:
     id: Nationals
     regionId: Osaka
     countryId: JPN
-    name: "\u5168\u65E5\u672C\u9078\u624B\u6A29\u5927\u4F1A"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: competition-nationals
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     isInternational: 0
     startDay:
       year: 2022
@@ -29,3 +37,6 @@ MonoBehaviour:
     eventIds:
     - SeniorMenSingle
     - SeniorWomenSingle
+  references:
+    version: 2
+    RefIds: []
