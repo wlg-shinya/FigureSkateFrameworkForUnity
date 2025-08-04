@@ -6,7 +6,7 @@
 
 ## はじめに
 
-こちらを利用してアプリを作成したいけど機能が足りない！ という方は製作者にEメールにてご連絡ください。2025/6/13の時点、減点項目(Deduction)や2024-25シーズンのGOE上限ルールなど明確に対応できていない要素がありますので、どう利用したいかをすり合わせさせてください
+こちらを利用してアプリを作成したいけど機能が足りない！ という方は製作者にEメールにてご連絡ください。2025/8/4の時点、減点項目(Deduction)や2024-25シーズンのGOE上限ルールなど明確に対応できていない要素がありますので、どう利用したいかをすり合わせさせてください
 
 ## これを使って作られた製品
 - スケット - フィギュアスケートプログラム構成管理アプリ
@@ -16,7 +16,8 @@
 ## 動作環境
 
 - Unity 6 (6000.0.45f1で動作確認してます)
-- [Unity Addressables](https://docs.unity3d.com/Packages/com.unity.addressables@2.2/manual/index.html) (2.4.1 で動作確認してます)
+- [Unity Addressables](https://docs.unity3d.com/Packages/com.unity.addressables@2.4/manual/index.html) (2.4.6 で動作確認してます)
+- [Unity Localization](https://docs.unity3d.com/Packages/com.unity.localization@1.5/manual/index.html) (1.5.5 で動作確認してます)
 
 ## インストール方法
 
