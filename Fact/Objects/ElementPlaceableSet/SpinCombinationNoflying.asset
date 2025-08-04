@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: SpinCombinationNoflying
-    name: "\u30D5\u30E9\u30A4\u30F3\u30B0\u306A\u3057\u30B9\u30D4\u30F3\u30B3\u30F3\u30D3\u30CD\u30FC\u30B7\u30E7\u30F3"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: element-placeable-set-spin-combination-noflying
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     jump: 0
     elementPlaceableIds:
     - SpinCombinationNoflying
+  references:
+    version: 2
+    RefIds: []

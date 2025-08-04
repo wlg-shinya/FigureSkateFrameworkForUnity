@@ -850,6 +850,170 @@ MonoBehaviour:
     m_Localized: ChSq1
     m_Metadata:
       m_Items: []
+  - m_Id: 22994326712320
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712321
+    m_Localized: Jump2Combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712322
+    m_Localized: Jump3Combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712323
+    m_Localized: Jump2A
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712324
+    m_Localized: Jump23Lo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712325
+    m_Localized: Jump23Lz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712326
+    m_Localized: Jump23F
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712327
+    m_Localized: Jump23A
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712328
+    m_Localized: Jump34
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712329
+    m_Localized: Jump3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712330
+    m_Localized: Jump22-23-33Combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712331
+    m_Localized: Jump23-33Combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712332
+    m_Localized: Jump23-33-42-43Combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712333
+    m_Localized: SpinOneposition
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712334
+    m_Localized: SpinOnepositionFlying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712335
+    m_Localized: SpinOnepositionCamelSitLayback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712336
+    m_Localized: SpinOnepositionCamelSitLaybackNoflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712337
+    m_Localized: SpinOnepositionCamelLaybackNoflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712338
+    m_Localized: SpinOnepositionSitLaybackNoflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712339
+    m_Localized: SpinFlying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712340
+    m_Localized: SpinCombination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712341
+    m_Localized: SpinCombinationChangefootNoflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712342
+    m_Localized: SpinCombinationNoflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712343
+    m_Localized: SpinCamelFlying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712344
+    m_Localized: SpinCamelChangefootNoflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712345
+    m_Localized: SpinCamelSitNoflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712346
+    m_Localized: SpinCamelSitChangefootNoflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712347
+    m_Localized: SpinSitFlying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712348
+    m_Localized: SpinSitChangefootNoflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712349
+    m_Localized: StepSequence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712350
+    m_Localized: ChoreographicSequence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711936
+    m_Localized: NoviceBMenSingle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711937
+    m_Localized: NoviceBWomenSingle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711938
+    m_Localized: NoviceAMenSingle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711939
+    m_Localized: NoviceAWomenSingle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711940
+    m_Localized: JuniorMenSingle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711941
+    m_Localized: JuniorWomenSingle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711942
+    m_Localized: SeniorMenSingle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711943
+    m_Localized: SeniorWomenSingle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34568487628800
+    m_Localized: Men
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34568487628801
+    m_Localized: Women
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

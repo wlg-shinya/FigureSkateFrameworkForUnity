@@ -1,9 +1,9 @@
 id,name,classId,sexId,programIds
-NoviceBMenSingle,ノービスB男子シングル,NoviceB,Men,NoviceBMenFreeSkating
-NoviceBWomenSingle,ノービスB女子シングル,NoviceB,Women,NoviceBWomenFreeSkating
-NoviceAMenSingle,ノービスA男子シングル,NoviceA,Men,NoviceAMenFreeSkating
-NoviceAWomenSingle,ノービスA女子シングル,NoviceA,Women,NoviceAWomenFreeSkating
-JuniorMenSingle,ジュニア男子シングル,Junior,Men,JuniorMenShortProgram/JuniorMenFreeSkating
-JuniorWomenSingle,ジュニア女子シングル,Junior,Women,JuniorWomenShortProgram/JuniorWomenFreeSkating
-SeniorMenSingle,シニア男子シングル,Senior,Men,SeniorMenShortProgram/SeniorMenFreeSkating
-SeniorWomenSingle,シニア女子シングル,Senior,Women,SeniorWomenShortProgram/SeniorWomenFreeSkating
+NoviceBMenSingle,event-novice-b-men-single,NoviceB,Men,NoviceBMenFreeSkating
+NoviceBWomenSingle,event-novice-b-women-single,NoviceB,Women,NoviceBWomenFreeSkating
+NoviceAMenSingle,event-novice-a-men-single,NoviceA,Men,NoviceAMenFreeSkating
+NoviceAWomenSingle,event-novice-a-women-single,NoviceA,Women,NoviceAWomenFreeSkating
+JuniorMenSingle,event-junior-men-single,Junior,Men,JuniorMenShortProgram/JuniorMenFreeSkating
+JuniorWomenSingle,event-junior-women-single,Junior,Women,JuniorWomenShortProgram/JuniorWomenFreeSkating
+SeniorMenSingle,event-senior-men-single,Senior,Men,SeniorMenShortProgram/SeniorMenFreeSkating
+SeniorWomenSingle,event-senior-women-single,Senior,Women,SeniorWomenShortProgram/SeniorWomenFreeSkating

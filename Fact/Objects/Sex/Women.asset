@@ -14,4 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: Women
-    name: "\u5973\u5B50"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: sex-women
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

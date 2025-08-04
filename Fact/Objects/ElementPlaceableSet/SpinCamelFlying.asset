@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: SpinCamelFlying
-    name: "\u30D5\u30E9\u30A4\u30F3\u30B0\u30AD\u30E3\u30E1\u30EB\u30B9\u30D4\u30F3"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: element-placeable-set-spin-camel-flying
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     jump: 0
     elementPlaceableIds:
     - SpinCamelFlying
+  references:
+    version: 2
+    RefIds: []

@@ -14,8 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: NoviceAWomenSingle
-    name: "\u30CE\u30FC\u30D3\u30B9A\u5973\u5B50\u30B7\u30F3\u30B0\u30EB"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: event-novice-a-women-single
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     classId: NoviceA
     sexId: Women
     programIds:
     - NoviceAWomenFreeSkating
+  references:
+    version: 2
+    RefIds: []

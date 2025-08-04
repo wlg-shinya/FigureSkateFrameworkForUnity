@@ -15,6 +15,170 @@ MonoBehaviour:
   m_TableCollectionName: FigureSkateFrameworkFact
   m_TableCollectionNameGuidString: 2f310b5a87b5494439685382e4bc2641
   m_Entries:
+  - m_Id: 34568487628800
+    m_Key: sex-men
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34568487628801
+    m_Key: sex-women
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711936
+    m_Key: event-novice-b-men-single
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711937
+    m_Key: event-novice-b-women-single
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711938
+    m_Key: event-novice-a-men-single
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711939
+    m_Key: event-novice-a-women-single
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711940
+    m_Key: event-junior-men-single
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711941
+    m_Key: event-junior-women-single
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711942
+    m_Key: event-senior-men-single
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23471340711943
+    m_Key: event-senior-women-single
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712320
+    m_Key: element-placeable-set-jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712321
+    m_Key: element-placeable-set-jump2-combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712322
+    m_Key: element-placeable-set-jump3-combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712323
+    m_Key: element-placeable-set-jump2a
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712324
+    m_Key: element-placeable-set-jump23lo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712325
+    m_Key: element-placeable-set-jump23lz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712326
+    m_Key: element-placeable-set-jump23f
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712327
+    m_Key: element-placeable-set-jump23a
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712328
+    m_Key: element-placeable-set-jump34
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712329
+    m_Key: element-placeable-set-jump3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712330
+    m_Key: element-placeable-set-jump22-23-33-combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712331
+    m_Key: element-placeable-set-jump23-33-combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712332
+    m_Key: element-placeable-set-jump23-33-42-43-combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712333
+    m_Key: element-placeable-set-spin-oneposition
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712334
+    m_Key: element-placeable-set-spin-oneposition-flying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712335
+    m_Key: element-placeable-set-spin-oneposition-camel-sit-layback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712336
+    m_Key: element-placeable-set-spin-oneposition-camel-sit-layback-noflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712337
+    m_Key: element-placeable-set-spin-oneposition-camel-layback-noflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712338
+    m_Key: element-placeable-set-spin-oneposition-sit-layback-noflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712339
+    m_Key: element-placeable-set-spin-flying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712340
+    m_Key: element-placeable-set-spin-combination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712341
+    m_Key: element-placeable-set-spin-combination-changefoot-noflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712342
+    m_Key: element-placeable-set-spin-combination-noflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712343
+    m_Key: element-placeable-set-spin-camel-flying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712344
+    m_Key: element-placeable-set-spin-camel-changefoot-noflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712345
+    m_Key: element-placeable-set-spin-camel-sit-noflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712346
+    m_Key: element-placeable-set-spin-camel-sit-changefoot-noflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712347
+    m_Key: element-placeable-set-spin-sit-flying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712348
+    m_Key: element-placeable-set-spin-sit-changefoot-noflying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712349
+    m_Key: element-placeable-set-step-sequence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22994326712350
+    m_Key: element-placeable-set-choreographic-sequence
+    m_Metadata:
+      m_Items: []
   - m_Id: 21808710217728
     m_Key: element-1t
     m_Metadata:

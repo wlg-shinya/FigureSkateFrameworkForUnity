@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: Jump3
-    name: "\u5358\u72EC3\u56DE\u8EE2\u30B8\u30E3\u30F3\u30D7"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: element-placeable-set-jump3
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     jump: 1
     elementPlaceableIds:
     - Jump3
+  references:
+    version: 2
+    RefIds: []
