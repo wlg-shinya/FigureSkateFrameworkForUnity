@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
   m_Name: FigureSkateFrameworkFact
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 7372f44530036f246bc283766042c827, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 2f310b5a87b5494439685382e4bc2641, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 190d7d659554e4648b1973d24ce7c87e, type: 2}
-  - {fileID: 11400000, guid: ee92e084ad7a40741be518abf358572c, type: 2}
+  - {fileID: 11400000, guid: fe642f320fe95d64daf49bd13905a7b6, type: 2}
+  - {fileID: 11400000, guid: 5bdb317b2c3cd024088ca59415eb3ccd, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:

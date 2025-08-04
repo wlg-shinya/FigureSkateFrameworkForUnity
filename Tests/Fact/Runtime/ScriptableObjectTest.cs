@@ -35,7 +35,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             {
                 Assert.IsNotNull(obj.data);
                 Assert.IsFalse(string.IsNullOrEmpty(obj.data.id));
-                Assert.IsFalse(string.IsNullOrEmpty(obj.data.name));
+                Assert.IsFalse(string.IsNullOrEmpty(await obj.data.name.GetLocalizedStringAsync().Task));
                 Assert.IsTrue(obj.data.minAge >= 0);
                 Assert.IsTrue(obj.data.maxAge >= 0);
                 Assert.IsTrue(obj.data.minAge <= obj.data.maxAge);

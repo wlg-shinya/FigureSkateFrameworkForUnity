@@ -14,6 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: Junior
-    name: "\u30B8\u30E5\u30CB\u30A2"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: class-junior
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     minAge: 13
     maxAge: 18
+  references:
+    version: 2
+    RefIds: []

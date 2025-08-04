@@ -14,6 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     id: Senior
-    name: "\u30B7\u30CB\u30A2"
+    name:
+      m_TableReference:
+        m_TableCollectionName: FigureSkateFrameworkFact
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: class-senior
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     minAge: 16
     maxAge: 1000
+  references:
+    version: 2
+    RefIds: []

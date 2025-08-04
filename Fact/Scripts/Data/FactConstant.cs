@@ -13,5 +13,7 @@ namespace Wlg.FigureSkate.Fact
 
         // 選手一人のプログラム構成の最大数
         public const int PLAYER_PROGRAM_COMPONENTS_MAX_COUNT = 2;
+
+        public const string LOCALIZE_STRING_TABLE_NAME = "FigureSkateFrameworkFact";
     }
 }

@@ -14,10 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en
-  m_SharedData: {fileID: 11400000, guid: 7372f44530036f246bc283766042c827, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 2f310b5a87b5494439685382e4bc2641, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1616982634496
+    m_Localized: NoviceB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616999411712
+    m_Localized: NoviceA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616999411713
+    m_Localized: Junior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616999411714
+    m_Localized: Senior
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

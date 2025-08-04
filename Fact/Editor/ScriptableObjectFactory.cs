@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Localization;
 using Wlg.FigureSkate.Core;
 
 namespace Wlg.FigureSkate.Fact.Editor
@@ -32,7 +33,23 @@ namespace Wlg.FigureSkate.Fact.Editor
                     CreateOrUpdateScriptableObjectFromCsv(
                         path,
                         "Class.csv",
-                        (List<string[]> rows) => { return CSVSerializer.Deserialize<Class>(rows); },
+                        (List<string[]> rows) =>
+                        {
+                            // ローカライズ対応のために独自に値を設定する
+                            var result = new Class[rows.Count - 1];
+                            for (var i = 0; i < result.Length; ++i)
+                            {
+                                var rowsIndex = i + 1;
+                                result[i] = new Class
+                                {
+                                    id = rows[rowsIndex][Array.IndexOf(rows[0], "id")],
+                                    name = new LocalizedString { TableReference = FactConstant.LOCALIZE_STRING_TABLE_NAME, TableEntryReference = rows[rowsIndex][Array.IndexOf(rows[0], "name")] },
+                                    minAge = int.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "minAge")]),
+                                    maxAge = int.Parse(rows[rowsIndex][Array.IndexOf(rows[0], "maxAge")]),
+                                };
+                            }
+                            return result;
+                        },
                         (Class data) => { return $"{data.id}.asset"; },
                         (Class data, ClassObject obj) => { obj.data = data; }
                         );

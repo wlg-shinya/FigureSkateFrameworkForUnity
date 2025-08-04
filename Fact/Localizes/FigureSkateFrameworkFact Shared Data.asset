@@ -13,16 +13,32 @@ MonoBehaviour:
   m_Name: FigureSkateFrameworkFact Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: FigureSkateFrameworkFact
-  m_TableCollectionNameGuidString: 7372f44530036f246bc283766042c827
-  m_Entries: []
+  m_TableCollectionNameGuidString: 2f310b5a87b5494439685382e4bc2641
+  m_Entries:
+  - m_Id: 1616982634496
+    m_Key: class-novice-b
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616999411712
+    m_Key: class-novice-a
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616999411713
+    m_Key: class-junior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616999411714
+    m_Key: class-senior
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 8635921760029507786
+    rid: 8635921760029507790
   references:
     version: 2
     RefIds:
-    - rid: 8635921760029507786
+    - rid: 8635921760029507790
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1754282360691
+        m_CustomEpoch: 1754290320915

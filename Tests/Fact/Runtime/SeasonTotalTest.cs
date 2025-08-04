@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using UnityEngine.Localization.Settings;
 using Wlg.FigureSkate.Core;
 using Wlg.FigureSkate.Fact;
 using Assert = UnityEngine.Assertions.Assert;
@@ -16,6 +17,8 @@ namespace Wlg.FigureSkate.Tests.Fact
         [Test]
         public async Task Class()
         {
+            await LocalizationSettings.InitializationOperation.Task;
+
             var classObject2022_23 = await ClassObjectQuery.All(BASEDAY_2022_23);
             var classObject2023_24 = await ClassObjectQuery.All(BASEDAY_2023_24);
             var classObject2024_25 = await ClassObjectQuery.All(BASEDAY_2024_25);
