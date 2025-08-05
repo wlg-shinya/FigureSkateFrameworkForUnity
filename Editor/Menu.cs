@@ -10,11 +10,13 @@ namespace Wlg.FigureSkate.Editor
 {
     public static class Menu
     {
-        [UnityEditor.MenuItem("Wlg.FigureSkate/LocalizeHealthCheck (HEAVY)")]
+        [UnityEditor.MenuItem("Wlg.FigureSkate/LocalizeHealthCheck")]
         public static async Task LocalizeHealthCheck()
         {
             try
             {
+                Debug.Log($"LocalizeHealthCheck start. After a while, the log will be output.");
+
                 PackageInfo packageInfo = PackageInfo.FindForAssetPath("Packages/com.welovegamesinc.figureskate-framework") ??
                 throw new Exception("Not found path 'com.welovegamesinc.figureskate-framework'");
 
@@ -26,13 +28,14 @@ namespace Wlg.FigureSkate.Editor
                 var searchFileParamList = new List<(string DirPath, string FileExt)>() {
                     (DirPath: "Core", FileExt: "cs"),
                     (DirPath: "Fact", FileExt: "cs"),
-                    (DirPath: Path.Combine("Fact", "Objects"), FileExt: "asset"),
+                    (DirPath: Path.Combine("Fact", "MasterData"), FileExt: "csv"),
                     (DirPath: Path.Combine("Fact", "UI"), FileExt: "uxml"),
                 };
 
                 var healthChecker = new LocalizeHealthChecker(packageInfo.resolvedPath);
                 await healthChecker.Run(stringTableNameList, searchFileParamList);
                 healthChecker.Dump();
+                Debug.Log($"LocalizeHealthCheck finished.");
             }
             catch (Exception e)
             {
