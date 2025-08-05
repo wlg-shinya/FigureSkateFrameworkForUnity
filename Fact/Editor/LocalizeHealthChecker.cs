@@ -2,9 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
@@ -15,6 +16,7 @@ namespace Wlg.FigureSkate.Fact.Editor
         public LocalizeHealthChecker(string searchRootPath)
         {
             _searchRootPath = searchRootPath;
+            SetThisFileName();
         }
 
         public async Task Run(
@@ -94,7 +96,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                 var searchResults = new List<SearchResult>();
 
                 // 使用しているが未定義(missing)を見つけるためにキーのルールで検索語彙を追加
-                var keyRulePattern = @"«(.*?)»";
+                var keyRulePattern = @"«(?:.*?)»";
                 var allSearchTermList = searchTermList.Concat(new[] { keyRulePattern }).ToList();
 
                 // これまでの検索語彙すべてを検索できるような正規表現パターンを構築
@@ -121,6 +123,14 @@ namespace Wlg.FigureSkate.Fact.Editor
                                 if (match.Groups[groupIndex].Success)
                                 {
                                     string foundSearchTerm = allSearchTermList[groupIndex - 1];
+
+                                    // このファイル自身はスキップ
+                                    if (foundSearchTerm == keyRulePattern && Path.GetFileName(filePath) == _thisFileName)
+                                    {
+                                        continue;
+                                    }
+
+                                    // 結果を記録して次の検索へ
                                     var result = new SearchResult
                                     {
                                         searchTerm = foundSearchTerm,
@@ -139,6 +149,14 @@ namespace Wlg.FigureSkate.Fact.Editor
             });
         }
 
+        /// <summary>
+        /// [CallerFilePath]を利用して、このクラスのファイル名を設定するヘルパーメソッド。
+        /// </summary>
+        private void SetThisFileName([CallerFilePath] string sourceFilePath = "")
+        {
+            _thisFileName = Path.GetFileName(sourceFilePath);
+        }
+
         private class SearchResult
         {
             public string searchTerm;
@@ -150,6 +168,7 @@ namespace Wlg.FigureSkate.Fact.Editor
         }
 
         private readonly string _searchRootPath;
+        private string _thisFileName = null;
         private List<string> _unusedList = null;
         private List<SearchResult> _missingList = null;
     }
