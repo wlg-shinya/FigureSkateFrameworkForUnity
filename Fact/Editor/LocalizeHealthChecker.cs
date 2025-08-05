@@ -40,7 +40,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                 .ToList();
 
             // ファイルをKey/Idのペアで一行ずつ検索
-            var searchTermsInFilesTasks = searchFileParamList.Select(param => SearchTermsInFiles(
+            var searchTermsInFilesTasks = searchFileParamList.Select(param => SearchKeyInFiles(
                 targetPath: Path.Combine(_searchRootPath, param.DirPath),
                 targetFileExt: param.FileExt,
                 searchTermList: searchTermList
@@ -55,13 +55,13 @@ namespace Wlg.FigureSkate.Fact.Editor
             _unusedList = searchTermList.Where(searchTerm => !allSearchResults.Any(result => result.searchTerm == searchTerm)).ToList();
 
             // 全検索結果で全キーを検索して使用しているがキーが存在していないものを判別
-            // _missingList = allSearchResults.Where(result => !searchTermList.Any(searchTerm => result.searchTerm == searchTerm)).ToList();
+            _missingList = allSearchResults.Where(result => !searchTermList.Any(searchTerm => result.searchTerm == searchTerm)).ToList();
         }
 
         public void Dump()
         {
             DumpFindUnusedKeyLog();
-            // DumpFindMissingKeyLog();
+            DumpFindMissingKeyLog();
         }
 
         public void DumpFindUnusedKeyLog()
@@ -87,13 +87,21 @@ namespace Wlg.FigureSkate.Fact.Editor
             return _missingList.Select(x => x.Dump).ToList();
         }
 
-        private async Task<List<SearchResult>> SearchTermsInFiles(string targetPath, string targetFileExt, List<string> searchTermList)
+        private async Task<List<SearchResult>> SearchKeyInFiles(string targetPath, string targetFileExt, List<string> searchTermList)
         {
             return await Task.Run(async () =>
             {
                 var searchResults = new List<SearchResult>();
-                var pattern = new Regex(string.Join("|", searchTermList.Select(term => $"({term})")));
-                string[] targetFilePaths = Directory.GetFiles(targetPath, $"*.{targetFileExt}", SearchOption.AllDirectories);
+
+                // 使用しているが未定義(missing)を見つけるためにキーのルールで検索語彙を追加
+                var keyRulePattern = @"«(.*?)»";
+                var allSearchTermList = searchTermList.Concat(new[] { keyRulePattern }).ToList();
+
+                // これまでの検索語彙すべてを検索できるような正規表現パターンを構築
+                var pattern = new Regex(string.Join("|", allSearchTermList.Select(term => $"({term})")));
+
+                // 指定パスの指定拡張子のファイルを1行単位で正規表現パターンマッチング
+                var targetFilePaths = Directory.GetFiles(targetPath, $"*.{targetFileExt}", SearchOption.AllDirectories);
                 var readAllLinesTasks = targetFilePaths.Select(path => File.ReadAllLinesAsync(path)).ToList();
                 await Task.WhenAll(readAllLinesTasks);
                 for (int i = 0; i < readAllLinesTasks.Count; i++)
@@ -112,7 +120,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                             {
                                 if (match.Groups[groupIndex].Success)
                                 {
-                                    string foundSearchTerm = searchTermList[groupIndex - 1];
+                                    string foundSearchTerm = allSearchTermList[groupIndex - 1];
                                     var result = new SearchResult
                                     {
                                         searchTerm = foundSearchTerm,
