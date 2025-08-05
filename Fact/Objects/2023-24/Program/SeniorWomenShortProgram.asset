@@ -19,7 +19,7 @@ MonoBehaviour:
         m_TableCollectionName: FigureSkateFrameworkFact
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: program-senior-women-short-program
+        m_Key: "\xABprogram-senior-women-short-program\xBB"
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
@@ -28,7 +28,7 @@ MonoBehaviour:
         m_TableCollectionName: FigureSkateFrameworkFact
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: program-senior-women-short-program-short
+        m_Key: "\xABprogram-senior-women-short-program-short\xBB"
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []

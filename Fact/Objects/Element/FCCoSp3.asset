@@ -19,7 +19,7 @@ MonoBehaviour:
         m_TableCollectionName: FigureSkateFrameworkFact
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: element-fccosp3
+        m_Key: "\xABelement-fccosp3\xBB"
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []

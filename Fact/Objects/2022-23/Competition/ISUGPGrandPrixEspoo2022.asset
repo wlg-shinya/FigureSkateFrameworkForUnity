@@ -21,7 +21,7 @@ MonoBehaviour:
         m_TableCollectionName: FigureSkateFrameworkFact
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: competition-isugp-grand-prix-espoo2022
+        m_Key: "\xABcompetition-isugp-grand-prix-espoo2022\xBB"
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []

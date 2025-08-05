@@ -133,6 +133,6 @@ namespace Wlg.FigureSkate.Core
             day = 1;
         }
 
-        private readonly LocalizedString _format = new() { TableReference = "FigureSkateFrameworkCore", TableEntryReference = "yearmonthday-format" };
+        private readonly LocalizedString _format = new() { TableReference = "FigureSkateFrameworkCore", TableEntryReference = "«yearmonthday-format»" };
     }
 }

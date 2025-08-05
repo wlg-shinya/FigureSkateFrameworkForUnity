@@ -19,7 +19,7 @@ MonoBehaviour:
         m_TableCollectionName: FigureSkateFrameworkFact
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: program-novice-a-men-free-skating
+        m_Key: "\xABprogram-novice-a-men-free-skating\xBB"
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
@@ -28,7 +28,7 @@ MonoBehaviour:
         m_TableCollectionName: FigureSkateFrameworkFact
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: program-novice-a-men-free-skating-short
+        m_Key: "\xABprogram-novice-a-men-free-skating-short\xBB"
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []

@@ -1,5 +1,5 @@
 id,name,minAge,maxAge
-NoviceB,class-novice-b,0,10
-NoviceA,class-novice-a,11,12
-Junior,class-junior,13,18
-Senior,class-senior,16,1000
+NoviceB,«class-novice-b»,0,10
+NoviceA,«class-novice-a»,11,12
+Junior,«class-junior»,13,18
+Senior,«class-senior»,16,1000

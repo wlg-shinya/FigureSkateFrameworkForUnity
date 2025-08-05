@@ -20,7 +20,7 @@ MonoBehaviour:
         m_TableCollectionName: FigureSkateFrameworkFact
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: goe-minus-choreographic-sequence-m12
+        m_Key: "\xABgoe-minus-choreographic-sequence-m12\xBB"
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []

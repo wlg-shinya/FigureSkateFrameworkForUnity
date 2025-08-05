@@ -20,7 +20,7 @@ MonoBehaviour:
         m_TableCollectionName: FigureSkateFrameworkFact
       m_TableEntryReference:
         m_KeyId: 0
-        m_Key: goe-minus-step-sequence-m8
+        m_Key: "\xABgoe-minus-step-sequence-m8\xBB"
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
