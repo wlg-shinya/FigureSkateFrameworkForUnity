@@ -2,9 +2,10 @@
     "name": "Wlg.FigureSkate.Editor.Fact",
     "rootNamespace": "Wlg.FigureSkate",
     "references": [
+        "GUID:eec0964c48f6f4e40bc3ec2257ccf8c5",
+        "GUID:84651a3751eca9349aac36a66bba901b",
         "GUID:a8e567b750f394f41b2f9e3adcab0fea",
-        "GUID:e39f5e0c232503b4aa9d3f3c9e79bf16",
-        "GUID:eec0964c48f6f4e40bc3ec2257ccf8c5"
+        "GUID:e39f5e0c232503b4aa9d3f3c9e79bf16"
     ],
     "includePlatforms": [
         "Editor"

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
-namespace Wlg.FigureSkate.Editor
+namespace Wlg.FigureSkate.Fact.Editor
 {
     public static class Menu
     {

@@ -8,7 +8,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
-namespace Wlg.FigureSkate.Editor
+namespace Wlg.FigureSkate.Fact.Editor
 {
     public class LocalizeHealthChecker
     {
