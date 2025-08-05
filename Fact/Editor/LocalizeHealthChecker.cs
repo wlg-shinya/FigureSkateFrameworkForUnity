@@ -36,7 +36,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                 .Select(pair =>
                 {
                     string escapedKey = Regex.Escape(pair.Key);
-                    return $@"{escapedKey}|Id\({pair.Value}\)";
+                    return $@"{escapedKey}|{pair.Value}";
                 })
                 .OrderByDescending(x => x.Length)
                 .ToList();
@@ -114,7 +114,12 @@ namespace Wlg.FigureSkate.Fact.Editor
                     for (int lineIndex = 0; lineIndex < lines.Length; lineIndex++)
                     {
                         string line = lines[lineIndex];
-                        var matches = pattern.Matches(line);
+
+                        // asset内にマルチバイトや特殊文字が含まれる場合はエスケープされる。それをもとに戻す
+                        string normalizedLine = line.Replace(@"\xAB", "«").Replace(@"\xBB", "»");
+
+                        // 正規表現による検索
+                        var matches = pattern.Matches(normalizedLine);
                         foreach (Match match in matches)
                         {
                             if (!match.Success) continue;

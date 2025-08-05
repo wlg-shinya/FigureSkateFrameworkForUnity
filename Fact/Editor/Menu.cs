@@ -28,7 +28,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                 var searchFileParamList = new List<(string DirPath, string FileExt)>() {
                     (DirPath: "Core", FileExt: "cs"),
                     (DirPath: "Fact", FileExt: "cs"),
-                    (DirPath: Path.Combine("Fact", "MasterData"), FileExt: "csv"),
+                    (DirPath: Path.Combine("Fact", "Objects"), FileExt: "asset"),
                     (DirPath: Path.Combine("Fact", "UI"), FileExt: "uxml"),
                 };
 
