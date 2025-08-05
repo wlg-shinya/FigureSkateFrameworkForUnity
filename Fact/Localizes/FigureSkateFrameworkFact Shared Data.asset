@@ -1483,6 +1483,10 @@ MonoBehaviour:
     m_Key: "\xABclass-senior\xBB"
     m_Metadata:
       m_Items: []
+  - m_Id: 468975233069056
+    m_Key: "\xABgoe-minus-spin-m8\xBB"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
