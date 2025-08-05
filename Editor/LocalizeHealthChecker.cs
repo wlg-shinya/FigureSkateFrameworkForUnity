@@ -30,9 +30,16 @@ namespace Wlg.FigureSkate.Editor
                 .ToList();
 
             // 検索単語をKey/Idのペアで検索できるように構築
-            var searchTermList = allKeyIds.Select(pair => $@"{pair.Key}|Id\({pair.Value}\)").ToList();
+            var searchTermList = allKeyIds
+                .Select(pair =>
+                {
+                    string escapedKey = Regex.Escape(pair.Key);
+                    return $@"{escapedKey}|Id\({pair.Value}\)";
+                })
+                .OrderByDescending(x => x.Length)
+                .ToList();
 
-            // Core以下のcsファイルから全キーを検索
+            // ファイルをKey/Idのペアで一行ずつ検索
             var searchTermsInFilesTasks = searchFileParamList.Select(param => SearchTermsInFiles(
                 targetPath: Path.Combine(_searchRootPath, param.DirPath),
                 targetFileExt: param.FileExt,
@@ -97,23 +104,15 @@ namespace Wlg.FigureSkate.Editor
                     for (int lineIndex = 0; lineIndex < lines.Length; lineIndex++)
                     {
                         string line = lines[lineIndex];
-
-                        // 1行に対して、生成した巨大なパターンで全てのマッチを一度に検索する
                         var matches = pattern.Matches(line);
-
                         foreach (Match match in matches)
                         {
                             if (!match.Success) continue;
-
-                            // マッチしたグループを特定し、どの検索単語にヒットしたかを見つける
-                            // Groups[0]は全体のマッチなので、[1]から調べる
                             for (int groupIndex = 1; groupIndex < match.Groups.Count; groupIndex++)
                             {
                                 if (match.Groups[groupIndex].Success)
                                 {
-                                    // グループのインデックス(1-based)から元の検索単語リストのインデックス(0-based)を特定
                                     string foundSearchTerm = searchTermList[groupIndex - 1];
-
                                     var result = new SearchResult
                                     {
                                         searchTerm = foundSearchTerm,
@@ -122,9 +121,6 @@ namespace Wlg.FigureSkate.Editor
                                         lineContent = line
                                     };
                                     searchResults.Add(result);
-
-                                    // 1つのマッチに対して成功するグループは1つだけなので、
-                                    // 見つかったら次のマッチの検索に移る
                                     break;
                                 }
                             }
