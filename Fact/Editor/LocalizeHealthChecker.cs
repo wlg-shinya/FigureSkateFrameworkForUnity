@@ -134,6 +134,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                                     var result = new SearchResult
                                     {
                                         searchTerm = foundSearchTerm,
+                                        match = match.Value,
                                         filePath = Path.GetRelativePath(_searchRootPath, filePath),
                                         lineNumber = lineIndex + 1, // 行番号は1から
                                         lineContent = line
@@ -160,11 +161,12 @@ namespace Wlg.FigureSkate.Fact.Editor
         private class SearchResult
         {
             public string searchTerm;
+            public string match;
             public string filePath; // Project相対パス
             public int lineNumber;
             public string lineContent;
 
-            public string Dump => $"{searchTerm} ({filePath} L:{lineNumber} {lineContent.Trim()})";
+            public string Dump => $"{match} ({filePath} L:{lineNumber} {lineContent.Trim()})";
         }
 
         private readonly string _searchRootPath;
