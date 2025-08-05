@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -10,7 +11,7 @@ namespace Wlg.FigureSkate.Core
         public ProgramComponent[] ProgramComponents { get; private set; }
         public string ErrorMessage { get; private set; } = "";
 
-        public ProgramComponentHandler(
+        public async Task Initialize(
             Program program,
             ProgramComponent[] programComponent,
             ProgramComponentRegulation[] programComponentRegulationAll,
@@ -23,18 +24,18 @@ namespace Wlg.FigureSkate.Core
             _programComponentRegulationAll = programComponentRegulationAll;
             _elementPlaceableSetAll = elementPlaceableSetAll;
             _elementPlaceableAll = elementPlaceableAll;
-            UpdateErrorMessage();
+            await UpdateErrorMessage();
         }
 
         // セットトライ
-        public bool TrySet(int componentIndex, int elementIndex, string elementId)
+        public async Task<bool> TrySet(int componentIndex, int elementIndex, string elementId)
         {
             if (!CanSet(componentIndex, elementIndex, elementId))
             {
                 return false;
             }
             ProgramComponents[componentIndex].elementIds[elementIndex] = elementId;
-            UpdateErrorMessage();
+            await UpdateErrorMessage();
             return true;
         }
 
@@ -54,15 +55,15 @@ namespace Wlg.FigureSkate.Core
         }
 
         // セット解除
-        public void Unset(int componentIndex, int elementIndex)
+        public async Task Unset(int componentIndex, int elementIndex)
         {
             CheckIndexOutOfRange(componentIndex, elementIndex);
             ProgramComponents[componentIndex].elementIds[elementIndex] = null;
-            UpdateErrorMessage();
+            await UpdateErrorMessage();
         }
 
         // セット全解除
-        public void UnsetAll()
+        public async Task UnsetAll()
         {
             for (var i = 0; i < ProgramComponents.Length; i++)
             {
@@ -71,7 +72,7 @@ namespace Wlg.FigureSkate.Core
                     ProgramComponents[i].elementIds[j] = null;
                 }
             }
-            UpdateErrorMessage();
+            await UpdateErrorMessage();
         }
 
         // 入れ替え
@@ -79,7 +80,7 @@ namespace Wlg.FigureSkate.Core
 
         // エラーメッセージの更新
         // 現在の構成に不正があったらその原因となるエラーメッセージが、正常なら空文字が入る
-        public void UpdateErrorMessage()
+        public async Task UpdateErrorMessage()
         {
             // 構成ごとの配置可能条件を満たしていないものがあればそのエラーメッセージを設定
             var programComponentSetCondition = ProgramComponents
@@ -89,7 +90,7 @@ namespace Wlg.FigureSkate.Core
                 .FirstOrDefault();
             if (programComponentSetCondition != null)
             {
-                ErrorMessage = programComponentSetCondition.falseMessage;
+                ErrorMessage = await programComponentSetCondition.falseMessage.GetLocalizedStringAsync().Task;
                 return;
             }
             // 上記が見つからなければ構成全体をみて配置可能条件を満たしていないものがあればそのエラーメッセージを設定
@@ -99,7 +100,7 @@ namespace Wlg.FigureSkate.Core
                 var programComponentCondition = regulation.Conditions.Find(condition => !condition.Condition(ProgramComponents));
                 if (programComponentCondition != null)
                 {
-                    ErrorMessage = programComponentCondition.falseMessage;
+                    ErrorMessage = await programComponentCondition.falseMessage.GetLocalizedStringAsync().Task;
                     return;
                 }
             }
@@ -121,9 +122,9 @@ namespace Wlg.FigureSkate.Core
             }
         }
 
-        private readonly ProgramComponentRegulation[] _programComponentRegulationAll;
-        private readonly ElementPlaceableSet[] _elementPlaceableSetAll;
-        private readonly ElementPlaceable[] _elementPlaceableAll;
+        private ProgramComponentRegulation[] _programComponentRegulationAll;
+        private ElementPlaceableSet[] _elementPlaceableSetAll;
+        private ElementPlaceable[] _elementPlaceableAll;
 
         // 内部で使う一時変数の事前確保。要素数は最大コンビネーション数と同値
         // private readonly string[] _placedElementIdsBuffer = new string[CoreConstant.ELEMENT_IN_COMBINATION_MAX_COUNT];

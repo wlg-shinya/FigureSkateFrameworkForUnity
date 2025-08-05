@@ -13,6 +13,17 @@ MonoBehaviour:
   m_Name: ProgramComponentConditionDifferentBetweenComponentSingleJump
   m_EditorClassIdentifier: 
   data:
-    falseMessage: "\u5358\u72EC\u30B8\u30E3\u30F3\u30D7\u3067\u306F\u540C\u3058\u30B8\u30E3\u30F3\u30D7\u3092\u8907\u6570\u69CB\u6210\u3059\u308B\u3068\u57FA\u790E\u70B9\u304C\u6E1B\u308B\u306E\u3067\u63A7\u3048\u3066\u304F\u3060\u3055\u3044"
+    falseMessage:
+      m_TableReference:
+        m_TableCollectionName: GUID:2f310b5a87b5494439685382e4bc2641
+      m_TableEntryReference:
+        m_KeyId: 495606525915142
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     elementPlaceableSetIds:
     - Jump
+  references:
+    version: 2
+    RefIds: []

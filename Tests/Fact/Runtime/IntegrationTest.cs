@@ -153,7 +153,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                 };
                 if (Equals(programObject.name, "SeniorMenShortProgram"))
                 {
-                    var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                    var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
                     programComponentHanlders.Add(programComponentHanlder);
 
                     // 合計基礎点テスト
@@ -171,47 +171,47 @@ namespace Wlg.FigureSkate.Tests.Fact
                 }
                 else if (Equals(programObject.name, "SeniorWomenShortProgram"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "SeniorMenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "SeniorWomenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.SeniorWomenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.SeniorWomenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorMenShortProgram"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorWomenShortProgram"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorMenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorMenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.JuniorMenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "JuniorWomenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "NoviceAMenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceAMenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.NoviceAMenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "NoviceAWomenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceAWomenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.NoviceAWomenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "NoviceBMenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceBMenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.NoviceBMenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else if (Equals(programObject.name, "NoviceBWomenFreeSkating"))
                 {
-                    programComponentHanlders.Add(ProgramComponentHanlderFactory.NoviceBWomenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+                    programComponentHanlders.Add(await ProgramComponentHanlderFactory.NoviceBWomenFreeSkating(programObject.data, player.programComponentsList[i].components, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
                 }
                 else throw new Exception($"Invalid ProgramObject.name = {programObject.name}");
             }

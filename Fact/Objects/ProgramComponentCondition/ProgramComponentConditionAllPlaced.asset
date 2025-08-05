@@ -13,4 +13,15 @@ MonoBehaviour:
   m_Name: ProgramComponentConditionAllPlaced
   m_EditorClassIdentifier: 
   data:
-    falseMessage: "\u69CB\u6210\u8981\u7D20\u306F\u3059\u3079\u3066\u8A2D\u5B9A\u3057\u3066\u304F\u3060\u3055\u3044"
+    falseMessage:
+      m_TableReference:
+        m_TableCollectionName: GUID:2f310b5a87b5494439685382e4bc2641
+      m_TableEntryReference:
+        m_KeyId: 495606525915136
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

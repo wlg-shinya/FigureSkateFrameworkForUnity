@@ -13,8 +13,19 @@ MonoBehaviour:
   m_Name: ProgramComponentConditionContainLimitOncePatternInComponentWithoutHeadJumpSequence
   m_EditorClassIdentifier: 
   data:
-    falseMessage: "\u30B8\u30E3\u30F3\u30D7\u30B7\u30FC\u30AF\u30A7\u30F3\u30B9(2/3\u756A\u76EE\u306B\u30A2\u30AF\u30BB\u30EB\u3092\u542B\u3080\u69CB\u6210)\u306F\u6700\u5927\u3072\u3068\u3064\u307E\u3067\u3057\u304B\u69CB\u6210\u3067\u304D\u307E\u305B\u3093"
+    falseMessage:
+      m_TableReference:
+        m_TableCollectionName: GUID:2f310b5a87b5494439685382e4bc2641
+      m_TableEntryReference:
+        m_KeyId: 495606525915140
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     elementPlaceableSetIds:
     - Jump2Combination
     - Jump3Combination
     pattern: .*A$
+  references:
+    version: 2
+    RefIds: []

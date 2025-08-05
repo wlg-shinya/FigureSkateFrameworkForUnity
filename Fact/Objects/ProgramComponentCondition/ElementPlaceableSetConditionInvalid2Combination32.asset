@@ -13,6 +13,17 @@ MonoBehaviour:
   m_Name: ElementPlaceableSetConditionInvalid2Combination32
   m_EditorClassIdentifier: 
   data:
-    falseMessage: "3\u56DE\u8EE2+2\u56DE\u8EE2\u306F\u69CB\u6210\u3067\u304D\u307E\u305B\u3093"
+    falseMessage:
+      m_TableReference:
+        m_TableCollectionName: GUID:2f310b5a87b5494439685382e4bc2641
+      m_TableEntryReference:
+        m_KeyId: 495606488166400
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     firstInvalidElementIdPattern: ^3.+
     secondInvalidElementIdPattern: ^2.+
+  references:
+    version: 2
+    RefIds: []

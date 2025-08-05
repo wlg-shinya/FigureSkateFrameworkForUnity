@@ -13,9 +13,20 @@ MonoBehaviour:
   m_Name: ProgramComponentConditionWithinJump2
   m_EditorClassIdentifier: 
   data:
-    falseMessage: "\u540C\u3058\u30B8\u30E3\u30F3\u30D7\u306F3\u56DE\u4EE5\u4E0A\u69CB\u6210\u3067\u304D\u307E\u305B\u3093"
+    falseMessage:
+      m_TableReference:
+        m_TableCollectionName: GUID:2f310b5a87b5494439685382e4bc2641
+      m_TableEntryReference:
+        m_KeyId: 495606525915145
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     elementPlaceableSetIds:
     - Jump
     - Jump2Combination
     - Jump3Combination
     count: 2
+  references:
+    version: 2
+    RefIds: []

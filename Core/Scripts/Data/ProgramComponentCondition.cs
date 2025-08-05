@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Localization;
 
 namespace Wlg.FigureSkate.Core
 {
@@ -7,7 +8,7 @@ namespace Wlg.FigureSkate.Core
     public abstract class ProgramComponentCondition
     {
         // 条件を満たしていないときのメッセージ
-        public string falseMessage;
+        public LocalizedString falseMessage;
         // 条件
         public abstract bool Condition(ProgramComponent[] components);
     }

@@ -1486,6 +1486,58 @@ MonoBehaviour:
     m_Localized: SpinM8
     m_Metadata:
       m_Items: []
+  - m_Id: 495606488166400
+    m_Localized: ElementPlaceableSetConditionInvalid2Combination32
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606521720832
+    m_Localized: ElementPlaceableSetConditionLimit3CombinationThirdTLoA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915136
+    m_Localized: ProgramComponentConditionAllPlaced
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915137
+    m_Localized: ProgramComponentConditionAnyPatternAxel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915138
+    m_Localized: ProgramComponentConditionContainAllPatternInFirstLoLzF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915139
+    m_Localized: ProgramComponentConditionContainAllPatternInFirstLzF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915140
+    m_Localized: ProgramComponentConditionContainLimitOncePatternInComponentWithoutHeadJumpSequence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915141
+    m_Localized: ProgramComponentConditionDifferentBetweenComponentJumpForShortProgram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915142
+    m_Localized: ProgramComponentConditionDifferentBetweenComponentSingleJump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915143
+    m_Localized: ProgramComponentConditionDifferentPatternSpin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915144
+    m_Localized: ProgramComponentConditionWithinInPatternMultipleConditionsJump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915145
+    m_Localized: ProgramComponentConditionWithinJump2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495606525915146
+    m_Localized: ProgramComponentConditionWithinSpin1
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
