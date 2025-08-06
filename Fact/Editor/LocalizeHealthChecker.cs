@@ -48,10 +48,10 @@ namespace Wlg.FigureSkate.Fact.Editor
                 searchTermList: searchTermList
                 ))
                 .ToList();
-            var allSearchResultsArrays = await Task.WhenAll(searchTermsInFilesTasks);
-            var allSearchResults = allSearchResultsArrays
-                .SelectMany(resultsArray => resultsArray)
-                .ToList();
+
+            var allTaskResults = await Task.WhenAll(searchTermsInFilesTasks);
+            var allSearchResults = allTaskResults.SelectMany(result => result.SuccessResults).ToList();
+            _errorList = allTaskResults.SelectMany(result => result.ErrorResults).ToList();
 
             // 全キーで全検索結果を検索して未使用キーを判別
             _unusedList = searchTermList.Where(searchTerm => !allSearchResults.Any(result => result.searchTerm == searchTerm)).ToList();
@@ -64,36 +64,38 @@ namespace Wlg.FigureSkate.Fact.Editor
         {
             DumpFindUnusedKeyLog();
             DumpFindMissingKeyLog();
+            DumpFindErrorKeyLog();
         }
 
         public void DumpFindUnusedKeyLog()
         {
-            var results = FindUnusedKey();
+            var results = _unusedList;
             var log = results.Count > 0 ? string.Join("\n", results) : "Not found";
             Debug.Log($"[FindUnusedKey]\n{log}");
         }
         public void DumpFindMissingKeyLog()
         {
-            var results = FindMissingKey();
+            var results = _missingList.Select(x => x.Dump).ToList();
             var log = results.Count > 0 ? string.Join("\n", results) : "Not found";
             Debug.Log($"[FindMissingKey]\n{log}");
         }
 
-        private List<string> FindUnusedKey()
+        public void DumpFindErrorKeyLog()
         {
-            return _unusedList;
+            var results = _errorList.Select(x => x.Dump).ToList();
+            var log = results.Count > 0 ? string.Join("\n", results) : "Not found";
+            Debug.Log($"[FindErrorKey]\n{log}");
         }
 
-        private List<string> FindMissingKey()
-        {
-            return _missingList.Select(x => x.Dump).ToList();
-        }
-
-        private async Task<List<SearchResult>> SearchKeyInFiles(string targetPath, string targetFileExt, List<string> searchTermList)
+        private async Task<(
+            List<SearchResult> SuccessResults,
+            List<SearchResult> ErrorResults
+            )> SearchKeyInFiles(string targetPath, string targetFileExt, List<string> searchTermList)
         {
             return await Task.Run(async () =>
             {
-                var searchResults = new List<SearchResult>();
+                var successResults = new List<SearchResult>();
+                var errorResults = new List<SearchResult>();
 
                 // 使用しているが未定義(missing)を見つけるためにキーのルールで検索語彙を追加
                 var keyRulePattern = @"«(?:.*?)»";
@@ -117,6 +119,23 @@ namespace Wlg.FigureSkate.Fact.Editor
 
                         // asset内にマルチバイトや特殊文字が含まれる場合はエスケープされる。それをもとに戻す
                         string normalizedLine = line.Replace(@"\xAB", "«").Replace(@"\xBB", "»");
+
+                        // エラーチェック：ギユメの数が一致しない場合はエラーとして記録
+                        if (normalizedLine.Contains('«') || normalizedLine.Contains('»'))
+                        {
+                            if (normalizedLine.Count(c => c == '«') != normalizedLine.Count(c => c == '»'))
+                            {
+                                errorResults.Add(new SearchResult
+                                {
+                                    searchTerm = "Unmatched Guillemet", // エラーの種類を記録
+                                    match = normalizedLine.Trim(),
+                                    filePath = Path.GetRelativePath(_searchRootPath, filePath),
+                                    lineNumber = lineIndex + 1,
+                                    lineContent = line
+                                });
+                                continue; // エラー行はキー検索せずに次の行へ
+                            }
+                        }
 
                         // 正規表現による検索
                         var matches = pattern.Matches(normalizedLine);
@@ -144,14 +163,14 @@ namespace Wlg.FigureSkate.Fact.Editor
                                         lineNumber = lineIndex + 1, // 行番号は1から
                                         lineContent = line
                                     };
-                                    searchResults.Add(result);
+                                    successResults.Add(result);
                                     break;
                                 }
                             }
                         }
                     }
                 }
-                return searchResults;
+                return (successResults, errorResults);
             });
         }
 
@@ -178,6 +197,7 @@ namespace Wlg.FigureSkate.Fact.Editor
         private string _thisFileName = null;
         private List<string> _unusedList = null;
         private List<SearchResult> _missingList = null;
+        private List<SearchResult> _errorList = null;
     }
 }
 #endif
