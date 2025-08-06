@@ -9,6 +9,9 @@ namespace Wlg.FigureSkate.Core
     {
         public Program Program { get; private set; }
         public ProgramComponent[] ProgramComponents { get; private set; }
+        public ProgramComponentRegulation[] ProgramComponentRegulationAll { get; private set; }
+        public ElementPlaceableSet[] ElementPlaceableSetAll { get; private set; }
+        public ElementPlaceable[] ElementPlaceableAll { get; private set; }
         public string ErrorMessage { get; private set; } = "";
 
         public async Task Initialize(
@@ -21,9 +24,9 @@ namespace Wlg.FigureSkate.Core
         {
             Program = program;
             ProgramComponents = programComponent;
-            _programComponentRegulationAll = programComponentRegulationAll;
-            _elementPlaceableSetAll = elementPlaceableSetAll;
-            _elementPlaceableAll = elementPlaceableAll;
+            ProgramComponentRegulationAll = programComponentRegulationAll;
+            ElementPlaceableSetAll = elementPlaceableSetAll;
+            ElementPlaceableAll = elementPlaceableAll;
             await UpdateErrorMessage();
         }
 
@@ -49,8 +52,8 @@ namespace Wlg.FigureSkate.Core
             if (string.IsNullOrEmpty(elementId)) return true;
 
             // 指定された構成要素が設定可能一覧に含まれている場合は追加可。そうでなければ追加不可
-            var elementPlaceableSet = Array.Find(_elementPlaceableSetAll, x => x.id.Equals(ProgramComponents[componentIndex].elementPlaceableSetId)) ?? throw new Exception($"Not found '{ProgramComponents[componentIndex].elementPlaceableSetId}'");
-            var elementPlaceable = Array.Find(_elementPlaceableAll, x => x.id.Equals(elementPlaceableSet.elementPlaceableIds[elementIndex])) ?? throw new Exception($"Not found '{elementPlaceableSet.elementPlaceableIds[elementIndex]}'");
+            var elementPlaceableSet = Array.Find(ElementPlaceableSetAll, x => x.id.Equals(ProgramComponents[componentIndex].elementPlaceableSetId)) ?? throw new Exception($"Not found '{ProgramComponents[componentIndex].elementPlaceableSetId}'");
+            var elementPlaceable = Array.Find(ElementPlaceableAll, x => x.id.Equals(elementPlaceableSet.elementPlaceableIds[elementIndex])) ?? throw new Exception($"Not found '{elementPlaceableSet.elementPlaceableIds[elementIndex]}'");
             return elementPlaceable.elementIds.Any(id => id == elementId);
         }
 
@@ -84,7 +87,7 @@ namespace Wlg.FigureSkate.Core
         {
             // 構成ごとの配置可能条件を満たしていないものがあればそのエラーメッセージを設定
             var programComponentSetCondition = ProgramComponents
-                .Select(component => (component, elementPlaceableSet: Array.Find(_elementPlaceableSetAll, x => x.id.Equals(component.elementPlaceableSetId))))
+                .Select(component => (component, elementPlaceableSet: Array.Find(ElementPlaceableSetAll, x => x.id.Equals(component.elementPlaceableSetId))))
                 .Where(x => x.elementPlaceableSet.Conditions.Count > 0)
                 .Select(x => x.elementPlaceableSet.Conditions.Find(condition => !condition.Condition(x.component.elementIds.Where(id => id != null).ToArray())))
                 .FirstOrDefault();
@@ -96,7 +99,7 @@ namespace Wlg.FigureSkate.Core
             // 上記が見つからなければ構成全体をみて配置可能条件を満たしていないものがあればそのエラーメッセージを設定
             else
             {
-                var regulation = ProgramUtility.GetProgramComponentRegulationById(_programComponentRegulationAll, Program.programComponentRegulationId);
+                var regulation = ProgramUtility.GetProgramComponentRegulationById(ProgramComponentRegulationAll, Program.programComponentRegulationId);
                 var programComponentCondition = regulation.Conditions.Find(condition => !condition.Condition(ProgramComponents));
                 if (programComponentCondition != null)
                 {
@@ -121,12 +124,5 @@ namespace Wlg.FigureSkate.Core
                 throw new ArgumentOutOfRangeException($"elementIndex = {elementIndex}");
             }
         }
-
-        private ProgramComponentRegulation[] _programComponentRegulationAll;
-        private ElementPlaceableSet[] _elementPlaceableSetAll;
-        private ElementPlaceable[] _elementPlaceableAll;
-
-        // 内部で使う一時変数の事前確保。要素数は最大コンビネーション数と同値
-        // private readonly string[] _placedElementIdsBuffer = new string[CoreConstant.ELEMENT_IN_COMBINATION_MAX_COUNT];
     }
 }
