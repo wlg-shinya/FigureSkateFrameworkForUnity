@@ -4030,6 +4030,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55e0c7dab06a89749af8aeec42c52096
+    m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2024-25/GoeMinus/filelist.txt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55eccd9e9dc54e7468e9fc5c524144c3
     m_Address: Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/2023-24/GoePlus/JumpP6.asset
     m_ReadOnly: 0
