@@ -12,7 +12,7 @@ namespace Wlg.FigureSkate.Core
         public ProgramComponentRegulation[] ProgramComponentRegulationAll { get; private set; }
         public ElementPlaceableSet[] ElementPlaceableSetAll { get; private set; }
         public ElementPlaceable[] ElementPlaceableAll { get; private set; }
-        public string ErrorMessage { get; private set; } = "";
+        public string ErrorMessage { get; private set; } = "Not Initialized";
 
         public async Task Initialize(
             Program program,
