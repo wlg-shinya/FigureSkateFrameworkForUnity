@@ -1,5 +1,210 @@
-.JudesScore {
+.judges-score {
+    flex-grow: 1;
+    align-self: auto;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px; 
+}
+
+.judges-score-item {
+    flex-grow: 0; 
+    flex-direction: row; 
+    justify-content: flex-start; 
+    margin-bottom: 2px;
+}
+
+.judges-score-container {
     background-color: rgb(255, 255, 255);
     border-width: 2px;
     border-color: rgb(0, 0, 0);
+}
+
+.judges-score-text {
+    color: rgb(0, 0, 0);
+}
+
+.judges-score-text-bold {
+    color: rgb(0, 0, 0);
+    -unity-font-style: bold; 
+}
+
+.judges-score-label {
+    margin-left: 0; 
+    margin-top: 0; 
+    margin-right: 0; 
+    margin-bottom: 0; 
+    padding-top: 0; 
+    padding-right: 0; 
+    padding-bottom: 0; 
+    padding-left: 0;
+}
+
+
+.judges-score-header {
+    flex-grow: 0;
+    flex-direction: row; 
+    flex-basis: 20%; 
+    margin-bottom: 2px; 
+    padding-right: 10px; 
+    padding-bottom: 2px; 
+    padding-left: 20px;
+}
+
+.judges-score-header-left {
+    flex-grow: 0;
+    flex-basis: 30%;
+    flex-direction: row;
+}
+
+.judges-score-header-right {
+    flex-grow: 1; 
+    flex-direction: row-reverse; 
+    flex-basis: auto;
+}
+
+.judges-score-body {
+    flex-grow: 0; 
+    flex-direction: column; 
+    flex-basis: 75%; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    padding-left: 40px; 
+    padding-right: 10px; 
+    padding-top: 2px; 
+    padding-bottom: 2px;
+}
+
+.judges-score-footer {
+    flex-grow: 0; 
+    flex-direction: row; 
+    flex-basis: 5%; 
+    margin-top: 2px; 
+    padding-bottom: 2px; 
+    padding-right: 10px; 
+    padding-left: 60px; 
+    padding-top: 2px;
+}
+
+.judges-score-rank-container {
+    flex-grow: 0; 
+    align-items: flex-end; 
+    justify-content: space-around; 
+    padding-right: 10px;
+}
+
+.judges-score-name-container {
+    flex-grow: 0; 
+    justify-content: space-around; 
+    align-items: flex-start; 
+    padding-right: 10px; 
+    padding-left: 10px;
+}
+
+.judges-score-total-deductions-container {
+    flex-grow: 0; 
+    justify-content: space-around; 
+    align-items: flex-end; 
+    padding-left: 20px;
+}
+
+.judges-score-total-program-component-score-container {
+    flex-grow: 0; 
+    justify-content: space-around; 
+    align-items: flex-end; 
+    padding-right: 20px; 
+    padding-left: 20px;
+}
+
+.judges-score-total-element-score-container {
+    flex-grow: 0; 
+    justify-content: space-around; 
+    align-items: flex-end; 
+    padding-right: 20px; 
+    padding-left: 20px;
+}
+
+.judges-score-total-segment-score-container {
+    flex-grow: 0; 
+    justify-content: space-around; 
+    align-items: flex-end; 
+    padding-right: 20px; 
+    padding-left: 20px;
+}
+
+.judges-score-starting-number-container {
+    flex-grow: 0; 
+    justify-content: space-around; 
+    align-items: flex-end; 
+    padding-right: 20px; 
+    padding-left: 20px;
+}
+
+.judges-score-nation-container {
+    flex-grow: 0; 
+    justify-content: space-around; 
+    align-items: flex-start; 
+    padding-right: 20px; 
+    padding-left: 20px;
+}
+
+.judges-score-tes-container {
+    flex-grow: 1; 
+    flex-direction: column;
+}
+
+.judges-score-tes-header-container {
+    flex-grow: 0; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    margin-bottom: 10px;
+}
+
+.judges-score-tes-header-base-value-container {
+    flex-grow: 1; 
+    flex-direction: row-reverse;
+}
+
+.judges-score-tes-body-container {
+    flex-grow: 1;
+}
+
+.judges-score-tes-footer-container {
+    flex-grow: 1; 
+    flex-direction: row; 
+    justify-content: flex-start;
+}
+
+.judges-score-pcs-container {
+    flex-grow: 0; 
+    flex-direction: column; 
+    flex-basis: auto;
+}
+
+.judges-score-pcs-header-container {
+    flex-grow: 0; 
+    flex-direction: row; 
+    justify-content: flex-start; 
+    margin-bottom: 10px;
+}
+
+.judges-score-pcs-body-container {
+    flex-grow: 1;
+}
+
+.judges-score-pcs-body-content {
+    flex-grow: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 2px;
+}
+
+.judges-score-pcs-footer-container {
+    flex-grow: 1; flex-direction: row;
+}
+
+.judges-score-deductions-space {
+    flex-grow: 1; 
+    margin-left: 30px; 
+    margin-right: 30px;
 }

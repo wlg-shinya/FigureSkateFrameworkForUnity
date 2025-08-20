@@ -1,147 +1,147 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Packages/com.welovegamesinc.figureskate-framework/Fact/UI/FigureSkateFramework.uss?guid=da148a1052e9e74429279e23ae095aca&amp;type=3#FigureSkateFramework" />
-    <ui:VisualElement name="Top" style="flex-grow: 1; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; justify-content: center; align-items: stretch; align-self: auto;">
-        <ui:VisualElement style="flex-grow: 0; justify-content: flex-start; align-self: auto;">
-            <ui:VisualElement name="Header" class="JudesScore" style="flex-grow: 0; flex-direction: row; flex-basis: 30%; margin-bottom: 2px; padding-right: 10px; padding-bottom: 2px; padding-left: 20px;">
-                <ui:VisualElement style="flex-grow: 0; flex-basis: 30%; flex-direction: row;">
-                    <ui:VisualElement style="flex-grow: 0; align-items: flex-end; justify-content: space-around; padding-right: 10px;">
-                        <ui:Label tabindex="-1" text="Rank" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-basis: auto; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Rank" style="-unity-text-align: lower-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 0; flex-basis: 20%;" />
+    <Style src="project://database/Packages/com.welovegamesinc.figureskate-framework/Fact/UI/FigureSkateFramework.uss?fileID=7433441132597879392&amp;guid=da148a1052e9e74429279e23ae095aca&amp;type=3#FigureSkateFramework" />
+    <ui:VisualElement name="Top" style="flex-grow: 1;">
+        <ui:VisualElement class="judges-score">
+            <ui:VisualElement name="Header" class="judges-score-container judges-score-header">
+                <ui:VisualElement class="judges-score-header-left">
+                    <ui:VisualElement class="judges-score-rank-container">
+                        <ui:Label tabindex="-1" text="Rank" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" style="-unity-text-align: middle-right; flex-basis: auto; flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Rank" class="judges-score-label judges-score-text-bold" style="-unity-text-align: lower-right; flex-grow: 0; flex-basis: 20%;" />
                     </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 0; justify-content: space-around; align-items: flex-start; padding-right: 10px; padding-left: 10px;">
-                        <ui:Label tabindex="-1" text="Name" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-left; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="Test TEST" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="-unity-text-align: lower-left; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 0; flex-basis: 20%;" />
-                    </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; flex-direction: row-reverse; flex-basis: auto;">
-                    <ui:VisualElement style="flex-grow: 0; justify-content: space-around; align-items: flex-end; padding-left: 20px;">
-                        <ui:Label tabindex="-1" text="Total&#10;Deductions" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="0.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalDeductions" style="-unity-text-align: lower-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 0; flex-basis: 20%;" />
-                    </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 0; justify-content: space-around; align-items: flex-end; padding-right: 20px; padding-left: 20px;">
-                        <ui:Label tabindex="-1" text="Total Program Component&#10;Score (factored)" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalProgramComponentScore" style="-unity-text-align: lower-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 0; flex-basis: 20%;" />
-                    </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 0; justify-content: space-around; align-items: flex-end; padding-right: 20px; padding-left: 20px;">
-                        <ui:Label tabindex="-1" text="Total&#10;Element&#10;Score" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalElementScore" style="-unity-text-align: lower-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 0; flex-basis: 20%;" />
-                    </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 0; justify-content: space-around; align-items: flex-end; padding-right: 20px; padding-left: 20px;">
-                        <ui:Label tabindex="-1" text="Total&#10;Segment&#10;Score" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalSegmentScore" style="-unity-text-align: lower-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 0; flex-basis: 20%;" />
-                    </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 0; justify-content: space-around; align-items: flex-end; padding-right: 20px; padding-left: 20px;">
-                        <ui:Label tabindex="-1" text="Starting&#10;Number" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartingNumber" style="-unity-text-align: lower-right; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 0; flex-basis: 20%;" />
-                    </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 0; justify-content: space-around; align-items: flex-start; padding-right: 20px; padding-left: 20px;">
-                        <ui:Label tabindex="-1" text="Nation" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-left; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="TEST" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nation" style="-unity-text-align: lower-left; -unity-font-style: bold; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; flex-grow: 0; flex-basis: 20%;" />
+                    <ui:VisualElement class="judges-score-name-container">
+                        <ui:Label tabindex="-1" text="Name" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" style="-unity-text-align: middle-left; flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="Test TEST" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" name="Name" style="-unity-text-align: lower-left; flex-grow: 0; flex-basis: 20%;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
-            </ui:VisualElement>
-            <ui:VisualElement name="Body" class="JudesScore" style="flex-grow: 1; flex-direction: column; flex-basis: auto; margin-top: 0; margin-bottom: 0; padding-left: 40px; padding-right: 10px; padding-top: 2px; padding-bottom: 2px;">
-                <ui:VisualElement style="flex-grow: 1; flex-direction: column;">
-                    <ui:VisualElement name="ExecutedElementHeader" style="flex-grow: 0; flex-direction: row; justify-content: space-between; margin-bottom: 10px;">
-                        <ui:Label tabindex="-1" text="#" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Number" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="Executed Elements" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExecutedElement" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="Info" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Info" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; rotate: 270deg; -unity-text-align: middle-left; flex-grow: 0;" />
-                        <ui:VisualElement name="BaseValue" style="flex-grow: 1; flex-direction: row-reverse;">
-                            <ui:Label tabindex="-1" text="Base&#10;Value" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 0; -unity-text-align: upper-left;" />
-                        </ui:VisualElement>
-                        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LastJump" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; -unity-text-align: upper-right; flex-grow: 1;" />
-                        <ui:Label tabindex="-1" text="GOE" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Goe" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="J1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J1" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="J2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J2" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="J3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J3" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="J4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J4" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="J5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J5" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="J6" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J6" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="J7" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J7" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="J8" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J8" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="J9" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J9" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="Ref." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Ref" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 50px; -unity-font-style: bold; flex-grow: 1; -unity-text-align: upper-right;" />
-                        <ui:Label tabindex="-1" text="Scores of&#10;Panel" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; -unity-text-align: upper-right; flex-grow: 1;" />
+                <ui:VisualElement class="judges-score-header-right">
+                    <ui:VisualElement class="judges-score-total-deductions-container">
+                        <ui:Label tabindex="-1" text="Total&#10;Deductions" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" style="-unity-text-align: middle-right; flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="0.00" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" name="TotalDeductions" style="-unity-text-align: lower-right; flex-grow: 0; flex-basis: 20%;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="ExecutedElementBody" style="flex-grow: 1;" />
-                    <ui:VisualElement name="ExecutedElementFooter" style="flex-grow: 1; flex-direction: row; justify-content: flex-start;">
-                        <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
-                        <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalBaseValue" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right; -unity-font-style: bold;" />
-                        <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
-                        <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalElementScore" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right; -unity-font-style: bold;" />
+                    <ui:VisualElement class="judges-score-total-program-component-score-container">
+                        <ui:Label tabindex="-1" text="Total Program Component&#10;Score (factored)" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" style="-unity-text-align: middle-right; flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalProgramComponentScore" class="judges-score-label judges-score-text-bold" style="-unity-text-align: lower-right; flex-grow: 0; flex-basis: 20%;" />
                     </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 0; flex-direction: column; flex-basis: auto;">
-                    <ui:VisualElement name="ProgramComponentHeader" style="flex-grow: 0; flex-direction: row; justify-content: flex-start; margin-bottom: 10px;">
-                        <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
-                        <ui:Label tabindex="-1" text="Program Components" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ProgramComponent" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold;" />
-                        <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
-                        <ui:Label tabindex="-1" text="Factor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Factor" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; align-items: stretch; -unity-text-align: upper-right;" />
+                    <ui:VisualElement class="judges-score-total-element-score-container">
+                        <ui:Label tabindex="-1" text="Total&#10;Element&#10;Score" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" style="-unity-text-align: middle-right; flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalElementScore" class="judges-score-label judges-score-text-bold" style="-unity-text-align: lower-right; flex-grow: 0; flex-basis: 20%;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="ProgramComponentBody" style="flex-grow: 1;">
-                        <ui:VisualElement name="Composition" style="flex-grow: 0; flex-direction: row; justify-content: flex-start; margin-bottom: 2px;">
-                            <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
-                            <ui:Label tabindex="-1" text="Composition" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: normal;" />
-                            <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
-                            <ui:Label tabindex="-1" text="1.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Factor" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: normal; align-items: stretch; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J1" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J2" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J3" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J4" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J5" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J6" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J7" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J8" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J9" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:VisualElement name="Adjust3" style="flex-grow: 0;" />
-                            <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                        </ui:VisualElement>
-                        <ui:VisualElement name="Presentation" style="flex-grow: 0; flex-direction: row; justify-content: flex-start; margin-bottom: 2px;">
-                            <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
-                            <ui:Label tabindex="-1" text="Presentation" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: normal;" />
-                            <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
-                            <ui:Label tabindex="-1" text="1.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Factor" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: normal; align-items: stretch; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J1" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J2" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J3" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J4" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J5" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J6" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J7" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J8" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J9" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:VisualElement name="Adjust3" style="flex-grow: 0;" />
-                            <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                        </ui:VisualElement>
-                        <ui:VisualElement name="SkatingSkills" style="flex-grow: 0; flex-direction: row; justify-content: flex-start; margin-bottom: 2px;">
-                            <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
-                            <ui:Label tabindex="-1" text="Skating Skills" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: normal;" />
-                            <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
-                            <ui:Label tabindex="-1" text="1.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Factor" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: normal; align-items: stretch; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J1" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J2" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J3" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J4" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J5" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J6" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J7" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J8" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J9" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                            <ui:VisualElement name="Adjust3" style="flex-grow: 0;" />
-                            <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right;" />
-                        </ui:VisualElement>
+                    <ui:VisualElement class="judges-score-total-segment-score-container">
+                        <ui:Label tabindex="-1" text="Total&#10;Segment&#10;Score" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" style="-unity-text-align: middle-right; flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalSegmentScore" class="judges-score-label judges-score-text-bold" style="-unity-text-align: lower-right; flex-grow: 0; flex-basis: 20%;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="ProgramComponentFooter" style="flex-grow: 1; flex-direction: row;">
-                        <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
-                        <ui:Label tabindex="-1" text="Judges Total Program Component Scrore (factored)" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-font-style: bold; flex-grow: 0;" />
-                        <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-text-align: upper-right; -unity-font-style: bold; flex-grow: 0;" />
+                    <ui:VisualElement class="judges-score-starting-number-container">
+                        <ui:Label tabindex="-1" text="Starting&#10;Number" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" style="-unity-text-align: middle-right; flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartingNumber" class="judges-score-label judges-score-text-bold" style="-unity-text-align: lower-right; flex-grow: 0; flex-basis: 20%;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="judges-score-nation-container">
+                        <ui:Label tabindex="-1" text="Nation" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" style="-unity-text-align: middle-left; flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="TEST" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nation" class="judges-score-label judges-score-text-bold" style="-unity-text-align: lower-left; flex-grow: 0; flex-basis: 20%;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Footer" class="JudesScore" style="flex-grow: 0; flex-direction: row; flex-basis: auto; margin-top: 2px; padding-bottom: 2px; padding-right: 10px; padding-left: 60px; padding-top: 2px;">
-                <ui:Label tabindex="-1" text="Deductions:" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; -unity-text-align: upper-right;" />
-                <ui:VisualElement style="flex-grow: 1; margin-left: 30px; margin-right: 30px;" />
-                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Deductions" style="-unity-font-style: bold; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; -unity-text-align: upper-right;" />
+            <ui:VisualElement name="Body" class="judges-score-container judges-score-body">
+                <ui:VisualElement class="judges-score-tes-container">
+                    <ui:VisualElement name="ExecutedElementHeader" class="judges-score-tes-header-container">
+                        <ui:Label tabindex="-1" text="#" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Number" class="judges-score-label judges-score-text-bold" style="flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="Executed Elements" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExecutedElement" class="judges-score-label judges-score-text-bold" style="flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="Info" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Info" class="judges-score-label judges-score-text-bold" style="rotate: 270deg; -unity-text-align: middle-left; flex-grow: 0;" />
+                        <ui:VisualElement name="BaseValue" class="judges-score-tes-header-base-value-container">
+                            <ui:Label tabindex="-1" text="Base&#10;Value" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text-bold" style="flex-grow: 0; -unity-text-align: upper-left;" />
+                        </ui:VisualElement>
+                        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LastJump" class="judges-score-label judges-score-text-bold" style="-unity-text-align: upper-right; flex-grow: 1;" />
+                        <ui:Label tabindex="-1" text="GOE" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Goe" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="J1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J1" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="J2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J2" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="J3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J3" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="J4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J4" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="J5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J5" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="J6" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J6" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="J7" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J7" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="J8" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J8" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="J9" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J9" class="judges-score-label judges-score-text-bold" style="flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="Ref." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Ref" class="judges-score-label judges-score-text-bold" style="padding-left: 50px; flex-grow: 1; -unity-text-align: upper-right;" />
+                        <ui:Label tabindex="-1" text="Scores of&#10;Panel" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" class="judges-score-label judges-score-text-bold" style="-unity-text-align: upper-right; flex-grow: 1;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="ExecutedElementBody" class="judges-score-tes-body-container" />
+                    <ui:VisualElement name="ExecutedElementFooter" class=".judges-score-tes-footer-container">
+                        <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
+                        <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalBaseValue" class="judges-score-label judges-score-text-bold" style="-unity-text-align: upper-right;" />
+                        <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
+                        <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalElementScore" class="judges-score-label judges-score-text-bold" style="-unity-text-align: upper-right;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement class="judges-score-pcs-container">
+                    <ui:VisualElement name="ProgramComponentHeader" class="judges-score-pcs-header-container">
+                        <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
+                        <ui:Label tabindex="-1" text="Program Components" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ProgramComponent" class="judges-score-label judges-score-text-bold" />
+                        <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
+                        <ui:Label tabindex="-1" text="Factor" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Factor" class="judges-score-label judges-score-text-bold" style="align-items: stretch; -unity-text-align: upper-right;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="ProgramComponentBody" class="judges-score-pcs-body-container">
+                        <ui:VisualElement name="Composition" class="judges-score-pcs-body-content">
+                            <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
+                            <ui:Label tabindex="-1" text="Composition" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="judges-score-label judges-score-text" style="-unity-font-style: normal;" />
+                            <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
+                            <ui:Label tabindex="-1" text="1.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Factor" class="judges-score-label judges-score-text" style="-unity-font-style: normal; align-items: stretch; -unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J1" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J2" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J3" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J4" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J5" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J6" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J7" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J8" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J9" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:VisualElement name="Adjust3" style="flex-grow: 0;" />
+                            <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="Presentation" class="judges-score-pcs-body-content">
+                            <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
+                            <ui:Label tabindex="-1" text="Presentation" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="judges-score-label judges-score-text" style="-unity-font-style: normal;" />
+                            <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
+                            <ui:Label tabindex="-1" text="1.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Factor" class="judges-score-label judges-score-text" style="-unity-font-style: normal; align-items: stretch; -unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J1" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J2" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J3" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J4" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J5" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J6" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J7" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J8" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J9" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:VisualElement name="Adjust3" style="flex-grow: 0;" />
+                            <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="SkatingSkills" class="judges-score-pcs-body-content">
+                            <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
+                            <ui:Label tabindex="-1" text="Skating Skills" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="judges-score-label judges-score-text" style="-unity-font-style: normal;" />
+                            <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />
+                            <ui:Label tabindex="-1" text="1.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Factor" class="judges-score-label judges-score-text" style="-unity-font-style: normal; align-items: stretch; -unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J1" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J2" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J3" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J4" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J5" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J6" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J7" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J8" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:Label tabindex="-1" text="9.00" parse-escape-sequences="true" display-tooltip-when-elided="true" name="J9" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                            <ui:VisualElement name="Adjust3" style="flex-grow: 0;" />
+                            <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" class="judges-score-label judges-score-text" style="-unity-text-align: upper-right;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="ProgramComponentFooter" class="judges-score-pcs-footer-container">
+                        <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
+                        <ui:Label tabindex="-1" text="Judges Total Program Component Scrore (factored)" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="judges-score-label judges-score-text-bold" style="flex-grow: 0;" />
+                        <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" class="judges-score-label judges-score-text-bold" style="-unity-text-align: upper-right; flex-grow: 0;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Footer" class="judges-score-container judges-score-footer">
+                <ui:Label tabindex="-1" text="Deductions:" parse-escape-sequences="true" display-tooltip-when-elided="true" class="judges-score-label judges-score-text" style="-unity-font-style: bold; -unity-text-align: upper-right;" />
+                <ui:VisualElement class="judges-score-deductions-space" />
+                <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Deductions" class="judges-score-label judges-score-text" style="-unity-font-style: bold; -unity-text-align: upper-right;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
