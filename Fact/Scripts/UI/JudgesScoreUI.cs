@@ -135,6 +135,18 @@ namespace Wlg.FigureSkate.Fact
             Root.UnregisterCallback<GeometryChangedEvent>(OnLayoutReady);
 
             // Setupで設定したデータでレイアウトが決定した後に更新することができるレイアウトのセットアップ
+
+            // 1. 親要素(Body)のコンテンツ領域の幅を計算
+            var body = ExecutedElementBody();
+            var horizontalPadding = body.resolvedStyle.paddingLeft + body.resolvedStyle.paddingRight;
+            var availableWidth = body.resolvedStyle.width - horizontalPadding;
+            var totalHeaderWidth = 0.0f;
+            foreach (var label in EXECUTED_ELEMENT_ITEM_LABELS)
+            {
+                totalHeaderWidth += GetExecutedElementHeaderWidth(label);
+            }
+            var scale = totalHeaderWidth > 0 ? availableWidth / totalHeaderWidth : 1.0f;
+
             {
                 // TESボディ部
                 {
@@ -142,23 +154,25 @@ namespace Wlg.FigureSkate.Fact
                     {
                         foreach (var label in EXECUTED_ELEMENT_ITEM_LABELS)
                         {
-                            SetStyleWidth(item.Q<VisualElement>(label), GetExecutedElementHeaderWidth(label));
+                            SetStyleWidth(item.Q<VisualElement>(label), GetExecutedElementHeaderWidth(label) * scale);
                         }
                     }
                 }
                 // TESフッター部
                 {
-                    SetStyleWidth(ExecutedElementFooter().Q<VisualElement>("Adjust1"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 0, 3).ToArray()));
-                    SetStyleWidth(ExecutedElementFooter().Q<VisualElement>("TotalBaseValue"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[3]));
-                    SetStyleWidth(ExecutedElementFooter().Q<VisualElement>("Adjust2"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 4, 12).ToArray()));
-                    SetStyleWidth(ExecutedElementFooter().Q<VisualElement>("TotalElementScore"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[16]));
+                    var element = ExecutedElementFooter();
+                    SetStyleWidth(element.Q<VisualElement>("Adjust1"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 0, 3).ToArray()) * scale);
+                    SetStyleWidth(element.Q<VisualElement>("TotalBaseValue"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[3]) * scale);
+                    SetStyleWidth(element.Q<VisualElement>("Adjust2"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 4, 12).ToArray()) * scale);
+                    SetStyleWidth(element.Q<VisualElement>("TotalElementScore"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[16]) * scale);
                 }
                 // PCSヘッダー部
                 {
-                    SetStyleWidth(ProgramComponentHeader().Q<VisualElement>("Adjust1"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[0]));
-                    SetStyleWidth(ProgramComponentHeader().Q<VisualElement>("ProgramComponent"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[1]));
-                    SetStyleWidth(ProgramComponentHeader().Q<VisualElement>("Adjust2"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 2, 3).ToArray()));
-                    SetStyleWidth(ProgramComponentHeader().Q<VisualElement>("Factor"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[5]));
+                    var element = ProgramComponentHeader();
+                    SetStyleWidth(element.Q<VisualElement>("Adjust1"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[0]) * scale);
+                    SetStyleWidth(element.Q<VisualElement>("ProgramComponent"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[1]) * scale);
+                    SetStyleWidth(element.Q<VisualElement>("Adjust2"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 2, 3).ToArray()) * scale);
+                    SetStyleWidth(element.Q<VisualElement>("Factor"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[5]) * scale);
                 }
                 // PCSボディ部
                 {
@@ -166,23 +180,24 @@ namespace Wlg.FigureSkate.Fact
                     {
                         var e = ProgramComponentBody().Q<VisualElement>(PCS_LABELS[i]);
                         var labelIndex = 0;
-                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[0]));
-                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[1]));
-                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 2, 3).ToArray()));
-                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[5]));
+                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[0]) * scale);
+                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[1]) * scale);
+                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 2, 3).ToArray()) * scale);
+                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[5]) * scale);
                         for (var j = 0; j < CoreConstant.REFEREE_COUNT; j++)
                         {
-                            SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[6 + j]));
+                            SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[6 + j]) * scale);
                         }
-                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[15]));
-                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[16]));
+                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[15]) * scale);
+                        SetStyleWidth(e.Q<VisualElement>(PCS_CONTENT_LABELS[labelIndex++]), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[16]) * scale);
                     }
                 }
                 // PCSフッター部
                 {
-                    SetStyleWidth(ProgramComponentFooter().Q<VisualElement>("Adjust1"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[0]));
-                    SetStyleWidth(ProgramComponentFooter().Q<VisualElement>("Name"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 1, 5).ToArray()));
-                    SetStyleWidth(ProgramComponentFooter().Q<VisualElement>("Sop"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 6, 11).ToArray()));
+                    var element = ProgramComponentFooter();
+                    SetStyleWidth(element.Q<VisualElement>("Adjust1"), GetExecutedElementHeaderWidth(EXECUTED_ELEMENT_ITEM_LABELS[0]) * scale);
+                    SetStyleWidth(element.Q<VisualElement>("Name"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 1, 5).ToArray()) * scale);
+                    SetStyleWidth(element.Q<VisualElement>("Sop"), GetExecutedElementHeaderWidth(new ArraySegment<string>(EXECUTED_ELEMENT_ITEM_LABELS, 6, 11).ToArray()) * scale);
                 }
             }
         }

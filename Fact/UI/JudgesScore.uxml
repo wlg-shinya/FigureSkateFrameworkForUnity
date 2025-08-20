@@ -64,7 +64,7 @@
                         <ui:Label tabindex="-1" text="Scores of&#10;Panel" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Sop" class="judges-score-label judges-score-text-bold" style="-unity-text-align: upper-right; flex-grow: 1;" />
                     </ui:VisualElement>
                     <ui:VisualElement name="ExecutedElementBody" class="judges-score-tes-body-container" />
-                    <ui:VisualElement name="ExecutedElementFooter" class=".judges-score-tes-footer-container">
+                    <ui:VisualElement name="ExecutedElementFooter" class="judges-score-tes-footer-container">
                         <ui:VisualElement name="Adjust1" style="flex-grow: 0;" />
                         <ui:Label tabindex="-1" text="1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TotalBaseValue" class="judges-score-label judges-score-text-bold" style="-unity-text-align: upper-right;" />
                         <ui:VisualElement name="Adjust2" style="flex-grow: 0;" />

@@ -1,6 +1,7 @@
 .judges-score {
     flex-grow: 1;
     align-self: auto;
+    justify-content: center;
     padding-top: 2px;
     padding-right: 2px;
     padding-bottom: 2px;
@@ -66,7 +67,7 @@
 .judges-score-body {
     flex-grow: 0; 
     flex-direction: column; 
-    flex-basis: 75%; 
+    flex-basis: auto;
     margin-top: 0; 
     margin-bottom: 0; 
     padding-left: 40px; 
