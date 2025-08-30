@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,14 +8,48 @@ namespace Wlg.FigureSkate.Core
     // プログラム構成操作クラス
     public class ProgramComponentHandler
     {
+        public class ErrorData
+        {
+            public List<ElementPlaceableSetError> ElementPlaceableSetErrors { set; get; } = new();
+            public List<ProgramComponentError> ProgramComponentErrors { set; get; } = new();
+
+            public class ElementPlaceableSetError
+            {
+                public ElementPlaceableSetCondition Condition;
+                public int OffendingComponentIndex { set; get; }
+            }
+
+            public class ProgramComponentError
+            {
+                public ProgramComponentCondition Condition;
+            }
+
+            public async Task<string> FirstMessage()
+            {
+                if (ElementPlaceableSetErrors.Count > 0)
+                {
+                    return await ElementPlaceableSetErrors.First().Condition.falseMessage.GetLocalizedStringAsync().Task;
+                }
+                else if (ProgramComponentErrors.Count > 0)
+                {
+                    return await ProgramComponentErrors.First().Condition.falseMessage.GetLocalizedStringAsync().Task;
+                }
+                else
+                {
+                    // エラーなし
+                    return "";
+                }
+            }
+        }
+
         public Program Program { get; private set; }
         public ProgramComponent[] ProgramComponents { get; private set; }
         public ProgramComponentRegulation[] ProgramComponentRegulationAll { get; private set; }
         public ElementPlaceableSet[] ElementPlaceableSetAll { get; private set; }
         public ElementPlaceable[] ElementPlaceableAll { get; private set; }
-        public string ErrorMessage { get; private set; } = "Not Initialized";
+        public ErrorData Error { get; private set; } = new(); // nullなら正常。初期時はエラーとするためインスタンス化
 
-        public async Task Initialize(
+        public void Initialize(
             Program program,
             ProgramComponent[] programComponent,
             ProgramComponentRegulation[] programComponentRegulationAll,
@@ -27,18 +62,18 @@ namespace Wlg.FigureSkate.Core
             ProgramComponentRegulationAll = programComponentRegulationAll;
             ElementPlaceableSetAll = elementPlaceableSetAll;
             ElementPlaceableAll = elementPlaceableAll;
-            await UpdateErrorMessage();
+            UpdateError();
         }
 
         // セットトライ
-        public async Task<bool> TrySet(int componentIndex, int elementIndex, string elementId)
+        public bool TrySet(int componentIndex, int elementIndex, string elementId)
         {
             if (!CanSet(componentIndex, elementIndex, elementId))
             {
                 return false;
             }
             ProgramComponents[componentIndex].elementIds[elementIndex] = elementId;
-            await UpdateErrorMessage();
+            UpdateError();
             return true;
         }
 
@@ -58,15 +93,15 @@ namespace Wlg.FigureSkate.Core
         }
 
         // セット解除
-        public async Task Unset(int componentIndex, int elementIndex)
+        public void Unset(int componentIndex, int elementIndex)
         {
             CheckIndexOutOfRange(componentIndex, elementIndex);
             ProgramComponents[componentIndex].elementIds[elementIndex] = null;
-            await UpdateErrorMessage();
+            UpdateError();
         }
 
         // セット全解除
-        public async Task UnsetAll()
+        public void UnsetAll()
         {
             for (var i = 0; i < ProgramComponents.Length; i++)
             {
@@ -75,40 +110,56 @@ namespace Wlg.FigureSkate.Core
                     ProgramComponents[i].elementIds[j] = null;
                 }
             }
-            await UpdateErrorMessage();
+            UpdateError();
         }
 
         // 入れ替え
         public void Swap(int a, int b) => (ProgramComponents[a], ProgramComponents[b]) = (ProgramComponents[b], ProgramComponents[a]);
 
-        // エラーメッセージの更新
-        // 現在の構成に不正があったらその原因となるエラーメッセージが、正常なら空文字が入る
-        public async Task UpdateErrorMessage()
+        // エラー発生状況の更新
+        public void UpdateError()
         {
-            // 構成ごとの配置可能条件を満たしていないものがあればそのエラーメッセージを設定
-            var programComponentSetCondition = ProgramComponents
-                .Select(component => (component, elementPlaceableSet: Array.Find(ElementPlaceableSetAll, x => x.id.Equals(component.elementPlaceableSetId))))
-                .Where(x => x.elementPlaceableSet.Conditions.Count > 0)
-                .Select(x => x.elementPlaceableSet.Conditions.Find(condition => !condition.Condition(x.component.elementIds.Where(id => id != null).ToArray())))
-                .FirstOrDefault();
-            if (programComponentSetCondition != null)
-            {
-                ErrorMessage = await programComponentSetCondition.falseMessage.GetLocalizedStringAsync().Task;
-                return;
-            }
-            // 上記が見つからなければ構成全体をみて配置可能条件を満たしていないものがあればそのエラーメッセージを設定
-            else
-            {
-                var regulation = ProgramUtility.GetProgramComponentRegulationById(ProgramComponentRegulationAll, Program.programComponentRegulationId);
-                var programComponentCondition = regulation.Conditions.Find(condition => !condition.Condition(ProgramComponents));
-                if (programComponentCondition != null)
+            bool errorOccurred = false;
+            // 構成ごとの配置可能条件を満たしていないものがあればそのエラーを設定
+            var programComponentSetConditions = ProgramComponents
+                .Select((component, componentIndex) => new
                 {
-                    ErrorMessage = await programComponentCondition.falseMessage.GetLocalizedStringAsync().Task;
-                    return;
-                }
+                    Component = component,
+                    ComponentIndex = componentIndex,
+                    ElementPlaceableSet = Array.Find(ElementPlaceableSetAll, x => x.id.Equals(component.elementPlaceableSetId))
+                })
+                .Where(x => x.ElementPlaceableSet.Conditions.Count > 0)
+                .SelectMany(x => x.ElementPlaceableSet.Conditions
+                    .Where(condition => !condition.Condition(x.Component.elementIds.Where(id => !string.IsNullOrEmpty(id)).ToArray())),
+                    (x, condition) => (Condition: condition, x.ComponentIndex)
+                )
+                .ToList();
+            if (programComponentSetConditions.Count > 0)
+            {
+                errorOccurred = true;
+                Error ??= new();
+                Error.ElementPlaceableSetErrors = programComponentSetConditions
+                    .Select(x => new ErrorData.ElementPlaceableSetError() { Condition = x.Condition, OffendingComponentIndex = x.ComponentIndex })
+                    .ToList();
             }
-            // エラーが見つからなかったのでエラーメッセージなし
-            ErrorMessage = "";
+
+            // 構成全体をみて配置可能条件を満たしていないものがあればそのエラーを設定
+            var regulation = ProgramUtility.GetProgramComponentRegulationById(ProgramComponentRegulationAll, Program.programComponentRegulationId);
+            var programComponentConditions = regulation.Conditions.Where(condition => !condition.Condition(ProgramComponents)).ToList();
+            if (programComponentConditions.Count > 0)
+            {
+                errorOccurred = true;
+                Error ??= new();
+                Error.ProgramComponentErrors = programComponentConditions
+                    .Select(x => new ErrorData.ProgramComponentError() { Condition = x })
+                    .ToList();
+            }
+
+            // エラーが発生していないのでエラーなし
+            if (!errorOccurred)
+            {
+                Error = null;
+            }
         }
 
         private void CheckIndexOutOfRange(int componentIndex, int elementIndex)

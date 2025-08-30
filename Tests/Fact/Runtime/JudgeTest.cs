@@ -34,7 +34,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
-            var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -122,7 +122,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
-            var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -241,7 +241,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
-            var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -292,7 +292,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
-            var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,
@@ -367,7 +367,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var programComponentRegulationAll = programComponentRegulationObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
-            var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+            var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
             var judge = new Judge(
                 programComponentHanlder.Program,
                 programComponentHanlder.ProgramComponents,

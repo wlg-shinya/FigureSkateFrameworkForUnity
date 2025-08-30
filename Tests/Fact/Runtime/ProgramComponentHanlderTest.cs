@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.Localization.Settings;
 using Wlg.FigureSkate.Core;
 using Wlg.FigureSkate.Fact;
 using Assert = UnityEngine.Assertions.Assert;
@@ -43,47 +45,47 @@ namespace Wlg.FigureSkate.Tests.Fact
                 case "2024-25":
                 case "2025-26":
                     {
-                        var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
                         // 空文字は設定可能
-                        Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, ""));
+                        Assert.IsTrue(programComponentHanlder.TrySet(0, 0, ""));
                         // nullも設定可能
-                        Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, null));
+                        Assert.IsTrue(programComponentHanlder.TrySet(1, 0, null));
                         // 未設定項目があるので当然エラーは発生する
-                        Assert.AreNotEqual(programComponentHanlder.ErrorMessage, "");
+                        Assert.IsNotNull(programComponentHanlder.Error);
                     }
                     {
-                        var errorMessage = "3回転+2回転は構成できません";
-                        var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                        Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(2, 1, "2Lo"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var localizedKeyId = 495606488166400;
+                        var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "2Lo"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                     {
-                        var errorMessage = "同じジャンプを複数構成することはできません";
-                        var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                        Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var localizedKeyId = 495606525915141;
+                        var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         // 同じ要素でもジャンプコンビネーションならエラーにはならない
-                        Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3Lo"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(2, 1, "3Lo"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lo"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3Lo"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var errorMessage = "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください";
-                        var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                        Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "FSSp4"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "CSSp4"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var localizedKeyId = 495606525915143;
+                        var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FSSp4"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "CSSp4"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         // 異なる着氷姿勢に設定しなおしたのでエラーは解消しているはず
-                        Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "FCSp4"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FCSp4"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var errorMessage = "構成要素はすべて設定してください";
-                        var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                        await programComponentHanlder.Unset(6, 0);
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var localizedKeyId = 495606525915136;
+                        var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.Unset(6, 0);
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                     break;
                 default:
@@ -119,31 +121,31 @@ namespace Wlg.FigureSkate.Tests.Fact
                 case "2024-25":
                 case "2025-26":
                     {
-                        var errorMessage = "同じジャンプを複数構成することはできません";
-                        var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                        Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var localizedKeyId = 495606525915141;
+                        var programComponentHanlder = ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         // 同じ要素でもジャンプコンビネーションならエラーにはならない
-                        Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3Lo"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(2, 1, "3Lo"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lo"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3Lo"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var errorMessage = "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください";
-                        var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                        Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "FSSp4"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "SSp4"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var localizedKeyId = 495606525915143;
+                        var programComponentHanlder = ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FSSp4"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "SSp4"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         // 異なる着氷姿勢に設定しなおしたのでエラーは解消しているはず
-                        Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "FCSp4"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FCSp4"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var errorMessage = "構成要素はすべて設定してください";
-                        var programComponentHanlder = await ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                        await programComponentHanlder.Unset(6, 0);
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var localizedKeyId = 495606525915136;
+                        var programComponentHanlder = ProgramComponentHanlderFactory.SeniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                        programComponentHanlder.Unset(6, 0);
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                     break;
                 default:
@@ -152,189 +154,189 @@ namespace Wlg.FigureSkate.Tests.Fact
             }
         }
 
-        private async Task SeniorFreeSkating(Func<Task<ProgramComponentHandler>> CreateProgramComponentHanlder)
+        private void SeniorFreeSkating(Func<ProgramComponentHandler> CreateProgramComponentHanlder)
         {
             {
-                var errorMessage = "3連続ジャンプは2番目にオイラーを構成しないと3番目のジャンプはトウループかループかアクセルしか構成できません";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
+                var localizedKeyId = 495606521720832;
+                var programComponentHanlder = CreateProgramComponentHanlder();
                 // 設定はできるがエラーとなるはず
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3S"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "2Lo"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "2Lo"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2S"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // ただし2番目に1Euを配置した場合に限り上記制限が解除される
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "1Eu"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "1Eu"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2S"));
+                Assert.IsNull(programComponentHanlder.Error);
                 // もともと構成できない要素は当然構成できない
-                Assert.IsFalse(await programComponentHanlder.TrySet(6, 2, "ChSq1"));
+                Assert.IsFalse(programComponentHanlder.TrySet(6, 2, "ChSq1"));
             }
             {
-                var errorMessage = "アクセルジャンプを少なくともひとつ構成する必要があります";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915137;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "2S"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // コンビネーション中でもアクセルを含んでいるならOK
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3S"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "1Eu"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2A"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "1Eu"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
+                Assert.IsNull(programComponentHanlder.Error);
             }
             {
-                var errorMessage = "同じジャンプは3回以上構成できません";
+                var localizedKeyId = 495606525915145;
                 // どのような回転数でもダメ
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "1S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "2S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "2S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3F"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "4S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "1S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "2S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "2S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "4S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
+                    var programComponentHanlder = CreateProgramComponentHanlder();
                     // 2連続コンビネーションで連続構成はOK
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "3T"));
+                    Assert.IsNull(programComponentHanlder.Error);
                     // 単独含めて全体で3回以上の構成はダメ
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3T"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 3連続コンビネーション中でもダメ
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "3T"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
             }
             {
-                var errorMessage = "すべての3回転および4回転ジャンプの中から2種類のみ2回繰り返すことができます。2種類の繰り返しのうち4回転は1種類のみ認められます";
+                var localizedKeyId = 495606525915144;
                 // 3回転は3種類以上2回繰り返すことはできない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3Lz"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3Lz"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 4回転を2回繰り返す場合、3回転は1種類しか繰り返すことができない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "4Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "4Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3F"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "4Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "4Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 4回転を2種類2回繰り返すことはできない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "1T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "1T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "4F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "4F"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "4S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "1T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "1T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "4F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "4F"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "4S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
             }
             {
-                var errorMessage = "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "4T"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "4T"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915142;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "4T"));
+                Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "4T"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
             {
-                var errorMessage = "ジャンプシークェンス(2/3番目にアクセルを含む構成)は最大ひとつまでしか構成できません";
+                var localizedKeyId = 495606525915140;
                 // 3連続ジャンプシークェンス中に同じジャンプはOK
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "2A"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2A"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "2A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
+                    Assert.IsNull(programComponentHanlder.Error);
                 }
                 // ジャンプシークェンスは2回以上構成してはいけない
                 {
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                 }
                 // 1番目であればジャンプシークエンスにならないので複数構成にアクセルがあっても問題ない
                 {
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                 }
             }
             {
-                var errorMessage = "同じスピンを複数構成することはできません";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(7, 0, "FCoSp4"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(9, 0, "FCoSp4"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915146;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "FCoSp4"));
+                Assert.IsTrue(programComponentHanlder.TrySet(9, 0, "FCoSp4"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
             {
-                var errorMessage = "構成要素はすべて設定してください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                await programComponentHanlder.Unset(11, 0);
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915136;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                programComponentHanlder.Unset(11, 0);
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
         }
 
@@ -358,7 +360,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            await SeniorFreeSkating(() => ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            SeniorFreeSkating(() => ProgramComponentHanlderFactory.SeniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
         [TestCase("2022/7/1")]
@@ -381,7 +383,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            await SeniorFreeSkating(() => ProgramComponentHanlderFactory.SeniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            SeniorFreeSkating(() => ProgramComponentHanlderFactory.SeniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
         [TestCase("2022/7/1")]
@@ -405,32 +407,32 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
             {
-                var errorMessage = "同じジャンプを複数構成することはできません";
+                var localizedKeyId = 495606525915141;
                 switch (skateYear)
                 {
                     case "2022-23":
                     case "2025-26":
                         {
-                            var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                            Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3Lo"));
-                            Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3Lo"));
-                            Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                            var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                            Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lo"));
+                            Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lo"));
+                            Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         }
                         break;
                     case "2023-24":
                         {
-                            var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                            Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3Lz"));
-                            Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3Lz"));
-                            Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                            var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                            Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lz"));
+                            Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lz"));
+                            Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         }
                         break;
                     case "2024-25":
                         {
-                            var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                            Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3F"));
-                            Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3F"));
-                            Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                            var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                            Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3F"));
+                            Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3F"));
+                            Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         }
                         break;
                     default:
@@ -439,17 +441,17 @@ namespace Wlg.FigureSkate.Tests.Fact
                 }
                 {
                     // 同じ要素でもジャンプコンビネーションならエラーにはならない
-                    var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 1, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3T"));
+                    Assert.IsNull(programComponentHanlder.Error);
                 }
             }
             {
-                var errorMessage = "構成要素はすべて設定してください";
-                var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                await programComponentHanlder.Unset(6, 0);
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915136;
+                var programComponentHanlder = ProgramComponentHanlderFactory.JuniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                programComponentHanlder.Unset(6, 0);
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
         }
 
@@ -474,34 +476,34 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
             {
-                var errorMessage = "同じジャンプを複数構成することはできません";
+                var localizedKeyId = 495606525915141;
                 switch (skateYear)
                 {
                     case "2022-23":
                     case "2025-26":
                         {
-                            var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                            Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3Lo"));
-                            Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3Lo"));
-                            Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                            var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                            Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lo"));
+                            Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lo"));
+                            Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         }
                         break;
                     case "2023-24":
-                        // "同じジャンプを複数構成することはできません"
+                        // "495606525915141"
                         {
-                            var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                            Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3Lz"));
-                            Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3Lz"));
-                            Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                            var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                            Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3Lz"));
+                            Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lz"));
+                            Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         }
                         break;
                     case "2024-25":
-                        // "同じジャンプを複数構成することはできません"
+                        // "495606525915141"
                         {
-                            var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                            Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3F"));
-                            Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3F"));
-                            Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                            var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                            Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3F"));
+                            Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3F"));
+                            Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                         }
                         break;
                     default:
@@ -510,210 +512,210 @@ namespace Wlg.FigureSkate.Tests.Fact
                 }
                 {
                     // 同じ要素でもジャンプコンビネーションならエラーにはならない
-                    var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 1, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3T"));
+                    Assert.IsNull(programComponentHanlder.Error);
                 }
             }
             {
-                var errorMessage = "3回転+2回転は構成できません";
-                var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3F"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(2, 1, "2Lo"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606488166400;
+                var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3F"));
+                Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "2Lo"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
             {
-                var errorMessage = "構成要素はすべて設定してください";
-                var programComponentHanlder = await ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
-                await programComponentHanlder.Unset(6, 0);
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915136;
+                var programComponentHanlder = ProgramComponentHanlderFactory.JuniorWomenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
+                programComponentHanlder.Unset(6, 0);
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
         }
 
-        private async Task JuniorFreeSkating(Func<Task<ProgramComponentHandler>> CreateProgramComponentHanlder)
+        private void JuniorFreeSkating(Func<ProgramComponentHandler> CreateProgramComponentHanlder)
         {
             {
-                var errorMessage = "3連続ジャンプは2番目にオイラーを構成しないと3番目のジャンプはトウループかループかアクセルしか構成できません";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
+                var localizedKeyId = 495606521720832;
+                var programComponentHanlder = CreateProgramComponentHanlder();
                 // 設定はできるがエラーとなるはず
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3S"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "2Lo"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "2Lo"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2S"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // ただし2番目に1Euを配置した場合に限り上記制限が解除される
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "1Eu"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "1Eu"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2S"));
+                Assert.IsNull(programComponentHanlder.Error);
                 // もともと構成できない要素は当然構成できない
-                Assert.IsFalse(await programComponentHanlder.TrySet(6, 2, "ChSq1"));
+                Assert.IsFalse(programComponentHanlder.TrySet(6, 2, "ChSq1"));
             }
             {
-                var errorMessage = "アクセルジャンプを少なくともひとつ構成する必要があります";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915137;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "2S"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // コンビネーション中でもアクセルを含んでいるならOK
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3S"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "1Eu"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2A"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "1Eu"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
+                Assert.IsNull(programComponentHanlder.Error);
             }
             {
-                var errorMessage = "同じジャンプは3回以上構成できません";
+                var localizedKeyId = 495606525915145;
                 // どのような回転数でもダメ
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "1S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "2S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "2S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3F"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "4S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "1S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "2S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "2S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "4S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
+                    var programComponentHanlder = CreateProgramComponentHanlder();
                     // 2連続コンビネーションで連続構成はOK
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "3T"));
+                    Assert.IsNull(programComponentHanlder.Error);
                     // 単独含めて全体で3回以上の構成はダメ
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3T"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 3連続コンビネーション中でもダメ
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "3T"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
             }
             {
-                var errorMessage = "すべての3回転および4回転ジャンプの中から2種類のみ2回繰り返すことができます。2種類の繰り返しのうち4回転は1種類のみ認められます";
+                var localizedKeyId = 495606525915144;
                 // 3回転は3種類以上2回繰り返すことはできない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3Lz"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3Lz"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 4回転を2回繰り返す場合、3回転は1種類しか繰り返すことができない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "4Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "4Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3F"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "3S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "4Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "4Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "3S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 4回転を2種類2回繰り返すことはできない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "1T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "1T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "4F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "4F"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "4S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "1T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "1T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "4F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "4F"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "4S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
             }
             {
-                var errorMessage = "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "4T"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "4T"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915142;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "4T"));
+                Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "4T"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
             {
-                var errorMessage = "ジャンプシークェンス(2/3番目にアクセルを含む構成)は最大ひとつまでしか構成できません";
+                var localizedKeyId = 495606525915140;
                 // 3連続ジャンプシークェンス中に同じジャンプはOK
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "2A"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2A"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "2A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
+                    Assert.IsNull(programComponentHanlder.Error);
                 }
                 // ジャンプシークェンスは2回以上構成してはいけない
                 {
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(6, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(6, 1, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                 }
                 // 1番目であればジャンプシークエンスにならないので複数構成にアクセルがあっても問題ない
                 {
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(6, 2, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(6, 2, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                 }
             }
             {
-                var errorMessage = "同じスピンを複数構成することはできません";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(7, 0, "FCoSp4"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(9, 0, "FCoSp4"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915146;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "FCoSp4"));
+                Assert.IsTrue(programComponentHanlder.TrySet(9, 0, "FCoSp4"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
             {
-                var errorMessage = "構成要素はすべて設定してください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                await programComponentHanlder.Unset(10, 0);
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915136;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                programComponentHanlder.Unset(10, 0);
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
         }
 
@@ -737,7 +739,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            await JuniorFreeSkating(() => ProgramComponentHanlderFactory.JuniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            JuniorFreeSkating(() => ProgramComponentHanlderFactory.JuniorMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
         [TestCase("2022/7/1")]
@@ -760,196 +762,196 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            await JuniorFreeSkating(() => ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            JuniorFreeSkating(() => ProgramComponentHanlderFactory.JuniorWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
-        private async Task NoviceAFreeSkating(Func<Task<ProgramComponentHandler>> CreateProgramComponentHanlder)
+        private void NoviceAFreeSkating(Func<ProgramComponentHandler> CreateProgramComponentHanlder)
         {
             {
-                var errorMessage = "3連続ジャンプは2番目にオイラーを構成しないと3番目のジャンプはトウループかループかアクセルしか構成できません";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
+                var localizedKeyId = 495606521720832;
+                var programComponentHanlder = CreateProgramComponentHanlder();
                 // 設定はできるがエラーとなるはず
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3S"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2Lo"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 2, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3S"));
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2Lo"));
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 2, "2S"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // ただし2番目に1Euを配置した場合に限り上記制限が解除される
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "1Eu"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 2, "2S"));
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "1Eu"));
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 2, "2S"));
                 // もともと構成できない要素は当然構成できない
-                Assert.IsFalse(await programComponentHanlder.TrySet(5, 2, "ChSq1"));
+                Assert.IsFalse(programComponentHanlder.TrySet(5, 2, "ChSq1"));
             }
             {
-                var errorMessage = "アクセルジャンプを少なくともひとつ構成する必要があります";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915137;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2S"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // コンビネーション中でもアクセルを含んでいるならOK
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3F"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "1Eu"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 2, "2A"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "1Eu"));
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 2, "2A"));
+                Assert.IsNull(programComponentHanlder.Error);
             }
             {
-                var errorMessage = "同じジャンプは3回以上構成できません";
+                var localizedKeyId = 495606525915145;
                 // どのような回転数でもダメ
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3A"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "1S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "2S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "2S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "4S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "1S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "2S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "2S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "4S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
+                    var programComponentHanlder = CreateProgramComponentHanlder();
                     // 2連続コンビネーションで連続構成はOK
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3A"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "3T"));
+                    Assert.IsNull(programComponentHanlder.Error);
                     // 単独含めて全体で3回以上の構成はダメ
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3T"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 3連続コンビネーション中でもダメ
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 2, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 2, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "3T"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
             }
             {
-                var errorMessage = "すべての3回転および4回転ジャンプの中から2種類のみ2回繰り返すことができます。2種類の繰り返しのうち4回転は1種類のみ認められます";
+                var localizedKeyId = 495606525915144;
                 // 3回転は2種類までなら2回繰り返すことができる
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3Lo"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "3Lo"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "3Lo"));
+                    Assert.IsNull(programComponentHanlder.Error);
                     // 3回転は3種類以上2回繰り返すことはできない
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3A"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3Lz"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3Lz"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 4回転を2回繰り返す場合、3回転は1種類しか繰り返すことができない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "4F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "4F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3Lo"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "3Lo"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3A"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3Lz"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "4F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "4F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "3Lo"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3Lz"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 4回転を2種類2回繰り返すことはできない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "4F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "4F"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "4Lo"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "4Lo"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "4F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "4F"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "4Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "4Lo"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
             }
             {
-                var errorMessage = "第1ジャンプにループ、ルッツ、フリップの3種類を含めてください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
+                var localizedKeyId = 495606525915138;
+                var programComponentHanlder = CreateProgramComponentHanlder();
                 // ひとつでもかけてはダメ
-                Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3Lz"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3F"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "1A"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
+                Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3F"));
+                Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "1A"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // 第1ジャンプ以外ではダメ
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "3Lo"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "3Lo"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // 欠けていたのがそろったのでOK
-                Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3Lo"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lo"));
+                Assert.IsNull(programComponentHanlder.Error);
             }
             {
-                var errorMessage = "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3T"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3T"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915142;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3T"));
+                Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3T"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
             {
-                var errorMessage = "ジャンプシークェンス(2/3番目にアクセルを含む構成)は最大ひとつまでしか構成できません";
+                var localizedKeyId = 495606525915140;
                 // 3連続ジャンプシークェンス中に同じジャンプはOK
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2A"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(5, 2, "2A"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(5, 2, "2A"));
+                    Assert.IsNull(programComponentHanlder.Error);
                 }
                 // ジャンプシークェンスは2回以上構成してはいけない
                 {
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 2, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 2, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                 }
                 // 1番目であればジャンプシークエンスにならないので複数構成にアクセルがあっても問題ない
                 {
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(5, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(5, 1, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                 }
             }
             {
-                var errorMessage = "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "FSSp4"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(7, 0, "SSp4"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915143;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "FSSp4"));
+                Assert.IsTrue(programComponentHanlder.TrySet(7, 0, "SSp4"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // 異なる着氷姿勢に設定しなおしたのでエラーは解消しているはず
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "FCSp4"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "FCSp4"));
+                Assert.IsNull(programComponentHanlder.Error);
             }
             {
-                var errorMessage = "構成要素はすべて設定してください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                await programComponentHanlder.Unset(9, 0);
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915136;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                programComponentHanlder.Unset(9, 0);
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
         }
 
@@ -973,7 +975,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            await NoviceAFreeSkating(() => ProgramComponentHanlderFactory.NoviceAMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            NoviceAFreeSkating(() => ProgramComponentHanlderFactory.NoviceAMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
         [TestCase("2022/7/1")]
@@ -996,196 +998,196 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            await NoviceAFreeSkating(() => ProgramComponentHanlderFactory.NoviceAWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            NoviceAFreeSkating(() => ProgramComponentHanlderFactory.NoviceAWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
-        private async Task NoviceBFreeSkating(Func<Task<ProgramComponentHandler>> CreateProgramComponentHanlder)
+        private void NoviceBFreeSkating(Func<ProgramComponentHandler> CreateProgramComponentHanlder)
         {
             {
-                var errorMessage = "3連続ジャンプは2番目にオイラーを構成しないと3番目のジャンプはトウループかループかアクセルしか構成できません";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
+                var localizedKeyId = 495606521720832;
+                var programComponentHanlder = CreateProgramComponentHanlder();
                 // 設定はできるがエラーとなるはず
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3S"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2Lo"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3S"));
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2Lo"));
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "2S"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // ただし2番目に1Euを配置した場合に限り上記制限が解除される
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "1Eu"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "1Eu"));
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "2S"));
+                Assert.IsNull(programComponentHanlder.Error);
                 // もともと構成できない要素は当然構成できない
-                Assert.IsFalse(await programComponentHanlder.TrySet(4, 2, "ChSq1"));
+                Assert.IsFalse(programComponentHanlder.TrySet(4, 2, "ChSq1"));
             }
             {
-                var errorMessage = "アクセルジャンプを少なくともひとつ構成する必要があります";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "2S"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915137;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "2S"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // コンビネーション中でもアクセルを含んでいるならOK
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2S"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "1Eu"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "2A"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2S"));
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "1Eu"));
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "2A"));
+                Assert.IsNull(programComponentHanlder.Error);
             }
             {
-                var errorMessage = "同じジャンプは3回以上構成できません";
+                var localizedKeyId = 495606525915145;
                 // どのような回転数でもダメ
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3A"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "1S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "1S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "2S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "2S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "3S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
-                    Assert.IsTrue(await programComponentHanlder.TrySet(2, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "4S"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "4S"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "1S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "1S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "2S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "2S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                    Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "4S"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "4S"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 2連続コンビネーションで連続構成はOK
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 1, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 1, "3T"));
+                    Assert.IsNull(programComponentHanlder.Error);
                     // 全体で3回以上の構成はダメ
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3T"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 3連続コンビネーション中でもダメ
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "3T"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "3T"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "3T"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "3T"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
             }
             {
-                var errorMessage = "すべての3回転および4回転ジャンプの中から2種類のみ2回繰り返すことができます。2種類の繰り返しのうち4回転は1種類のみ認められます";
+                var localizedKeyId = 495606525915144;
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
+                    var programComponentHanlder = CreateProgramComponentHanlder();
                     // 3回転は2種類までなら2回繰り返すことができる
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "3F"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "3F"));
+                    Assert.IsNull(programComponentHanlder.Error);
                     // 3回転は3種類以上2回繰り返すことはできない
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "3Lo"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "3Lo"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "3Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "3Lo"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 4回転を2回繰り返す場合、3回転は1種類しか繰り返すことができない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "4F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "4F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3Lz"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3Lz"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "3Lo"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "3Lo"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "4F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "4F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3Lz"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "3Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "3Lo"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
                 // 4回転を2種類2回繰り返すことはできない
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "4F"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "4F"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "4Lo"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "4Lo"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "4F"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "4F"));
+                    Assert.IsNull(programComponentHanlder.Error);
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "4Lo"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "4Lo"));
+                    Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 }
             }
             {
-                var errorMessage = "第1ジャンプにルッツ、フリップの2種類を含めてください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
+                var localizedKeyId = 495606525915139;
+                var programComponentHanlder = CreateProgramComponentHanlder();
                 // ひとつでもかけてはダメ
-                Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3Lz"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "1A"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3Lz"));
+                Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "1A"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // 第1ジャンプ以外ではダメ
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2S"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "1Eu"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "2F"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2S"));
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "1Eu"));
+                Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "2F"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // 欠けていたのがそろったのでOK
-                Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "2F"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "2F"));
+                Assert.IsNull(programComponentHanlder.Error);
             }
             {
-                var errorMessage = "単独ジャンプでは同じジャンプを複数構成すると基礎点が減るので控えてください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "3Lz"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(0, 0, "3F"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(1, 0, "3F"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915142;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "3Lz"));
+                Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3F"));
+                Assert.IsTrue(programComponentHanlder.TrySet(1, 0, "3F"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
             {
-                var errorMessage = "ジャンプシークェンス(2/3番目にアクセルを含む構成)は最大ひとつまでしか構成できません";
+                var localizedKeyId = 495606525915140;
                 // 3連続ジャンプシークェンス中に同じジャンプはOK
                 {
-                    var programComponentHanlder = await CreateProgramComponentHanlder();
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2A"));
-                    Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "2A"));
-                    Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                    var programComponentHanlder = CreateProgramComponentHanlder();
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2A"));
+                    Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "2A"));
+                    Assert.IsNull(programComponentHanlder.Error);
                 }
                 // ジャンプシークェンスは2回以上構成してはいけない
                 {
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(3, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(3, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(3, 1, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 2, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(3, 1, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 2, "2A"));
+                        Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                     }
                 }
                 // 1番目であればジャンプシークエンスにならないので複数構成にアクセルがあっても問題ない
                 {
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 0, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                     {
-                        var programComponentHanlder = await CreateProgramComponentHanlder();
-                        Assert.IsTrue(await programComponentHanlder.TrySet(3, 0, "2A"));
-                        Assert.IsTrue(await programComponentHanlder.TrySet(4, 1, "2A"));
-                        Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                        var programComponentHanlder = CreateProgramComponentHanlder();
+                        Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "2A"));
+                        Assert.IsTrue(programComponentHanlder.TrySet(4, 1, "2A"));
+                        Assert.IsNull(programComponentHanlder.Error);
                     }
                 }
             }
             {
-                var errorMessage = "フライングスピンと単一姿勢スピンでは異なる着氷姿勢を設定してください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "FSSp4"));
-                Assert.IsTrue(await programComponentHanlder.TrySet(6, 0, "SSp4"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915143;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "FSSp4"));
+                Assert.IsTrue(programComponentHanlder.TrySet(6, 0, "SSp4"));
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
                 // 異なる着氷姿勢に設定しなおしたのでエラーは解消しているはず
-                Assert.IsTrue(await programComponentHanlder.TrySet(5, 0, "FCSp4"));
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, "");
+                Assert.IsTrue(programComponentHanlder.TrySet(5, 0, "FCSp4"));
+                Assert.IsNull(programComponentHanlder.Error);
             }
             {
-                var errorMessage = "構成要素はすべて設定してください";
-                var programComponentHanlder = await CreateProgramComponentHanlder();
-                await programComponentHanlder.Unset(8, 0);
-                Assert.AreEqual(programComponentHanlder.ErrorMessage, errorMessage);
+                var localizedKeyId = 495606525915136;
+                var programComponentHanlder = CreateProgramComponentHanlder();
+                programComponentHanlder.Unset(8, 0);
+                Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
             }
         }
 
@@ -1209,7 +1211,7 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            await NoviceBFreeSkating(() => ProgramComponentHanlderFactory.NoviceBMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            NoviceBFreeSkating(() => ProgramComponentHanlderFactory.NoviceBMenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
         }
 
         [TestCase("2022/7/1")]
@@ -1232,7 +1234,13 @@ namespace Wlg.FigureSkate.Tests.Fact
             var elementPlaceableSetAll = elementPlaceableSetObjectAll.Select(x => x.data).ToArray();
             var elementPlaceableAll = elementPlaceableObjectAll.Select(x => x.data).ToArray();
 
-            await NoviceBFreeSkating(() => ProgramComponentHanlderFactory.NoviceBWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+            NoviceBFreeSkating(() => ProgramComponentHanlderFactory.NoviceBWomenFreeSkating(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll));
+        }
+
+        private bool ContainsErrorMessagelocalizedKeyId(ProgramComponentHandler handler, long keyId)
+        {
+            return handler.Error.ElementPlaceableSetErrors.Any(x => x.Condition.falseMessage.TableEntryReference.KeyId == keyId) ||
+                handler.Error.ProgramComponentErrors.Any(x => x.Condition.falseMessage.TableEntryReference.KeyId == keyId);
         }
     }
 }
