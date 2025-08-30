@@ -15,27 +15,32 @@ namespace Wlg.FigureSkate.Core
 
         public override bool Condition(ProgramComponent[] components)
         {
-            // 対象となる候補の構成データを抽出
-            var candidates = components.Where(argument => elementPlaceableSetIds.Any(id => Equals(id, argument.elementPlaceableSetId)));
+            // リストを初期化
+            falseComponentIndexList.Clear();
 
-            // 構成の先頭以外に指定パターンが含まれるのが上限ひとつまでか判定
+            // 条件違反の可能性があるコンポーネント（＝パターンを含むもの）のインデックスを探す
+            var componentsWithPatternIndices = components
+                .Select((component, index) => new { component, index })
+                // 1. 対象の構成要素グループに絞る
+                .Where(x => elementPlaceableSetIds.Contains(x.component.elementPlaceableSetId))
+                // 2. 構成要素が2つ以上あるものに絞る
+                .Where(x => x.component.elementIds.Count() >= 2)
+                // 3. 先頭以外の要素に指定パターンが含まれているかチェック
+                .Where(x => x.component.elementIds
+                    .Skip(1) // 先頭要素をスキップ
+                    .Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, pattern)))
+                .Select(x => x.index)
+                .ToList();
+
+            // パターンを含むコンポーネントが2つ以上ある場合、条件違反
+            if (componentsWithPatternIndices.Count > 1)
             {
-                var containPatternComponent = candidates
-                    // 一つしかない構成は対象外
-                    .Where(x => x.elementIds.Count() >= 2)
-                    // 先頭要素以外の構成に指定パターンが含んでいるものだけ抽出
-                    .Where(x => x.elementIds
-                        // 未設定の構成要素は無視
-                        .Where(x => !string.IsNullOrEmpty(x))
-                        // 先頭要素を除外した構成要素IDに絞る
-                        .Where((x, i) => i > 0)
-                        // 構成要素IDの中に指定パターンが含んでいるものがあるかどうか判断
-                        .Any(elementId => Regex.IsMatch(elementId, pattern))
-                        );
-
-                // パターンを含む構成要素がひとつ以下なら条件成立
-                return containPatternComponent.Count() <= 1;
+                // 違反したすべてのコンポーネントのインデックスをリストに追加
+                falseComponentIndexList.AddRange(componentsWithPatternIndices);
             }
+
+            // 条件を満たしていればリストは空、満たしていなければリストにインデックスが入っている
+            return falseComponentIndexList.Count == 0;
         }
     }
 }

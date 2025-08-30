@@ -15,47 +15,50 @@ namespace Wlg.FigureSkate.Core
 
         public override bool Condition(ProgramComponent[] components)
         {
-            // 指定した構成グループのデータを抽出
-            var groups = components.Where(argument => elementPlaceableSetIds.Any(id => Equals(id, argument.elementPlaceableSetId))).ToArray();
+            // リストを初期化
+            falseComponentIndexList.Clear();
 
-            // 指定した構成グループ間でパターンの要素を設定しているか判断する
-            bool SearchPatterm(ProgramComponent[] groups, string[] patterns)
+            // チェック対象となるコンポーネントとその元のインデックスを抽出
+            var targetComponentsWithIndices = components
+                .Select((component, index) => new { component, index })
+                .Where(x => elementPlaceableSetIds.Contains(x.component.elementPlaceableSetId))
+                .ToList();
+
+            // マッチングに使用するため、コンポーネント部分だけの可変リストを作成
+            // （一度マッチしたコンポーネントは次の検索から除外するため）
+            var availableComponents = targetComponentsWithIndices.Select(x => x.component).ToList();
+
+            int matchesFound = 0;
+
+            // 各パターンに対して、まだ使われていないコンポーネントから一致するものを探す
+            foreach (var pattern in patterns)
             {
-                // すべてのパターンを見つけられたので条件成立
-                if (patterns.Length == 0)
-                {
-                    return true;
-                }
+                // パターンに一致する最初の要素を持つコンポーネントを探す
+                var matchedComponent = availableComponents.FirstOrDefault(comp =>
+                    !string.IsNullOrEmpty(comp.elementIds.FirstOrDefault()) && Regex.IsMatch(comp.elementIds[0], pattern));
 
-                // 各グループの先頭構成要素が指定パターンとマッチしているか探す
-                ProgramComponent matchedGroup = null;
-                var matchedPattern = patterns
-                    .ToList()
-                    .Find(pattern => groups
-                        .Any(group =>
-                        {
-                            if (!string.IsNullOrEmpty(group.elementIds[0]) && Regex.IsMatch(group.elementIds[0], pattern))
-                            {
-                                matchedGroup = group;
-                                return true;
-                            }
-                            else return false;
-                        })
-                    );
-                if (!string.IsNullOrEmpty(matchedPattern) && matchedGroup != null)
+                if (matchedComponent != null)
                 {
-                    // 今回扱ったグループの一員と見つかったパターンを除外して再度検索
-                    var newGroups = groups.Where((x) => !ReferenceEquals(x, matchedGroup)).ToArray();
-                    var newPatterns = patterns.Where(x => !ReferenceEquals(x, matchedPattern)).ToArray();
-                    return SearchPatterm(newGroups, newPatterns);
-                }
-                else
-                {
-                    // パターンをすべて見つけられなかったので設定漏れがある。条件不成立
-                    return false;
+                    matchesFound++;
+                    // 一致したコンポーネントは次の検索から除外する
+                    availableComponents.Remove(matchedComponent);
                 }
             }
-            return SearchPatterm(groups, patterns);
+
+            // 全てのパターンに一致するものが見つかったかどうかで成否を判断
+            bool isConditionMet = matchesFound == patterns.Length;
+
+            // 条件を満たしていない場合、対象となったコンポーネントのインデックスをすべてリストに追加
+            if (!isConditionMet)
+            {
+                foreach (var item in targetComponentsWithIndices)
+                {
+                    falseComponentIndexList.Add(item.index);
+                }
+            }
+
+            // 条件を満たしていればリストは空、満たしていなければリストにインデックスが入っている
+            return falseComponentIndexList.Count == 0;
         }
     }
 }

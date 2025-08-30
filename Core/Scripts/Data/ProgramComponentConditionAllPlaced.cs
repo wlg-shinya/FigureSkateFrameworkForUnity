@@ -10,10 +10,15 @@ namespace Wlg.FigureSkate.Core
         public override bool Condition(ProgramComponent[] components)
         {
             // 未設定のものが一つもなければ条件成立
-            var notPlacedElementIds = components
-                .SelectMany(x => x.elementIds)
-                .Where(x => string.IsNullOrEmpty(x));
-            return notPlacedElementIds.Count() == 0;
+            falseComponentIndexList.Clear();
+            for (int i = 0; i < components.Length; i++)
+            {
+                if (components[i].elementIds.Any(string.IsNullOrEmpty))
+                {
+                    falseComponentIndexList.Add(i);
+                }
+            }
+            return falseComponentIndexList.Count == 0;
         }
     }
 }

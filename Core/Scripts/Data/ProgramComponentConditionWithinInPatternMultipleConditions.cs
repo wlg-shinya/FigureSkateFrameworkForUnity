@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -20,33 +21,40 @@ namespace Wlg.FigureSkate.Core
             // 同じ構成要素の最大同時構成の許容数
             public int maxPlacedAllowCount;
 
-            // データ単体の条件判定
-            public bool Condition(ProgramComponent[] components)
+            public List<int> GetViolatingIndices(ProgramComponent[] components)
             {
-                // 指定パターンの構成要素のリスト作成
-                var targetPlacedElementIds = components
-                    .SelectMany(arg => arg.elementIds)
-                    .Where(elementId => !string.IsNullOrEmpty(elementId))
-                    .Where(elementId => Regex.IsMatch(elementId, groupPattern));
-                var uniquePlacedElementIds = targetPlacedElementIds.Distinct();
+                var violatingIndices = new HashSet<int>();
 
-                // 構成要素ごとに同じ構成要素が何回設定されているかのリスト作成
-                var countList = uniquePlacedElementIds.Select(elementId => targetPlacedElementIds.Count(elementId2 => Equals(elementId, elementId2)));
-                if (countList.Any(x => x > maxPlacedCount))
+                // 1. パターンに一致する全要素を、元のコンポーネントのインデックス付きで抽出
+                var targetElementsWithIndices = components
+                    .Select((component, index) => new { component, index })
+                    .SelectMany(c => c.component.elementIds
+                        .Where(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, groupPattern))
+                        .Select(id => new { ElementId = id, OriginalIndex = c.index }))
+                    .ToList();
+
+                // 要素IDでグループ化して集計
+                var groupedElements = targetElementsWithIndices.GroupBy(x => x.ElementId).ToList();
+
+                // 2.【違反チェック1】最大同時構成数(maxPlacedCount)を超えている要素がないか
+                var exceedingCountGroups = groupedElements.Where(g => g.Count() > maxPlacedCount);
+                foreach (var group in exceedingCountGroups)
                 {
-                    // 最大同時構成数を超えている構成要素があるので不正なデータ
-                    return false;
+                    foreach (var item in group) violatingIndices.Add(item.OriginalIndex);
                 }
-                else if (countList.Count(x => x == maxPlacedCount) > maxPlacedAllowCount)
+
+                // 3.【違反チェック2】最大同時構成数に達している要素の数が許容数(maxPlacedAllowCount)を超えていないか
+                var groupsAtMaxCount = groupedElements.Where(g => g.Count() == maxPlacedCount).ToList();
+                if (groupsAtMaxCount.Count > maxPlacedAllowCount)
                 {
-                    // 構成要素の最大同時構成数の許容数を超えているので不正なデータ
-                    return false;
+                    // 違反している場合、その原因となった要素を持つコンポーネントをすべてリストアップ
+                    foreach (var group in groupsAtMaxCount)
+                    {
+                        foreach (var item in group) violatingIndices.Add(item.OriginalIndex);
+                    }
                 }
-                else
-                {
-                    // すべてのチェックが通ったので正しいデータ
-                    return true;
-                }
+
+                return violatingIndices.ToList();
             }
         }
         [Serializable]
@@ -55,24 +63,57 @@ namespace Wlg.FigureSkate.Core
             public Data current;
             public Data ifTrue;
             public Data ifFalse;
-            public bool Condition(ProgramComponent[] components)
+            public List<int> GetViolatingIndices(ProgramComponent[] components)
             {
-                if (!current.disable && current.Condition(components))
+                if (current.disable)
                 {
-                    return ifTrue.disable || ifTrue.Condition(components);
+                    return new List<int>(); // currentが無効なら常に成功
                 }
+
+                var currentViolations = current.GetViolatingIndices(components);
+
+                // currentが条件を満たした場合 (違反なし)
+                if (currentViolations.Count == 0)
+                {
+                    // ifTrueが無効なら成功、そうでなければifTrueの結果を返す
+                    return ifTrue.disable ? new List<int>() : ifTrue.GetViolatingIndices(components);
+                }
+                // currentが条件を満たさなかった場合 (違反あり)
                 else
                 {
-                    return !ifFalse.disable && ifFalse.Condition(components);
+                    // ifFalseが無効な場合、currentの失敗がそのまま最終的な失敗となる
+                    if (ifFalse.disable)
+                    {
+                        return currentViolations;
+                    }
+                    // そうでなければifFalseの結果を返す
+                    return ifFalse.GetViolatingIndices(components);
                 }
             }
-
         }
         public ConditionData[] conditionDatas;
 
         public override bool Condition(ProgramComponent[] components)
         {
-            return conditionDatas.All(x => x.Condition(components));
+            falseComponentIndexList.Clear();
+            var allViolatingIndices = new HashSet<int>();
+
+            // 全ての条件セットをチェックし、違反インデックスを集約する
+            foreach (var data in conditionDatas)
+            {
+                var violations = data.GetViolatingIndices(components);
+                foreach (var index in violations)
+                {
+                    allViolatingIndices.Add(index);
+                }
+            }
+
+            if (allViolatingIndices.Any())
+            {
+                falseComponentIndexList.AddRange(allViolatingIndices);
+            }
+
+            return !falseComponentIndexList.Any();
         }
     }
 }

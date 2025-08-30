@@ -15,11 +15,29 @@ namespace Wlg.FigureSkate.Core
 
         public override bool Condition(ProgramComponent[] components)
         {
-            return components
-                // 対象の構成要素枠だけに絞る
-                .Where(argument => elementPlaceableSetIds.Any(id => Equals(id, argument.elementPlaceableSetId)))
-                // 構成されている要素が指定パターンと一致しているものがあるかどうか判断する
-                .Any(group => group.elementIds.Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, pattern)));
+            // リストを初期化
+            falseComponentIndexList.Clear();
+
+            // 対象の構成要素枠だけに絞って、その中で指定パターンに一致する要素があるかチェック
+            bool isConditionMet = components
+                .Where(c => elementPlaceableSetIds.Contains(c.elementPlaceableSetId))
+                .Any(c => c.elementIds.Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, pattern)));
+
+            // 条件を満たしていない場合（＝一致する要素が一つもなかった場合）
+            if (!isConditionMet)
+            {
+                // そもそもチェック対象だったコンポーネントのインデックスをすべてリストアップする
+                for (int i = 0; i < components.Length; i++)
+                {
+                    if (elementPlaceableSetIds.Contains(components[i].elementPlaceableSetId))
+                    {
+                        falseComponentIndexList.Add(i);
+                    }
+                }
+            }
+
+            // 条件を満たしていればリストは空、満たしていなければリストにインデックスが入っている
+            return falseComponentIndexList.Count == 0;
         }
     }
 }

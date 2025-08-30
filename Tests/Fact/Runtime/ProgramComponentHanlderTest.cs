@@ -1,9 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.Localization.Settings;
 using Wlg.FigureSkate.Core;
 using Wlg.FigureSkate.Fact;
 using Assert = UnityEngine.Assertions.Assert;
@@ -52,6 +52,9 @@ namespace Wlg.FigureSkate.Tests.Fact
                         Assert.IsTrue(programComponentHanlder.TrySet(1, 0, null));
                         // 未設定項目があるので当然エラーは発生する
                         Assert.IsNotNull(programComponentHanlder.Error);
+                        Assert.IsTrue(ContainsErrorComponentIndex(programComponentHanlder, new() { 0, 1 }));
+                        // 設定変更していない部分はエラーは起きていないはず
+                        Assert.IsFalse(ContainsErrorComponentIndex(programComponentHanlder, new() { 2, 3, 4, 5, 6 }));
                     }
                     {
                         var localizedKeyId = 495606488166400;
@@ -59,6 +62,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                         Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3A"));
                         Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "2Lo"));
                         Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                        Assert.IsTrue(ContainsErrorComponentIndex(programComponentHanlder, new() { 2 }));
                     }
                     {
                         var localizedKeyId = 495606525915141;
@@ -66,6 +70,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                         Assert.IsTrue(programComponentHanlder.TrySet(0, 0, "3A"));
                         Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3A"));
                         Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                        Assert.IsTrue(ContainsErrorComponentIndex(programComponentHanlder, new() { 2 }));
                         // 同じ要素でもジャンプコンビネーションならエラーにはならない
                         Assert.IsTrue(programComponentHanlder.TrySet(2, 0, "3Lo"));
                         Assert.IsTrue(programComponentHanlder.TrySet(2, 1, "3Lo"));
@@ -77,6 +82,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                         Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FSSp4"));
                         Assert.IsTrue(programComponentHanlder.TrySet(4, 0, "CSSp4"));
                         Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                        Assert.IsTrue(ContainsErrorComponentIndex(programComponentHanlder, new() { 4 }));
                         // 異なる着氷姿勢に設定しなおしたのでエラーは解消しているはず
                         Assert.IsTrue(programComponentHanlder.TrySet(3, 0, "FCSp4"));
                         Assert.IsNull(programComponentHanlder.Error);
@@ -86,6 +92,7 @@ namespace Wlg.FigureSkate.Tests.Fact
                         var programComponentHanlder = ProgramComponentHanlderFactory.SeniorMenShortProgram(programObject.data, programComponents, skateYear, programComponentRegulationAll, elementPlaceableSetAll, elementPlaceableAll);
                         programComponentHanlder.Unset(6, 0);
                         Assert.IsTrue(ContainsErrorMessagelocalizedKeyId(programComponentHanlder, localizedKeyId));
+                        Assert.IsTrue(ContainsErrorComponentIndex(programComponentHanlder, new() { 6 }));
                     }
                     break;
                 default:
@@ -1241,6 +1248,15 @@ namespace Wlg.FigureSkate.Tests.Fact
         {
             return handler.Error.ElementPlaceableSetErrors.Any(x => x.Condition.falseMessage.TableEntryReference.KeyId == keyId) ||
                 handler.Error.ProgramComponentErrors.Any(x => x.Condition.falseMessage.TableEntryReference.KeyId == keyId);
+        }
+
+        private bool ContainsErrorComponentIndex(ProgramComponentHandler handler, List<int> indexList)
+        {
+            var elementPlaceableSetErrorComponentIndexList = handler.Error.ElementPlaceableSetErrors.Select(x => x.ComponentIndex);
+            var programComponentErrorComponentIndexList = handler.Error.ProgramComponentErrors.SelectMany(x => x.ComponentIndexList);
+            var allErrorComponentIndexList = elementPlaceableSetErrorComponentIndexList.Concat(programComponentErrorComponentIndexList).Distinct();
+            return indexList.All(index =>
+                allErrorComponentIndexList.Any(errorIndex => errorIndex == index));
         }
     }
 }

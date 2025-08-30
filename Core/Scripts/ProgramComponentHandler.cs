@@ -16,12 +16,13 @@ namespace Wlg.FigureSkate.Core
             public class ElementPlaceableSetError
             {
                 public ElementPlaceableSetCondition Condition;
-                public int OffendingComponentIndex { set; get; }
+                public int ComponentIndex { set; get; }
             }
 
             public class ProgramComponentError
             {
                 public ProgramComponentCondition Condition;
+                public List<int> ComponentIndexList { set; get; }
             }
 
             public async Task<string> FirstMessage()
@@ -139,7 +140,7 @@ namespace Wlg.FigureSkate.Core
                 errorOccurred = true;
                 Error ??= new();
                 Error.ElementPlaceableSetErrors = programComponentSetConditions
-                    .Select(x => new ErrorData.ElementPlaceableSetError() { Condition = x.Condition, OffendingComponentIndex = x.ComponentIndex })
+                    .Select(x => new ErrorData.ElementPlaceableSetError() { Condition = x.Condition, ComponentIndex = x.ComponentIndex })
                     .ToList();
             }
 
@@ -151,7 +152,7 @@ namespace Wlg.FigureSkate.Core
                 errorOccurred = true;
                 Error ??= new();
                 Error.ProgramComponentErrors = programComponentConditions
-                    .Select(x => new ErrorData.ProgramComponentError() { Condition = x })
+                    .Select(x => new ErrorData.ProgramComponentError() { Condition = x, ComponentIndexList = x.falseComponentIndexList })
                     .ToList();
             }
 

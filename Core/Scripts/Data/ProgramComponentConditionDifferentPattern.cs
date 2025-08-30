@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -15,49 +16,59 @@ namespace Wlg.FigureSkate.Core
 
         public override bool Condition(ProgramComponent[] components)
         {
-            // 指定した構成グループのデータを抽出
-            var groups = components.Where(argument => elementPlaceableSetIds.Any(id => Equals(id, argument.elementPlaceableSetId))).ToArray();
+            // リストを初期化
+            falseComponentIndexList.Clear();
 
-            // 指定した構成グループ間で同じパターンの要素を設定していないか判断する
-            bool SearchPatterm(ProgramComponent[] groups, string[] patterns)
+            // 1. 対象となるコンポーネントを元のインデックスと共に抽出
+            var targetComponentsWithIndices = components
+                .Select((component, index) => new { component, index })
+                .Where(x => elementPlaceableSetIds.Contains(x.component.elementPlaceableSetId))
+                .ToList();
+
+            // 2. 未設定の要素を持つコンポーネントが対象内にあれば、チェックせず常に成功とする
+            if (targetComponentsWithIndices.Any(c => c.component.elementIds.Any(string.IsNullOrEmpty)))
             {
-                // グループの先頭が指定パターンのどれとマッチしているか探す
-                var foundPattern = patterns
-                    .ToList()
-                    .Find(pattern => groups[0].elementIds
-                        .Where(placedElementId => !string.IsNullOrEmpty(placedElementId))
-                        .Any(placedElementId => Regex.IsMatch(placedElementId, pattern))
-                    );
-                if (!string.IsNullOrEmpty(foundPattern))
+                return true;
+            }
+
+            // 違反したコンポーネントのインデックスを重複なく保持するためのHashSet
+            var violatingIndices = new HashSet<int>();
+
+            // 3.【重複チェック】同じパターンを複数のコンポーネントが使用していないか
+            foreach (var pattern in patterns)
+            {
+                var matchingComponents = targetComponentsWithIndices
+                    .Where(c => c.component.elementIds.Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, pattern)))
+                    .ToList();
+
+                // パターンに一致するコンポーネントが2つ以上あれば、それは重複であり条件違反
+                if (matchingComponents.Count > 1)
                 {
-                    if (groups.Length > 1)
+                    // 違反した（重複の原因となった）コンポーネントのインデックスをすべて追加
+                    foreach (var comp in matchingComponents)
                     {
-                        // 今回扱ったグループの一員と見つかったパターンを除外して再度検索
-                        var newGroups = groups.Where((x, i) => i != 0).ToArray();
-                        var newPatterns = patterns.Where(x => !Equals(x, foundPattern)).ToArray();
-                        return SearchPatterm(newGroups, newPatterns);
-                    }
-                    else
-                    {
-                        // グループの最後だった場合、すべてのパターンを見つけられたので同じパターンを指定していないことが確定
-                        return true;
-                    }
-                }
-                else
-                {
-                    if (groups[0].elementIds.Any(x => string.IsNullOrEmpty(x)))
-                    {
-                        // まだ設定が不完全の構成なのでエラーとしない
-                        return true;
-                    }
-                    else
-                    {
-                        // 同じパターンかパターン外の要素を指定しているのでエラー
-                        return false;
+                        violatingIndices.Add(comp.index);
                     }
                 }
             }
-            return SearchPatterm(groups, patterns);
+
+            // 4.【パターン網羅チェック】いずれのパターンにも一致しない要素が設定されていないか
+            var componentsWithoutMatch = targetComponentsWithIndices
+                .Where(c => !patterns.Any(p => c.component.elementIds.Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, p))));
+
+            foreach (var comp in componentsWithoutMatch)
+            {
+                violatingIndices.Add(comp.index);
+            }
+
+            // 5. 違反したインデックスを最終的なリストに追加
+            if (violatingIndices.Count > 0)
+            {
+                falseComponentIndexList.AddRange(violatingIndices);
+            }
+
+            // 違反リストが空であれば条件成立
+            return falseComponentIndexList.Count == 0;
         }
     }
 }
