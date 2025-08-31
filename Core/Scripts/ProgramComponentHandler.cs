@@ -24,23 +24,6 @@ namespace Wlg.FigureSkate.Core
                 public ProgramComponentCondition Condition;
                 public List<int> ComponentIndexList { set; get; }
             }
-
-            public async Task<string> FirstMessage()
-            {
-                if (ElementPlaceableSetErrors.Count > 0)
-                {
-                    return await ElementPlaceableSetErrors.First().Condition.falseMessage.GetLocalizedStringAsync().Task;
-                }
-                else if (ProgramComponentErrors.Count > 0)
-                {
-                    return await ProgramComponentErrors.First().Condition.falseMessage.GetLocalizedStringAsync().Task;
-                }
-                else
-                {
-                    // エラーなし
-                    return "";
-                }
-            }
         }
 
         public Program Program { get; private set; }
