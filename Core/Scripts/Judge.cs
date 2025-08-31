@@ -277,6 +277,7 @@ namespace Wlg.FigureSkate.Core
             // 記号付きIDリストの構築
             var markedIds = component.elementIds.Select((x, i) => x + tes.infoMarksList[i].Unified());
             // 実行済み要素。コンビネーションの場合は+でつなぎ合わせる
+            // TODO:+SEQ対応
             tes.executedElement = markedIds.Aggregate("", (a, c) => Equals(a, "") ? c : $"{a}+{c}");
             // 最終ジャンプかどうか
             tes.lastJump = ProgramUtility.IsLastJumpProgramComponent(_program, _programComponents, _elementPlaceableSetAll, component);
