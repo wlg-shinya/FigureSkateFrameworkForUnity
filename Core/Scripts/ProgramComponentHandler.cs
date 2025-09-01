@@ -129,13 +129,16 @@ namespace Wlg.FigureSkate.Core
 
             // 構成全体をみて配置可能条件を満たしていないものがあればそのエラーを設定
             var regulation = ProgramUtility.GetProgramComponentRegulationById(ProgramComponentRegulationAll, Program.programComponentRegulationId);
-            var programComponentConditions = regulation.Conditions.Where(condition => !condition.Condition(ProgramComponents)).ToList();
+            var programComponentConditions = regulation.Conditions
+                .Select(condition => new { Condition = condition, IsMet = condition.Condition(ProgramComponents, out var indices), FalseIndices = indices })
+                .Where(x => !x.IsMet)
+                .ToList();
             if (programComponentConditions.Count > 0)
             {
                 errorOccurred = true;
                 Error ??= new();
                 Error.ProgramComponentErrors = programComponentConditions
-                    .Select(x => new ErrorData.ProgramComponentError() { Condition = x, ComponentIndexList = x.falseComponentIndexList })
+                    .Select(x => new ErrorData.ProgramComponentError() { Condition = x.Condition, ComponentIndexList = x.FalseIndices }) // outで受け取ったリストを使用
                     .ToList();
             }
 

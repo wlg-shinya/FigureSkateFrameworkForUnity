@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Wlg.FigureSkate.Core
@@ -7,10 +8,9 @@ namespace Wlg.FigureSkate.Core
     [Serializable]
     public class ProgramComponentConditionAllPlaced : ProgramComponentCondition
     {
-        public override bool Condition(ProgramComponent[] components)
+        public override bool Condition(ProgramComponent[] components, out List<int> falseComponentIndexList)
         {
-            // 未設定のものが一つもなければ条件成立
-            falseComponentIndexList.Clear();
+            falseComponentIndexList = new List<int>(); // 新しいリストを作成
             for (int i = 0; i < components.Length; i++)
             {
                 if (components[i].elementIds.Any(string.IsNullOrEmpty))

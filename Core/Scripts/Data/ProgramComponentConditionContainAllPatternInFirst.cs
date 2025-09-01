@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -13,52 +14,51 @@ namespace Wlg.FigureSkate.Core
         // 含めるべきパターン
         public string[] patterns;
 
-        public override bool Condition(ProgramComponent[] components)
+        public override bool Condition(ProgramComponent[] components, out List<int> falseComponentIndexList)
         {
-            // リストを初期化
-            falseComponentIndexList.Clear();
-
-            // チェック対象となるコンポーネントとその元のインデックスを抽出
+            // 1. このルールのチェック対象となるコンポーネントとその元のインデックスを抽出
             var targetComponentsWithIndices = components
                 .Select((component, index) => new { component, index })
                 .Where(x => elementPlaceableSetIds.Contains(x.component.elementPlaceableSetId))
                 .ToList();
 
-            // マッチングに使用するため、コンポーネント部分だけの可変リストを作成
-            // （一度マッチしたコンポーネントは次の検索から除外するため）
-            var availableComponents = targetComponentsWithIndices.Select(x => x.component).ToList();
+            // 2. マッチングに使用するため、対象コンポーネントの「第1要素のID」の可変リストを作成
+            //    (一度マッチしたIDは次の検索から除外するため)
+            var availableFirstElementIds = targetComponentsWithIndices
+                .Select(x => x.component.elementIds.FirstOrDefault())
+                .Where(id => !string.IsNullOrEmpty(id))
+                .ToList();
 
             int matchesFound = 0;
 
-            // 各パターンに対して、まだ使われていないコンポーネントから一致するものを探す
+            // 3. 各パターンに対して、まだ使われていない要素IDから一致するものを探す
             foreach (var pattern in patterns)
             {
-                // パターンに一致する最初の要素を持つコンポーネントを探す
-                var matchedComponent = availableComponents.FirstOrDefault(comp =>
-                    !string.IsNullOrEmpty(comp.elementIds.FirstOrDefault()) && Regex.IsMatch(comp.elementIds[0], pattern));
+                var matchedId = availableFirstElementIds.FirstOrDefault(id => Regex.IsMatch(id, pattern));
 
-                if (matchedComponent != null)
+                if (matchedId != null)
                 {
                     matchesFound++;
-                    // 一致したコンポーネントは次の検索から除外する
-                    availableComponents.Remove(matchedComponent);
+                    // 一致したIDは次の検索から除外する (一対一マッチングのため)
+                    availableFirstElementIds.Remove(matchedId);
                 }
             }
 
-            // 全てのパターンに一致するものが見つかったかどうかで成否を判断
+            // 4. 全てのパターンに一致するものが見つかったかどうかで成否を判断
             bool isConditionMet = matchesFound == patterns.Length;
 
-            // 条件を満たしていない場合、対象となったコンポーネントのインデックスをすべてリストに追加
-            if (!isConditionMet)
+            if (isConditionMet)
             {
-                foreach (var item in targetComponentsWithIndices)
-                {
-                    falseComponentIndexList.Add(item.index);
-                }
+                // 条件を満たした場合、エラーリストは空
+                falseComponentIndexList = new List<int>();
+            }
+            else
+            {
+                // 条件を満たさなかった場合、対象となったコンポーネントのインデックスをすべてエラーとする
+                falseComponentIndexList = targetComponentsWithIndices.Select(x => x.index).ToList();
             }
 
-            // 条件を満たしていればリストは空、満たしていなければリストにインデックスが入っている
-            return falseComponentIndexList.Count == 0;
+            return isConditionMet;
         }
     }
 }

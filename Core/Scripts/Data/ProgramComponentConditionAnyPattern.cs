@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -13,31 +14,24 @@ namespace Wlg.FigureSkate.Core
         // 指定パターン
         public string pattern;
 
-        public override bool Condition(ProgramComponent[] components)
+        public override bool Condition(ProgramComponent[] components, out List<int> falseComponentIndexList)
         {
-            // リストを初期化
-            falseComponentIndexList.Clear();
+            // 1. このルールのチェック対象となるコンポーネントのインデックスをすべて探し出す
+            var targetIndices = components
+                .Select((component, index) => new { component, index })
+                .Where(x => elementPlaceableSetIds.Contains(x.component.elementPlaceableSetId))
+                .Select(x => x.index)
+                .ToList();
 
-            // 対象の構成要素枠だけに絞って、その中で指定パターンに一致する要素があるかチェック
-            bool isConditionMet = components
-                .Where(c => elementPlaceableSetIds.Contains(c.elementPlaceableSetId))
-                .Any(c => c.elementIds.Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, pattern)));
+            // 2. チェック対象のコンポーネントの中に、パターンに一致する要素が1つでも存在するか調べる
+            bool isPatternFound = targetIndices.Any(index =>
+                components[index].elementIds.Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, pattern))
+            );
 
-            // 条件を満たしていない場合（＝一致する要素が一つもなかった場合）
-            if (!isConditionMet)
-            {
-                // そもそもチェック対象だったコンポーネントのインデックスをすべてリストアップする
-                for (int i = 0; i < components.Length; i++)
-                {
-                    if (elementPlaceableSetIds.Contains(components[i].elementPlaceableSetId))
-                    {
-                        falseComponentIndexList.Add(i);
-                    }
-                }
-            }
+            // 3. パターンが見つかれば条件成功（エラーリストは空）、見つからなければ失敗（エラーリストは対象インデックス全て）
+            falseComponentIndexList = isPatternFound ? new List<int>() : targetIndices;
 
-            // 条件を満たしていればリストは空、満たしていなければリストにインデックスが入っている
-            return falseComponentIndexList.Count == 0;
+            return isPatternFound;
         }
     }
 }

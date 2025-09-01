@@ -93,9 +93,8 @@ namespace Wlg.FigureSkate.Core
         }
         public ConditionData[] conditionDatas;
 
-        public override bool Condition(ProgramComponent[] components)
+        public override bool Condition(ProgramComponent[] components, out List<int> falseComponentIndexList)
         {
-            falseComponentIndexList.Clear();
             var allViolatingIndices = new HashSet<int>();
 
             // 全ての条件セットをチェックし、違反インデックスを集約する
@@ -108,12 +107,11 @@ namespace Wlg.FigureSkate.Core
                 }
             }
 
-            if (allViolatingIndices.Any())
-            {
-                falseComponentIndexList.AddRange(allViolatingIndices);
-            }
+            // 集約した違反インデックスを最終的なリストとしてoutパラメータに設定
+            falseComponentIndexList = allViolatingIndices.ToList();
 
-            return !falseComponentIndexList.Any();
+            // 違反リストが空であれば条件成立
+            return falseComponentIndexList.Count == 0;
         }
     }
 }

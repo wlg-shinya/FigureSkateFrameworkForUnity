@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -13,34 +14,29 @@ namespace Wlg.FigureSkate.Core
         // 先頭以外に含むのがひとつだけであるべきパターン
         public string pattern;
 
-        public override bool Condition(ProgramComponent[] components)
+        public override bool Condition(ProgramComponent[] components, out List<int> falseComponentIndexList)
         {
-            // リストを初期化
-            falseComponentIndexList.Clear();
-
-            // 条件違反の可能性があるコンポーネント（＝パターンを含むもの）のインデックスを探す
-            var componentsWithPatternIndices = components
+            // 1. ルールに違反している可能性のあるコンポーネント
+            //    (＝指定パターンを先頭以外に含むもの) のインデックスをすべて探し出す
+            var violatingIndices = components
                 .Select((component, index) => new { component, index })
-                // 1. 対象の構成要素グループに絞る
-                .Where(x => elementPlaceableSetIds.Contains(x.component.elementPlaceableSetId))
-                // 2. 構成要素が2つ以上あるものに絞る
-                .Where(x => x.component.elementIds.Count() >= 2)
-                // 3. 先頭以外の要素に指定パターンが含まれているかチェック
-                .Where(x => x.component.elementIds
-                    .Skip(1) // 先頭要素をスキップ
-                    .Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, pattern)))
+                .Where(x =>
+                    // 対象の構成要素グループであり、
+                    elementPlaceableSetIds.Contains(x.component.elementPlaceableSetId) &&
+                    // 構成要素が2つ以上あり、
+                    x.component.elementIds.Length >= 2 &&
+                    // 先頭以外の要素に指定パターンが含まれている
+                    x.component.elementIds.Skip(1).Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, pattern)))
                 .Select(x => x.index)
                 .ToList();
 
-            // パターンを含むコンポーネントが2つ以上ある場合、条件違反
-            if (componentsWithPatternIndices.Count > 1)
-            {
-                // 違反したすべてのコンポーネントのインデックスをリストに追加
-                falseComponentIndexList.AddRange(componentsWithPatternIndices);
-            }
+            // 2. パターンを含むコンポーネントが2つ以上あればルール違反
+            bool isConditionMet = violatingIndices.Count <= 1;
 
-            // 条件を満たしていればリストは空、満たしていなければリストにインデックスが入っている
-            return falseComponentIndexList.Count == 0;
+            // 3. 条件を満たせばエラーリストは空、違反すれば違反したインデックスのリストを返す
+            falseComponentIndexList = isConditionMet ? new List<int>() : violatingIndices;
+
+            return isConditionMet;
         }
     }
 }

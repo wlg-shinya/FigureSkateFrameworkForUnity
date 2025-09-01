@@ -14,11 +14,8 @@ namespace Wlg.FigureSkate.Core
         // 重複してはいけないパターン
         public string[] patterns;
 
-        public override bool Condition(ProgramComponent[] components)
+        public override bool Condition(ProgramComponent[] components, out List<int> falseComponentIndexList)
         {
-            // リストを初期化
-            falseComponentIndexList.Clear();
-
             // 1. 対象となるコンポーネントを元のインデックスと共に抽出
             var targetComponentsWithIndices = components
                 .Select((component, index) => new { component, index })
@@ -28,17 +25,18 @@ namespace Wlg.FigureSkate.Core
             // 2. 未設定の要素を持つコンポーネントが対象内にあれば、チェックせず常に成功とする
             if (targetComponentsWithIndices.Any(c => c.component.elementIds.Any(string.IsNullOrEmpty)))
             {
+                falseComponentIndexList = new List<int>();
                 return true;
             }
 
-            // 違反したコンポーネントのインデックスを重複なく保持するためのHashSet
+            // 違反したコンポー-ネントのインデックスを重複なく保持するためのHashSet
             var violatingIndices = new HashSet<int>();
 
             // 3.【重複チェック】同じパターンを複数のコンポーネントが使用していないか
             foreach (var pattern in patterns)
             {
                 var matchingComponents = targetComponentsWithIndices
-                    .Where(c => c.component.elementIds.Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, pattern)))
+                    .Where(c => c.component.elementIds.Any(id => Regex.IsMatch(id, pattern)))
                     .ToList();
 
                 // パターンに一致するコンポーネントが2つ以上あれば、それは重複であり条件違反
@@ -54,20 +52,17 @@ namespace Wlg.FigureSkate.Core
 
             // 4.【パターン網羅チェック】いずれのパターンにも一致しない要素が設定されていないか
             var componentsWithoutMatch = targetComponentsWithIndices
-                .Where(c => !patterns.Any(p => c.component.elementIds.Any(id => !string.IsNullOrEmpty(id) && Regex.IsMatch(id, p))));
+                .Where(c => !patterns.Any(p => c.component.elementIds.Any(id => Regex.IsMatch(id, p))));
 
             foreach (var comp in componentsWithoutMatch)
             {
                 violatingIndices.Add(comp.index);
             }
 
-            // 5. 違反したインデックスを最終的なリストに追加
-            if (violatingIndices.Count > 0)
-            {
-                falseComponentIndexList.AddRange(violatingIndices);
-            }
+            // 5. 違反したインデックスを最終的なリストに変換
+            falseComponentIndexList = violatingIndices.ToList();
 
-            // 違反リストが空であれば条件成立
+            // 6. 違反リストが空であれば条件成立
             return falseComponentIndexList.Count == 0;
         }
     }
