@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
@@ -10,16 +11,14 @@ namespace Wlg.FigureSkate.Fact.Editor
 {
     public static class Menu
     {
-        [UnityEditor.MenuItem("Wlg.FigureSkate/LocalizeHealthCheck")]
-        public static async Task LocalizeHealthCheck()
+        [MenuItem("Wlg.FigureSkate/LocalizeHealthCheck")]
+        public static async void LocalizeHealthCheck()
         {
             try
             {
                 Debug.Log($"LocalizeHealthCheck start. After a while, the log will be output.");
 
-                PackageInfo packageInfo = PackageInfo.FindForAssetPath("Packages/com.welovegamesinc.figureskate-framework") ??
-                throw new Exception("Not found path 'com.welovegamesinc.figureskate-framework'");
-
+                var packageInfo = GetPackageInfo();
                 var stringTableNameList = new List<string>() {
                     "FigureSkateFrameworkCore",
                     "FigureSkateFrameworkFact",
@@ -41,6 +40,31 @@ namespace Wlg.FigureSkate.Fact.Editor
             {
                 Debug.LogException(e);
             }
+        }
+
+        [MenuItem("Wlg.FigureSkate/ValidProgramComponentsBuilder")]
+        public static async void ValidProgramComponentsBuilder()
+        {
+            try
+            {
+                Debug.Log($"ValidProgramComponentsBuilder start. After a while, the log will be output.");
+
+                var packageInfo = GetPackageInfo();
+                var builder = new ValidProgramComponentsBuilder(Path.Combine(packageInfo.resolvedPath, "ValidProgramComponents"));
+                await builder.Initialize();
+                await builder.FullBuild();
+                Debug.Log($"ValidProgramComponentsBuilder finished.");
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
+        }
+
+        private static UnityEditor.PackageManager.PackageInfo GetPackageInfo()
+        {
+            return UnityEditor.PackageManager.PackageInfo.FindForAssetPath("Packages/com.welovegamesinc.figureskate-framework") ??
+                throw new Exception("Not found path 'com.welovegamesinc.figureskate-framework'");
         }
     }
 }
