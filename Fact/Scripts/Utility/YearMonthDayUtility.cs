@@ -28,6 +28,21 @@ namespace Wlg.FigureSkate.Fact
             return $"{seasonStartYear}-{(seasonStartYear + 1) % 100:D2}";
         }
 
+        // 指定シーズンの開始日を得る
+        public static YearMonthDay GetSeasonStartDay(string season)
+        {
+            // "2024-25" -> "2024" と "25" に分割
+            var parts = season.Split('-');
+            if (parts.Length != 2 || !int.TryParse(parts[0], out int startYear))
+            {
+                // 不正なフォーマット
+                throw new ArgumentException("Invalid season format. Expected 'YYYY-YY'.", nameof(season));
+            }
+
+            // シーズンの開始日は常に7月1日
+            return new YearMonthDay(startYear, 7, 1);
+        }
+
         // 指定シーズンの最終日を得る
         public static YearMonthDay GetSeasonLastDay(string season)
         {
