@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Wlg.FigureSkate.Fact
@@ -10,6 +11,52 @@ namespace Wlg.FigureSkate.Fact
     {
         public ValidProgramComponents Root { get; private set; }
         public Dictionary<ushort, string> IdToStringMap { get; private set; }
+
+        private ValidProgramComponentsLoader() { }
+
+        public static async Task<ValidProgramComponentsLoader> Load(string dirPath)
+        {
+            var loader = new ValidProgramComponentsLoader();
+            var mapJsonPath = Path.Combine(dirPath, "IdMap.json");
+            var binGzPath = Path.Combine(dirPath, "ValidProgramComponents.bin.gz");
+
+            if (!File.Exists(mapJsonPath) || !File.Exists(binGzPath))
+            {
+                throw new FileNotFoundException("TrieデータファイルまたはIDマップファイルが見つかりません。", dirPath);
+            }
+
+            // --- Step 1: IDマップ(JSON)を非同期で読み込む ---
+            var json = await File.ReadAllTextAsync(mapJsonPath);
+            var serializableMap = JsonUtility.FromJson<SerializableUshortStringMap>(json);
+            loader.IdToStringMap = new Dictionary<ushort, string>();
+            for (int i = 0; i < serializableMap.keys.Count; i++)
+            {
+                loader.IdToStringMap[serializableMap.keys[i]] = serializableMap.values[i];
+            }
+
+            // --- Step 2: GZip圧縮されたTrieデータを非同期で読み込み、伸張する ---
+            // まず非同期でファイルからメモリへ読み込み、その後メモリ上で高速にパースする
+            using (var memoryStream = new MemoryStream())
+            {
+                // FileStreamを非同期モードで開く
+                using (var fileStream = new FileStream(binGzPath, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize: 4096, useAsync: true))
+                using (var decompressionStream = new GZipStream(fileStream, CompressionMode.Decompress))
+                {
+                    // 非同期で伸張し、結果をメモリストリームにコピーする
+                    await decompressionStream.CopyToAsync(memoryStream);
+                }
+
+                // メモリストリームの先頭から読み込むために位置をリセット
+                memoryStream.Position = 0;
+                using (var binReader = new BinaryReader(memoryStream))
+                {
+                    // ReadNodeはメモリ上のデータを読むだけなので、同期のままで高速
+                    loader.Root = loader.ReadNode(binReader);
+                }
+            }
+
+            return loader;
+        }
 
         [Serializable]
         public class SerializableUshortStringMap
@@ -24,35 +71,6 @@ namespace Wlg.FigureSkate.Fact
                     keys.Add(pair.Key);
                     values.Add(pair.Value);
                 }
-            }
-        }
-
-        public ValidProgramComponentsLoader(string dirPath)
-        {
-            var mapJsonPath = Path.Combine(dirPath, "IdMap.json");
-            var binGzPath = Path.Combine(dirPath, "ValidProgramComponents.bin.gz");
-
-            if (!File.Exists(mapJsonPath) || !File.Exists(binGzPath))
-            {
-                throw new FileNotFoundException("TrieデータファイルまたはIDマップファイルが見つかりません。", dirPath);
-            }
-
-            // --- Step 1: IDマップ(JSON)を読み込む ---
-            var json = File.ReadAllText(mapJsonPath);
-            var serializableMap = JsonUtility.FromJson<SerializableUshortStringMap>(json);
-            IdToStringMap = new Dictionary<ushort, string>();
-            for (int i = 0; i < serializableMap.keys.Count; i++)
-            {
-                IdToStringMap[serializableMap.keys[i]] = serializableMap.values[i];
-            }
-
-            // --- Step 2: GZip圧縮されたTrieデータを読み込み、伸張する ---
-            using (var fileStream = new FileStream(binGzPath, FileMode.Open))
-            using (var decompressionStream = new GZipStream(fileStream, CompressionMode.Decompress))
-            using (var binReader = new BinaryReader(decompressionStream))
-            {
-                // 伸張ストリームから直接Trieを読み込む
-                Root = ReadNode(binReader);
             }
         }
 

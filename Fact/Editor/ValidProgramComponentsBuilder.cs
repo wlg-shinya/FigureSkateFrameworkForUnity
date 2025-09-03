@@ -147,7 +147,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                     File.WriteAllText(mapJsonPath, json);
 
                     // Trie木をGZipで圧縮して保存
-                    binFilePath = Path.Combine(outputDir, "ProgramComponentsTrieNode.bin.gz");
+                    binFilePath = Path.Combine(outputDir, "ValidProgramComponents.bin.gz");
 
                     using (var fileStream = new FileStream(binFilePath, FileMode.Create))
                     using (var compressionStream = new GZipStream(fileStream, CompressionMode.Compress))
