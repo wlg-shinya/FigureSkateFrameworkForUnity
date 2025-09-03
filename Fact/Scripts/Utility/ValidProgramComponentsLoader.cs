@@ -15,11 +15,14 @@ namespace Wlg.FigureSkate.Fact
         public ValidProgramComponents Root { get; private set; }
         public Dictionary<ushort, string> IdToStringMap { get; private set; }
 
+        public const string VALID_PROGRAM_COMPONENTS_FILENAME = "ValidProgramComponents.bin.gz";
+        public const string ID_MAP_FILENAME = "IdMap.json";
+
         public static async Task<ValidProgramComponentsLoader> Load(string dirPath)
         {
             var loader = new ValidProgramComponentsLoader();
-            var mapJsonPath = Path.Combine(dirPath, "IdMap.json");
-            var binGzPath = Path.Combine(dirPath, "ValidProgramComponents.bin.gz");
+            var mapJsonPath = Path.Combine(dirPath, ID_MAP_FILENAME);
+            var binGzPath = Path.Combine(dirPath, VALID_PROGRAM_COMPONENTS_FILENAME);
 
             if (!File.Exists(mapJsonPath) || !File.Exists(binGzPath))
             {

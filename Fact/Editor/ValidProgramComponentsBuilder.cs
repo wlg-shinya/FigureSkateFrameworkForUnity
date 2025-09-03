@@ -142,12 +142,12 @@ namespace Wlg.FigureSkate.Fact.Editor
                 try
                 {
                     // IDマップをJSONとして保存
-                    var mapJsonPath = Path.Combine(outputDir, "IdMap.json");
+                    var mapJsonPath = Path.Combine(outputDir, ValidProgramComponentsLoader.ID_MAP_FILENAME);
                     var json = JsonUtility.ToJson(new ValidProgramComponentsLoader.SerializableUshortStringMap(idToStringMap), true);
                     File.WriteAllText(mapJsonPath, json);
 
                     // Trie木をGZipで圧縮して保存
-                    binFilePath = Path.Combine(outputDir, "ValidProgramComponents.bin.gz");
+                    binFilePath = Path.Combine(outputDir, ValidProgramComponentsLoader.VALID_PROGRAM_COMPONENTS_FILENAME);
 
                     using (var fileStream = new FileStream(binFilePath, FileMode.Create))
                     using (var compressionStream = new GZipStream(fileStream, CompressionMode.Compress))
