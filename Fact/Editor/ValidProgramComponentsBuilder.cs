@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,17 +26,17 @@ namespace Wlg.FigureSkate.Fact.Editor
             setting.GetAllAssets(_addressableAssetEntry, false);
 
             // フィギュアスケートデータの読み込み
-            _eventObjects = LoadAssetsAsync<EventObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event");
-            _elementPlaceableSetObjects = LoadAssetsAsync<ElementPlaceableSetObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceableSet");
-            _elementPlaceableObjects = LoadAssetsAsync<ElementPlaceableObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceable");
-            _elementObjects = LoadAssetsAsync<ElementObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element");
+            _eventObjects = LoadAssets<EventObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event");
+            _elementPlaceableSetObjects = LoadAssets<ElementPlaceableSetObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceableSet");
+            _elementPlaceableObjects = LoadAssets<ElementPlaceableObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceable");
+            _elementObjects = LoadAssets<ElementObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Element");
             _elementPlaceableSetArray = _elementPlaceableSetObjects.Select(x => x.data).ToArray();
             _elementPlaceableArray = _elementPlaceableObjects.Select(x => x.data).ToArray();
             foreach (var season in FactConstant.SEASONS)
             {
-                var programObjects = LoadAssetsAsync<ProgramObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/Program");
-                var programComponentRegulationObjects = LoadAssetsAsync<ProgramComponentRegulationObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/ProgramComponentRegulation");
-                var elementBaseValueObjects = LoadAssetsAsync<ElementBaseValueObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/ElementBaseValue");
+                var programObjects = LoadAssets<ProgramObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/Program");
+                var programComponentRegulationObjects = LoadAssets<ProgramComponentRegulationObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/ProgramComponentRegulation");
+                var elementBaseValueObjects = LoadAssets<ElementBaseValueObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/{season}/ElementBaseValue");
                 _programObjectsMap.Add(season, programObjects.ToDictionary(x => x.data.id, x => x));
                 _programComponentRegulationObjectsMap.Add(season, programComponentRegulationObjects.ToDictionary(x => x.data.id, x => x));
                 _programComponentRegulationArray.Add(season, programComponentRegulationObjects.Select(x => x.data).ToArray());
@@ -75,49 +76,47 @@ namespace Wlg.FigureSkate.Fact.Editor
                 .ToList();
 
             // 全シーズンの全プログラム構成に対して構成可能な要素の組み割合わせを出力する
-            var tasks = new List<Task<BuildResult>>();
+            var tasks = new List<Task>();
             foreach (var (season, programId) in allPrograms)
             {
                 await semaphore.WaitAsync();
-                tasks.Add(Task.Run(() =>
+                var task = BuildOneProgram(season, programId).ContinueWith(t =>
                 {
-                    BuildResult result = null;
-                    try
+                    // エラーハンドリング
+                    if (t.IsFaulted)
                     {
-                        result = Build(
-                            season,
-                            _programObjectsMap[season][programId],
-                            _programComponentRegulationObjectsMap[season][_programObjectsMap[season][programId].data.programComponentRegulationId],
-                            _elementPlaceableSetObjects,
-                            _programComponentRegulationArray[season],
-                            _elementPlaceableSetArray,
-                            _elementPlaceableArray,
-                            _elementBaseValueArray[season]
-                        );
+                        Debug.LogError($"Failed to build program {programId} for season {season}. Error: {t.Exception.InnerException.Message}");
                     }
-                    catch (Exception ex)
-                    {
-                        // エラーが発生しても他のタスクが止まらないようにログに出力
-                        Debug.LogError($"Failed to build program {programId} for season {season}. Error: {ex.Message}");
-                    }
-                    finally
-                    {
-                        semaphore.Release();
-                    }
-                    return result;
-                }));
+                    // セマフォの解放
+                    semaphore.Release();
+                });
+                tasks.Add(task);
             }
-            var buildResults = await Task.WhenAll(tasks);
-            foreach (var result in buildResults)
-            {
-                Debug.Log(result.OutputPath);
-            }
+            await Task.WhenAll(tasks);
         }
 
         // 指定プログラムでビルド
         // MEMO:ハンドラ構築前に ProgramObjectQuery.SetupConditions が実行されている必要がある
         public async Task BuildOneProgram(string season, string programId)
         {
+            var stringToIdMap = new Dictionary<string, ushort>();
+            var idToStringMap = new Dictionary<ushort, string>();
+            ushort nextId = 0;
+            stringToIdMap[EmptyElementIdKey] = nextId;
+            idToStringMap[nextId] = null;
+            nextId++;
+
+            // そのシーズンで利用可能性のある全ての要素IDを辞書に登録
+            foreach (var elementId in _allPossibleElementIds[season].OrderBy(id => id)) // 順序を安定させるためにソート
+            {
+                if (!stringToIdMap.ContainsKey(elementId))
+                {
+                    stringToIdMap[elementId] = nextId;
+                    idToStringMap[nextId] = elementId;
+                    nextId++;
+                }
+            }
+
             var buildResult = await Task.Run(() =>
             {
                 return Build(
@@ -128,25 +127,36 @@ namespace Wlg.FigureSkate.Fact.Editor
                     _programComponentRegulationArray[season],
                     _elementPlaceableSetArray,
                     _elementPlaceableArray,
-                    _elementBaseValueArray[season]
+                    _elementBaseValueArray[season],
+                    stringToIdMap
                 );
             });
 
-            // ビルド結果（Trie木）をバイナリファイルに書き出します。
+            // ビルド結果をバイナリファイルに書き出します。
             if (buildResult != null && buildResult.Root.Children.Count > 0)
             {
-                var binFilePath = Path.Combine(buildResult.OutputPath, "ValidProgramComponents.bin");
+                var outputDir = buildResult.OutputPath;
+                Directory.CreateDirectory(outputDir);
+
+                string binFilePath = null;
                 try
                 {
-                    Directory.CreateDirectory(buildResult.OutputPath);
+                    // IDマップをJSONとして保存
+                    var mapJsonPath = Path.Combine(outputDir, "IdMap.json");
+                    var json = JsonUtility.ToJson(new ValidProgramComponentsLoader.SerializableUshortStringMap(idToStringMap), true);
+                    File.WriteAllText(mapJsonPath, json);
 
-                    using (var binStream = new FileStream(binFilePath, FileMode.Create))
-                    using (var binWriter = new BinaryWriter(binStream))
+                    // Trie木をGZipで圧縮して保存
+                    binFilePath = Path.Combine(outputDir, "ProgramComponentsTrieNode.bin.gz");
+
+                    using (var fileStream = new FileStream(binFilePath, FileMode.Create))
+                    using (var compressionStream = new GZipStream(fileStream, CompressionMode.Compress))
+                    using (var binWriter = new BinaryWriter(compressionStream))
                     {
-                        // Trie木のルートノードから再帰的に書き込みを開始
+                        // 圧縮ストリームに直接Trieを書き込む
                         WriteNode(binWriter, buildResult.Root);
                     }
-                    Debug.Log($"Successfully wrote Trie data to {binFilePath}");
+                    Debug.Log($"Successfully wrote GZip compressed Trie data to {binFilePath}");
                 }
                 catch (Exception ex)
                 {
@@ -164,20 +174,18 @@ namespace Wlg.FigureSkate.Fact.Editor
         }
 
         // Trie木を再帰的にバイナリへ書き込むヘルパーメソッド
-        private void WriteNode(BinaryWriter writer, ProgramComponentsTrieNode node)
+        private void WriteNode(BinaryWriter writer, ValidProgramComponents node)
         {
-            // 終点情報と基礎点を書き込む
             writer.Write(node.IsEndOfValid);
             if (node.IsEndOfValid)
             {
                 writer.Write(node.TotalBaseValue);
             }
 
-            // 子ノードの数を書き込む
             writer.Write(node.Children.Count);
             foreach (var child in node.Children)
             {
-                writer.Write(child.Key ?? string.Empty);
+                writer.Write(child.Key);
                 WriteNode(writer, child.Value);
             }
         }
@@ -190,7 +198,8 @@ namespace Wlg.FigureSkate.Fact.Editor
             ProgramComponentRegulation[] programComponentRegulationArray,
             ElementPlaceableSet[] elementPlaceableSetArray,
             ElementPlaceable[] elementPlaceableArray,
-            ElementBaseValue[] elementBaseValueArray
+            ElementBaseValue[] elementBaseValueArray,
+            Dictionary<string, ushort> stringToIdMap
             )
         {
             var programId = programObject.data.id;
@@ -213,7 +222,7 @@ namespace Wlg.FigureSkate.Fact.Editor
             );
 
             // 再帰的に有効なすべての組み合わせを探し出す
-            void FindValidCombinationsAndBuildTrie(int componentIndex, int elementIndex, ProgramComponentsTrieNode currentNode)
+            void FindValidCombinationsAndBuildTrie(int componentIndex, int elementIndex, ValidProgramComponents currentNode)
             {
                 // ベースケース: すべての要素スロットを調べ終えたら、最終的な検証を行います。
                 if (componentIndex >= handler.ProgramComponents.Length)
@@ -221,12 +230,10 @@ namespace Wlg.FigureSkate.Fact.Editor
                     handler.UpdateError();
                     if (handler.Error == null)
                     {
-                        // 有効な構成の終点としてノードにマーク
                         currentNode.IsEndOfValid = true;
-                        // 合計基礎点を計算して格納
                         currentNode.TotalBaseValue = ProgramUtility.EstimateTotalBaseValue(
                             handler.Program,
-                            handler.ProgramComponents, // 直接ハンドラの状態を利用
+                            handler.ProgramComponents,
                             handler.ElementPlaceableSetAll,
                             elementBaseValueArray,
                             goe: 0
@@ -243,19 +250,16 @@ namespace Wlg.FigureSkate.Fact.Editor
                     nextElementIndex = 0;
                 }
 
-                // --- 再帰ステップ ---
-
                 // 1. 現在のスロットを「空」にした場合の組み合わせを試します。
-                var emptyElementId = (string)null;
-                handler.ProgramComponents[componentIndex].elementIds[elementIndex] = emptyElementId;
+                var emptyElementIdForHandler = (string)null;
+                handler.ProgramComponents[componentIndex].elementIds[elementIndex] = emptyElementIdForHandler;
+                var emptyId = stringToIdMap[EmptyElementIdKey];
 
-                // 対応する子ノードがなければ作成
-                if (!currentNode.Children.ContainsKey(emptyElementId ?? string.Empty))
+                if (!currentNode.Children.ContainsKey(emptyId))
                 {
-                    currentNode.Children[emptyElementId ?? string.Empty] = new();
+                    currentNode.Children[emptyId] = new();
                 }
-                FindValidCombinationsAndBuildTrie(nextComponentIndex, nextElementIndex, currentNode.Children[emptyElementId ?? string.Empty]);
-
+                FindValidCombinationsAndBuildTrie(nextComponentIndex, nextElementIndex, currentNode.Children[emptyId]);
 
                 // 2. 現在のスロットに設定可能なすべての要素を試します。
                 var currentComponent = handler.ProgramComponents[componentIndex];
@@ -265,30 +269,30 @@ namespace Wlg.FigureSkate.Fact.Editor
                 foreach (var elementId in placeable.elementIds)
                 {
                     handler.ProgramComponents[componentIndex].elementIds[elementIndex] = elementId;
+                    var id = stringToIdMap[elementId];
 
-                    // 対応する子ノードがなければ作成
-                    if (!currentNode.Children.ContainsKey(elementId))
+                    if (!currentNode.Children.ContainsKey(id))
                     {
-                        currentNode.Children[elementId] = new();
+                        currentNode.Children[id] = new();
                     }
-                    FindValidCombinationsAndBuildTrie(nextComponentIndex, nextElementIndex, currentNode.Children[elementId]);
+                    FindValidCombinationsAndBuildTrie(nextComponentIndex, nextElementIndex, currentNode.Children[id]);
                 }
 
-                // バックトラック: このステップで変更した要素を元に戻す(次の探索に影響を与えないように)
+                // バックトラック
                 handler.ProgramComponents[componentIndex].elementIds[elementIndex] = null;
             }
-
             FindValidCombinationsAndBuildTrie(0, 0, buildResult.Root);
 
-            // ビルド結果を返す
             return buildResult;
         }
 
         private class BuildResult
         {
             public string OutputPath;
-            public ProgramComponentsTrieNode Root = new();
+            public ValidProgramComponents Root = new();
         }
+
+        const string EmptyElementIdKey = "$EMPTY_ELEMENT$";
 
         private readonly string _outputPath;
         private readonly List<ElementPlaceableObject> _elementPlaceableObjects;
@@ -308,7 +312,7 @@ namespace Wlg.FigureSkate.Fact.Editor
         //      LoaderUtility.LoadAssetsAsyncのAssetDatabaseをここに独自に用意
         //      本当はLoaderUtility.LoadAssetsAsyncの中でUNITY_EDITORで切り分けたかったが、
         //      UnityEditor.AddressableAssetsのアセンブリが必要になってしまうのでこちらに閉じ込める
-        public List<T> LoadAssetsAsync<T>(string path) where T : UnityEngine.Object
+        public List<T> LoadAssets<T>(string path) where T : UnityEngine.Object
         {
             var filelistKey = path + "/filelist.txt";
             var filelistObj = LoadAssetByAddress<TextAsset>(filelistKey);
