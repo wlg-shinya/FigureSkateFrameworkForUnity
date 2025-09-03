@@ -51,8 +51,9 @@ namespace Wlg.FigureSkate.Fact.Editor
 
                 var packageInfo = GetPackageInfo();
                 var builder = new ValidProgramComponentsBuilder(Path.Combine(packageInfo.resolvedPath, "ValidProgramComponents"));
-                await builder.Initialize();
-                await builder.FullBuild();
+                builder.Initialize();
+                // await builder.FullBuild();
+                await builder.BuildOneProgram("2022-23", "SeniorMenShortProgram");
                 Debug.Log($"ValidProgramComponentsBuilder finished.");
             }
             catch (Exception e)
