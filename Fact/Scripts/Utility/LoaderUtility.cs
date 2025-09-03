@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Wlg.FigureSkate.Fact
     public static class LoaderUtility
     {
         // 指定ディレクトリ以下のアセットファイルを非同期全読み込み
-        public static async Task<List<T>> LoadAssetsAsync<T>(string path)
+        public static async Task<List<T>> LoadAssetsAsync<T>(string path) where T : UnityEngine.Object
         {
             // MEMO:"filelist.txt" は ScriptableObjectFactory.OnProjectLoadedInEditor のものと一致させる必要がある
             // MEMO:ここはファイルパスではなくAddressablesのキーを指すのでPath.Combineは使わない
