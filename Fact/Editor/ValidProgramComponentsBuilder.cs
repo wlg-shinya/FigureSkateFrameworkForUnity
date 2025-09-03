@@ -132,47 +132,21 @@ namespace Wlg.FigureSkate.Fact.Editor
                 );
             });
 
-            // ビルド結果をバイナリファイルに書き出します。
-            if (buildResult != null && buildResult.AllValidProgramComponents.Count > 0)
+            // ビルド結果（Trie木）をバイナリファイルに書き出します。
+            if (buildResult != null && buildResult.Root.Children.Count > 0)
             {
-                var binFilePath = Path.Combine(buildResult.OutputPath, "AllValidProgramComponents.bin");
-                var idxFilePath = Path.Combine(buildResult.OutputPath, "AllValidProgramComponents.idx");
+                var binFilePath = Path.Combine(buildResult.OutputPath, "ValidProgramComponents.bin");
                 try
                 {
                     Directory.CreateDirectory(buildResult.OutputPath);
 
                     using (var binStream = new FileStream(binFilePath, FileMode.Create))
                     using (var binWriter = new BinaryWriter(binStream))
-                    using (var idxStream = new FileStream(idxFilePath, FileMode.Create))
-                    using (var idxWriter = new BinaryWriter(idxStream))
                     {
-                        // 最初に組み合わせの総数を書き込みます。
-                        binWriter.Write(buildResult.AllValidProgramComponents.Count);
-
-                        foreach (var vpc in buildResult.AllValidProgramComponents)
-                        {
-                            // 現在のストリームの位置（=これから書き込むデータの開始位置）をidxファイルに記録
-                            idxWriter.Write(binStream.Position);
-
-                            // 各組み合わせのデータを書き込みます。
-                            binWriter.Write(vpc.programId);
-                            binWriter.Write(vpc.totalBaseValue);
-
-                            // プログラム構成要素のデータを書き込みます。
-                            var components = vpc.programComponents.components;
-                            binWriter.Write(components.Length);
-                            foreach (var pc in components)
-                            {
-                                binWriter.Write(pc.elementPlaceableSetId);
-                                binWriter.Write(pc.elementIds.Length);
-                                foreach (var id in pc.elementIds)
-                                {
-                                    binWriter.Write(id ?? string.Empty);
-                                }
-                            }
-                        }
+                        // Trie木のルートノードから再帰的に書き込みを開始
+                        WriteNode(binWriter, buildResult.Root);
                     }
-                    Debug.Log($"Successfully wrote {binFilePath} and {idxFilePath}");
+                    Debug.Log($"Successfully wrote Trie data to {binFilePath}");
                 }
                 catch (Exception ex)
                 {
@@ -186,6 +160,25 @@ namespace Wlg.FigureSkate.Fact.Editor
             else
             {
                 Debug.LogError($"Build failed for program {programId} in season {season}.");
+            }
+        }
+
+        // Trie木を再帰的にバイナリへ書き込むヘルパーメソッド
+        private void WriteNode(BinaryWriter writer, ProgramComponentsTrieNode node)
+        {
+            // 終点情報と基礎点を書き込む
+            writer.Write(node.IsEndOfValid);
+            if (node.IsEndOfValid)
+            {
+                writer.Write(node.TotalBaseValue);
+            }
+
+            // 子ノードの数を書き込む
+            writer.Write(node.Children.Count);
+            foreach (var child in node.Children)
+            {
+                writer.Write(child.Key ?? string.Empty);
+                WriteNode(writer, child.Value);
             }
         }
 
@@ -220,7 +213,7 @@ namespace Wlg.FigureSkate.Fact.Editor
             );
 
             // 再帰的に有効なすべての組み合わせを探し出す
-            void FindValidCombinations(int componentIndex, int elementIndex)
+            void FindValidCombinationsAndBuildTrie(int componentIndex, int elementIndex, ProgramComponentsTrieNode currentNode)
             {
                 // ベースケース: すべての要素スロットを調べ終えたら、最終的な検証を行います。
                 if (componentIndex >= handler.ProgramComponents.Length)
@@ -228,35 +221,20 @@ namespace Wlg.FigureSkate.Fact.Editor
                     handler.UpdateError();
                     if (handler.Error == null)
                     {
-                        var validProgramComponents = new ValidProgramComponents()
-                        {
-                            programId = programId,
-                            programComponents = new()
-                            {
-                                components = handler.ProgramComponents.Select(pc => new ProgramComponent
-                                {
-                                    elementPlaceableSetId = pc.elementPlaceableSetId,
-                                    elementIds = pc.elementIds.ToArray()
-                                }).ToArray()
-                            }
-                        };
-
-                        // 合計基礎点を計算します。
-                        validProgramComponents.totalBaseValue = ProgramUtility.EstimateTotalBaseValue(
+                        // 有効な構成の終点としてノードにマーク
+                        currentNode.IsEndOfValid = true;
+                        // 合計基礎点を計算して格納
+                        currentNode.TotalBaseValue = ProgramUtility.EstimateTotalBaseValue(
                             handler.Program,
-                            validProgramComponents.programComponents.components,
+                            handler.ProgramComponents, // 直接ハンドラの状態を利用
                             handler.ElementPlaceableSetAll,
                             elementBaseValueArray,
                             goe: 0
                         );
-
-                        // 有効な構成を結果リストに追加します。
-                        buildResult.AllValidProgramComponents.Add(validProgramComponents);
                     }
                     return;
                 }
 
-                // 次の再帰呼び出しのためのインデックスを計算します。
                 var nextComponentIndex = componentIndex;
                 var nextElementIndex = elementIndex + 1;
                 if (nextElementIndex >= handler.ProgramComponents[componentIndex].elementIds.Length)
@@ -266,9 +244,18 @@ namespace Wlg.FigureSkate.Fact.Editor
                 }
 
                 // --- 再帰ステップ ---
+
                 // 1. 現在のスロットを「空」にした場合の組み合わせを試します。
-                handler.ProgramComponents[componentIndex].elementIds[elementIndex] = null;
-                FindValidCombinations(nextComponentIndex, nextElementIndex);
+                var emptyElementId = (string)null;
+                handler.ProgramComponents[componentIndex].elementIds[elementIndex] = emptyElementId;
+
+                // 対応する子ノードがなければ作成
+                if (!currentNode.Children.ContainsKey(emptyElementId ?? string.Empty))
+                {
+                    currentNode.Children[emptyElementId ?? string.Empty] = new();
+                }
+                FindValidCombinationsAndBuildTrie(nextComponentIndex, nextElementIndex, currentNode.Children[emptyElementId ?? string.Empty]);
+
 
                 // 2. 現在のスロットに設定可能なすべての要素を試します。
                 var currentComponent = handler.ProgramComponents[componentIndex];
@@ -278,10 +265,20 @@ namespace Wlg.FigureSkate.Fact.Editor
                 foreach (var elementId in placeable.elementIds)
                 {
                     handler.ProgramComponents[componentIndex].elementIds[elementIndex] = elementId;
-                    FindValidCombinations(nextComponentIndex, nextElementIndex);
+
+                    // 対応する子ノードがなければ作成
+                    if (!currentNode.Children.ContainsKey(elementId))
+                    {
+                        currentNode.Children[elementId] = new();
+                    }
+                    FindValidCombinationsAndBuildTrie(nextComponentIndex, nextElementIndex, currentNode.Children[elementId]);
                 }
+
+                // バックトラック: このステップで変更した要素を元に戻す(次の探索に影響を与えないように)
+                handler.ProgramComponents[componentIndex].elementIds[elementIndex] = null;
             }
-            FindValidCombinations(0, 0);
+
+            FindValidCombinationsAndBuildTrie(0, 0, buildResult.Root);
 
             // ビルド結果を返す
             return buildResult;
@@ -290,7 +287,7 @@ namespace Wlg.FigureSkate.Fact.Editor
         private class BuildResult
         {
             public string OutputPath;
-            public List<ValidProgramComponents> AllValidProgramComponents = new();
+            public ProgramComponentsTrieNode Root = new();
         }
 
         private readonly string _outputPath;
