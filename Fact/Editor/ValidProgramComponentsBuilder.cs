@@ -135,42 +135,48 @@ namespace Wlg.FigureSkate.Fact.Editor
             // ビルド結果をバイナリファイルに書き出します。
             if (buildResult != null && buildResult.AllValidProgramComponents.Count > 0)
             {
-                var filePath = Path.Combine(buildResult.OutputPath, "AllValidProgramComponents.bin");
+                var binFilePath = Path.Combine(buildResult.OutputPath, "AllValidProgramComponents.bin");
+                var idxFilePath = Path.Combine(buildResult.OutputPath, "AllValidProgramComponents.idx");
                 try
                 {
                     Directory.CreateDirectory(buildResult.OutputPath);
 
-                    using (var stream = File.Open(filePath, FileMode.Create))
-                    using (var writer = new BinaryWriter(stream, System.Text.Encoding.UTF8, false))
+                    using (var binStream = new FileStream(binFilePath, FileMode.Create))
+                    using (var binWriter = new BinaryWriter(binStream))
+                    using (var idxStream = new FileStream(idxFilePath, FileMode.Create))
+                    using (var idxWriter = new BinaryWriter(idxStream))
                     {
                         // 最初に組み合わせの総数を書き込みます。
-                        writer.Write(buildResult.AllValidProgramComponents.Count);
+                        binWriter.Write(buildResult.AllValidProgramComponents.Count);
 
                         foreach (var vpc in buildResult.AllValidProgramComponents)
                         {
+                            // 現在のストリームの位置（=これから書き込むデータの開始位置）をidxファイルに記録
+                            idxWriter.Write(binStream.Position);
+
                             // 各組み合わせのデータを書き込みます。
-                            writer.Write(vpc.programId);
-                            writer.Write(vpc.totalBaseValue);
+                            binWriter.Write(vpc.programId);
+                            binWriter.Write(vpc.totalBaseValue);
 
                             // プログラム構成要素のデータを書き込みます。
                             var components = vpc.programComponents.components;
-                            writer.Write(components.Length);
+                            binWriter.Write(components.Length);
                             foreach (var pc in components)
                             {
-                                writer.Write(pc.elementPlaceableSetId);
-                                writer.Write(pc.elementIds.Length);
+                                binWriter.Write(pc.elementPlaceableSetId);
+                                binWriter.Write(pc.elementIds.Length);
                                 foreach (var id in pc.elementIds)
                                 {
-                                    writer.Write(id ?? string.Empty);
+                                    binWriter.Write(id ?? string.Empty);
                                 }
                             }
                         }
                     }
-                    Debug.Log($"Successfully built and wrote {buildResult.AllValidProgramComponents.Count} combinations to {filePath}");
+                    Debug.Log($"Successfully wrote {binFilePath} and {idxFilePath}");
                 }
                 catch (Exception ex)
                 {
-                    Debug.LogError($"Failed to write build result to {filePath}. Error: {ex.Message}");
+                    Debug.LogError($"Failed to write build result to {binFilePath}. Error: {ex.Message}");
                 }
             }
             else if (buildResult != null)
