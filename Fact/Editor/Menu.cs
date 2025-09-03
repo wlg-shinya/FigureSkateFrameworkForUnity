@@ -50,7 +50,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                 Debug.Log($"ValidProgramComponentsBuilder start. After a while, the log will be output.");
 
                 var packageInfo = GetPackageInfo();
-                _validProgramComponentsBuilder ??= new ValidProgramComponentsBuilder(Path.Combine(packageInfo.resolvedPath, "ValidProgramComponents"));
+                _validProgramComponentsBuilder ??= new ValidProgramComponentsBuilder(Path.Combine(packageInfo.resolvedPath, "Fact", "ValidProgramComponents"));
                 await _validProgramComponentsBuilder.FullBuild();
                 // await builder.BuildOneProgram("2022-23", "SeniorMenShortProgram");
                 Debug.Log($"ValidProgramComponentsBuilder finished.");
@@ -69,7 +69,7 @@ namespace Wlg.FigureSkate.Fact.Editor
                 Debug.Log($"ValidProgramComponentsBuilder start. After a while, the log will be output.");
 
                 var packageInfo = GetPackageInfo();
-                _validProgramComponentsBuilder ??= new ValidProgramComponentsBuilder(Path.Combine(packageInfo.resolvedPath, "ValidProgramComponents"));
+                _validProgramComponentsBuilder ??= new ValidProgramComponentsBuilder(Path.Combine(packageInfo.resolvedPath, "Fact", "ValidProgramComponents"));
                 await _validProgramComponentsBuilder.BuildOneProgram("2022-23", "SeniorMenShortProgram");
                 Debug.Log($"ValidProgramComponentsBuilder finished.");
             }
