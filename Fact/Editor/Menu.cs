@@ -42,18 +42,35 @@ namespace Wlg.FigureSkate.Fact.Editor
             }
         }
 
-        [MenuItem("Wlg.FigureSkate/ValidProgramComponentsBuilder")]
-        public static async void ValidProgramComponentsBuilder()
+        [MenuItem("Wlg.FigureSkate/ValidProgramComponentsBuilder/Full build")]
+        public static async void ValidProgramComponentsBuilderFullBuild()
         {
             try
             {
                 Debug.Log($"ValidProgramComponentsBuilder start. After a while, the log will be output.");
 
                 var packageInfo = GetPackageInfo();
-                var builder = new ValidProgramComponentsBuilder(Path.Combine(packageInfo.resolvedPath, "ValidProgramComponents"));
-                builder.Initialize();
-                // await builder.FullBuild();
-                await builder.BuildOneProgram("2022-23", "SeniorMenShortProgram");
+                _validProgramComponentsBuilder ??= new ValidProgramComponentsBuilder(Path.Combine(packageInfo.resolvedPath, "ValidProgramComponents"));
+                await _validProgramComponentsBuilder.FullBuild();
+                // await builder.BuildOneProgram("2022-23", "SeniorMenShortProgram");
+                Debug.Log($"ValidProgramComponentsBuilder finished.");
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
+        }
+
+        [MenuItem("Wlg.FigureSkate/ValidProgramComponentsBuilder/2022-23 SeniorMenShortProgram")]
+        public static async void ValidProgramComponentsBuilder2022_23SeniorMenShortProgram()
+        {
+            try
+            {
+                Debug.Log($"ValidProgramComponentsBuilder start. After a while, the log will be output.");
+
+                var packageInfo = GetPackageInfo();
+                _validProgramComponentsBuilder ??= new ValidProgramComponentsBuilder(Path.Combine(packageInfo.resolvedPath, "ValidProgramComponents"));
+                await _validProgramComponentsBuilder.BuildOneProgram("2022-23", "SeniorMenShortProgram");
                 Debug.Log($"ValidProgramComponentsBuilder finished.");
             }
             catch (Exception e)
@@ -67,6 +84,8 @@ namespace Wlg.FigureSkate.Fact.Editor
             return UnityEditor.PackageManager.PackageInfo.FindForAssetPath("Packages/com.welovegamesinc.figureskate-framework") ??
                 throw new Exception("Not found path 'com.welovegamesinc.figureskate-framework'");
         }
+
+        private static ValidProgramComponentsBuilder _validProgramComponentsBuilder = null;
     }
 }
 #endif

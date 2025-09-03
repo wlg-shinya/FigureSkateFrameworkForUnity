@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
@@ -22,10 +23,7 @@ namespace Wlg.FigureSkate.Fact.Editor
             var setting = AddressableAssetSettingsDefaultObject.GetSettings(false);
             _addressableAssetEntry = new List<AddressableAssetEntry>();
             setting.GetAllAssets(_addressableAssetEntry, false);
-        }
 
-        public void Initialize()
-        {
             // フィギュアスケートデータの読み込み
             _eventObjects = LoadAssetsAsync<EventObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/Event");
             _elementPlaceableSetObjects = LoadAssetsAsync<ElementPlaceableSetObject>(@$"Packages/com.welovegamesinc.figureskate-framework/Fact/Objects/ElementPlaceableSet");
@@ -69,82 +67,145 @@ namespace Wlg.FigureSkate.Fact.Editor
         // フルビルド
         public async Task FullBuild()
         {
+            var maxConcurrency = Environment.ProcessorCount;
+            using var semaphore = new SemaphoreSlim(maxConcurrency, maxConcurrency);
+
+            var allPrograms = FactConstant.SEASONS
+                .SelectMany(season => _programObjectsMap[season].Values.Select(program => (season, program.data.id)))
+                .ToList();
+
             // 全シーズンの全プログラム構成に対して構成可能な要素の組み割合わせを出力する
-            var taskList = new List<Task>();
-            foreach (var season in FactConstant.SEASONS)
+            var tasks = new List<Task<BuildResult>>();
+            foreach (var (season, programId) in allPrograms)
             {
-                foreach (var programObject in _programObjectsMap[season].Values)
+                await semaphore.WaitAsync();
+                tasks.Add(Task.Run(() =>
                 {
-                    taskList.Add(BuildOneProgram(season, programObject.data.id));
-                }
+                    BuildResult result = null;
+                    try
+                    {
+                        result = Build(
+                            season,
+                            _programObjectsMap[season][programId],
+                            _programComponentRegulationObjectsMap[season][_programObjectsMap[season][programId].data.programComponentRegulationId],
+                            _elementPlaceableSetObjects,
+                            _programComponentRegulationArray[season],
+                            _elementPlaceableSetArray,
+                            _elementPlaceableArray,
+                            _elementBaseValueArray[season]
+                        );
+                    }
+                    catch (Exception ex)
+                    {
+                        // エラーが発生しても他のタスクが止まらないようにログに出力
+                        Debug.LogError($"Failed to build program {programId} for season {season}. Error: {ex.Message}");
+                    }
+                    finally
+                    {
+                        semaphore.Release();
+                    }
+                    return result;
+                }));
             }
-            await Task.WhenAll(taskList);
+            var buildResults = await Task.WhenAll(tasks);
+            foreach (var result in buildResults)
+            {
+                Debug.Log(result.OutputPath);
+            }
         }
 
         // 指定プログラムでビルド
         // MEMO:ハンドラ構築前に ProgramObjectQuery.SetupConditions が実行されている必要がある
         public async Task BuildOneProgram(string season, string programId)
         {
-            var (outputDir, validProgramComponents) = await Task.Run(() =>
+            var buildResult = await Task.Run(() =>
             {
-                var programObject = _programObjectsMap[season][programId];
-                var validProgramComponents = new ValidProgramComponents()
-                {
-                    programId = programId,
-                    programComponents = new(),
-                    totalBaseValue = 0.0f
-                };
-                validProgramComponents.programComponents.components = ProgramComponentQuery.Create(
-                    _programComponentRegulationObjectsMap[season][programObject.data.programComponentRegulationId].data,
-                    _elementPlaceableSetObjects
-                );
-                // プログラム構成の配置条件を考慮して設定するためのハンドラの用意
-                var handler = new ProgramComponentHandler();
-                handler.Initialize(
-                    programObject.data,
-                    validProgramComponents.programComponents.components,
+                return Build(
+                    season,
+                    _programObjectsMap[season][programId],
+                    _programComponentRegulationObjectsMap[season][_programObjectsMap[season][programId].data.programComponentRegulationId],
+                    _elementPlaceableSetObjects,
                     _programComponentRegulationArray[season],
                     _elementPlaceableSetArray,
-                    _elementPlaceableArray
+                    _elementPlaceableArray,
+                    _elementBaseValueArray[season]
+                );
+            });
+            Debug.Log(buildResult.OutputPath);
+        }
+
+        private BuildResult Build(
+            string season,
+            ProgramObject programObject,
+            ProgramComponentRegulationObject programComponentRegulationObject,
+            List<ElementPlaceableSetObject> elementPlaceableSetObjects,
+            ProgramComponentRegulation[] programComponentRegulationArray,
+            ElementPlaceableSet[] elementPlaceableSetArray,
+            ElementPlaceable[] elementPlaceableArray,
+            ElementBaseValue[] elementBaseValueArray
+            )
+        {
+            var programId = programObject.data.id;
+            var validProgramComponents = new ValidProgramComponents()
+            {
+                programId = programId,
+                programComponents = new(),
+                totalBaseValue = 0.0f
+            };
+            validProgramComponents.programComponents.components = ProgramComponentQuery.Create(
+                programComponentRegulationObject.data,
+                elementPlaceableSetObjects
+            );
+            // プログラム構成の配置条件を考慮して設定するためのハンドラの用意
+            var handler = new ProgramComponentHandler();
+            handler.Initialize(
+                programObject.data,
+                validProgramComponents.programComponents.components,
+                programComponentRegulationArray,
+                elementPlaceableSetArray,
+                elementPlaceableArray
+            );
+
+            // TODO:ここでhandler.TrySetを行い、すべて設定してもhandler.Error==nullになる組み合わせをひとつ見つける
+
+            // 構成したプログラムの合計基礎点を記録
+            validProgramComponents.totalBaseValue = ProgramUtility.EstimateTotalBaseValue(
+                handler.Program,
+                handler.ProgramComponents,
+                handler.ElementPlaceableSetAll,
+                elementBaseValueArray,
+                goe: 0
                 );
 
-                // TODO:ここでhandler.TrySetを行い、すべて設定してもhandler.Error==nullになる組み合わせをひとつ見つける
+            var outputDir = Path.Combine(_outputPath, season, programId);
+            return new BuildResult() { OutputPath = outputDir, ValidProgramComponents = validProgramComponents };
+        }
 
-                // 構成したプログラムの合計基礎点を記録
-                validProgramComponents.totalBaseValue = ProgramUtility.EstimateTotalBaseValue(
-                    handler.Program,
-                    handler.ProgramComponents,
-                    handler.ElementPlaceableSetAll,
-                    _elementBaseValueArray[season],
-                    goe: 0
-                    );
-
-                // TODO:ここでoutputDir以下にValidProgramComponentsをファイルに書き出す
-                var outputDir = Path.Combine(_outputPath, season, programId);
-                return (outputDir, validProgramComponents);
-            });
-            Debug.Log(outputDir);
+        private class BuildResult
+        {
+            public string OutputPath;
+            public ValidProgramComponents ValidProgramComponents;
         }
 
         private readonly string _outputPath;
-        private List<ElementPlaceableObject> _elementPlaceableObjects;
-        private List<ElementPlaceableSetObject> _elementPlaceableSetObjects;
-        private List<EventObject> _eventObjects;
-        private List<ElementObject> _elementObjects;
-        private Dictionary<string, Dictionary<string, ProgramComponentRegulationObject>> _programComponentRegulationObjectsMap = new();
-        private Dictionary<string, Dictionary<string, ProgramObject>> _programObjectsMap = new();
-        private ElementPlaceable[] _elementPlaceableArray;
-        private ElementPlaceableSet[] _elementPlaceableSetArray;
-        private Dictionary<string, ProgramComponentRegulation[]> _programComponentRegulationArray = new();
-        private Dictionary<string, Dictionary<string, ElementBaseValueObject>> _elementBaseValueObjectsMap = new();
-        private Dictionary<string, ElementBaseValue[]> _elementBaseValueArray = new();
-        private Dictionary<string, List<string>> _allPossibleElementIds = new();
+        private readonly List<ElementPlaceableObject> _elementPlaceableObjects;
+        private readonly List<ElementPlaceableSetObject> _elementPlaceableSetObjects;
+        private readonly List<EventObject> _eventObjects;
+        private readonly List<ElementObject> _elementObjects;
+        private readonly Dictionary<string, Dictionary<string, ProgramComponentRegulationObject>> _programComponentRegulationObjectsMap = new();
+        private readonly Dictionary<string, Dictionary<string, ProgramObject>> _programObjectsMap = new();
+        private readonly ElementPlaceable[] _elementPlaceableArray;
+        private readonly ElementPlaceableSet[] _elementPlaceableSetArray;
+        private readonly Dictionary<string, ProgramComponentRegulation[]> _programComponentRegulationArray = new();
+        private readonly Dictionary<string, Dictionary<string, ElementBaseValueObject>> _elementBaseValueObjectsMap = new();
+        private readonly Dictionary<string, ElementBaseValue[]> _elementBaseValueArray = new();
+        private readonly Dictionary<string, List<string>> _allPossibleElementIds = new();
 
         // MEMO:UnityEngine.Addressables以下のAPIをEditor拡張上で使うと不安定だったので、
         //      LoaderUtility.LoadAssetsAsyncのAssetDatabaseをここに独自に用意
         //      本当はLoaderUtility.LoadAssetsAsyncの中でUNITY_EDITORで切り分けたかったが、
         //      UnityEditor.AddressableAssetsのアセンブリが必要になってしまうのでこちらに閉じ込める
-        public static List<T> LoadAssetsAsync<T>(string path) where T : UnityEngine.Object
+        public List<T> LoadAssetsAsync<T>(string path) where T : UnityEngine.Object
         {
             var filelistKey = path + "/filelist.txt";
             var filelistObj = LoadAssetByAddress<TextAsset>(filelistKey);
@@ -160,7 +221,7 @@ namespace Wlg.FigureSkate.Fact.Editor
             }
             return results;
         }
-        public static T LoadAssetByAddress<T>(string address) where T : UnityEngine.Object
+        public T LoadAssetByAddress<T>(string address) where T : UnityEngine.Object
         {
             foreach (var entry in _addressableAssetEntry)
             {
@@ -171,7 +232,7 @@ namespace Wlg.FigureSkate.Fact.Editor
             }
             return null;
         }
-        static List<AddressableAssetEntry> _addressableAssetEntry = new();
+        private readonly List<AddressableAssetEntry> _addressableAssetEntry = new();
     }
 }
 #endif
