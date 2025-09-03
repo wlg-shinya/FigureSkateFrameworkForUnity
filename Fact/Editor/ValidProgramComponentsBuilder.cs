@@ -131,7 +131,56 @@ namespace Wlg.FigureSkate.Fact.Editor
                     _elementBaseValueArray[season]
                 );
             });
-            Debug.Log(buildResult.OutputPath);
+
+            // ビルド結果をバイナリファイルに書き出します。
+            if (buildResult != null && buildResult.AllValidProgramComponents.Count > 0)
+            {
+                var filePath = Path.Combine(buildResult.OutputPath, "AllValidProgramComponents.bin");
+                try
+                {
+                    Directory.CreateDirectory(buildResult.OutputPath);
+
+                    using (var stream = File.Open(filePath, FileMode.Create))
+                    using (var writer = new BinaryWriter(stream, System.Text.Encoding.UTF8, false))
+                    {
+                        // 最初に組み合わせの総数を書き込みます。
+                        writer.Write(buildResult.AllValidProgramComponents.Count);
+
+                        foreach (var vpc in buildResult.AllValidProgramComponents)
+                        {
+                            // 各組み合わせのデータを書き込みます。
+                            writer.Write(vpc.programId);
+                            writer.Write(vpc.totalBaseValue);
+
+                            // プログラム構成要素のデータを書き込みます。
+                            var components = vpc.programComponents.components;
+                            writer.Write(components.Length);
+                            foreach (var pc in components)
+                            {
+                                writer.Write(pc.elementPlaceableSetId);
+                                writer.Write(pc.elementIds.Length);
+                                foreach (var id in pc.elementIds)
+                                {
+                                    writer.Write(id ?? string.Empty);
+                                }
+                            }
+                        }
+                    }
+                    Debug.Log($"Successfully built and wrote {buildResult.AllValidProgramComponents.Count} combinations to {filePath}");
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"Failed to write build result to {filePath}. Error: {ex.Message}");
+                }
+            }
+            else if (buildResult != null)
+            {
+                Debug.LogWarning($"No valid program components found for program {programId} in season {season}. Nothing to write.");
+            }
+            else
+            {
+                Debug.LogError($"Build failed for program {programId} in season {season}.");
+            }
         }
 
         private BuildResult Build(
@@ -146,45 +195,96 @@ namespace Wlg.FigureSkate.Fact.Editor
             )
         {
             var programId = programObject.data.id;
-            var validProgramComponents = new ValidProgramComponents()
+            BuildResult buildResult = new()
             {
-                programId = programId,
-                programComponents = new(),
-                totalBaseValue = 0.0f
+                OutputPath = Path.Combine(_outputPath, season, programId)
             };
-            validProgramComponents.programComponents.components = ProgramComponentQuery.Create(
-                programComponentRegulationObject.data,
-                elementPlaceableSetObjects
-            );
+
             // プログラム構成の配置条件を考慮して設定するためのハンドラの用意
             var handler = new ProgramComponentHandler();
             handler.Initialize(
                 programObject.data,
-                validProgramComponents.programComponents.components,
+                ProgramComponentQuery.Create(
+                    programComponentRegulationObject.data,
+                    elementPlaceableSetObjects
+                ),
                 programComponentRegulationArray,
                 elementPlaceableSetArray,
                 elementPlaceableArray
             );
 
-            // TODO:ここでhandler.TrySetを行い、すべて設定してもhandler.Error==nullになる組み合わせをひとつ見つける
+            // 再帰的に有効なすべての組み合わせを探し出す
+            void FindValidCombinations(int componentIndex, int elementIndex)
+            {
+                // ベースケース: すべての要素スロットを調べ終えたら、最終的な検証を行います。
+                if (componentIndex >= handler.ProgramComponents.Length)
+                {
+                    handler.UpdateError();
+                    if (handler.Error == null)
+                    {
+                        var validProgramComponents = new ValidProgramComponents()
+                        {
+                            programId = programId,
+                            programComponents = new()
+                            {
+                                components = handler.ProgramComponents.Select(pc => new ProgramComponent
+                                {
+                                    elementPlaceableSetId = pc.elementPlaceableSetId,
+                                    elementIds = pc.elementIds.ToArray()
+                                }).ToArray()
+                            }
+                        };
 
-            // 構成したプログラムの合計基礎点を記録
-            validProgramComponents.totalBaseValue = ProgramUtility.EstimateTotalBaseValue(
-                handler.Program,
-                handler.ProgramComponents,
-                handler.ElementPlaceableSetAll,
-                elementBaseValueArray,
-                goe: 0
-                );
+                        // 合計基礎点を計算します。
+                        validProgramComponents.totalBaseValue = ProgramUtility.EstimateTotalBaseValue(
+                            handler.Program,
+                            validProgramComponents.programComponents.components,
+                            handler.ElementPlaceableSetAll,
+                            elementBaseValueArray,
+                            goe: 0
+                        );
 
-            var outputDir = Path.Combine(_outputPath, season, programId);
-            return new BuildResult() { OutputPath = outputDir, ValidProgramComponents = validProgramComponents };
+                        // 有効な構成を結果リストに追加します。
+                        buildResult.AllValidProgramComponents.Add(validProgramComponents);
+                    }
+                    return;
+                }
+
+                // 次の再帰呼び出しのためのインデックスを計算します。
+                var nextComponentIndex = componentIndex;
+                var nextElementIndex = elementIndex + 1;
+                if (nextElementIndex >= handler.ProgramComponents[componentIndex].elementIds.Length)
+                {
+                    nextComponentIndex++;
+                    nextElementIndex = 0;
+                }
+
+                // --- 再帰ステップ ---
+                // 1. 現在のスロットを「空」にした場合の組み合わせを試します。
+                handler.ProgramComponents[componentIndex].elementIds[elementIndex] = null;
+                FindValidCombinations(nextComponentIndex, nextElementIndex);
+
+                // 2. 現在のスロットに設定可能なすべての要素を試します。
+                var currentComponent = handler.ProgramComponents[componentIndex];
+                var placeableSet = Array.Find(elementPlaceableSetArray, x => x.id == currentComponent.elementPlaceableSetId);
+                var placeable = Array.Find(elementPlaceableArray, x => x.id == placeableSet.elementPlaceableIds[elementIndex]);
+
+                foreach (var elementId in placeable.elementIds)
+                {
+                    handler.ProgramComponents[componentIndex].elementIds[elementIndex] = elementId;
+                    FindValidCombinations(nextComponentIndex, nextElementIndex);
+                }
+            }
+            FindValidCombinations(0, 0);
+
+            // ビルド結果を返す
+            return buildResult;
         }
 
         private class BuildResult
         {
             public string OutputPath;
-            public ValidProgramComponents ValidProgramComponents;
+            public List<ValidProgramComponents> AllValidProgramComponents = new();
         }
 
         private readonly string _outputPath;
