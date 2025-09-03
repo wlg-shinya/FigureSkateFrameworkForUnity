@@ -9,10 +9,11 @@ namespace Wlg.FigureSkate.Fact
 {
     public class ValidProgramComponentsLoader
     {
+        // インスタンス禁止
+        private ValidProgramComponentsLoader() { }
+
         public ValidProgramComponents Root { get; private set; }
         public Dictionary<ushort, string> IdToStringMap { get; private set; }
-
-        private ValidProgramComponentsLoader() { }
 
         public static async Task<ValidProgramComponentsLoader> Load(string dirPath)
         {
