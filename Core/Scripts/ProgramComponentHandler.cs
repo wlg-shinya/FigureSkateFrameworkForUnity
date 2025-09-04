@@ -10,8 +10,8 @@ namespace Wlg.FigureSkate.Core
     {
         public class ErrorData
         {
-            public List<ElementPlaceableSetError> ElementPlaceableSetErrors { set; get; } = new();
-            public List<ProgramComponentError> ProgramComponentErrors { set; get; } = new();
+            public List<ElementPlaceableSetError> ElementPlaceableSetErrors { set; get; }
+            public List<ProgramComponentError> ProgramComponentErrors { set; get; }
 
             public class ElementPlaceableSetError
             {
@@ -110,7 +110,7 @@ namespace Wlg.FigureSkate.Core
         {
             bool errorOccurred = false;
             // 構成ごとの配置可能条件を満たしていないものがあればそのエラーを設定
-            var programComponentSetConditions = ProgramComponents
+            var elementPlaceableSetConditions = ProgramComponents
                 .Select((component, componentIndex) => new
                 {
                     Component = component,
@@ -123,13 +123,18 @@ namespace Wlg.FigureSkate.Core
                     (x, condition) => (Condition: condition, x.ComponentIndex)
                 )
                 .ToList();
-            if (programComponentSetConditions.Count > 0)
+            if (elementPlaceableSetConditions.Count > 0)
             {
                 errorOccurred = true;
                 Error ??= new();
-                Error.ElementPlaceableSetErrors = programComponentSetConditions
+                Error.ElementPlaceableSetErrors = elementPlaceableSetConditions
                     .Select(x => new ErrorData.ElementPlaceableSetError() { Condition = x.Condition, ComponentIndex = x.ComponentIndex })
                     .ToList();
+            }
+            else
+            {
+                // エラーなし
+                if (Error != null) Error.ElementPlaceableSetErrors = new();
             }
 
             // 構成全体をみて配置可能条件を満たしていないものがあればそのエラーを設定
@@ -145,6 +150,11 @@ namespace Wlg.FigureSkate.Core
                 Error.ProgramComponentErrors = programComponentConditions
                     .Select(x => new ErrorData.ProgramComponentError() { Condition = x.Condition, ComponentIndexList = x.FalseIndices }) // outで受け取ったリストを使用
                     .ToList();
+            }
+            else
+            {
+                // エラーなし
+                if (Error != null) Error.ProgramComponentErrors = null;
             }
 
             // エラーが発生していないのでエラーなし
