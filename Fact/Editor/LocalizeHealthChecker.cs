@@ -1,4 +1,4 @@
-#if UNITY_EDITOR && WLG_DEVELOP
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using System.IO;
