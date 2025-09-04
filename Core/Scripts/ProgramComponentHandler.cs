@@ -29,8 +29,8 @@ namespace Wlg.FigureSkate.Core
         public Program Program { get; private set; }
         public ProgramComponent[] ProgramComponents { get; private set; }
         public ProgramComponentRegulation[] ProgramComponentRegulationAll { get; private set; }
-        public ElementPlaceableSet[] ElementPlaceableSetAll { get; private set; }
-        public ElementPlaceable[] ElementPlaceableAll { get; private set; }
+        public Dictionary<string, ElementPlaceableSet> ElementPlaceableSetMap { get; private set; }
+        public Dictionary<string, ElementPlaceable> ElementPlaceableMap { get; private set; }
         public ErrorData Error { get; private set; } = new(); // nullなら正常。初期時はエラーとするためインスタンス化
 
         public void Initialize(
@@ -44,8 +44,8 @@ namespace Wlg.FigureSkate.Core
             Program = program;
             ProgramComponents = programComponent;
             ProgramComponentRegulationAll = programComponentRegulationAll;
-            ElementPlaceableSetAll = elementPlaceableSetAll;
-            ElementPlaceableAll = elementPlaceableAll;
+            ElementPlaceableSetMap = elementPlaceableSetAll.ToDictionary(x => x.id, x => x);
+            ElementPlaceableMap = elementPlaceableAll.ToDictionary(x => x.id, x => x); ;
             UpdateError();
         }
 
@@ -71,9 +71,14 @@ namespace Wlg.FigureSkate.Core
             if (string.IsNullOrEmpty(elementId)) return true;
 
             // 指定された構成要素が設定可能一覧に含まれている場合は追加可。そうでなければ追加不可
-            var elementPlaceableSet = Array.Find(ElementPlaceableSetAll, x => x.id.Equals(ProgramComponents[componentIndex].elementPlaceableSetId)) ?? throw new Exception($"Not found '{ProgramComponents[componentIndex].elementPlaceableSetId}'");
-            var elementPlaceable = Array.Find(ElementPlaceableAll, x => x.id.Equals(elementPlaceableSet.elementPlaceableIds[elementIndex])) ?? throw new Exception($"Not found '{elementPlaceableSet.elementPlaceableIds[elementIndex]}'");
-            return elementPlaceable.elementIds.Any(id => id == elementId);
+            if (ElementPlaceableSetMap.TryGetValue(ProgramComponents[componentIndex].elementPlaceableSetId, out var elementPlaceableSet))
+            {
+                if (ElementPlaceableMap.TryGetValue(elementPlaceableSet.elementPlaceableIds[elementIndex], out var elementPlaceable))
+                {
+                    return elementPlaceable.elementIds.Any(id => id == elementId);
+                }
+            }
+            return false;
         }
 
         // セット解除
@@ -110,7 +115,7 @@ namespace Wlg.FigureSkate.Core
                 {
                     Component = component,
                     ComponentIndex = componentIndex,
-                    ElementPlaceableSet = Array.Find(ElementPlaceableSetAll, x => x.id.Equals(component.elementPlaceableSetId))
+                    ElementPlaceableSet = ElementPlaceableSetMap[component.elementPlaceableSetId]
                 })
                 .Where(x => x.ElementPlaceableSet.Conditions.Count > 0)
                 .SelectMany(x => x.ElementPlaceableSet.Conditions
